@@ -6,4 +6,4 @@ import OrdenesPendientesComp from "../components/ordenes-pendientes-comp";
 export const Main = () => <MainComp />;
 export const Clientes = () => <ClientesComp />;
 export const Ordenes = () => <OrdenesComp />;
-export const OrdenesPendientesComp = () => <OrdenesPendientesComp />;
+export const OrdenesPendientes = () => <OrdenesPendientesComp />;
