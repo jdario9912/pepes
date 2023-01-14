@@ -1,3 +1,11 @@
+:root{
+  /* Colores */
+  --negro: #353535;
+  --magenta: #FF0090;
+  --amarillo: #FFFF00;
+  --cyan: #00FFFF;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont,'Arial', 'Segoe UI', 'Roboto', 'Oxygen',
