@@ -1,7 +1,7 @@
-import MainComp from "../components/main-comp";
-import ClientesComp from "../components/clientes-comp";
-import OrdenesComp from "../components/ordenes-comp";
-import OrdenesPendientesComp from "../components/ordenes-pendientes-comp";
+import MainComp from "../components/comp-pages/main-comp";
+import ClientesComp from "../components/comp-pages/clientes-comp";
+import OrdenesComp from "../components/comp-pages/ordenes-comp";
+import OrdenesPendientesComp from "../components/comp-pages/ordenes-pendientes-comp";
 
 export const Main = () => <MainComp />;
 export const Clientes = () => <ClientesComp />;

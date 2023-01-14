@@ -3,7 +3,7 @@ import React from 'react';
 const MainComp = () => {
   return (
     <div>
-      <p>Pagina principal</p>
+      <h2>Pagina principal</h2>
     </div>
   );
 }
