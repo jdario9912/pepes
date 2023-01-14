@@ -1,6 +1,6 @@
 import React from 'react';
-import BtnSubmit from '../btn-submit';
-import InputNumber from '../input-number';
+import BtnSubmit from '../../btn-submit';
+import InputNumber from '../../input-number';
 
 const BuscarOrdenes = () => {
   return (

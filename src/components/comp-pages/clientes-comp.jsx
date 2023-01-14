@@ -1,7 +1,7 @@
 import React from 'react';
-import Botones from '../clientes-comp/botones';
-import BuscarClientes from '../clientes-comp/buscar-clientes';
-import MostrarClientes from '../clientes-comp/mostrar-clientes';
+import Botones from '../comp-pages/clientes-comp/botones';
+import BuscarClientes from '../comp-pages/clientes-comp/buscar-clientes';
+import MostrarClientes from '../comp-pages/clientes-comp/mostrar-clientes';
 
 const Clientes = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
-import Botones from '../ordenes-comp/botones';
-import BuscarOrdenes from '../ordenes-comp/buscar-ordenes';
-import MostrarOrdenes from '../ordenes-comp/mostrar-ordenes';
+import Botones from '../comp-pages/ordenes-comp/botones';
+import BuscarOrdenes from '../comp-pages/ordenes-comp/buscar-ordenes';
+import MostrarOrdenes from '../comp-pages/ordenes-comp/mostrar-ordenes';
 
 const OrdenesComp = () => {
   return (

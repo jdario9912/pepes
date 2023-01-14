@@ -1,5 +1,5 @@
 import React from 'react';
-import MostrarOrdenesPendientes from '../ordenes-pendientes-comp/mostrar-ordenes-pendientes';
+import MostrarOrdenesPendientes from '../comp-pages/ordenes-pendientes-comp/mostrar-ordenes-pendientes';
 
 const OrdenesPendientesComp = () => {
   return (

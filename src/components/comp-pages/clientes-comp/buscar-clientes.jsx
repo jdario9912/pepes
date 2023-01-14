@@ -1,6 +1,6 @@
 import React from 'react';
-import BtnSubmit from '../btn-submit';
-import InputText from '../input-text';
+import BtnSubmit from '../../btn-submit';
+import InputText from '../../input-text';
 
 const BuscarClientes = () => {
   return (
