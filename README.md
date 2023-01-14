@@ -1,5 +1,11 @@
 # Este proyecto esta en desarrollo
 
+Sistema para registrar clientes y ordenes de trabajo.
+
+Cuenta con un sistema de login, permisos de usuario y administrador.
+
+Tecnologías utilizadas: ReactJs, CSS, NodeJs y MySQL.
+
 ![Logo Pepe's](https://instagram.fcor13-2.fna.fbcdn.net/v/t51.2885-19/64276445_2302586509861529_4826445863674970112_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fcor13-2.fna.fbcdn.net&_nc_cat=105&_nc_ohc=tZezC1s7GZoAX9RKfvQ&edm=ACWDqb8BAAAA&ccb=7-5&oh=00_AfDRtqvekdUrrto3vLB_KjEWSy9YTiYOx81qN_K3UKQ2rg&oe=63C8599F&_nc_sid=1527a3)
 
 <!-- # Getting Started with Create React App
