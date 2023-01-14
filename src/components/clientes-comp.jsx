@@ -1,15 +1,15 @@
 import React from 'react';
 import Botones from './clientes-comp/botones';
-import FormBuscarClientes from './clientes-comp/form-buscar-clientes';
-import TableClientes from './clientes-comp/table-clientes';
+import BuscarClientes from './clientes-comp/buscar-clientes';
+import MostrarClientes from './clientes-comp/mostrar-clientes';
 
 const Clientes = () => {
   return (
     <div>
       <p>Clientes</p>
       <Botones />        
-      <FormBuscarClientes />
-      <TableClientes />
+      <BuscarClientes />
+      <MostrarClientes />
     </div>
   );
 }
