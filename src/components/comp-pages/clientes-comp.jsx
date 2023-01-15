@@ -3,7 +3,7 @@ import Botones from '../comp-pages/clientes-comp/botones';
 import BuscarClientes from '../comp-pages/clientes-comp/buscar-clientes';
 import MostrarClientes from '../comp-pages/clientes-comp/mostrar-clientes';
 
-const Clientes = () => {
+const ClientesComp = () => {
   return (
     <div>
       <h2>Clientes</h2>
@@ -14,4 +14,4 @@ const Clientes = () => {
   );
 }
 
-export default Clientes;
+export default ClientesComp;

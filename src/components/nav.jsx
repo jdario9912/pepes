@@ -10,6 +10,7 @@ const Nav = () => {
         <li><Link to='/ordenes'>Ordenes</Link></li>
         <li><Link to='/ordenes-pendientes'>Ordenes Pendientes</Link></li>
         <li><Link to='/agregar-cliente'>Agregar Cliente</Link></li>
+        <li><Link to='/nueva-orden'>Nueva Orden</Link></li>
       </ul>
     </nav>
   );
