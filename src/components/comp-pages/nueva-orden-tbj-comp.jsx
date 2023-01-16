@@ -1,5 +1,5 @@
 import React from 'react';
-import { DatosClienteModel } from '../../models/datos-cliente';
+import { DatosClienteModel } from '../../models/datos-cliente-model';
 import DatosCliente from './nueva-orden-tbj-comp/datos-cliente';
 import DatosOrdenTbj from './nueva-orden-tbj-comp/datos-orden-tbj';
 

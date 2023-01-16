@@ -2,9 +2,11 @@ import React from 'react';
 import InputDate from '../../input-date';
 import InputTime from '../../input-time';
 import SelectOption from '../../select-option';
+import TextArea from '../../text-area';
 import DetallePago from './detalle-pago';
 import EstadoOrdenTbj from './estado-orden-tbj';
 import ImprimirOrden from './imprimir-orden';
+import Muestra from './muestra';
 import TipoTrabajo from './tipo-trabajo';
 
 const DatosOrdenTbj = () => {
@@ -16,9 +18,10 @@ const DatosOrdenTbj = () => {
       <SelectOption texto='Atendido por: ' opciones={ empleados } />
       <InputDate texto='Fecha de entrega: ' />
       <InputTime texto='Hora de entrega: ' />
-      {/* ACA VA LA OPCION DE MUESTRA SI O NO */}
+      <Muestra />
       <TipoTrabajo />
       {/* ACA SE MUESTRAN LAS OPCIONES SEGUN EL TIPO DE TRABAJO */}
+      <TextArea texto='Observaciones: ' />
       <DetallePago />
       <EstadoOrdenTbj />
       <ImprimirOrden />
