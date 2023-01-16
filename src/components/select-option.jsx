@@ -7,7 +7,7 @@ const SelectOption = ({ texto, opciones }) => {
       <select name="" id="">
         {
           opciones.map(opcion =>
-            <option value={ opcion }>{ opcion }</option>
+            <option value={ opcion } key={ opcion }>{ opcion }</option>
           )
         }
       </select>
