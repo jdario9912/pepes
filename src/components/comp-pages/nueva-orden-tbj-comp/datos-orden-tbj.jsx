@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, createContext } from 'react';
 import InputDate from '../../input-date';
 import InputTime from '../../input-time';
 import SelectOption from '../../select-option';
@@ -12,6 +12,7 @@ import TipoTrabajo from './tipo-trabajo';
 
 const DatosOrdenTbj = () => {
   const empleados = ['Pepo', 'Maru', 'Viejo', 'Loli', 'Tomy', 'Vane', 'Joel'];
+  const [tipoTrabajo, setTipoTrabajo] = useState('');
 
   return (
     <div>
@@ -20,8 +21,8 @@ const DatosOrdenTbj = () => {
       <InputDate texto='Fecha de entrega: ' />
       <InputTime texto='Hora de entrega: ' />
       <Muestra />
-      <TipoTrabajo />
-      <DetalleTbj />
+      <TipoTrabajo setTipoTrabajo={ setTipoTrabajo } />
+      <DetalleTbj tipoTrabajo={ tipoTrabajo } />
       <TextArea texto='Observaciones: ' />
       <DetallePago />
       <EstadoOrdenTbj />

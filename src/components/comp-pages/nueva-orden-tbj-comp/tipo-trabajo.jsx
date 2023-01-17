@@ -1,20 +1,29 @@
 import React from 'react';
 
-const TipoTrabajo = () => {
+const TipoTrabajo = ({setTipoTrabajo}) => {
+  const handleTipoTrabajo = (e) => {
+    setTipoTrabajo('');
+    console.log(e.target.innerHTML);
+  }
+
+  // ESTOY AGREGANDO LA FUNCIONALIDAD DE MOSTRAR EL DETALLE DEL TIPO DE TRABAJO SEGUN EL BOTON QUE PRESIONE
+
   return (
     <div>
       <h4>Tipo de trabajo</h4>
-      <button>Impresiones</button>
-      <button>LOMA</button>
-      <button>Talonarios</button>
-      <button>Bonos</button>
-      <button>Diseños</button>
-      <button>Plotter</button>
-      <button>Remeras</button>
-      <button>Tarjetas</button>
-      <button>Volantes</button>
-      <button>Sellos</button>
-      <button>Varios</button>
+      <div>
+        <button onClick={ handleTipoTrabajo }>Impresiones</button>
+        <button onClick={ handleTipoTrabajo }>LOMA</button>
+        <button onClick={ handleTipoTrabajo }>Talonarios</button>
+        <button onClick={ handleTipoTrabajo }>Bonos</button>
+        <button onClick={ handleTipoTrabajo }>Diseños</button>
+        <button onClick={ handleTipoTrabajo }>Plotter</button>
+        <button onClick={ handleTipoTrabajo }>Remeras</button>
+        <button onClick={ handleTipoTrabajo }>Tarjetas</button>
+        <button onClick={ handleTipoTrabajo }>Volantes</button>
+        <button onClick={ handleTipoTrabajo }>Sellos</button>
+        <button onClick={ handleTipoTrabajo }>Varios</button>
+      </div>
     </div>
   );
 }
