@@ -5,9 +5,10 @@ import InputText from '../../input-text';
 import TextArea from '../../text-area';
 
 const DatosCliente = () => {
+  
   return (
     <div>
-      <InputText texto='Nombre: ' />
+      <InputText texto='Nombre: ' value='' />
       <InputTel texto='Teléfono: ' />
       <InputMail texto='e-mail: ' />
       <TextArea texto='Observaciones: ' />

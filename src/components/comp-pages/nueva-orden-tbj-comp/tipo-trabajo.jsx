@@ -5,7 +5,7 @@ const TipoTrabajo = () => {
     <div>
       <h4>Tipo de trabajo</h4>
       <button>Impresiones</button>
-      <button>Solventes</button>
+      <button>LOMA</button>
       <button>Talonarios</button>
       <button>Bonos</button>
       <button>Diseños</button>

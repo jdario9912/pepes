@@ -4,6 +4,7 @@ import InputTime from '../../input-time';
 import SelectOption from '../../select-option';
 import TextArea from '../../text-area';
 import DetallePago from './detalle-pago';
+import DetalleTbj from './detalle-tbj';
 import EstadoOrdenTbj from './estado-orden-tbj';
 import ImprimirOrden from './imprimir-orden';
 import Muestra from './muestra';
@@ -20,7 +21,7 @@ const DatosOrdenTbj = () => {
       <InputTime texto='Hora de entrega: ' />
       <Muestra />
       <TipoTrabajo />
-      {/* ACA SE MUESTRAN LAS OPCIONES SEGUN EL TIPO DE TRABAJO */}
+      <DetalleTbj />
       <TextArea texto='Observaciones: ' />
       <DetallePago />
       <EstadoOrdenTbj />
