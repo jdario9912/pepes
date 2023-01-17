@@ -4,6 +4,7 @@ import Abrochado from './impresiones-comp/abrochado';
 import Anillado from './impresiones-comp/anillado';
 import Corte from './impresiones-comp/corte';
 import Faz from './impresiones-comp/faz';
+import Orientacion from './impresiones-comp/orientacion';
 import TamanoPapel from './impresiones-comp/tamano-papel';
 
 const ImpresionesComp = () => {
@@ -14,6 +15,7 @@ const ImpresionesComp = () => {
       <Faz />
       <InputText texto='Tipo de papel: ' />
       <TamanoPapel />
+      <Orientacion />
       <Anillado />
       <Abrochado />
       <Corte />

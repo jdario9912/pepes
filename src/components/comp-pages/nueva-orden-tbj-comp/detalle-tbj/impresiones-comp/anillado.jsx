@@ -6,8 +6,10 @@ const Anillado = () => {
   return (
     <fieldset>
       <legend>Anillado:</legend>
-      <InputRadio props={ new InputRadioModel('anillado', 'si', 'Si')} />
-      <InputRadio props={ new InputRadioModel('anillado', 'no', 'No')} />
+      <div>
+        <InputRadio props={ new InputRadioModel('anillado', 'si', 'Si')} />
+        <InputRadio props={ new InputRadioModel('anillado', 'no', 'No')} />
+      </div>
     </fieldset>
   );
 }
