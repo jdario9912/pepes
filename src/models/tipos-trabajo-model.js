@@ -1,9 +1,11 @@
 import { 
   Impresiones,
-  Loma
+  Loma,
+  Talonarios
 } from "../components/comp-pages/nueva-orden-tbj-comp/detalle-tbj/index";
 
 export const tiposTrabajo = {
   "Impresiones": <Impresiones />,
-  "LOMA": <Loma />
+  "LOMA": <Loma />,
+  "Talonarios": <Talonarios />
 }
