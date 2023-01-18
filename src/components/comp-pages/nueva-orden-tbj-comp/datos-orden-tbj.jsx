@@ -10,24 +10,28 @@ import ImprimirOrden from './imprimir-orden';
 import Muestra from './muestra';
 import TipoTrabajo from './tipo-trabajo';
 
+export const DatosOrdenTbjContext = createContext();
+
 const DatosOrdenTbj = () => {
   const empleados = ['Pepo', 'Maru', 'Viejo', 'Loli', 'Tomy', 'Vane', 'Joel'];
   const [tipoTrabajo, setTipoTrabajo] = useState('');
 
   return (
-    <div>
-      <h3>Datos de la Orden</h3>
-      <SelectOption texto='Atendido por: ' opciones={ empleados } />
-      <InputDate texto='Fecha de entrega: ' />
-      <InputTime texto='Hora de entrega: ' />
-      <Muestra />
-      <TipoTrabajo setTipoTrabajo={ setTipoTrabajo } />
-      <DetalleTbj tipoTrabajo={ tipoTrabajo } />
-      <TextArea texto='Observaciones: ' />
-      <DetallePago />
-      <EstadoOrdenTbj />
-      <ImprimirOrden />
-    </div>
+    <DatosOrdenTbjContext.Provider value={{ tipoTrabajo, setTipoTrabajo }}>
+      <div>
+        <h3>Datos de la Orden</h3>
+        <SelectOption texto='Atendido por: ' opciones={ empleados } />
+        <InputDate texto='Fecha de entrega: ' />
+        <InputTime texto='Hora de entrega: ' />
+        <Muestra />
+        <TipoTrabajo />
+        <DetalleTbj tipoTrabajo={ tipoTrabajo } />
+        <TextArea texto='Observaciones: ' />
+        <DetallePago />
+        <EstadoOrdenTbj />
+        <ImprimirOrden />
+      </div>
+    </DatosOrdenTbjContext.Provider>
   );
 }
 
