@@ -7,8 +7,8 @@ const Abrochado = () => {
     <fieldset>
       <legend>Abrochado:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('abrochado', 'si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('abrochado', 'no', 'No')} />
+        <InputRadio props={ new InputRadioModel('abrochado', 'abrochado-si', 'Si')} />
+        <InputRadio props={ new InputRadioModel('abrochado', 'abrochado-no', 'No')} />
       </div>
     </fieldset>
   );

@@ -1,19 +1,12 @@
 import React from 'react';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
-import InputRadio from '../../../../input-radio';
+import SelectOption from '../../../../select-option';
 
 const TamanoPapel = () => {
+  const opciones = ['A5', 'A4', 'A3', 'Oficio', 'Legal'];
   return (
-    <fieldset>
-      <legend>Tamaño de papel:</legend>
-      <div>
-        <InputRadio props={ new InputRadioModel('size', 'a5', 'A5')} />
-        <InputRadio props={ new InputRadioModel('size', 'a4', 'A4')} />
-        <InputRadio props={ new InputRadioModel('size', 'a3', 'A3')} />
-        <InputRadio props={ new InputRadioModel('size', 'oficio', 'Oficio')} />
-        <InputRadio props={ new InputRadioModel('size', 'legal', 'Legal')} />
-      </div>
-    </fieldset>
+    <div>
+      <SelectOption texto='Tamaño de papel: ' opciones={ opciones } />
+    </div>
   );
 }
 

@@ -7,8 +7,8 @@ const Ojales = () => {
     <fieldset>
       <legend>Ojales:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('ojales', 'si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('ojales', 'no', 'No')} />
+        <InputRadio props={ new InputRadioModel('ojales', 'ojales-si', 'Si')} />
+        <InputRadio props={ new InputRadioModel('ojales', 'ojales-no', 'No')} />
       </div>
     </fieldset>
   );

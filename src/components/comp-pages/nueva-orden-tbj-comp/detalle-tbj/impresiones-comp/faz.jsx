@@ -7,8 +7,8 @@ const Faz = () => {
     <fieldset>
       <legend>Faz:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('faz', 'simple', 'Simple') } />
-        <InputRadio props={ new InputRadioModel('faz', 'doble', 'Doble') } />
+        <InputRadio props={ new InputRadioModel('faz', 'faz-simple', 'Simple') } />
+        <InputRadio props={ new InputRadioModel('faz', 'faz-doble', 'Doble') } />
       </div>
     </fieldset>
   );

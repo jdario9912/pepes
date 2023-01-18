@@ -7,9 +7,9 @@ const Bolsillo = () => {
     <fieldset>
       <legend>Bolsillo:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('bolsillo', 'no', 'No')} />
-        <InputRadio props={ new InputRadioModel('bolsillo', 'arriba', 'Arriba')} />
-        <InputRadio props={ new InputRadioModel('bolsillo', 'arriba-abajo', 'Arriba y Abajo')} />
+        <InputRadio props={ new InputRadioModel('bolsillo', 'bolsillo-no', 'No')} />
+        <InputRadio props={ new InputRadioModel('bolsillo', 'bolsillo-arriba', 'Arriba')} />
+        <InputRadio props={ new InputRadioModel('bolsillo', 'bolsillo-arriba-abajo', 'Arriba y Abajo')} />
       </div>
     </fieldset>
   );

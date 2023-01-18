@@ -7,8 +7,8 @@ const Portabaner = () => {
     <fieldset>
       <legend>Portabaner:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('portabaner', 'si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('portabaner', 'no', 'No')} />
+        <InputRadio props={ new InputRadioModel('portabaner', 'portabaner-si', 'Si')} />
+        <InputRadio props={ new InputRadioModel('portabaner', 'portabaner-no', 'No')} />
       </div>
     </fieldset>
   );

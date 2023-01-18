@@ -7,8 +7,8 @@ const Corte = () => {
     <fieldset>
       <legend>Corte:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('corte', 'si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('corte', 'no', 'No')} />
+        <InputRadio props={ new InputRadioModel('loma-corte', 'loma-corte-si', 'Si')} />
+        <InputRadio props={ new InputRadioModel('loma-corte', 'loma-corte-no', 'No')} />
       </div>
     </fieldset>
   );

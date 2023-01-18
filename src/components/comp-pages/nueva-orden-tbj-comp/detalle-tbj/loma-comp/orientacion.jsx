@@ -7,8 +7,8 @@ const Orientacion = () => {
     <fieldset>
       <legend>Orientacion:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('orientacion', 'horizontal', 'Horizontal')} />
-        <InputRadio props={ new InputRadioModel('orientacion', 'vertical', 'Vertical')} />
+        <InputRadio props={ new InputRadioModel('orientacion', 'orientacion-horizontal', 'Horizontal')} />
+        <InputRadio props={ new InputRadioModel('orientacion', 'orientacion-vertical', 'Vertical')} />
       </div>
     </fieldset>
   );

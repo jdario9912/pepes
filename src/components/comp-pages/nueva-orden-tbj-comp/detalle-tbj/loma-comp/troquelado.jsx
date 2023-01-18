@@ -7,8 +7,8 @@ const Troquelado = () => {
     <fieldset>
       <legend>Troquelado:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('troquelado', 'si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('troquelado', 'no', 'No')} />
+        <InputRadio props={ new InputRadioModel('troquelado', 'troquelado-si', 'Si')} />
+        <InputRadio props={ new InputRadioModel('troquelado', 'troquelado-no', 'No')} />
       </div>
     </fieldset>
   );
