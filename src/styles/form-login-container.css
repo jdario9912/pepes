@@ -1,0 +1,11 @@
+.bienvenida-form-container{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bienvenida-form-container h2{
+  text-align: center;
+}

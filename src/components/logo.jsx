@@ -1,13 +1,12 @@
 import React from 'react';
-import imgLogo from '../img/logoPepes.png';
 import { Link } from 'react-router-dom';
-import '../styles/logo.css';
+import ImagenLogoNombre from './imagen-logo-nombre';
 
 const Logo = () => {
   return (
     <h1>
       <Link to='/'>
-        <img src={ imgLogo } alt="Logo Pepe's" className='logo-img' />
+        <ImagenLogoNombre />        
       </Link>
     </h1>
   );

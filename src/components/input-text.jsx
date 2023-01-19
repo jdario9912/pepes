@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/input-text.css';
 
-const InputText = ({ texto, value }) => {
+const InputText = (props) => {
   const [valueInChange, setValueInChange] = useState('');
+  const [placeholder, setPlaceholder] = useState('');
   const handleValue = (e) => setValueInChange(e.target.value);
 
   useEffect(() => {
-    value ? setValueInChange(value) : setValueInChange('No se ingreso ningun valor');
+    props.value ? setValueInChange(props.value) : setValueInChange('');
+    props.placeholder ? setPlaceholder(props.placeholder) : setPlaceholder('');
   }, []);
   
   return (
-    <label>
-      { texto }
-      <input type="text" value={ valueInChange } onChange={ handleValue } />
+    <label className='input-text--label'>
+      { props.texto }
+      <input 
+        type="text" 
+        value={ valueInChange } 
+        placeholder={ placeholder } 
+        onChange={ handleValue } 
+      />
     </label>
   );
 }
