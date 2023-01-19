@@ -4,6 +4,7 @@ import OrdenesComp from "../components/comp-pages/ordenes-comp";
 import OrdenesPendientesComp from "../components/comp-pages/ordenes-pendientes-comp";
 import AgregarClienteComp from "../components/comp-pages/agregar-cliente-comp";
 import NuevaOrdenTbjComp from "../components/comp-pages/nueva-orden-tbj-comp";
+import LandingComp from "../components/comp-pages/landing-comp";
 
 export const Main = () => <MainComp />;
 export const Clientes = () => <ClientesComp />;
@@ -11,3 +12,4 @@ export const Ordenes = () => <OrdenesComp />;
 export const OrdenesPendientes = () => <OrdenesPendientesComp />;
 export const AgregarCliente = () => <AgregarClienteComp />;
 export const NuevaOrden = () => <NuevaOrdenTbjComp />;
+export const Landign = () => <LandingComp />;

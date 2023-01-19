@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/nav.css';
 
 const Nav = () => {
   return (
     <nav>
-      <ul>
-        <li><Link to='/'>Main</Link></li>
+      <ul className='nav-ul'>
+        <li><Link to='/'>Inicio</Link></li>
+        <li><Link to='/landing'>Bienvenida</Link></li>
         <li><Link to='/clientes'>Clientes</Link></li>
         <li><Link to='/ordenes'>Ordenes</Link></li>
         <li><Link to='/ordenes-pendientes'>Ordenes Pendientes</Link></li>
