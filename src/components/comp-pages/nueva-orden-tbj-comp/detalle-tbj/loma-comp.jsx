@@ -3,12 +3,15 @@ import InputText from '../../../input-text';
 import Orientacion from './loma-comp/orientacion';
 import Material from './loma-comp/material';
 import Corte from './loma-comp/corte';
-import Bolsillo from './loma-comp/bolsillo';
 import Ojales from './loma-comp/ojales';
 import Troquelado from './loma-comp/troquelado';
 import Portabaner from './loma-comp/portabaner';
+import SelectOption from '../../../select-option';
 
 const LomaComp = () => {
+  const 
+    opcionesBolsillo = ['No', 'Arriba', 'Arriba y abajo']
+  ;
   return (
     <div>
       <h5>Loma</h5>
@@ -16,7 +19,7 @@ const LomaComp = () => {
       <InputText texto='Ubicación del archivo: ' />
       <Orientacion />
       <Corte />
-      <Bolsillo />
+      <SelectOption texto='Bolsillo: ' opciones={ opcionesBolsillo } />
       <Ojales />
       <Troquelado />
       <Portabaner />
