@@ -4,6 +4,7 @@ import InputNumber from '../../../input-number';
 
 const BonosComp = () => {
   const 
+    opcionesTipo = ['Obra', 'Ilustración'],
     opcionesTamano = ['1/3', '1/4', '1/6', '1/8'],
     opcionesNumeradores = ['1', '2', '3'],
     opcionesLotes = ['10', '25', '50', '100']
@@ -12,7 +13,7 @@ const BonosComp = () => {
   return (
     <div>
       <h5>Bonos</h5>
-      <p>tipo de papel: es un desplegable con opciones (pedir a pepo)</p>
+      <SelecOption texto='Tipo: ' opciones={ opcionesTipo } />
       <SelecOption texto='Tamaño: ' opciones={ opcionesTamano } />
       <InputNumber texto='Desde número: ' />
       <InputNumber texto='Cantidad: ' />

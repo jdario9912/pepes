@@ -7,8 +7,7 @@ const TarjetasComp = () => {
   const 
     opcionesTipo = ['Laser 1/0', 'Laser 4/0', 'Laser 4/1', 'Laser 4/4', '1000 4/1', '1000 4/4', 'Opp mate X1', 'Opp mate X2', 'Uv sector X1', 'Uv sector X2'],
     opcionesCantidad = ['100', '200', '1000', '2000'],
-    opcionesPapel = ['Ilustración', 'Obra', 'Madera'],
-    opcionesTerminacion = []
+    opcionesPapel = ['Ilustración', 'Obra', 'Madera']
   ;
   return (
     <div>
@@ -16,7 +15,6 @@ const TarjetasComp = () => {
       <SelecOption texto='Tipo: ' opciones={ opcionesTipo } />
       <SelecOption texto='Cantidad: ' opciones={ opcionesCantidad } />
       <SelecOption texto='Papel: ' opciones={ opcionesPapel } />
-      <SelecOption texto='Terminación: ' opciones={ opcionesTerminacion } />
       <OtraTerminacion />
       <PuntasRedondas />
     </div>
