@@ -6,7 +6,8 @@ import {
   Plotter,
   Remeras,
   Talonarios,
-  Tarjetas
+  Tarjetas,
+  Volantes
 } from "../components/comp-pages/nueva-orden-tbj-comp/detalle-tbj/index";
 
 export const tiposTrabajo = {
@@ -17,5 +18,6 @@ export const tiposTrabajo = {
   "Diseños": <Disenos />,
   "Plotter": <Plotter />,
   "Remeras": <Remeras />,
-  "Tarjetas": <Tarjetas />
+  "Tarjetas": <Tarjetas />,
+  "Volantes": <Volantes />,
 }
