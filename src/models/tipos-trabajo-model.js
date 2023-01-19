@@ -1,5 +1,6 @@
 import { 
   Bonos,
+  Disenos,
   Impresiones,
   Loma,
   Talonarios
@@ -9,5 +10,6 @@ export const tiposTrabajo = {
   "Impresiones": <Impresiones />,
   "LOMA": <Loma />,
   "Talonarios": <Talonarios />,
-  "Bonos": <Bonos />
+  "Bonos": <Bonos />,
+  "Diseños": <Disenos />
 }
