@@ -7,7 +7,7 @@ import BienvenidaComp from './comp-pages/bienvenida-comp';
 export const AppContext = createContext();
 
 const App = () => {
-  const [usuarioLogeado, setUsuarioLogeado] = useState(true);
+  const [usuarioLogeado, setUsuarioLogeado] = useState(false);
   if (usuarioLogeado) {
     return (
       <AppContext.Provider value={{ setUsuarioLogeado }}>
