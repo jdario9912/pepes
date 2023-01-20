@@ -19,7 +19,9 @@ const App = () => {
     );  
   } else {
     return(
-      <BienvenidaComp />
+      <AppContext.Provider value={{ setUsuarioLogeado }}>
+        <BienvenidaComp />
+      </AppContext.Provider>
     )
   }
 }
