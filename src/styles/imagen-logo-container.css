@@ -1,7 +1,12 @@
 .imagen-logo-container{
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
+}
+
+@media only screen and (max-width: 767px) {
+  .imagen-logo-container{
+    display: none;
+  }
 }
