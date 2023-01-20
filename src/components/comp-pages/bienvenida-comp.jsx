@@ -1,15 +1,13 @@
 import React from 'react';
-import ImagenLogo from '../imagen-logo';
 import '../../styles/bienvenida-comp.css';
 import FormLoginContainer from './bienvenida-comp/form-login-container';
+import ImagenLogoContainer from './bienvenida-comp/imagen-logo-container';
 
 const BienvenidaComp = () => {
   return (
     <div className='bienvenida-comp'>
       <FormLoginContainer />      
-      <div>
-        <ImagenLogo />
-      </div>
+      <ImagenLogoContainer />
     </div>
   );
 }

@@ -12,4 +12,4 @@ export const Ordenes = () => <OrdenesComp />;
 export const OrdenesPendientes = () => <OrdenesPendientesComp />;
 export const AgregarCliente = () => <AgregarClienteComp />;
 export const NuevaOrden = () => <NuevaOrdenTbjComp />;
-export const Bienvenida = () => <BienvenidaComp />;
+export const Bienvenida = () => <BienvenidaComp />

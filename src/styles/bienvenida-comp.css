@@ -1,3 +1,8 @@
 .bienvenida-comp{
   display: flex;
+  background-color: var(--negro);
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
 }

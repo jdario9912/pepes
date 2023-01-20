@@ -1,11 +1,11 @@
 import React from 'react';
-import imgLogo from '../img/logoPepes.png';
+import imgLogoNombre from '../img/logo-nombre.png';
 import '../styles/imagen-logo-nombre.css';
 
 const ImagenLogoNombre = () => {
   return (
     <>
-      <img src={ imgLogo } alt="Imagen Logo y Nombre" className='imagen-logo-nombre--img' />
+      <img src={ imgLogoNombre } alt="Imagen Logo y Nombre" className='imagen-logo-nombre--img' />
     </>
   );
 }
