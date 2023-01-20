@@ -13,7 +13,7 @@ const InputText = (props) => {
   }, []);
   
   return (
-    <label className={ classLabel + props.estilosLabel}>
+    <label className={ classLabel + ' ' + props.estilosLabel}>
       { props.texto }
       <input 
         type="text" 
@@ -21,6 +21,7 @@ const InputText = (props) => {
         placeholder={ placeholder } 
         onChange={ handleValue } 
         className= { props.estilosInput }
+        data={ props.data }
       />
     </label>
   );

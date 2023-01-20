@@ -9,7 +9,7 @@ const InputPassword = (props) => {
     props.placeholder ? setPlaceholder(props.placeholder) : setPlaceholder('');
   }, []);
   return (
-    <label className={ classLabel + props.estilosLabel }>
+    <label className={ classLabel + ' ' + props.estilosLabel }>
       { props.texto }
       <input 
         type="password" 
@@ -17,6 +17,7 @@ const InputPassword = (props) => {
         id=""
         placeholder={ placeholder }
         className={ props.estilosInput }
+        data={ props.data }
       />
     </label>
   );

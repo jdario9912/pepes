@@ -7,7 +7,7 @@ const FormLoginContainer = () => {
   return (
     <div className='bienvenida-form-container'>
       <ImagenLogoContainer />
-      <h2 className='h2'>Bienvenido@.</h2>
+      <h2 className='h2'>Bienvenid@.</h2>
       <FormLogin />
     </div>
   );
