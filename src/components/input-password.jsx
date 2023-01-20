@@ -3,18 +3,20 @@ import '../styles/input-password.css';
 
 const InputPassword = (props) => {
   const [placeholder, setPlaceholder] = useState('');
+  const classLabel = 'input-password--label';
 
   useEffect(() => {
     props.placeholder ? setPlaceholder(props.placeholder) : setPlaceholder('');
   }, []);
   return (
-    <label className='input-password--label'>
+    <label className={ classLabel + props.estilosLabel }>
       { props.texto }
       <input 
         type="password" 
         name="" 
         id=""
         placeholder={ placeholder }
+        className={ props.estilosInput }
       />
     </label>
   );

@@ -1,4 +1,60 @@
 .form-login{
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 60%;
+}
+
+.label{
+  color: var(--negro);
+}
+
+.input{
+  color: var(--negro);
+  border: none;
+  height: 2rem;
+  border-radius: 5px;
+}
+
+.input:focus{
+  border: 2px solid var(--magenta);
+  outline: 0 none;
+  scale: 110%;
+}
+
+.form-login-btn-submit{
+  background-color: transparent;
+  border: 1px solid var(--negro);
+  color: var(--negro);
+  border-radius: 5px;
+  height: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all .4s;
+}
+
+.form-login-btn-submit:hover{
+  background-color: var(--negro);
+  color: var(--blanco);
+  transition: all .4s;
+}
+
+.form-login-btn-submit:active{
+  background-color: transparent;
+  color: var(--blanco);
+  border: 1px solid var(--blanco);
+}
+
+.form-login-btn-submit:focus{
+  outline: 0 none;
+  border: 2px solid var(--negro);
+  transition: all 0s;
+  scale: 105%;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-login{
+    width: 100%;
+  }
 }

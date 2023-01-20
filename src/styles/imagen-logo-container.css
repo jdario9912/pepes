@@ -2,11 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-}
+  width: 20%;
 
-@media only screen and (max-width: 767px) {
-  .imagen-logo-container{
-    display: none;
-  }
 }
