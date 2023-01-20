@@ -18,7 +18,7 @@ const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : undefined;
 
   return (
-    <nav>
+    <nav className='nav'>
       <ul className='nav-ul'>
         <li>
           <NavLink style={ linkActivo } to='/' end>
