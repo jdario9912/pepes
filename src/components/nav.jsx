@@ -1,21 +1,10 @@
-import React, {
-  useContext,
-} from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
-import { AppContext } from './app';
 import { activeStyle } from '../models/nav-link-active-style-model';
 
 const Nav = () => {
-  const { setUsuarioLogeado, setUsuario } = useContext(AppContext);
-  const cerrarSesion = () => {
-    localStorage.setItem('usuario-logeado', false);
-    setUsuarioLogeado(JSON.parse(localStorage.getItem('usuario-logeado')));
-    localStorage.setItem('usuario-actual', '');
-    setUsuario(localStorage.getItem('usuario-actual'));
-  }
-
-  const linkActivo = ({ isActive }) => isActive ? activeStyle : undefined;
+  const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
 
   return (
     <nav className='nav'>
@@ -37,23 +26,18 @@ const Nav = () => {
         </li>
         <li>
           <NavLink style={ linkActivo } to='/ordenes-pendientes'>
-            Ordenes
-           Pendientes</NavLink>
+            Ordenes Pendientes
+          </NavLink>
         </li>
         <li>
           <NavLink style={ linkActivo } to='/agregar-cliente'>
-            Agregar
-           Cliente</NavLink>
+            Nuevo Cliente
+          </NavLink>
         </li>
         <li>
           <NavLink style={ linkActivo } to='/nueva-orden'>
-            Nueva
-           Orden</NavLink>
-        </li>
-        <li>
-          <button onClick={ cerrarSesion }>
-            Cerrar Sesión
-          </button>
+            Nueva Orden
+          </NavLink>
         </li>
       </ul>
     </nav>

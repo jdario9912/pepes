@@ -1,6 +1,5 @@
 .bienvenida-comp{
   display: flex;
-  background: linear-gradient(0deg, var(--cyan) 0%, var(--magenta) 35%, var(--amarillo) 100%);
   min-height: 100vh;
   padding: 1rem;
   box-sizing: border-box;

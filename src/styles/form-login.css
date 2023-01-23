@@ -15,34 +15,36 @@
   border: none;
   height: 2rem;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .input:focus{
   border: 2px solid var(--magenta);
   outline: 0 none;
-  scale: 110%;
 }
 
 .form-login-btn-submit{
-  background-color: transparent;
+  background-color: var(--negro);
   border: 1px solid var(--negro);
-  color: var(--negro);
+  color: var(--blanco);
   border-radius: 5px;
   height: 2rem;
   text-transform: uppercase;
   font-weight: 600;
   transition: all .4s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .form-login-btn-submit:hover{
-  background-color: var(--negro);
+  background-color: rgba(0, 0, 0, 0.7 );
   color: var(--blanco);
   transition: all .4s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .form-login-btn-submit:active{
   background-color: transparent;
-  color: var(--blanco);
+  color: var(--negro);
   border: 1px solid var(--blanco);
 }
 

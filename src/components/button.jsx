@@ -1,11 +1,19 @@
 import React from 'react';
 
-const Button = ({ texto, estilos }) => {
-  return (
-    <button className={ estilos } >
+const Button = ({ texto, estilos, onClick }) => {
+  if (onClick) {
+    return (
+      <button className={ estilos } onClick={ onClick } >
       { texto }
-    </button>
-  );  
+      </button>
+    );
+  } else {
+    return (
+      <button className={ estilos } >
+      { texto }
+      </button>
+    );  
+  }
 }
 
 export default Button;

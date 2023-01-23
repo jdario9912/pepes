@@ -5,7 +5,7 @@ import '../styles/imagen-logo.css';
 const ImagenLogo = () => {
   return (
     <>
-      <img src={ imgLogo } alt="Imagen Logo" className='imagen-logo' /> 
+      <img src={ imgLogo } alt="Imagen Logo" className='imagen-logo'></img> 
     </>
   );
 }
