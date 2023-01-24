@@ -6,6 +6,9 @@ import ModeloAnterior from './talonarios-comp/modelo-anterior';
 import TieneLogo from './talonarios-comp/tiene-logo';
 import Triplicado from './talonarios-comp/triplicado';
 import Aviso from './talonarios-comp/aviso';
+import { SelectOptionModel } from '../../../../models/select-option-model';
+import { InputTextModel } from '../../../../models/input-text-model';
+import { InputNumberModel } from '../../../../models/input-number-model';
 
 export const TalonariosCompContext = createContext();
 
@@ -23,23 +26,23 @@ const TalonariosComp = () => {
     <TalonariosCompContext.Provider value={{ setMostrarColorTriplicado, setMostrarUbicacionLogo }}>
       <div>
         <h5>Talonarios</h5>
-        <SelectOption texto='Tipo: ' opciones={ opcionesTipo } />
-        <InputNumber texto='Cantidad: ' />
-        <SelectOption texto='Tamaño' opciones={ opcionesTamano } />
+        <SelectOption props={ new SelectOptionModel('Tipo:', '', '', '', 'tipo', opcionesTipo) } />
+        <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', 4, 'cantidad') } />
+        <SelectOption props={ new SelectOptionModel('Tamaño:', '', '', '', 'tamano', opcionesTamano) } />
         <ModeloAnterior />
         <TieneLogo />
         {
           mostrarUbicacionLogo ?
-            <InputText texto='Ubicacion logo: ' /> :
+            <InputText props={ new InputTextModel('Ubicación del logo:', '', '', 'Ingresa ubicación del logo', '', 'ubicacion-logo')} /> :
             null
         }
-        <InputNumber texto='Numero desde: ' />
-        <SelectOption texto='Puntillado - Emblocado: ' opciones={ opcionesPuntillado } />
-        <SelectOption texto='Color duplicado: ' opciones={ opcionesColorDuplicadoTriplicado } />
+        <InputNumber props={ new InputNumberModel('Número desde:', '', '', '', 'numero-desde') } />
+        <SelectOption props={ new SelectOptionModel('Puntillado - Emblocado: ', '', '', '', 'puntillado', opcionesPuntillado)} />
+        <SelectOption props={ new SelectOptionModel('Color duplicado:', '', '', '', 'color-duplicado', opcionesColorDuplicadoTriplicado)} />
         <Triplicado />
         {
           mostrarColorTriplicado ?
-            <SelectOption texto='Color triplicado: ' opciones={ opcionesColorDuplicadoTriplicado } /> :
+          <SelectOption props={ new SelectOptionModel('Color triplicado:', '', '', '', 'color-triplicado', opcionesColorDuplicadoTriplicado)} /> :
             null
         }
         <Aviso />
