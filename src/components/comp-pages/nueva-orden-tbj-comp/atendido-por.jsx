@@ -4,10 +4,10 @@ import React, {
 import { AppContext } from '../../app';
 
 const AtendidoPor = () => {
-  const { usuario } = useContext(AppContext);
+  const { usuarioActual } = useContext(AppContext);
   return (
     <div>
-      <p>Atendido por: { usuario }</p>
+      <p>Atendido por: { usuarioActual }</p>
     </div>
   );
 }
