@@ -12,16 +12,16 @@ export const AppContext = createContext();
 
 const App = () => {
   const [usuarioLogeado, setUsuarioLogeado] = useState(false);
-  const [usuario, setUsuario] = useState('');
+  const [usuarioActual, setUsuarioActual] = useState('');
 
   useEffect(() => {
     setUsuarioLogeado(JSON.parse(localStorage.getItem('usuario-logeado')));
-    setUsuario(localStorage.getItem('usuario-actual'));
+    setUsuarioActual(localStorage.getItem('usuario-actual'));
   }, []);
 
   if (usuarioLogeado) {
     return (
-      <AppContext.Provider value={{ setUsuarioLogeado, usuario, setUsuario }}>
+      <AppContext.Provider value={{ setUsuarioLogeado, usuarioActual, setUsuarioActual }}>
         <div className='app'>
           <Header />
           <Enrutador />
@@ -30,7 +30,7 @@ const App = () => {
     );  
   } else {
     return(
-      <AppContext.Provider value={{ setUsuarioLogeado, setUsuario }}>
+      <AppContext.Provider value={{ setUsuarioLogeado, setUsuarioActual }}>
         <BienvenidaComp />
       </AppContext.Provider>
     )

@@ -19,11 +19,6 @@
   font-size: xx-large;
 }
 
-.bienvenida-form-container h2:hover{
-  color: var(--blanco);
-  cursor: default;
-}
-
 @media only screen and (max-width: 991px) {
   .bienvenida-form-container{
     width: 60%;

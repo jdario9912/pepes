@@ -16,6 +16,7 @@
   height: 2rem;
   border-radius: 5px;
   box-sizing: border-box;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .input:focus{

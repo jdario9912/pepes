@@ -3,16 +3,20 @@ import InputMail from '../../input-mail';
 import InputTel from '../../input-tel';
 import InputText from '../../input-text';
 import TextArea from '../../text-area';
+import { InputTextModel } from '../../../models/input-text-model';
+import InputSubmit from '../../input-submit';
+import { InputTelModel } from '../../../models/input-tel-model';
 
 const DatosCliente = () => {
   
   return (
-    <div>
-      <InputText texto='Nombre: ' value='' />
-      <InputTel texto='Teléfono: ' />
+    <form>
+      <InputText props={ new InputTextModel('Nombre:', '', null, 'Nombre del cliente', '', 'nombre')} />
+      <InputTel props={ new InputTelModel('Teléfono:', '', null, '', 'telefono')} />
       <InputMail texto='e-mail: ' />
       <TextArea texto='Observaciones: ' />
-    </div>
+      <InputSubmit texto='Guardar' estilos='' />
+    </form>
   );
 }
 

@@ -6,4 +6,9 @@
   width: 100%;
   gap: 1rem;
   justify-content: center;
+  background: 
+    radial-gradient(circle at 50% 0, var(--amarillo), rgba(255, 0, 0, 0) 70.71%), 
+    radial-gradient(circle at 6.7% 75%, var(--magenta), rgba(0, 0, 255, 0) 70.71%),
+    radial-gradient(circle at 93.3% 75%, var(--cyan), rgba(0, 255, 0, 0) 70.71%)
+  ;
 }

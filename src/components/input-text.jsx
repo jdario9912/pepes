@@ -1,27 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/input-text.css';
 
-const InputText = (props) => {
+const InputText = ({ props }) => {
+  const [texto, setTexto] = useState('');
   const [valueInChange, setValueInChange] = useState('');
   const [placeholder, setPlaceholder] = useState('');
-  const handleValue = (e) => setValueInChange(e.target.value);
+  const [estilosInput, setEstilosInput] = useState('');
+  const [estilosLabel, setEstilosLabel] = useState('');
+  const [data, setData] = useState('');
+  
   const classLabel = 'input-text--label';
+  
+  const handleValue = (e) => setValueInChange(e.target.value);
 
   useEffect(() => {
+    props.texto ? setTexto(props.texto) : setTexto('');
     props.value ? setValueInChange(props.value) : setValueInChange('');
     props.placeholder ? setPlaceholder(props.placeholder) : setPlaceholder('');
+    props.estilosInput ? setEstilosInput(props.estilosInput) : setEstilosInput('');
+    props.estilosLabel ? setEstilosLabel(props.estilosLabel) : setEstilosLabel('');
+    props.data ? setData(props.data) : setData('');
   }, []);
   
   return (
-    <label className={ classLabel + ' ' + props.estilosLabel}>
-      { props.texto }
+    <label className={ (classLabel + ' ' + estilosLabel).trimEnd() }>
+      { texto }
       <input 
         type="text" 
         value={ valueInChange } 
         placeholder={ placeholder } 
         onChange={ handleValue } 
-        className= { props.estilosInput }
-        data={ props.data }
+        className= { estilosInput.trimEnd() }
+        data={ data }
       />
     </label>
   );

@@ -5,8 +5,11 @@
   --negro: #353535;
   --blanco: #f8f8f8;
   --magenta: #FF0090;
+  --magenta50: #ff009080;
   --amarillo: #FFFF00;
+  --amarillo50: #FFFF0080;
   --cyan: #00FFFF;
+  --cyan50: #00FFFF80;
 
   /* Font */
   --Karla: 'Karla', sans-serif;
@@ -17,9 +20,13 @@ body {
   font-family: var(--Karla);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--blanco);
+  color: var(--negro);
   min-height: 100vh;
-  background: url(./img/background/background-1.jpg) no-repeat center;
+  background: 
+    radial-gradient(circle at 50% 0, var(--amarillo50), rgba(255, 0, 0, 0) 70.71%), 
+    radial-gradient(circle at 6.7% 75%, var(--magenta50), rgba(0, 0, 255, 0) 70.71%),
+    radial-gradient(circle at 93.3% 75%, var(--cyan50), rgba(0, 255, 0, 0) 70.71%)
+  ;
 }
 
 li{
@@ -28,7 +35,7 @@ li{
 
 a{
   text-decoration: none;
-  color: var(--blanco);
+  color: var(--negro);
 }
 
 input[type='submit']{

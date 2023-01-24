@@ -6,10 +6,10 @@ import 'moment/locale/es';
 
 const SaludoUsuario = () => {
   moment.locale('es');
-  const { usuario } = useContext(AppContext);
+  const { usuarioActual } = useContext(AppContext);
   return (
     <div className='saludo-usuario'>
-      <span>Hola, { usuario }!</span>
+      <span>Hola, { usuarioActual }!</span>
       <span>Hoy es { moment().format('dddd') }, { moment().format('L') }</span>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Botones from '../comp-pages/clientes-comp/botones';
+// import Botones from '../comp-pages/clientes-comp/botones';
 import BuscarClientes from '../comp-pages/clientes-comp/buscar-clientes';
 import MostrarClientes from '../comp-pages/clientes-comp/mostrar-clientes';
 
@@ -7,7 +7,7 @@ const ClientesComp = () => {
   return (
     <div>
       <h2>Clientes</h2>
-      <Botones />        
+      {/* <Botones />         */}
       <BuscarClientes />
       <MostrarClientes />
     </div>
