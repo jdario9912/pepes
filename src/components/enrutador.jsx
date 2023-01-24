@@ -10,7 +10,7 @@ const EnrutadorComp = () => {
       <Route path='/clientes' element={ <Clientes /> } />
       <Route path='/ordenes' element={ <Ordenes /> } />
       <Route path='/ordenes-pendientes' element={ <OrdenesPendientes /> } />
-      <Route path='/agregar-cliente' element={ <AgregarCliente /> } />
+      <Route path='/nuevo-cliente' element={ <AgregarCliente /> } />
       <Route path='/nueva-orden' element={ <NuevaOrden /> } />
     </Routes>
   );

@@ -30,7 +30,7 @@ const Nav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink style={ linkActivo } to='/agregar-cliente'>
+          <NavLink style={ linkActivo } to='/nuevo-cliente'>
             Nuevo Cliente
           </NavLink>
         </li>
