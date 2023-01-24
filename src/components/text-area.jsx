@@ -1,10 +1,41 @@
-import React from 'react';
+import React, {
+  useState,
+  useEffect
+} from 'react';
 
-const TextArea = ({ texto }) => {
+const TextArea = ({ props }) => {
+  const [texto, setTexto] = useState('');
+  const [value, setValue] = useState('');
+  const [placeholder, setPlaceholder] = useState('');
+  const [estilosTextArea, setEstilosTextArea] = useState('');
+  const [estilosLabel, setEstilosLabel] = useState('');
+  const [data, setData] = useState('');
+
+  const handleValue = (e) => setValue(e.target.value);
+
+  useEffect(() => {
+    props.texto ? setTexto(props.texto) : setTexto('');
+    props.value ? setValue(props.value) : setValue('');
+    props.placeholder ? setPlaceholder(props.placeholder) : setPlaceholder('');
+    props.estilosInput ? setEstilosTextArea(props.estilosTextArea) : setEstilosTextArea('');
+    props.estilosLabel ? setEstilosLabel(props.estilosLabel) : setEstilosLabel('');
+    props.data ? setData(props.data) : setData('');
+  }, []);
+
   return (
-    <label>
+    <label className={ estilosLabel} >
       { texto }
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <textarea 
+        name="" 
+        id="" 
+        cols="30" 
+        rows="10"
+        className={ estilosTextArea }
+        value={ value }
+        data={ data }
+        placeholder={ placeholder }
+        onChange= { handleValue }
+      ></textarea>
     </label>
   );
 }

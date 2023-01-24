@@ -7,10 +7,7 @@ const BuscarClientes = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const inputCliente = document.querySelector('[data="cliente"]');
-    console.log(
-      inputCliente,
-    );
+    // const inputCliente = document.querySelector('[data="cliente"]');
   }
   return (
     <form onSubmit={ handleSubmit }>
