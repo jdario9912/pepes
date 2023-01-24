@@ -1,6 +1,8 @@
 import React from 'react';
 import SelecOption from '../../../select-option';
 import InputNumber from '../../../input-number';
+import { InputNumberModel } from '../../../../models/input-number-model';
+import { SelectOptionModel } from '../../../../models/select-option-model';
 
 const BonosComp = () => {
   const 
@@ -13,12 +15,12 @@ const BonosComp = () => {
   return (
     <div>
       <h5>Bonos</h5>
-      <SelecOption texto='Tipo: ' opciones={ opcionesTipo } />
-      <SelecOption texto='Tamaño: ' opciones={ opcionesTamano } />
-      <InputNumber texto='Desde número: ' />
-      <InputNumber texto='Cantidad: ' />
-      <SelecOption texto='Numeradores: ' opciones={ opcionesNumeradores } />
-      <SelecOption texto='En lotes de: ' opciones={ opcionesLotes} />
+      <SelecOption props={ new SelectOptionModel('Tipo: ', '', '', '', 'bonos-tipo', opcionesTipo)} />
+      <SelecOption props={ new SelectOptionModel('Tamaño: ', '', '', '', 'bonos-tamano', opcionesTamano)} />
+      <InputNumber props={ new InputNumberModel('Desde número: ', '', '', '', 'desde-numero')} />
+      <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'cantidad')} />
+      <SelecOption props={ new SelectOptionModel('Numeradores: ', '', '', '', 'bonos-numeradores', opcionesNumeradores)} />
+      <SelecOption props={ new SelectOptionModel('En lotes de: ', '', '', '', 'bonos-lotes', opcionesLotes)} />
     </div>
   );
 }
