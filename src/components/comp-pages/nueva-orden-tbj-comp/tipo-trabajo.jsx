@@ -9,8 +9,6 @@ const TipoTrabajo = () => {
     setTipoTrabajo(e.target.innerHTML);
   }
 
-  // ESTOY AGREGANDO LA FUNCIONALIDAD DE MOSTRAR EL DETALLE DEL TIPO DE TRABAJO SEGUN EL BOTON QUE PRESIONE
-
   return (
     <div>
       <h4>Tipo de trabajo</h4>

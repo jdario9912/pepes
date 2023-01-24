@@ -9,7 +9,13 @@ const InputRadio = ({ props }) => {
       return (
         <label htmlFor={ props.id}>
           { props.value }
-          <input type="radio" name={ props.name } id={ props.id } value={ props.value } onClick={ mostrarComponente } />
+          <input 
+            type="radio" 
+            name={ props.name } 
+            id={ props.id } 
+            value={ props.value } 
+            onClick={ mostrarComponente } 
+          />
         </label>
       );  
     }
@@ -18,7 +24,13 @@ const InputRadio = ({ props }) => {
       return (
         <label htmlFor={ props.id}>
           { props.value }
-          <input type="radio" name={ props.name } id={ props.id } value={ props.value } onClick={ ocultarComponente } />
+          <input 
+            type="radio" 
+            name={ props.name } 
+            id={ props.id } 
+            value={ props.value } 
+            onClick={ ocultarComponente } 
+          />
         </label>
       );
     }

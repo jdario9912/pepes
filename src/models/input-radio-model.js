@@ -1,5 +1,10 @@
 export class InputRadioModel{
-  constructor(name, id, value, handleComponent = null){
+  constructor(
+    name = null, 
+    id = null, 
+    value = null, 
+    handleComponent = null
+  ){
     this.name = name;
     this.id = id;
     this.value = value;

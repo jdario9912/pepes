@@ -11,6 +11,7 @@ import Muestra from './muestra';
 import TipoTrabajo from './tipo-trabajo';
 import { TextAreaModel } from '../../../models/text-area-model';
 import { InputDateModel } from '../../../models/input-date-model';
+import { InputTimeModel } from '../../../models/input-time-model';
 
 export const DatosOrdenTbjContext = createContext();
 
@@ -23,11 +24,11 @@ const DatosOrdenTbj = () => {
         <h3>Datos de la Orden</h3>
         <AtendidoPor />
         <InputDate props={ new InputDateModel('Fecha de entrega:', '', null, '', 'fecha') } />
-        <InputTime texto='Hora de entrega: ' />
+        <InputTime props={ new InputTimeModel('Hora de entrega:', '', '19:00', '', 'hora')} />
         <Muestra />
         <TipoTrabajo />
         <DetalleTbj tipoTrabajo={ tipoTrabajo } />
-        <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresa detalles de la orden', '', 'observaciones') } />
+        <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
         <DetallePago />
         <EstadoOrdenTbj />
         <ImprimirOrden />
