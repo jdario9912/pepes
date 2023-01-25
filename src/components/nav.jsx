@@ -1,13 +1,24 @@
-import React from 'react';
+import React, {
+  useContext,
+  useEffect
+} from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
 import { activeStyle } from '../models/nav-link-active-style-model';
+import { HeaderContext } from './header';
 
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
+  const { toogleNav, setToogleNav } = useContext(HeaderContext);
+
+  const handleClick = () => setToogleNav(!toogleNav);
+
+  useEffect(() => {
+    toogleNav ? console.log('Nav aparece') : console.log('Nav se oculta');
+  }, [toogleNav]);
 
   return (
-    <nav className='nav'>
+    <nav className='nav' onClick={ handleClick }>
       <ul className='nav-ul'>
         <li>
           <NavLink style={ linkActivo } to='/' end>

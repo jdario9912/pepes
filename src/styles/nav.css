@@ -1,6 +1,7 @@
 .nav{
   display: flex;
   align-items: center;
+  transition: all 1s;
 }
 
 .nav-ul{
@@ -13,10 +14,10 @@
   .nav{
     order: -1;
     position: absolute;
+    left: -100%;
   }
   
   .nav-ul{
     flex-direction: column;
-    translate: calc(-100% - 2rem) 0;
   }
 }

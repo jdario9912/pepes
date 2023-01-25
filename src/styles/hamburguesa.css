@@ -1,6 +1,7 @@
 .hamburguesa--btn{
-  /* background: transparent; */
-  /* border: none; */
+  background: transparent;
+  border: 1px solid var(--negro);
+  border-radius: 5px;
 }
 
 .hamburguesa--icon{
