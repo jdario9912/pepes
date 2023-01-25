@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Button from './button';
 import { AppContext } from './app';
+import '../styles/btn-logout.css';
 
 const BtnLogout = () => {
   const { setUsuarioLogeado, setUsuarioActual } = useContext(AppContext);
@@ -15,7 +16,7 @@ const BtnLogout = () => {
     <div>
       <Button 
         texto={ 'Cerrar Sesión' }
-        estilos=''
+        estilos='btn-logout-header'
         onClick={ logOut }
       />
     </div>

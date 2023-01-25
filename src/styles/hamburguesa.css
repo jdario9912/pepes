@@ -1,15 +1,22 @@
 .hamburguesa--btn{
   background: transparent;
-  border: 1px solid var(--negro);
-  border-radius: 5px;
+  border: none;
 }
 
 .hamburguesa--icon{
   font-size: xx-large;
 }
 
+.hamburguesa--icon:active{
+  color: var(--blanco);
+}
+
 @media only screen and (min-width: 992px) {
+  .hamburguesa-container{
+    position: absolute;
+  }
   .hamburguesa--btn{
     display: none;
+    position: absolute;
   }
 }

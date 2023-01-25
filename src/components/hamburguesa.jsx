@@ -14,7 +14,7 @@ const Hamburguesa = () => {
   }
   
   return (
-    <div>
+    <div className='hamburguesa-container'>
       <button 
         className='hamburguesa--btn'
         onClick={ handleClick }

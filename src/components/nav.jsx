@@ -1,6 +1,7 @@
 import React, {
   useContext,
-  useEffect
+  useEffect,
+  useState
 } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
@@ -10,15 +11,16 @@ import { HeaderContext } from './header';
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
   const { toogleNav, setToogleNav } = useContext(HeaderContext);
+  const [toogleClassNav, setToogleClassNav] = useState('nav');
 
   const handleClick = () => setToogleNav(!toogleNav);
 
   useEffect(() => {
-    toogleNav ? console.log('Nav aparece') : console.log('Nav se oculta');
+    toogleNav ? setToogleClassNav('nav nav-visible') : setToogleClassNav('nav');
   }, [toogleNav]);
 
   return (
-    <nav className='nav' onClick={ handleClick }>
+    <nav className={ toogleClassNav} onClick={ handleClick }>
       <ul className='nav-ul'>
         <li>
           <NavLink style={ linkActivo } to='/' end>
