@@ -3,6 +3,8 @@ import Tipo from './volantes-comp/tipo';
 import SelecOption from '../../../select-option';
 import Impresion from './volantes-comp/impresion';
 import InputText from '../../../input-text';
+import { InputTextModel } from '../../../../models/input-text-model';
+import { SelectOptionModel } from '../../../../models/select-option-model';
 
 const VolantesComp = () => {
   const
@@ -13,11 +15,11 @@ const VolantesComp = () => {
     <div>
       <h5>Volantes</h5>
       <Tipo />
-      <SelecOption texto='Tamaño: ' opciones={ opcionesTamano } />
-      <SelecOption texto='Cantidad: ' opciones={ opcionesCantidad } />
+      <SelecOption props={ new SelectOptionModel('Tamaño: ', '', '', '', 'volantes-tamano', opcionesTamano)} />
+      <SelecOption props={ new SelectOptionModel('Cantidad: ', '', '', '', 'volantes-cantidad', opcionesCantidad)} />
       <Impresion />
-      <InputText texto='Ubicación del diseño: ' />
-      <InputText texot='Corte o arreglo especial' />
+      <InputText props={ new InputTextModel('Ubicación del diseño: ', '', '', 'Ingresa ubicación del diseño', '', 'volantes-ubicacion')} />
+      <InputText props={ new InputTextModel('Corte o arreglo especial: ', '', '', 'Ingresa corte o arreglo especial', '', 'volantes-corte-arreglo')} />
     </div>
   );
 }
