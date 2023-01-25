@@ -7,7 +7,6 @@ import OrdenesPendientesComp from './ordenes-pendientes-comp';
 const MainComp = () => {
   return (
     <div>
-      <h2>Inicio</h2>
       <SaludoUsuario />
       <ClientesComp />
       <OrdenesComp />

@@ -1,0 +1,9 @@
+.imagen-logo-header-container{
+  width: 10vw;
+}
+
+@media only screen and (min-width: 992px) {
+  .imagen-logo-header-container{
+    display: none;
+  }
+}

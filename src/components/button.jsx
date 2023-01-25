@@ -4,13 +4,13 @@ const Button = ({ texto, estilos, onClick }) => {
   if (onClick) {
     return (
       <button className={ estilos } onClick={ onClick } >
-      { texto }
+        { texto }
       </button>
     );
   } else {
     return (
       <button className={ estilos } >
-      { texto }
+        { texto }
       </button>
     );  
   }

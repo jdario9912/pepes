@@ -1,3 +1,9 @@
 .imagen-logo-nombre--img{
   width: 15vw;
 }
+
+@media only screen and (max-width: 991px) {
+  .imagen-logo-nombre--img {
+    display: none;
+  }
+}

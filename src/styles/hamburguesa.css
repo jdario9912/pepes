@@ -1,0 +1,14 @@
+.hamburguesa--btn{
+  /* background: transparent; */
+  /* border: none; */
+}
+
+.hamburguesa--icon{
+  font-size: xx-large;
+}
+
+@media only screen and (min-width: 992px) {
+  .hamburguesa--btn{
+    display: none;
+  }
+}

@@ -14,7 +14,7 @@ const Nav = () => {
             Inicio
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink style={ linkActivo } to='/clientes'>
             Clientes
           </NavLink>
@@ -28,7 +28,7 @@ const Nav = () => {
           <NavLink style={ linkActivo } to='/ordenes-pendientes'>
             Ordenes Pendientes
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink style={ linkActivo } to='/nuevo-cliente'>
             Nuevo Cliente
