@@ -10,7 +10,7 @@ const SaludoUsuario = () => {
   return (
     <div className='saludo-usuario'>
       <span>Hola, { usuarioActual }!</span>
-      <span>Hoy es { moment().format('dddd') }, { moment().format('L') }</span>
+      <span>Hoy es <i>{ moment().format('dddd') }</i>, { moment().format('L') }</span>
     </div>
   );
 }

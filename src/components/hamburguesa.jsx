@@ -10,7 +10,6 @@ const Hamburguesa = () => {
   
   const handleClick = () => {
     setToogleNav(!toogleNav);
-    console.log(toogleNav);
   }
   
   return (

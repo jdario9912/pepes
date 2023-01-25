@@ -1,0 +1,15 @@
+.agregar-cliente-comp--container{
+  padding: 0 2rem;
+}
+
+@media only scree and (max-width: 819px){
+  .agregar-cliente-comp--container{
+    padding: 0 1rem;
+  }
+}
+
+@media only scree and (max-width: 991px){
+  .agregar-cliente-comp--container{
+    padding: 0 1.5rem;
+  }
+}

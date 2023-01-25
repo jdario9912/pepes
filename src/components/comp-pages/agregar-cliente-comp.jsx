@@ -1,10 +1,11 @@
 import React from 'react';
 import DatosCliente from './agregar-clientes-comp/datos-cliente';
+import '../../styles/agregar-cliente-comp-container.css'
 
 const AgregarClienteComp = () => {
   return (
-    <div>
-      <h2>Agregar Cliente</h2>
+    <div className='agregar-cliente-comp--container'>
+      <h2>Nuevo Cliente</h2>
       <DatosCliente />
     </div>
   );

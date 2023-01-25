@@ -7,6 +7,8 @@ import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
 import { activeStyle } from '../models/nav-link-active-style-model';
 import { HeaderContext } from './header';
+import { BtnLogoutModel } from '../models/btn-logout-model';
+import BtnLogout from './btn-logout';
 
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
@@ -16,7 +18,7 @@ const Nav = () => {
   const handleClick = () => setToogleNav(!toogleNav);
 
   useEffect(() => {
-    toogleNav ? setToogleClassNav('nav nav-visible') : setToogleClassNav('nav');
+    !toogleNav ? setToogleClassNav('nav nav-visible') : setToogleClassNav('nav');
   }, [toogleNav]);
 
   return (
@@ -27,21 +29,6 @@ const Nav = () => {
             Inicio
           </NavLink>
         </li>
-        {/* <li>
-          <NavLink style={ linkActivo } to='/clientes'>
-            Clientes
-          </NavLink>
-        </li>
-        <li>
-          <NavLink style={ linkActivo } to='/ordenes'>
-            Ordenes
-          </NavLink>
-        </li>
-        <li>
-          <NavLink style={ linkActivo } to='/ordenes-pendientes'>
-            Ordenes Pendientes
-          </NavLink>
-        </li> */}
         <li>
           <NavLink style={ linkActivo } to='/nuevo-cliente'>
             Nuevo Cliente
@@ -51,6 +38,9 @@ const Nav = () => {
           <NavLink style={ linkActivo } to='/nueva-orden'>
             Nueva Orden
           </NavLink>
+        </li>
+        <li>
+          <BtnLogout props={ new BtnLogoutModel('Cerrar sesión', 'btn-logout-nav')} />
         </li>
       </ul>
     </nav>
