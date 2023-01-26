@@ -8,7 +8,7 @@ const InicioComp = () => {
     <div>
       <ClientesComp />
       <OrdenesComp />
-      <OrdenesPendientesComp />
+      {/* <OrdenesPendientesComp /> */}
     </div>
   );
 }

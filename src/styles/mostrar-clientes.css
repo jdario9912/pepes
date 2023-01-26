@@ -1,3 +1,31 @@
+.mostrar-clientes--table-container{
+  height: 200px;
+  width: 100%;
+  overflow: auto;
+}
+
 .mostrar-clientes--table{
   margin-top: 1rem;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+
+.mostrar-clientes--table-container::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.mostrar-clientes--table-container::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.mostrar-clientes--table-container::-webkit-scrollbar-thumb {
+  background-color: #666666;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+@media only screen and (max-width: 991px){
+  .mostrar-clientes--table-container{
+    overflow: scroll;
+  }
 }

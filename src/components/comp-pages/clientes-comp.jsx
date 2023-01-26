@@ -1,20 +1,30 @@
-import React from 'react';
+import React, {
+  createContext,
+  useState
+} from 'react';
 import BuscarClientes from '../comp-pages/clientes-comp/buscar-clientes';
 import MostrarClientes from '../comp-pages/clientes-comp/mostrar-clientes';
 import '../../styles/clientes-comp.css';
 import Button from '../button';
 
+export const ClientesCompContext = createContext();
+
 const ClientesComp = () => {
-  const verListaClientes = () => console.log('Mostrando lista de clientes');
+  const [mostrarListaClientes, setMostrarListaClientes] = useState(true);
+
+  const verListaClientes = () => setMostrarListaClientes(true);
+
   return (
-    <div className='clientes-comp--container'>
-      <h2>Clientes</h2>
-      <div className="clientes-comp--lista-buscar-container">
-        <Button texto='Ver lista' estilos='clientes-comp--btn-ver-lista' onClick={ verListaClientes } />
-        <BuscarClientes />
+    <ClientesCompContext.Provider value={{ mostrarListaClientes, setMostrarListaClientes }}>
+      <div className='clientes-comp--container'>
+        <h2>Clientes</h2>
+        <div className="clientes-comp--lista-buscar-container">
+          <Button texto='Ver lista' estilos='clientes-comp--btn-ver-lista' onClick={ verListaClientes } />
+          <BuscarClientes />
+        </div>
+        <MostrarClientes />
       </div>
-      <MostrarClientes />
-    </div>
+    </ClientesCompContext.Provider>
   );
 }
 

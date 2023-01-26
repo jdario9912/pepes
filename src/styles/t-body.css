@@ -1,0 +1,23 @@
+.t-body--tr:nth-child(even){
+  background: #ffffff90;
+}
+
+.t-body--tr:nth-child(odd){
+  background: #ffffff60;
+}
+
+.t-body--tr td{
+  padding: .5rem;
+}
+
+.t-body--tr a{
+  margin-right: 10px;
+}
+
+.t-body--tr a:last-child{
+  margin-right: 0;
+}
+
+.t-body--tr td a:hover{
+  text-decoration: underline;
+}

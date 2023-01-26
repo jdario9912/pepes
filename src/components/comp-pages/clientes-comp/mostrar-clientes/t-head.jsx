@@ -2,7 +2,7 @@ import React from 'react';
 
 const THead = () => {
   return (
-    <thead>
+    <thead className='t-head'>
       <tr>
         <th>Nombre</th>
         <th>Teléfono</th>
