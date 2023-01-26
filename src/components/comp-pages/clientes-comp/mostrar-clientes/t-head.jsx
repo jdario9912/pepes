@@ -1,9 +1,10 @@
 import React from 'react';
+import '../../../../styles/t-head.css';
 
 const THead = () => {
   return (
     <thead className='t-head'>
-      <tr>
+      <tr className='t-head--tr'>
         <th>Nombre</th>
         <th>Teléfono</th>
         <th>Mail</th>

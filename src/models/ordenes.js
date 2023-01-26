@@ -41,7 +41,7 @@ export const ordenes = [
   },
   {
     id: 5,
-    numero: 1,
+    numero: 104,
     cliente: 'Korn',
     fechaCreacion: '02-01-23',
     estado: 'pendiente',

@@ -1,3 +1,7 @@
 .t-head{
   
 }
+
+.t-head--tr th{
+  padding: .5rem;
+}
