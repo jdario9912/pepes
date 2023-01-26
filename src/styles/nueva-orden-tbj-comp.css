@@ -1,0 +1,19 @@
+.nueva-orden-tbj-comp--container{
+  padding: 0 2rem;
+}
+
+.nueva-orden-tbj-comp--container h2{
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px){
+  .nueva-orden-tbj-comp--container{
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 991px){
+  .nueva-orden-tbj-comp--container{
+    padding: 0 1.5rem;
+  }
+}

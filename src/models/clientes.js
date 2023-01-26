@@ -4,7 +4,7 @@ export const clientes = [
     nombre: 'Eduardo Quevedo',
     telefono: '351-235546',
     email: 'eduardo@quevedo.com',
-    observaciones: 'Jefe',
+    observaciones: 'Lorem ipsum dolor sit amet consectetur adipiscing elit praesent leo eget, class bibendum interdum dui sed nulla ridiculus condimentum fringilla, porta lacus netus nisi vitae augue libero litora taciti. Feugiat neque sociosqu nascetur enim duis egestas eleifend nostra, cras cursus phasellus malesuada sapien maecenas in penatibus, ultrices vehicula sodales praesent litora accumsan nibh. Libero facilisis neque pharetra suspendisse imperdiet molestie fringilla habitant sociis euismod, urna nam himenaeos vestibulum fusce aliquet facilisi rutrum laoreet, interdum suscipit nullam magna quis pretium vehicula felis magnis.',
     ordenesPendientes: false
   },
   {

@@ -12,6 +12,7 @@ import TipoTrabajo from './tipo-trabajo';
 import { TextAreaModel } from '../../../models/text-area-model';
 import { InputDateModel } from '../../../models/input-date-model';
 import { InputTimeModel } from '../../../models/input-time-model';
+import '../../../styles/datos-orden-tbj.css';
 
 export const DatosOrdenTbjContext = createContext();
 
@@ -22,10 +23,14 @@ const DatosOrdenTbj = () => {
     <DatosOrdenTbjContext.Provider value={{ tipoTrabajo, setTipoTrabajo }}>
       <div>
         <h3>Datos de la Orden</h3>
-        <AtendidoPor />
-        <InputDate props={ new InputDateModel('Fecha de entrega:', '', null, '', 'fecha') } />
-        <InputTime props={ new InputTimeModel('Hora de entrega:', '', '19:00', '', 'hora')} />
-        <Muestra />
+        <div className="datos-orden-tbj--cabecera">
+          <div className="datos-orden-tbj--atendido-fecha-hora">
+            <AtendidoPor />
+            <InputDate props={ new InputDateModel('Fecha de entrega:', '', null, '', 'fecha') } />
+            <InputTime props={ new InputTimeModel('Hora de entrega:', '', '19:00', '', 'hora')} />
+          </div>
+          <Muestra />
+        </div>
         <TipoTrabajo />
         <DetalleTbj tipoTrabajo={ tipoTrabajo } />
         <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />

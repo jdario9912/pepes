@@ -2,6 +2,10 @@
   padding: 0 2rem;
 }
 
+.agregar-cliente-comp--container h2{
+  text-align: center;
+}
+
 @media only scree and (max-width: 819px){
   .agregar-cliente-comp--container{
     padding: 0 1rem;

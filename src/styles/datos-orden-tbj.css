@@ -1,0 +1,12 @@
+.datos-orden-tbj--cabecera{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.datos-orden-tbj--atendido-fecha-hora{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

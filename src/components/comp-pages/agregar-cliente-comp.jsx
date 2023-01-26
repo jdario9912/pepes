@@ -1,6 +1,6 @@
 import React from 'react';
 import DatosCliente from './agregar-clientes-comp/datos-cliente';
-import '../../styles/agregar-cliente-comp-container.css'
+import '../../styles/agregar-cliente-comp.css'
 
 const AgregarClienteComp = () => {
   return (
