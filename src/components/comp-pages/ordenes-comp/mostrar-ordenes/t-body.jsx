@@ -1,9 +1,10 @@
 import React from 'react';
+import '../../../../styles/t-body.css';
 
 const TBody = () => {
   return (
-    <tbody>
-      <tr>
+    <tbody className='t-body'>
+      <tr className='t-body--tr'>
         <td></td>
         <td>345</td>
         <td>Figueroa Cristian</td>
