@@ -3,6 +3,7 @@ import TBody from './mostrar-ordenes/t-body';
 import THead from './mostrar-ordenes/t-head';
 import { OrdenesCompContext } from '../ordenes-comp';
 import '../../../styles/mostrar-ordenes.css';
+import { ordenes } from '../../../models/ordenes';
 
 const MostrarOrdenes = () => {
   const { mostrarListaOrdenes } = useContext(OrdenesCompContext);
@@ -12,7 +13,7 @@ const MostrarOrdenes = () => {
         <THead />
         {
           mostrarListaOrdenes ? 
-            <TBody /> :
+            <TBody ordenes={ ordenes } /> :
             <tbody><tr><td>Mostrar orden buscada</td></tr></tbody>
         }
       </table>

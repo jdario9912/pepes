@@ -4,7 +4,6 @@ const THead = () => {
   return (
     <thead>
       <tr>
-        <th></th>
         <th>Nro. Orden</th>
         <th>Cliente</th>
         <th>Fecha Creacion</th>
