@@ -5,9 +5,10 @@ import React,{
 
 const InputNumber = ({ props }) => {
   const [texto, setTexto] = useState('');
-  const [value, setValue] = useState('');
   const [estilosInput, setEstilosInput] = useState('');
   const [estilosLabel, setEstilosLabel] = useState('');
+  const [placeholder, setPlaceholder] = useState('');
+  const [value, setValue] = useState('');
   const [data, setData] = useState('');
 
   const handleValue = (e) => {
@@ -18,9 +19,10 @@ const InputNumber = ({ props }) => {
 
   useEffect(() => {
     props.texto ? setTexto(props.texto) : setTexto('');
-    props.value ? setValue(props.value) : setValue('');
     props.estilosLabel ? setEstilosLabel(props.estilosLabel) : setEstilosLabel('');
     props.estilosInput ? setEstilosInput(props.estilosInput) : setEstilosInput('');
+    props.placeholder ? setPlaceholder(props.placeholder) : setPlaceholder('');
+    props.value ? setValue(props.value) : setValue('');
     props.data ? setData(props.data) : setData('');
   }, []);
 
@@ -33,6 +35,7 @@ const InputNumber = ({ props }) => {
         id={ data } 
         min='0' 
         value={ value }
+        placeholder={ placeholder }
         className={ estilosInput }
         onChange={ handleValue }
         data={ data }

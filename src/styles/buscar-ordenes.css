@@ -1,0 +1,21 @@
+.buscar-ordenes--form{
+  display: flex;
+}
+
+.buscar-ordenes--label-input{
+
+}
+
+.buscar-ordenes--input{
+  box-sizing: border-box;
+  height: 33px;
+}
+
+.buscar-ordenes--btn-submit{
+  color: var(--negro);
+  background-color: var(--blanco);
+  border: none;
+  font-size: 1rem;
+  height: 33px;
+  width: 33px;
+}

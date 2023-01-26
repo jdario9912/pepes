@@ -17,6 +17,7 @@ const BuscarClientes = () => {
     inputCliente.value = '';
     setMostrarListaClientes(false);
   }
+  
   return (
     <form onSubmit={ handleSubmit } className='buscar-clientes--form'>
       <InputText props={ new InputTextModel(null, 'buscar-clientes--label-input', null, 'Buscar cliente', 'buscar-clientes--input', 'cliente')} />
