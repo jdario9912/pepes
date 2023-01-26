@@ -24,11 +24,9 @@ const DatosOrdenTbj = () => {
       <div>
         <h3>Datos de la Orden</h3>
         <div className="datos-orden-tbj--cabecera">
-          <div className="datos-orden-tbj--atendido-fecha-hora">
-            <AtendidoPor />
-            <InputDate props={ new InputDateModel('Fecha de entrega:', '', null, '', 'fecha') } />
-            <InputTime props={ new InputTimeModel('Hora de entrega:', '', '19:00', '', 'hora')} />
-          </div>
+          <AtendidoPor />
+          <InputDate props={ new InputDateModel('Fecha de entrega:', '', null, '', 'fecha') } />
+          <InputTime props={ new InputTimeModel('Hora de entrega:', '', '19:00', '', 'hora')} />
           <Muestra />
         </div>
         <TipoTrabajo />
