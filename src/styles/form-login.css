@@ -6,11 +6,13 @@
   width: 70%;
 }
 
-.label{
+.form-login--label-usuario, .form-login--label-pass{
   color: var(--negro);
+  display: flex;
+  flex-direction: column;
 }
 
-.input{
+.form-login--input-usuario, .form-login--input-pass{
   color: var(--negro);
   border: none;
   height: 2rem;
@@ -19,7 +21,7 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.input:focus{
+.form-login--input-usuario:focus, .form-login--input-pass:focus{
   border: 2px solid var(--magenta);
   outline: 0 none;
 }

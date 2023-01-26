@@ -31,7 +31,7 @@ const DatosCliente = () => {
     <form onSubmit={ handleSubmit } className='datos-cliente--form'>
       <div className="inputs-container">
         <div className="nombre-telefono-email-contanier">
-          <InputText props={ new InputTextModel('Nombre:', '', '', 'Ingresá el nombre', '', 'nombre')} />
+          <InputText props={ new InputTextModel('Nombre:', 'datos-cliente--label-nombre', '', 'Ingresá el nombre', '', 'nombre')} />
           <InputTel props={ new InputTelModel('Teléfono:', 'datos-cliente--label-telefono', '', '', 'Ingresá el telefono', 'telefono')} />
           <InputMail props={ new InputMailModel('e-mail:', 'datos-cliente--label-email', '', 'Ingresá el e-mail', '', 'e-mail')} />
         </div>

@@ -9,6 +9,7 @@ const EnrutadorComp = () => {
       <Route path='/bienvenida' element={ <Bienvenida /> } />
       <Route path='/nuevo-cliente' element={ <AgregarCliente /> } />
       <Route path='/nueva-orden' element={ <NuevaOrden /> } />
+      <Route path='/*' element={ <h1>No existe esa pagina</h1> } />
     </Routes>
   );
 }

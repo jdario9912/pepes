@@ -18,6 +18,12 @@
   gap: 1rem;
 }
 
+.datos-cliente--label-nombre{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
 .datos-cliente--label-telefono{
   display: flex;
   flex-direction: column;

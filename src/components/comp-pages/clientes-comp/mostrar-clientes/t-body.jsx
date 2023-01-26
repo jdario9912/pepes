@@ -1,16 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const TBody = () => {
+const TBody = ({ clientes }) => {
   return (
     <tbody>
-      <tr>
-        <td></td>
-        <td>Quevedo</td>
-        <td>Pepo</td>
-        <td>29938466</td>
-        <td>03481</td>
-        <td>pepo@gmail</td>
-      </tr>
+      {
+        clientes.map(({ id, nombre, telefono, email, observaciones, ordenesPendientes }) =>
+          <tr key={ id }>
+            <td>{ nombre }</td>
+            <td>{ telefono }</td>
+            <td>{ email }</td>
+            <td>{ observaciones }</td>
+            <td>{ ordenesPendientes ? 'Si' : 'No' }</td>
+            <td><Link to='#'>Ver ordenes</Link></td>
+          </tr>          
+        )
+      }
     </tbody>
   );
 }

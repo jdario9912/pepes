@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/input-password.css';
 
-const InputPassword = (props) => {
+const InputPassword = ({ props }) => {
+  const [texto, setTexto] = useState('');
+  const [estilosLabel, setEstilosLabel] = useState('');
+  const [estilosInput, setEstilosInput] = useState('');
   const [placeholder, setPlaceholder] = useState('');
-  const classLabel = 'input-password--label';
+  const [data, setData] = useState('');
 
   useEffect(() => {
+    props.texto ? setTexto(props.texto) : setTexto('');
+    props.estilosLabel ? setEstilosLabel(props.estilosLabel) : setEstilosLabel('');
+    props.estilosInput ? setEstilosInput(props.estilosInput) : setEstilosInput('');
     props.placeholder ? setPlaceholder(props.placeholder) : setPlaceholder('');
+    props.data ? setData(props.data) : setData('');
   }, []);
   return (
-    <label className={ classLabel + ' ' + props.estilosLabel }>
-      { props.texto }
+    <label className={ estilosLabel }>
+      { texto }
       <input 
         type="password" 
-        name="" 
-        id=""
+        name={ data } 
+        id={ data }
         placeholder={ placeholder }
-        className={ props.estilosInput }
-        data={ props.data }
+        className={ estilosInput }
+        data={ data }
       />
     </label>
   );

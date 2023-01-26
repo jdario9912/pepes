@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/input-text.css';
 
 const InputText = ({ props }) => {
   const [texto, setTexto] = useState('');
@@ -8,9 +7,7 @@ const InputText = ({ props }) => {
   const [estilosInput, setEstilosInput] = useState('');
   const [estilosLabel, setEstilosLabel] = useState('');
   const [data, setData] = useState('');
-  
-  const classLabel = 'input-text--label';
-  
+    
   const handleValue = (e) => setValueInChange(e.target.value);
 
   useEffect(() => {
@@ -23,7 +20,7 @@ const InputText = ({ props }) => {
   }, []);
   
   return (
-    <label className={ (classLabel + ' ' + estilosLabel).trimEnd() }>
+    <label className={ estilosLabel }>
       { texto }
       <input 
         type="text" 
