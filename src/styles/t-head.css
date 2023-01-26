@@ -1,5 +1,9 @@
 .t-head{
-  
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--negro);
+  color: var(--blanco);
 }
 
 .t-head--tr th{

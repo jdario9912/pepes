@@ -13,7 +13,7 @@ const TBody = ({ ordenes }) => {
           <td>{ estado }</td>
           <td>{ tipoTrabajo }</td>
           <td>{ fechaEntrega }</td>
-          <td>{ horaEntrega }</td>
+          <td>{ horaEntrega }hs</td>
         </tr>
         )
       }

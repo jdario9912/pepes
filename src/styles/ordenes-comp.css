@@ -2,6 +2,10 @@
   padding: 0 2rem;
 }
 
+.ordenes-comp--container h2{
+  text-align: center;
+}
+
 .ordenes-comp--lista-buscar-container{
   display: flex;
   justify-content: space-between;

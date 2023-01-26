@@ -4,6 +4,7 @@
   /* Colores */
   --negro: #353535;
   --blanco: #f8f8f8;
+  --blanco2: #e6e6e6; 
   --magenta: #FF0090;
   --magenta50: #ff009080;
   --amarillo: #FFFF00;
@@ -13,6 +14,13 @@
 
   /* Font */
   --Karla: 'Karla', sans-serif;
+
+  /* Background */
+  --bg-gradient:
+    radial-gradient(circle at 50% 0, var(--amarillo), rgba(255, 0, 0, 0) 99.71%), 
+    radial-gradient(circle at 6.7% 75%, var(--magenta), rgba(0, 0, 255, 0) 99.71%),
+    radial-gradient(circle at 93.3% 75%, var(--cyan), rgba(0, 255, 0, 0) 99.71%)
+  ;
 }
 
 body {
@@ -22,11 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--negro);
   min-height: 100vh;
-  background: 
-    radial-gradient(circle at 50% 0, var(--amarillo), rgba(255, 0, 0, 0) 99.71%), 
-    radial-gradient(circle at 6.7% 75%, var(--magenta), rgba(0, 0, 255, 0) 99.71%),
-    radial-gradient(circle at 93.3% 75%, var(--cyan), rgba(0, 255, 0, 0) 99.71%)
-  ;
+  background: var(--blanco2);
 }
 
 li{

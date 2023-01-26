@@ -1,31 +1,31 @@
-.mostrar-ordenes--table-container{
+.mostrar-ordenes-pendientes--table-container{
   max-height: 200px;
   width: 100%;
   overflow: auto;
   margin-top: 1rem;
 }
 
-.mostrar-ordenes--table{
+.mostrar-ordenes-pendientes--table{
   white-space: nowrap;
   border-collapse: collapse;
 }
 
-.mostrar-ordenes--table-container::-webkit-scrollbar {
+.mostrar-ordenes-pendientes--table-container::-webkit-scrollbar {
   width: 4px;
   height: 4px;
 }
 
-.mostrar-ordenes--table-container::-webkit-scrollbar-track {
+.mostrar-ordenes-pendientes--table-container::-webkit-scrollbar-track {
   background: transparent;        /* color of the tracking area */
 }
 
-.mostrar-ordenes--table-container::-webkit-scrollbar-thumb {
+.mostrar-ordenes-pendientes--table-container::-webkit-scrollbar-thumb {
   background-color: #666666;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
 }
 
 @media only screen and (max-width: 991px){
-  .mostrar-ordenes--table-container{
+  .mostrar-ordenes-pendientes--table-container{
     overflow: scroll;
   }
 }

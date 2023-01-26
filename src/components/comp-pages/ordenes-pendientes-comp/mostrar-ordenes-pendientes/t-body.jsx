@@ -1,18 +1,21 @@
 import React from 'react';
+import '../../../../styles/t-body.css';
 
-const TBody = () => {
+const TBody = ({ ordenesPendientes }) => {
   return (
-    <tbody>
-      <tr>
-        <td></td>
-        <td>345</td>
-        <td>Figueroa Cristian</td>
-        <td>12-11-22</td>
-        <td>Pendiente</td>
-        <td>Solvente</td>
-        <td>10-01-23</td>
-        <td>18:00</td>
-      </tr>
+    <tbody className='t-body'>
+      {
+        ordenesPendientes.map(({ id, numeroOrden, cliente, fechaCreacion, tipoTrabajo, fechaEntrega, horaEntrega }) =>
+        <tr key={ id } className='t-body--tr'>
+          <td>{ numeroOrden }</td>
+          <td>{ cliente }</td>
+          <td>{ fechaCreacion }</td>
+          <td>{ tipoTrabajo }</td>
+          <td>{ fechaEntrega }</td>
+          <td>{ horaEntrega }hs</td>
+        </tr>        
+        )
+      }
     </tbody>
   );
 }
