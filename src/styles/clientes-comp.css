@@ -1,0 +1,35 @@
+.clientes-comp--container{
+  padding: 0 2rem;
+}
+
+.clientes-comp--lista-buscar-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.clientes-comp--btn-ver-lista{
+  background-color: transparent;
+  border: 1px solid var(--negro);
+  color: var(--negro);
+  border-radius: 5px;
+  padding: .5rem 1rem;
+  box-sizing: border-box;
+}
+
+.clientes-comp--btn-ver-lista:hover{
+  background-color: var(--negro);
+  color: var(--blanco);
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 767px){
+  .clientes-comp--container{
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 991px){
+  .clientes-comp--container{
+    padding: 0 1.5rem;
+  }
+}

@@ -1,3 +1,21 @@
 .buscar-clientes--form{
   display: flex;
 }
+
+.buscar-clientes--label-input{
+
+}
+
+.buscar-clientes--input{
+  box-sizing: border-box;
+  height: 33px;
+}
+
+.buscar-clientes--btn-submit{
+  color: var(--negro);
+  background-color: var(--blanco);
+  border: none;
+  font-size: 1rem;
+  height: 33px;
+  width: 33px;
+}
