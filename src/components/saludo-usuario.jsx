@@ -8,9 +8,8 @@ const SaludoUsuario = () => {
   moment.locale('es');
   const { usuarioActual } = useContext(AppContext);
   return (
-    <div className='saludo-usuario'>
-      <span>Hola, { usuarioActual }!</span>
-      <span>Hoy es <i>{ moment().format('dddd') }</i>, { moment().format('L') }</span>
+    <div className='saludo-usuario--container'>
+      <p>Hola, { usuarioActual }!</p>
     </div>
   );
 }

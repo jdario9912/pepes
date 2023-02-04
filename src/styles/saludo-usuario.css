@@ -1,22 +1,22 @@
-.saludo-usuario{
+.saludo-usuario--container{
   display: flex;
   justify-content: space-between;
   padding: 5px 2rem;
 
 }
 
-.saludo-usuario i {
+.saludo-usuario--container p {
   text-transform: capitalize;
 }
 
 @media only scree and (max-width: 819px){
-  .saludo-usuario{
+  .saludo-usuario--container{
     padding: 0 1rem;
   }
 }
 
 @media only scree and (max-width: 991px){
-  .saludo-usuario{
+  .saludo-usuario--container{
     padding: 0 1.5rem;
   }
 }

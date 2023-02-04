@@ -6,7 +6,7 @@
   width: 70%;
 }
 
-.form-login--label-usuario, .form-login--label-pass{
+.form-login--label-usuario, .form-login--label-inputPass{
   color: var(--negro);
   display: flex;
   flex-direction: column;
