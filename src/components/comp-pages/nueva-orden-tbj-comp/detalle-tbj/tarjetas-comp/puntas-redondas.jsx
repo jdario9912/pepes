@@ -5,7 +5,7 @@ import InputRadio from '../../../../input-radio';
 const PuntasRedondas = () => {
   return (
     <fieldset>
-      <legend>Otra terminación:</legend>
+      <legend>Puntas redondeadas:</legend>
       <div>
         <InputRadio props={ new InputRadioModel('puntas-redondas', 'puntas-redondas-si', 'Si')} />
         <InputRadio props={ new InputRadioModel('puntas-redondas', 'puntas-redondas-no', 'No')} />

@@ -7,9 +7,9 @@ import '../../../styles/atendido-por.css';
 const AtendidoPor = () => {
   const { usuarioActual } = useContext(AppContext);
   return (
-    <div>
-      <p className='atendido-por--p'>Atendido por: { usuarioActual }</p>
-    </div>
+    <>
+      <p className='atendido-por--p'>Atendido por: <span>{ usuarioActual }</span></p>
+    </>
   );
 }
 

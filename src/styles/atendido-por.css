@@ -1,3 +1,7 @@
 .atendido-por--p{
   margin-block: 0 0;
 }
+
+.atendido-por--p span{
+  text-transform: capitalize;
+}

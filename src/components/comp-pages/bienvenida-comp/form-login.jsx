@@ -1,5 +1,6 @@
 import React,{
   useContext,
+  useState
 } from 'react';
 import InputPassword from '../../input-password';
 import InputSubmit from '../../input-submit';
@@ -12,6 +13,7 @@ import { urlApi, solicitudLogin, setSessionLocal, resetInputs } from '../../../s
 
 const FormLogin = () => {
   const { setUsuarioLogeado, setUsuarioActual } = useContext(AppContext);
+  const [errorLogin, setErrorLogin] = useState(false);
   
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -24,10 +26,15 @@ const FormLogin = () => {
       await solicitudLogin(urlApi, nickname, password)
         .then(res => res.json())      
         .then(({ auth }) => {
-          setUsuarioLogeado(auth);
-          setSessionLocal(auth, nickname);
-          setUsuarioActual(localStorage.getItem('usuario-actual'));
-          resetInputs(auth, inputNickname, inputPassword);
+          if(auth){
+            setErrorLogin(false);
+            setUsuarioLogeado(auth);
+            setSessionLocal(auth, nickname);
+            setUsuarioActual(localStorage.getItem('usuario-actual'));
+            resetInputs(auth, inputNickname, inputPassword);
+          } else {
+            setErrorLogin(true);
+          }
         })
         .catch(e => console.log(e))
       ;
@@ -36,8 +43,9 @@ const FormLogin = () => {
 
   return (
     <form className='form-login' onSubmit={ onSubmit }>
-      <InputText props={ new InputTextModel('Usuario:', 'form-login--label-usuario', null, 'Ingresa tu usuario', 'form-login--input-usuario', 'usuario')} />
+      <InputText props={ new InputTextModel('Usuario:', 'form-login--label-usuario', '', 'Ingresa tu usuario', 'form-login--input-usuario', 'usuario')} />
       <InputPassword props={ new InputPasswordModel('Contraseña:', 'form-login--label-inputPass', 'form-login--input-pass', 'Ingresa contraseña', 'password') } />
+      { errorLogin ? <span>Usuario o contraseña incorretos.</span> : null }
       <InputSubmit texto='Ingresar' estilos='form-login-btn-submit' />
     </form>
   );
