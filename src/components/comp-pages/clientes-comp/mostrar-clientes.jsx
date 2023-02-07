@@ -10,14 +10,15 @@ import '../../../styles/mostrar-clientes.css';
 import { ClientesCompContext } from '../clientes-comp';
 
 const MostrarClientes = () => {
-  const { mostrarListaClientes } = useContext(ClientesCompContext);
+  const { mostrarListaClientes, clienteBuscado } = useContext(ClientesCompContext);
   const [clientes, setClientes] = useState(null);
+  
 
-  // useEffect(() => {
-  //   fetch('http://localhost:3001/api/clientes')
-  //     .then(res => res.json())
-  //     .then(data => setClientes(data))
-  // }, []);
+  useEffect(() => {
+    fetch('http://localhost:3001/api/clientes')
+      .then(res => res.json())
+      .then(data => setClientes(data));
+  }, []);
   
   if (clientes) {
     return (
@@ -27,7 +28,7 @@ const MostrarClientes = () => {
           {
             mostrarListaClientes ? 
               <TBody clientes={ clientes } /> : 
-              <tbody><tr><td>Mostrar cliente buscado</td></tr></tbody>
+              <TBody clientes={ clienteBuscado } />
           }
         </table>
       </div>

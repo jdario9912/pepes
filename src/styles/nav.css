@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   transition: all .4s;
+  z-index: 200;
 }
 
 .nav-ul{
