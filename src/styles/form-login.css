@@ -3,39 +3,47 @@
   flex-direction: column;
   gap: 2rem;
   margin-top: 3rem;
-  width: 70%;
+  width: 80%;
 }
 
-.form-login--label-usuario, .form-login--label-inputPass{
-  color: var(--negro);
+.form-login--container-label-input{
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form-login--label-inputUsuario, .form-login--label-inputPass{
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  justify-content: center;
 }
 
 .form-login--input-usuario, .form-login--input-pass{
-  color: var(--negro);
+  background-color: transparent;
+  color: var(--blanco);
   border: none;
+  border-bottom: 1px solid var(--blanco);
   height: 2rem;
-  border-radius: 5px;
   box-sizing: border-box;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .form-login--input-usuario:focus, .form-login--input-pass:focus{
-  border: 2px solid var(--magenta);
   outline: 0 none;
 }
 
 .form-login-btn-submit{
-  background-color: var(--negro);
-  border: 1px solid var(--negro);
+  background-color: transparent;
+  border: 2.5px solid var(--blanco);
   color: var(--blanco);
   border-radius: 5px;
   height: 2rem;
   text-transform: uppercase;
   font-weight: 600;
   transition: all .4s;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .form-login-btn-submit:hover{

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root{
   /* Colores */
   --negro: #353535;
-  --blanco: #f8f8f8;
+  --blanco: #ffffff;
   --blanco2: #e6e6e6; 
   --magenta: #FF0090;
   --magenta50: #ff009080;
@@ -13,7 +13,7 @@
   --cyan50: #00FFFF80;
 
   /* Font */
-  --Karla: 'Karla', sans-serif;
+  --Montserrat: 'Montserrat', sans-serif;
 
   /* Background */
   --bg-gradient:
@@ -25,12 +25,23 @@
 
 body {
   margin: 0;
-  font-family: var(--Karla);
+  font-family: var(--Montserrat);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--negro);
+  color: var(--blanco);
   min-height: 100vh;
-  background: var(--blanco2);
+  background: 
+    radial-gradient(
+      40% 40% at 60% 10%, rgba(255, 0, 144, 0.86) 0%, 
+      rgba(0, 0, 0, .3) 100%),
+    radial-gradient(
+      40% 40% at 90% 70%, rgba(255, 255, 0, 0.59) 0%,
+      rgba(0, 0, 0, .3) 100%),
+    radial-gradient(
+      40% 40% at 10% 30%, rgba(0, 255, 255, 0.75) 0%, 
+      rgba(0, 0, 0, .7) 100%)
+  ;
+  backdrop-filter: blur(60px);
 }
 
 li{
