@@ -19,7 +19,6 @@ const VolantesComp = () => {
       <SelecOption props={ new SelectOptionModel('Cantidad: ', '', '', '', 'volantes-cantidad', opcionesCantidad)} />
       <Impresion />
       <InputText props={ new InputTextModel('Ubicación del diseño: ', '', '', 'Ingresa ubicación del diseño', '', 'volantes-ubicacion')} />
-      <InputText props={ new InputTextModel('Corte o arreglo especial: ', '', '', 'Ingresa corte o arreglo especial', '', 'volantes-corte-arreglo')} />
     </div>
   );
 }

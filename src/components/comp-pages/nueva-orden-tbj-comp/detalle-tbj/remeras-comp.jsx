@@ -14,7 +14,7 @@ const RemerasComp = () => {
       <InputText props={ new InputTextModel('Estampa pecho: ', '', '', 'Ingresa estampa pecho', '', 'remeras-estampa-pecho')} />
       <InputText props={ new InputTextModel('Estampa espalda: ', '', '', 'Ingresa estampa espalda', '', 'remeras-estampa-espalda')} />
       <InputText props={ new InputTextModel('Color estampa: ', '', '', 'Ingresa color de la estampa', '', 'remeras-color-estampa')} />
-      <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'remeras-cantidad')} />
+      <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'Ingresa cantidad', 'remeras-cantidad', null)} />
     </div>
   );
 }
