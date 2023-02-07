@@ -9,6 +9,4 @@ root.render(
   <Router>
     <App />
   </Router>
-);  
-
-// https://pepes-api-production.up.railway.app/
+);

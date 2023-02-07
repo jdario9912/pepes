@@ -9,7 +9,8 @@ import '../../../styles/form-login.css';
 import { AppContext } from '../../app';
 import { InputTextModel } from '../../../models/input-text-model';
 import { InputPasswordModel } from '../../../models/input-password-model';
-import { urlApi, solicitudLogin, setSessionLocal, resetInputs } from '../../../services/form-login/form-login';
+import { solicitudLogin, setSessionLocal, resetInputs } from '../../../services/form-login/form-login';
+import { urlApi } from '../../../services/url/url-api';
 
 const FormLogin = () => {
   const { setUsuarioLogeado, setUsuarioActual } = useContext(AppContext);
@@ -23,7 +24,7 @@ const FormLogin = () => {
     const password = inputPassword.value;
     
     if(nickname.length > 0 && password.length > 0){
-      await solicitudLogin(urlApi, nickname, password)
+      await solicitudLogin(urlApi + '/api/login', nickname, password)
         .then(res => res.json())      
         .then(({ auth }) => {
           if(auth){
@@ -31,7 +32,7 @@ const FormLogin = () => {
             setUsuarioLogeado(auth);
             setSessionLocal(auth, nickname);
             setUsuarioActual(localStorage.getItem('usuario-actual'));
-            resetInputs(auth, inputNickname, inputPassword);
+            if(auth) resetInputs(inputNickname, inputPassword);
           } else {
             setErrorLogin(true);
           }

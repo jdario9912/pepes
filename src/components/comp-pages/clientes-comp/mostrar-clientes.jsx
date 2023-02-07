@@ -6,12 +6,13 @@ import TBody from './mostrar-clientes/t-body';
 import THead from './mostrar-clientes/t-head';
 import '../../../styles/mostrar-clientes.css';
 import { ClientesCompContext } from '../clientes-comp';
+import { urlApi } from '../../../services/url/url-api';
 
 const MostrarClientes = () => {
   const { setClientes, clientes } = useContext(ClientesCompContext);  
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/clientes')
+    fetch(urlApi + '/api/clientes')
       .then(res => res.json())
       .then(data => setClientes(data));
   }, []);
