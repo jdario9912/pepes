@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputMail from '../../input-mail';
 import InputTel from '../../input-tel';
 import InputText from '../../input-text';
@@ -9,8 +9,11 @@ import { InputTelModel } from '../../../models/input-tel-model';
 import { InputMailModel } from '../../../models/input-mail-model';
 import { TextAreaModel } from '../../../models/text-area-model';
 import '../../../styles/datos-cliente.css';
+import { Navigate } from 'react-router-dom';
 
 const DatosCliente = () => {
+  const [irAlHome, setIrAlHome] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const
@@ -19,14 +22,25 @@ const DatosCliente = () => {
       inputEmail = document.querySelector('[data="e-mail"]'),
       inputObservaciones = document.querySelector('[data="observaciones"]')
     ;
-
-    console.log(
-      inputNombre.value,
-      inputEmail.value,
-      inputTelefono.value,
-      inputObservaciones.value
-    )
+    const 
+      nombre = inputNombre.value,
+      telefono = inputTelefono.value,
+      email = inputEmail.value,
+      observaciones = inputObservaciones.value
+    ;
+      
+    fetch("http://localhost:3001/api/clientes", {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ nombre, telefono, email, observaciones })
+    })
+    .then(res => res.ok ? setIrAlHome(true) : setIrAlHome(false))
   };
+
+  if(irAlHome) return <Navigate to='/' replace={true} />
+
   return (
     <form onSubmit={ handleSubmit } className='datos-cliente--form'>
       <div className="inputs-container">

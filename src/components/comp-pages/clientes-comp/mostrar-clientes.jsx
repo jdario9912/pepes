@@ -1,18 +1,14 @@
 import React, {
   useContext,
   useEffect,
-  useState
 } from 'react';
 import TBody from './mostrar-clientes/t-body';
 import THead from './mostrar-clientes/t-head';
-// import { clientes } from '../../../models/clientes';
 import '../../../styles/mostrar-clientes.css';
 import { ClientesCompContext } from '../clientes-comp';
 
 const MostrarClientes = () => {
-  const { mostrarListaClientes, clienteBuscado } = useContext(ClientesCompContext);
-  const [clientes, setClientes] = useState(null);
-  
+  const { setClientes, clientes } = useContext(ClientesCompContext);  
 
   useEffect(() => {
     fetch('http://localhost:3001/api/clientes')
@@ -20,22 +16,17 @@ const MostrarClientes = () => {
       .then(data => setClientes(data));
   }, []);
   
-  if (clientes) {
+  if (clientes)
     return (
       <div className="mostrar-clientes--table-container">
         <table className='mostrar-clientes--table'>
           <THead />
-          {
-            mostrarListaClientes ? 
-              <TBody clientes={ clientes } /> : 
-              <TBody clientes={ clienteBuscado } />
-          }
+          <TBody clientes={ clientes } />
         </table>
       </div>
     );  
-  } else {
+  else
     return(<p>Cargando clientes...</p>);
-  }
   
 }
 

@@ -9,7 +9,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { ClientesCompContext } from '../clientes-comp';
 
 const BuscarClientes = () => {
-  const { setMostrarListaClientes, setClienteBuscado} = useContext(ClientesCompContext);
+  const { setClientes } = useContext(ClientesCompContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,8 +18,7 @@ const BuscarClientes = () => {
     
     fetch(`http://localhost:3001/api/clientes?nombre=${nombre}`)
       .then(res => res.json())
-      .then(data => setClienteBuscado(data))
-      .then(setMostrarListaClientes(false))
+      .then(data => setClientes(data))
     ;
   }
   

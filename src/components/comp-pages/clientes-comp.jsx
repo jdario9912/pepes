@@ -11,12 +11,12 @@ export const ClientesCompContext = createContext();
 
 const ClientesComp = () => {
   const [mostrarListaClientes, setMostrarListaClientes] = useState(true);
-  const [clienteBuscado, setClienteBuscado] = useState({});
+  const [clientes, setClientes] = useState(null);
 
   const verListaClientes = () => setMostrarListaClientes(true);
 
   return (
-    <ClientesCompContext.Provider value={{ mostrarListaClientes, setMostrarListaClientes, clienteBuscado, setClienteBuscado }}>
+    <ClientesCompContext.Provider value={{ mostrarListaClientes, setMostrarListaClientes, clientes, setClientes }}>
       <div className='clientes-comp--container'>
         <h2>Clientes</h2>
         <div className="clientes-comp--lista-buscar-container">
