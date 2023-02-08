@@ -48,12 +48,29 @@ const FormLogin = () => {
   return (
     <form className='form-login' onSubmit={ onSubmit }>
       <div className='form-login--container-label-input'>
-        <TbUserCircle />
-        <InputText props={ new InputTextModel(<IoIosArrowRoundForward />, 'form-login--label-inputUsuario', '', 'Ingresa tu usuario', 'form-login--input-usuario', 'usuario')} />
+        <TbUserCircle className='form-login--icons' />
+        <InputText props={ 
+          new InputTextModel(
+            <IoIosArrowRoundForward className='form-login--icons icon-arrow' />, 
+            'form-login--label-inputUsuario', 
+            '', 
+            'Ingresa tu usuario', 
+            'form-login--input-usuario', 
+            'usuario')
+          } 
+        />
       </div>
       <div className='form-login--container-label-input'>
-        <CgKeyhole />
-        <InputPassword props={ new InputPasswordModel(<IoIosArrowRoundForward />, 'form-login--label-inputPass', 'form-login--input-pass', 'Ingresa contraseña', 'password') } />
+        <CgKeyhole className='form-login--icons' />
+        <InputPassword props={ 
+          new InputPasswordModel(
+            <IoIosArrowRoundForward className='form-login--icons icon-arrow' />, 
+            'form-login--label-inputPass', 
+            'form-login--input-pass', 
+            'Ingresa contraseña', 
+            'password') 
+          } 
+        />
       </div>
       { errorLogin ? <span>Usuario o contraseña incorretos.</span> : null }
       <InputSubmit texto='Ingresar' estilos='form-login-btn-submit' />

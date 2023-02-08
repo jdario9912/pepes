@@ -5,6 +5,8 @@
   --negro: #353535;
   --blanco: #ffffff;
   --blanco2: #e6e6e6; 
+  --blanco3: #e6e6e69e; 
+  --blanco4: #e6e6e62b; 
   --magenta: #FF0090;
   --magenta50: #ff009080;
   --amarillo: #FFFF00;
@@ -54,5 +56,5 @@ a{
 }
 
 input[type='submit']{
-  font-family: var(--Karla);
+  font-family: var(--Montserrat);
 }

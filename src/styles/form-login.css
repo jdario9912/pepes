@@ -9,48 +9,54 @@
 .form-login--container-label-input{
   display: flex;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
+  gap: 0.4rem;
 }
 
 .form-login--label-inputUsuario, .form-login--label-inputPass{
   color: var(--blanco);
+  border-bottom: 1px solid var(--blanco);
   display: flex;
   align-items: center;
-  gap: .5rem;
   justify-content: center;
+  width: 100%;
+}
+
+.form-login--icons{
+  font-size: 2rem;
 }
 
 .form-login--input-usuario, .form-login--input-pass{
   background-color: transparent;
-  color: var(--blanco);
   border: none;
-  border-bottom: 1px solid var(--blanco);
-  height: 2rem;
   box-sizing: border-box;
+  color: var(--blanco);
+  font-size: 1.2rem;
+  height: 2rem;
   width: 100%;
 }
 
 .form-login--input-usuario:focus, .form-login--input-pass:focus{
   outline: 0 none;
+  background-color: var(--blanco4);
+  padding-left: 1rem
 }
 
 .form-login-btn-submit{
   background-color: transparent;
   border: 2.5px solid var(--blanco);
-  color: var(--blanco);
-  border-radius: 5px;
-  height: 2rem;
+  border-radius: 12px;
+  color: inherit;
+  padding: 0.3rem 2rem;
+  font-weight: 400;
+  max-width: 400px;
+  margin: 0 auto;
   text-transform: uppercase;
-  font-weight: 600;
   transition: all .4s;
 }
 
 .form-login-btn-submit:hover{
-  background-color: rgba(0, 0, 0, 0.7 );
-  color: var(--blanco);
-  transition: all .4s;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: var(--blanco3);
+  transition: all .2s;
 }
 
 .form-login-btn-submit:active{
@@ -61,13 +67,26 @@
 
 .form-login-btn-submit:focus{
   outline: 0 none;
-  border: 2px solid var(--negro);
+  background-color: var(--blanco3);
+  border: 2px solid var(--blanco);
   transition: all 0s;
-  scale: 105%;
+  scale: 106%;
 }
 
 @media only screen and (max-width: 600px) {
   .form-login{
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .form-login--input-usuario, .form-login--input-pass{
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .icon-arrow{
+    display: none;
   }
 }

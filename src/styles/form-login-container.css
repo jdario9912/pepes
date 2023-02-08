@@ -1,5 +1,6 @@
 .bienvenida-form-container{
   width: 50%;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
