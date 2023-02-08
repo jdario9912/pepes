@@ -41,6 +41,11 @@
   padding-left: 1rem
 }
 
+.form-login--msj-error{
+  text-align: center;
+  color: var(--error);
+}
+
 .form-login-btn-submit{
   background-color: transparent;
   border: 2.5px solid var(--blanco);
@@ -52,6 +57,37 @@
   margin: 0 auto;
   text-transform: uppercase;
   transition: all .4s;
+}
+
+.form-login--btn-submit-error-login{
+  background-color: transparent;
+  border: 2.5px solid var(--blanco);
+  border-radius: 12px;
+  color: inherit;
+  padding: 0.3rem 2rem;
+  font-weight: 400;
+  max-width: 400px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  transition: all .4s;
+}
+
+.form-login--btn-submit-error-login:focus{
+  outline: 0 none;
+  border: 2px solid var(--error);
+  color: var(--error);
+}
+
+.form-login--btn-submit-error-login:hover{
+  outline: 0 none;
+  border: 2px solid var(--blanco);
+  color: var(--blanco);
+}
+
+.form-login--btn-submit-error-login:active{
+  outline: 0 none;
+  border: 2px solid var(--verde);
+  color: var(--verde);
 }
 
 .form-login-btn-submit:hover{

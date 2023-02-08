@@ -18,6 +18,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 const FormLogin = () => {
   const { setUsuarioLogeado, setUsuarioActual } = useContext(AppContext);
   const [errorLogin, setErrorLogin] = useState(false);
+  const [camposVacios, setCamposVacios] = useState(false);
   
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ const FormLogin = () => {
     const password = inputPassword.value;
     
     if(nickname.length > 0 && password.length > 0){
+      setCamposVacios(false);
       await solicitudLogin(urlApi + '/api/login', nickname, password)
         .then(res => res.json())      
         .then(({ auth }) => {
@@ -42,7 +44,7 @@ const FormLogin = () => {
         })
         .catch(e => console.log(e))
       ;
-    }
+    } else setCamposVacios(true);
   };
 
   return (
@@ -56,9 +58,9 @@ const FormLogin = () => {
             '', 
             'Ingresa tu usuario', 
             'form-login--input-usuario', 
-            'usuario')
-          } 
-        />
+            'usuario'
+          )
+        } />
       </div>
       <div className='form-login--container-label-input'>
         <CgKeyhole className='form-login--icons' />
@@ -68,12 +70,16 @@ const FormLogin = () => {
             'form-login--label-inputPass', 
             'form-login--input-pass', 
             'Ingresa contraseña', 
-            'password') 
-          } 
-        />
+            'password'
+          ) 
+        } />
       </div>
-      { errorLogin ? <span>Usuario o contraseña incorretos.</span> : null }
-      <InputSubmit texto='Ingresar' estilos='form-login-btn-submit' />
+      { errorLogin ? <span className='form-login--msj-error'>Usuario o contraseña incorretos.</span> : null }
+      { camposVacios ? <span className='form-login--msj-error'>Falta usuario o contraseña.</span> : null }
+      <InputSubmit 
+        texto='Ingresar' 
+        estilos={ errorLogin ? 'form-login--btn-submit-error-login' : 'form-login-btn-submit' }
+      />
     </form>
   );
 }

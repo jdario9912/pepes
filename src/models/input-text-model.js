@@ -5,7 +5,7 @@ export class InputTextModel{
     value = null, 
     placeholder = null,
     estilosInput = null,
-    data = null
+    data = null,
   ){
     this.texto = texto;
     this.estilosLabel = estilosLabel;

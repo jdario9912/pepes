@@ -13,6 +13,8 @@
   --amarillo50: #FFFF0080;
   --cyan: #00FFFF;
   --cyan50: #00FFFF80;
+  --error: #ff2929;
+  --verde: rgb(19, 152, 19);
 
   /* Font */
   --Montserrat: 'Montserrat', sans-serif;
@@ -44,6 +46,21 @@ body {
       rgba(0, 0, 0, .7) 100%)
   ;
   backdrop-filter: blur(60px);
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #666666;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
 }
 
 li{
