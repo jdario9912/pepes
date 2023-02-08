@@ -1,12 +1,11 @@
 .saludo-usuario--container{
   display: flex;
   justify-content: space-between;
-  padding: 5px 2rem;
-
 }
 
 .saludo-usuario--container p {
   text-transform: capitalize;
+  margin-block: 0;
 }
 
 @media only scree and (max-width: 819px){

@@ -1,4 +1,9 @@
-.btn-logout-nav, .btn-logout-header{
+.btn-logout--container{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-logout{
   color: var(--blanco);
   background-color: var(--negro);
   border: none;
@@ -6,27 +11,19 @@
   padding: .5em 1rem;
 }
 
-.btn-logout-nav, .btn-logout-header:hover{
+.btn-logout:hover{
   text-decoration: underline;
 }
 
-.btn-logout-nav, .btn-logout-header:active{
+.btn-logout:active{
   background-color: transparent;
   border: 1px solid var(--negro);
   color: var(--negro);
 }
 
-.btn-logout-nav{
-  display: none;
-}
-
 @media only screen and (max-width: 991px){
-  .btn-logout-header{
+  /* .btn-logout{
     display: none;
     position: absolute;
-  }
-
-  .btn-logout-nav{
-    display: block;
-  }
+  } */
 }

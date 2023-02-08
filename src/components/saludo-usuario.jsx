@@ -9,7 +9,8 @@ const SaludoUsuario = () => {
   const { usuarioActual } = useContext(AppContext);
   return (
     <div className='saludo-usuario--container'>
-      <p>Hola, { usuarioActual }!</p>
+      <p>Bienvenido! <br /> <strong>{ usuarioActual }</strong></p>
+      
     </div>
   );
 }

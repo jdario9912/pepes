@@ -1,6 +1,9 @@
 .hamburguesa--btn{
   background: transparent;
   border: none;
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
 }
 
 .hamburguesa--icon{

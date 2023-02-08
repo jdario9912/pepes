@@ -13,7 +13,8 @@ const BtnLogout = ({ props }) => {
     setUsuarioActual(localStorage.getItem('usuario-actual'));
   }
   return (
-    <div>
+    <div className='btn-logout--container'>
+      Es todo por hoy?
       <Button 
         texto={ props.texto }
         estilos={ props.estilos }

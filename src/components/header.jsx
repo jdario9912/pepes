@@ -4,25 +4,26 @@ import React,{
 } from 'react';
 import Nav from './nav';
 import '../styles/header.css';
-import Logo from './logo';
 import BtnLogout from './btn-logout';
 import Hamburguesa from './hamburguesa';
-import SaludoUsuario from './saludo-usuario';
 import { BtnLogoutModel } from '../models/btn-logout-model';
+import SaludoUsuario from './saludo-usuario';
 
 export const HeaderContext = createContext();
 
 const Header = () => {
-  const [toogleNav, setToogleNav] = useState(true);
+  const [toogleNav, setToogleNav] = useState(false);
+  const handleClick = () => setToogleNav(!toogleNav);
   return (
     <HeaderContext.Provider value={{toogleNav, setToogleNav}} >
-      <header className='header'>
-        <Hamburguesa />
-        <Logo />      
-        <Nav />
-        <BtnLogout props={ new BtnLogoutModel('Cerrar sesión', 'btn-logout-header')} />
-      </header>
-      <SaludoUsuario />
+      <div className={ toogleNav ? 'header--container' : 'header--container-visible' }>
+        <header className='header' onClick={ handleClick }>
+          <Hamburguesa />
+          <SaludoUsuario />      
+          <Nav />
+          <BtnLogout props={ new BtnLogoutModel('Cerrar sesión', 'btn-logout')} />
+        </header>
+      </div>
     </HeaderContext.Provider>
   );
 }

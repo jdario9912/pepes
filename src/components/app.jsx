@@ -12,7 +12,7 @@ export const AppContext = createContext();
 
 const App = () => {
   const [usuarioLogeado, setUsuarioLogeado] = useState(false);
-  const [usuarioActual, setUsuarioActual] = useState('');
+  const [usuarioActual, setUsuarioActual] = useState({});
 
   useEffect(() => {
     setUsuarioLogeado(JSON.parse(localStorage.getItem('usuario-logeado')));

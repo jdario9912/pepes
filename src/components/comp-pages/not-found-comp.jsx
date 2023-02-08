@@ -7,7 +7,7 @@ const NotFoundComp = () => {
     <div className='not-found-container'>
       <TbFaceIdError className='not-found--icon' />
       <p className='not-found--mensaje'>
-        <strong>Error 404</strong> - Not found
+        <strong className='not-found--error'>Error 404</strong> - Not found
       </p>
     </div>
   );

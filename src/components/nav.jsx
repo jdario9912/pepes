@@ -25,7 +25,7 @@ const Nav = () => {
     <nav className={ toogleClassNav} onClick={ handleClick }>
       <ul className='nav-ul'>
         <li>
-          <NavLink style={ linkActivo } to='/ordenes-pendientes' end>
+          <NavLink style={ linkActivo } to='/ordenes-pendientes'>
             Ordenes Pendientes
           </NavLink>
         </li>
@@ -38,9 +38,6 @@ const Nav = () => {
           <NavLink style={ linkActivo } to='/nueva-orden'>
             Nueva Orden
           </NavLink>
-        </li>
-        <li>
-          <BtnLogout props={ new BtnLogoutModel('Cerrar sesión', 'btn-logout-nav')} />
         </li>
       </ul>
     </nav>

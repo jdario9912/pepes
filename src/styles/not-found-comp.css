@@ -15,6 +15,6 @@
   text-align: center;
 }
 
-strong{
+.not-found--error{
   color: var(--error);
 }
