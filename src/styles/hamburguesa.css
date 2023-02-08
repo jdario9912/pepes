@@ -4,6 +4,7 @@
   position: fixed;
   left: 1rem;
   top: 1rem;
+  display: none;
 }
 
 .hamburguesa--icon{
@@ -16,10 +17,12 @@
 
 @media only screen and (min-width: 992px) {
   .hamburguesa-container{
-    position: absolute;
+    /* position: absolute; */
+    /* display: none; */
   }
+
   .hamburguesa--btn{
-    display: none;
-    position: absolute;
+    /* display: none; */
+    /* position: absolute; */
   }
 }

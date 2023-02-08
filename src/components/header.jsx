@@ -12,11 +12,11 @@ import SaludoUsuario from './saludo-usuario';
 export const HeaderContext = createContext();
 
 const Header = () => {
-  const [toogleNav, setToogleNav] = useState(false);
+  const [toogleNav, setToogleNav] = useState(true);
   const handleClick = () => setToogleNav(!toogleNav);
   return (
     <HeaderContext.Provider value={{toogleNav, setToogleNav}} >
-      <div className={ toogleNav ? 'header--container' : 'header--container-visible' }>
+      <div className='header--container'>
         <header className='header' onClick={ handleClick }>
           <Hamburguesa />
           <SaludoUsuario />      

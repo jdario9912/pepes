@@ -1,28 +1,19 @@
 import React, {
   useContext,
-  useEffect,
-  useState
 } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
 import { activeStyle } from '../models/nav-link-active-style-model';
 import { HeaderContext } from './header';
-import { BtnLogoutModel } from '../models/btn-logout-model';
-import BtnLogout from './btn-logout';
 
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
   const { toogleNav, setToogleNav } = useContext(HeaderContext);
-  const [toogleClassNav, setToogleClassNav] = useState('nav');
 
   const handleClick = () => setToogleNav(!toogleNav);
 
-  useEffect(() => {
-    !toogleNav ? setToogleClassNav('nav nav-visible') : setToogleClassNav('nav');
-  }, [toogleNav]);
-
   return (
-    <nav className={ toogleClassNav} onClick={ handleClick }>
+    <nav className='nav' onClick={ handleClick }>
       <ul className='nav-ul'>
         <li>
           <NavLink style={ linkActivo } to='/ordenes-pendientes'>

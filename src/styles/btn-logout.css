@@ -1,13 +1,22 @@
 .btn-logout--container{
+  border: 0.5px solid var(--blanco3);
+  border-radius: 19% / 26%;
+  background: #00000049;
+  color: var(--blanco3);
   display: flex;
   flex-direction: column;
+  font-size: 0.7rem;
+  gap: 1rem;
+  padding: 1.2rem 1.2rem 0.6rem;
+  text-align: center;
 }
 
 .btn-logout{
   color: var(--blanco);
-  background-color: var(--negro);
+  background-color: var(--amarillo25);
   border: none;
-  border-radius: 5px;
+  border-radius: 6% / 29%;
+  font-weight: 600;
   padding: .5em 1rem;
 }
 
@@ -22,8 +31,5 @@
 }
 
 @media only screen and (max-width: 991px){
-  /* .btn-logout{
-    display: none;
-    position: absolute;
-  } */
+  
 }
