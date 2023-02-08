@@ -25,8 +25,8 @@ const Nav = () => {
     <nav className={ toogleClassNav} onClick={ handleClick }>
       <ul className='nav-ul'>
         <li>
-          <NavLink style={ linkActivo } to='/' end>
-            Inicio
+          <NavLink style={ linkActivo } to='/ordenes-pendientes' end>
+            Ordenes Pendientes
           </NavLink>
         </li>
         <li>
