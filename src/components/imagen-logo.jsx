@@ -1,5 +1,5 @@
 import React from 'react';
-import imgLogo from '../img/logo.png';
+import imgLogo from '../img/logo-nombre-blanco.svg';
 import '../styles/imagen-logo.css';
 
 const ImagenLogo = () => {
