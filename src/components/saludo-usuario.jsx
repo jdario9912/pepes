@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { AppContext } from './app';
 import '../styles/saludo-usuario.css';
-import moment from 'moment';
-import 'moment/locale/es';
+import { AiOutlineSetting } from "react-icons/ai";
 
 const SaludoUsuario = () => {
-  moment.locale('es');
-  const { usuarioActual } = useContext(AppContext);
+  const { usuarioActual, permisos } = useContext(AppContext);
+
   return (
     <div className='saludo-usuario--container'>
-      <p>Bienvenido! <br /> <strong>{ usuarioActual }</strong></p>
       
+      <p>Hola! <br /> <strong>{ usuarioActual }</strong></p>
+      { permisos ? <AiOutlineSetting /> : null }
     </div>
   );
 }
