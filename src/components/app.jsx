@@ -13,6 +13,7 @@ export const AppContext = createContext();
 const App = () => {
   const [usuarioLogeado, setUsuarioLogeado] = useState(false);
   const [usuarioActual, setUsuarioActual] = useState({});
+  const [permisos, setPermisos] = useState(false);
 
   useEffect(() => {
     setUsuarioLogeado(JSON.parse(localStorage.getItem('usuario-logeado')));
@@ -21,7 +22,7 @@ const App = () => {
 
   if (usuarioLogeado) {
     return (
-      <AppContext.Provider value={{ setUsuarioLogeado, usuarioActual, setUsuarioActual }}>
+      <AppContext.Provider value={{ setUsuarioLogeado, usuarioActual, setUsuarioActual, permisos }}>
         <div className='app'>
           <Header />
           <Enrutador />
@@ -30,7 +31,7 @@ const App = () => {
     );  
   } else {
     return(
-      <AppContext.Provider value={{ setUsuarioLogeado, setUsuarioActual }}>
+      <AppContext.Provider value={{ setUsuarioLogeado, setUsuarioActual, setPermisos }}>
         <BienvenidaComp />
       </AppContext.Provider>
     )

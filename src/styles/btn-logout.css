@@ -1,6 +1,6 @@
 .btn-logout--container{
   border: 0.5px solid var(--blanco3);
-  border-radius: 19% / 26%;
+  border-radius: 16px / 16px;
   background: #00000049;
   color: var(--blanco3);
   display: flex;
@@ -15,7 +15,7 @@
   color: var(--blanco);
   background-color: var(--amarillo25);
   border: none;
-  border-radius: 6% / 29%;
+  border-radius: 10px;
   font-weight: 600;
   padding: .5em 1rem;
 }

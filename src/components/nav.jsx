@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
 import { activeStyle } from '../models/nav-link-active-style-model';
 import { HeaderContext } from './header';
+import { MdPendingActions, MdPostAdd } from "react-icons/md";
+import { AiOutlineUserAdd } from "react-icons/ai";
 
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
@@ -13,25 +15,31 @@ const Nav = () => {
   const handleClick = () => setToogleNav(!toogleNav);
 
   return (
-    <nav className='nav' onClick={ handleClick }>
-      <ul className='nav-ul'>
-        <li>
-          <NavLink style={ linkActivo } to='/ordenes-pendientes'>
-            Ordenes Pendientes
-          </NavLink>
-        </li>
-        <li>
-          <NavLink style={ linkActivo } to='/nuevo-cliente'>
-            Nuevo Cliente
-          </NavLink>
-        </li>
-        <li>
-          <NavLink style={ linkActivo } to='/nueva-orden'>
-            Nueva Orden
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+    <div className="nav--container">
+      <p className="nav--p">Opciones</p>
+      <nav className='nav' onClick={ handleClick }>
+        <ul className='nav--ul'>
+          <li>
+            <MdPendingActions />
+            <NavLink style={ linkActivo } to='/ordenes-pendientes'>
+              Pendientes
+            </NavLink>
+          </li>
+          <li>
+            <AiOutlineUserAdd />
+            <NavLink style={ linkActivo } to='/nuevo-cliente'>
+              Añadir nuevo cliente
+            </NavLink>
+          </li>
+          <li>
+            <MdPostAdd />
+            <NavLink style={ linkActivo } to='/nueva-orden'>
+              Generar nueva orden
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
 

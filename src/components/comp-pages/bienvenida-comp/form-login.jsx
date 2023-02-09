@@ -16,9 +16,10 @@ import { CgKeyhole } from "react-icons/cg";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 const FormLogin = () => {
-  const { setUsuarioLogeado, setUsuarioActual } = useContext(AppContext);
+  const { setUsuarioLogeado, setUsuarioActual, setPermisos } = useContext(AppContext);
   const [errorLogin, setErrorLogin] = useState(false);
   const [camposVacios, setCamposVacios] = useState(false);
+  const [mensajeServidor, setMensajeServidor] = useState('');
   
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -31,20 +32,25 @@ const FormLogin = () => {
       setCamposVacios(false);
       await solicitudLogin(urlApi + '/api/login', nickname, password)
         .then(res => res.json())      
-        .then(({ auth }) => {
+        .then(({ mensaje, auth, permisions }) => {
           if(auth){
             setErrorLogin(false);
+            setPermisos(permisions);
             setUsuarioLogeado(auth);
             setSessionLocal(auth, nickname);
             setUsuarioActual(localStorage.getItem('usuario-actual'));
             if(auth) resetInputs(inputNickname, inputPassword);
           } else {
             setErrorLogin(true);
+            setMensajeServidor(mensaje);
           }
         })
         .catch(e => console.log(e))
       ;
-    } else setCamposVacios(true);
+    } else {
+      setCamposVacios(true);
+      setMensajeServidor('');
+    }
   };
 
   return (
@@ -74,7 +80,7 @@ const FormLogin = () => {
           ) 
         } />
       </div>
-      { errorLogin ? <span className='form-login--msj-error'>Usuario o contraseña incorretos.</span> : null }
+      { errorLogin ? <span className='form-login--msj-error'>{ mensajeServidor}</span> : null }
       { camposVacios ? <span className='form-login--msj-error'>Falta usuario o contraseña.</span> : null }
       <InputSubmit 
         texto='Ingresar' 
