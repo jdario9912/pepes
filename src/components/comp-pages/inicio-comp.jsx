@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/inicio-comp.css';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 
 const InicioComp = () => {
   return (

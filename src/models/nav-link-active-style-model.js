@@ -4,3 +4,9 @@ export const
     letterSpacing: "1px"
   }
 ;
+
+export const 
+  activeStyleTools = {
+    color: "#ffff00bb"
+  }
+;

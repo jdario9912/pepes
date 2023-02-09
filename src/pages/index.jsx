@@ -5,6 +5,7 @@ import OrdenesPendientesComp from "../components/comp-pages/ordenes-pendientes-c
 import AgregarClienteComp from "../components/comp-pages/agregar-cliente-comp";
 import NuevaOrdenTbjComp from "../components/comp-pages/nueva-orden-tbj-comp";
 import NotFoundComp from "../components/comp-pages/not-found-comp";
+import GestionarEmpleadosComp from "../components/comp-pages/gestionar-empleados-comp";
 
 export const Inicio = () => <InicioComp />;
 export const Clientes = () => <ClientesComp />;
@@ -12,4 +13,5 @@ export const Ordenes = () => <OrdenesComp />;
 export const OrdenesPendientes = () => <OrdenesPendientesComp />;
 export const AgregarCliente = () => <AgregarClienteComp />;
 export const NuevaOrden = () => <NuevaOrdenTbjComp />;
-export const NotFound = () => <NotFoundComp />
+export const NotFound = () => <NotFoundComp />;
+export const GestionarEmpleados = () => <GestionarEmpleadosComp />;

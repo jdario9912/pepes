@@ -3,9 +3,28 @@
   justify-content: space-between;
 }
 
-.saludo-usuario--container p {
+.saludo-usuario--avatar-texto-container{
+  display: flex;
+  gap: 6%;
+}
+
+.saludo-usuario--avatar-container{
+  min-width: 30px;
+  max-width: 37px;
+}
+
+.saludo-usuario--avatar{
+  width: 100%;
+}
+
+.saludo-usuario--texto {
   text-transform: capitalize;
   margin-block: 0;
+  color: var(--blanco3);
+}
+
+.saludo-usuario--texto strong{
+  color: var(--blanco);
 }
 
 @media only scree and (max-width: 819px){
