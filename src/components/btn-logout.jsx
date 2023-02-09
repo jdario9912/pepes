@@ -2,15 +2,14 @@ import React, { useContext } from 'react';
 import Button from './button';
 import { AppContext } from './app';
 import '../styles/btn-logout.css';
+import { resetSessionLocal } from '../services/form-login/form-login';
 
 const BtnLogout = ({ props }) => {
-  const { setUsuarioLogeado, setUsuarioActual } = useContext(AppContext);
+  const { setUsuarioLogeado } = useContext(AppContext);
 
   const logOut = () => {
-    localStorage.setItem('usuario-logeado', false);
+    resetSessionLocal();
     setUsuarioLogeado(JSON.parse(localStorage.getItem('usuario-logeado')));
-    localStorage.setItem('usuario-actual', '');
-    setUsuarioActual(localStorage.getItem('usuario-actual'));
   }
   return (
     <div className='btn-logout--container'>

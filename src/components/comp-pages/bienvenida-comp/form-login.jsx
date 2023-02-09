@@ -16,7 +16,7 @@ import { CgKeyhole } from "react-icons/cg";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 const FormLogin = () => {
-  const { setUsuarioLogeado, setUsuarioActual, setPermisos } = useContext(AppContext);
+  const { setUsuarioLogeado } = useContext(AppContext);
   const [errorLogin, setErrorLogin] = useState(false);
   const [camposVacios, setCamposVacios] = useState(false);
   const [mensajeServidor, setMensajeServidor] = useState('');
@@ -35,10 +35,8 @@ const FormLogin = () => {
         .then(({ mensaje, auth, permisions }) => {
           if(auth){
             setErrorLogin(false);
-            setPermisos(permisions);
             setUsuarioLogeado(auth);
-            setSessionLocal(auth, nickname);
-            setUsuarioActual(localStorage.getItem('usuario-actual'));
+            setSessionLocal(auth, nickname, permisions);
             if(auth) resetInputs(inputNickname, inputPassword);
           } else {
             setErrorLogin(true);

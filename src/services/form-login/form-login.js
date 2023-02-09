@@ -8,10 +8,17 @@ export const solicitudLogin = (url, nickname, password) => {
   })
 };
 
-export const setSessionLocal = (auth, nickname) => {
+export const setSessionLocal = (auth, nickname, permisions) => {
   localStorage.setItem('usuario-logeado', auth);
   localStorage.setItem('usuario-actual', nickname);
+  localStorage.setItem('permisos', permisions);
 };
+
+export const resetSessionLocal = () => {
+  localStorage.removeItem('usuario-logeado');
+  localStorage.removeItem('usuario-actual');
+  localStorage.removeItem('permisos');
+}
 
 export const resetInputs = ( inputNickname, inputPassword) => {
     inputNickname.value = '';

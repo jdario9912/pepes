@@ -12,13 +12,10 @@ export const AppContext = createContext();
 
 const App = () => {
   const [usuarioLogeado, setUsuarioLogeado] = useState(false);
-  const [usuarioActual, setUsuarioActual] = useState({});
-  const [permisos, setPermisos] = useState(false);
   const [toogleNav, setToogleNav] = useState(false);
 
   useEffect(() => {
     setUsuarioLogeado(JSON.parse(localStorage.getItem('usuario-logeado')));
-    setUsuarioActual(localStorage.getItem('usuario-actual'));
   }, []);
 
   const handleClick = () => {
@@ -30,11 +27,8 @@ const App = () => {
     return (
       <AppContext.Provider value={{ 
         setUsuarioLogeado, 
-        usuarioActual, 
-        setUsuarioActual, 
-        permisos,
         setToogleNav,
-        toogleNav 
+        toogleNav,
       }}>
         <div className='app' onClick={ handleClick }>
           <Header />
@@ -44,7 +38,7 @@ const App = () => {
     );  
   } else {
     return(
-      <AppContext.Provider value={{ setUsuarioLogeado, setUsuarioActual, setPermisos }}>
+      <AppContext.Provider value={{ setUsuarioLogeado }}>
         <BienvenidaComp />
       </AppContext.Provider>
     )

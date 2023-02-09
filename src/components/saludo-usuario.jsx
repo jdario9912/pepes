@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
-import { AppContext } from './app';
+import React from 'react';
 import '../styles/saludo-usuario.css';
 import { AiOutlineSetting } from "react-icons/ai";
 
 const SaludoUsuario = () => {
-  const { usuarioActual, permisos } = useContext(AppContext);
+  const usuarioActual = localStorage.getItem('usuario-actual');
   const avatar = `https://ui-avatars.com/api/?name=${usuarioActual}&rounded=true`;
+  const permisos = JSON.parse(localStorage.getItem('permisos'));
+
   return (
     <div className='saludo-usuario--container'>
       <div>
