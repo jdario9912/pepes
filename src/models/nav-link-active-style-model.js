@@ -1,5 +1,6 @@
 export const 
   activeStyle = {
-    borderBottom: "3px solid var(--blanco3)",
+    fontWeight: "800",
+    letterSpacing: "1px"
   }
 ;

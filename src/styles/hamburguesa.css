@@ -1,28 +1,26 @@
-.hamburguesa--btn{
-  background: transparent;
-  border: none;
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
+.hamburguesa-container{
   display: none;
 }
 
 .hamburguesa--icon{
   font-size: xx-large;
-}
-
-.hamburguesa--icon:active{
   color: var(--blanco);
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 991px) {
   .hamburguesa-container{
-    /* position: absolute; */
-    /* display: none; */
+    position: fixed;
+    display: block;
+    left: 1rem;
+    top: 1rem;
+  }
+
+  .hamburguesa-container-oculta{
+    display: none;
   }
 
   .hamburguesa--btn{
-    /* display: none; */
-    /* position: absolute; */
+    background: transparent;
+    border: none;
   }
 }

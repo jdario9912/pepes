@@ -14,16 +14,29 @@ const App = () => {
   const [usuarioLogeado, setUsuarioLogeado] = useState(false);
   const [usuarioActual, setUsuarioActual] = useState({});
   const [permisos, setPermisos] = useState(false);
+  const [toogleNav, setToogleNav] = useState(false);
 
   useEffect(() => {
     setUsuarioLogeado(JSON.parse(localStorage.getItem('usuario-logeado')));
     setUsuarioActual(localStorage.getItem('usuario-actual'));
   }, []);
 
+  const handleClick = () => {
+    if(toogleNav)
+      setToogleNav(false);
+  }
+
   if (usuarioLogeado) {
     return (
-      <AppContext.Provider value={{ setUsuarioLogeado, usuarioActual, setUsuarioActual, permisos }}>
-        <div className='app'>
+      <AppContext.Provider value={{ 
+        setUsuarioLogeado, 
+        usuarioActual, 
+        setUsuarioActual, 
+        permisos,
+        setToogleNav,
+        toogleNav 
+      }}>
+        <div className='app' onClick={ handleClick }>
           <Header />
           <Enrutador />
         </div>

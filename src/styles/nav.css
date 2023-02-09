@@ -5,13 +5,14 @@
   flex-direction: column;
   justify-content: flex-start;
   font-size: 0.8rem;
-  padding-top: 5rem;
-  gap: 1.5rem;
+  padding-top: 10%;
+  gap: 3%;
 }
 
 .nav--p{
   align-self: flex-start;
   color: var(--blanco3);
+  margin-block-end: 0;
 }
 
 .nav{
@@ -35,6 +36,10 @@
   gap: 0.6rem;
   border-radius: 10px / 8px;
   border: 0.2px solid var(--blanco3);
+}
+
+.nav--ul li:hover{
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 991px){

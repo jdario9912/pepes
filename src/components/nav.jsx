@@ -4,15 +4,18 @@ import React, {
 import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
 import { activeStyle } from '../models/nav-link-active-style-model';
-import { HeaderContext } from './header';
 import { MdPendingActions, MdPostAdd } from "react-icons/md";
 import { AiOutlineUserAdd } from "react-icons/ai";
+import { AppContext } from './app';
 
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
-  const { toogleNav, setToogleNav } = useContext(HeaderContext);
+  const { toogleNav, setToogleNav } = useContext(AppContext);
 
-  const handleClick = () => setToogleNav(!toogleNav);
+  const handleClick = () => {
+    if(toogleNav)
+      setToogleNav(false);
+  };
 
   return (
     <div className="nav--container">

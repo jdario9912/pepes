@@ -3,17 +3,21 @@ import React, {
 } from 'react';
 import { AiOutlineMenu } from "react-icons/ai";
 import '../styles/hamburguesa.css';
-import { HeaderContext } from './header';
+import { AppContext } from './app';
 
 const Hamburguesa = () => {
-  const { toogleNav, setToogleNav} = useContext(HeaderContext);
+  const { toogleNav, setToogleNav} = useContext(AppContext);
   
   const handleClick = () => {
-    setToogleNav(!toogleNav);
-  }
+    if(!toogleNav)
+      setToogleNav(true);
+  };
   
   return (
-    <div className='hamburguesa-container'>
+    <div className={
+      toogleNav ? 'hamburguesa-container hamburguesa-container-oculta' :
+      'hamburguesa-container'
+    }>
       <button 
         className='hamburguesa--btn'
         onClick={ handleClick }
