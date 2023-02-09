@@ -4,7 +4,7 @@ import '../../styles/agregar-cliente-comp.css'
 
 const AgregarClienteComp = () => {
   return (
-    <div className='agregar-cliente-comp--container'>
+    <div className='agregar-cliente-comp--container modulo'>
       <h2>Nuevo Cliente</h2>
       <DatosCliente />
     </div>

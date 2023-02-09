@@ -1,7 +1,5 @@
-/* .inicio-comp--container{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.inicio-comp--container{
+  padding: 1rem;
 }
 
 @media only screen and (min-width: 1900px) {
@@ -9,4 +7,4 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-} */
+}

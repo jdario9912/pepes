@@ -26,7 +26,7 @@ const Header = () => {
         toogleNav ? 'header--container header--container-visible' :
         'header--container'
       }>
-        <header className='header' onClick={ handleClick }>
+        <header className='modulo header' onClick={ handleClick }>
           <Hamburguesa />
           <SaludoUsuario />      
           <Nav />
