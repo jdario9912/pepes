@@ -3,10 +3,13 @@
 :root{
   /* Colores */
   --negro: #353535;
+  --negro2: #00000045;
+  --negro3: #00000049;
   --blanco: #ffffff;
   --blanco2: #e6e6e6; 
   --blanco3: #e6e6e69e; 
-  --blanco4: #e6e6e62b; 
+  --blanco4: #e6e6e62b;
+  --blanco5: #e6e6e640 
   --magenta: #FF0090;
   --magenta50: #ff009080;
   --amarillo: #FFFF00;

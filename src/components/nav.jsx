@@ -7,6 +7,7 @@ import { activeStyle } from '../models/nav-link-active-style-model';
 import { MdPendingActions, MdPostAdd } from "react-icons/md";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { AppContext } from './app';
+import { SlScreenDesktop } from "react-icons/sl";
 
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
@@ -31,13 +32,18 @@ const Nav = () => {
           <li>
             <AiOutlineUserAdd />
             <NavLink style={ linkActivo } to='/nuevo-cliente'>
-              Añadir nuevo cliente
+              Nuevo cliente
             </NavLink>
           </li>
           <li>
             <MdPostAdd />
             <NavLink style={ linkActivo } to='/nueva-orden'>
-              Generar nueva orden
+              Nueva orden
+            </NavLink>
+          </li>
+          <li>
+            <NavLink style={ linkActivo } to='/'>
+              Vaciar <span><SlScreenDesktop /></span>
             </NavLink>
           </li>
         </ul>

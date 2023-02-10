@@ -5,12 +5,12 @@ const THead = () => {
   return (
     <thead className='t-head'>
       <tr className='t-head--tr'>
-        <th>Nro. Orden</th>
+        <th>Nro.</th>
         <th>Cliente</th>
-        <th>Fecha Creacion</th>
-        <th>Tipo Trabajo</th>
-        <th>Fecha Entrega</th>
-        <th>Hora Entrega</th>
+        <th>Fecha C</th>
+        <th>Trabajo</th>
+        <th>Entrega</th>
+        <th>Hora</th>
       </tr>
     </thead>
   );

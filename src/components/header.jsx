@@ -26,8 +26,8 @@ const Header = () => {
         toogleNav ? 'header--container header--container-visible' :
         'header--container'
       }>
+        <Hamburguesa />
         <header className='modulo header' onClick={ handleClick }>
-          <Hamburguesa />
           <SaludoUsuario />      
           <Nav />
           <BtnLogout props={ new BtnLogoutModel('Cerrar sesión', 'btn-logout')} />

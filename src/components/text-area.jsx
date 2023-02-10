@@ -17,7 +17,7 @@ const TextArea = ({ props }) => {
     props.texto ? setTexto(props.texto) : setTexto('');
     props.value ? setValue(props.value) : setValue('');
     props.placeholder ? setPlaceholder(props.placeholder) : setPlaceholder('');
-    props.estilosInput ? setEstilosTextArea(props.estilosTextArea) : setEstilosTextArea('');
+    props.estilosInput ? setEstilosTextArea(props.estilosInput) : setEstilosTextArea('');
     props.estilosLabel ? setEstilosLabel(props.estilosLabel) : setEstilosLabel('');
     props.data ? setData(props.data) : setData('');
   }, []);

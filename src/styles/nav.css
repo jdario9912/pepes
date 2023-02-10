@@ -28,7 +28,7 @@
 }
 
 .nav--ul li{
-  background-color: var(--magenta);
+  background: var(--magenta);
   padding: 0.6rem;
   font-size: 0.7rem;
   display: flex;
@@ -42,6 +42,13 @@
   text-decoration: underline;
 }
 
+.nav--ul li:last-child{
+  /* background: none; */
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 991px){
   .nav{
     align-self: center;
@@ -53,6 +60,10 @@
   .nav-visible{
     left: 0;
     top: 0;
+  }
+
+  .nav--ul li:last-child{
+    display: none;
   }
 }
 

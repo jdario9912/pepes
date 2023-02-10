@@ -43,15 +43,15 @@ const DatosCliente = () => {
 
   return (
     <form onSubmit={ handleSubmit } className='datos-cliente--form'>
-      <div className="inputs-container">
-        <div className="nombre-telefono-email-contanier">
-          <InputText props={ new InputTextModel('Nombre:', 'datos-cliente--label-nombre', '', 'Ingresá el nombre', '', 'nombre')} />
-          <InputTel props={ new InputTelModel('Teléfono:', 'datos-cliente--label-telefono', '', '', 'Ingresá el telefono', 'telefono')} />
-          <InputMail props={ new InputMailModel('e-mail:', 'datos-cliente--label-email', '', 'Ingresá el e-mail', '', 'e-mail')} />
-        </div>
-        <TextArea props={ new TextAreaModel('Observaciones:', 'datos-cliente--label-observaciones', '', 'Ingresá observaciones', '', 'observaciones') } />
+      <div className="datos-cliente--inputs-container">
+        <InputText props={ new InputTextModel('', 'datos-cliente--label', '', 'Nombre', 'datos-cliente--input', 'nombre')} />
+        <InputTel props={ new InputTelModel('', 'datos-cliente--label', '', 'datos-cliente--input', 'Teléfono', 'telefono')} />
+        <InputMail props={ new InputMailModel('', 'datos-cliente--label', '', 'Email', 'datos-cliente--input', 'e-mail')} />
+        <TextArea props={ new TextAreaModel('', 'datos-cliente--label', '', 'Observaciones', 'datos-cliente--text-area', 'observaciones') } />
       </div>
-      <InputSubmit texto='Guardar' estilos='' />
+      <div className="datos-cliente--btn-submit-container">
+        <InputSubmit texto='Guardar' estilos='datos-cliente--btn-submint' />
+      </div>
     </form>
   );
 }
