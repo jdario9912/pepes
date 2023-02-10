@@ -10,6 +10,8 @@ import { InputMailModel } from '../../../models/input-mail-model';
 import { TextAreaModel } from '../../../models/text-area-model';
 import '../../../styles/datos-cliente.css';
 import { Navigate } from 'react-router-dom';
+import { enviarDatos } from '../../../services/form-nuevo-cliente/form-nuevo-cliente';
+import { urlApi } from '../../../services/url/url-api';
 
 const DatosCliente = () => {
   const [irAlHome, setIrAlHome] = useState(false);
@@ -29,17 +31,11 @@ const DatosCliente = () => {
       observaciones = inputObservaciones.value
     ;
       
-    fetch("http://localhost:3001/api/clientes", {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ nombre, telefono, email, observaciones })
-    })
+    enviarDatos(urlApi + '/api/clientes', nombre, telefono, email, observaciones)
     .then(res => res.ok ? setIrAlHome(true) : setIrAlHome(false))
   };
 
-  if(irAlHome) return <Navigate to='/' replace={true} />
+  if(irAlHome) return <Navigate to='/' replace={true} />;
 
   return (
     <form onSubmit={ handleSubmit } className='datos-cliente--form'>
