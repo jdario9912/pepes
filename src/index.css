@@ -8,14 +8,15 @@
   --blanco: #ffffff;
   --blanco2: #e6e6e6; 
   --blanco3: #e6e6e69e; 
+  --blanco5: #e6e6e640;
   --blanco4: #e6e6e62b;
-  --blanco5: #e6e6e640 
   --magenta: #FF0090;
   --magenta50: #ff009080;
   --amarillo: #FFFF00;
   --amarillo25: #FFFF00bb;
   --amarillo50: #FFFF0080;
   --cyan: #00FFFF;
+  --cyan75: #00ffffbb;
   --cyan50: #00FFFF80;
   --error: #ff2929;
   --verde: rgb(19, 152, 19);

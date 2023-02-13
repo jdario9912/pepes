@@ -7,6 +7,7 @@ import { InputTextModel } from '../../../models/input-text-model';
 import '../../../styles/buscar-clientes.css';
 import { AiOutlineSearch } from "react-icons/ai";
 import { ClientesCompContext } from '../clientes-comp';
+import { urlApi } from '../../../services/url/url-api';
 
 const BuscarClientes = () => {
   const { setClientes } = useContext(ClientesCompContext);
@@ -16,7 +17,7 @@ const BuscarClientes = () => {
     const inputCliente = document.querySelector('[data="cliente"]');
     const nombre = inputCliente.value;
     
-    fetch(`http://localhost:3001/api/clientes?nombre=${nombre}`)
+    fetch(`${urlApi}/api/clientes?nombre=${nombre}`)
       .then(res => res.json())
       .then(data => setClientes(data))
     ;

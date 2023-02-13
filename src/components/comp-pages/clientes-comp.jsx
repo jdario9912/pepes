@@ -11,7 +11,7 @@ export const ClientesCompContext = createContext();
 
 const ClientesComp = () => {
   const [mostrarListaClientes, setMostrarListaClientes] = useState(true);
-  const [clientes, setClientes] = useState(null);
+  const [clientes, setClientes] = useState([]);
 
   const verListaClientes = () => setMostrarListaClientes(true);
 

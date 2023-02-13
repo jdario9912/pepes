@@ -4,17 +4,18 @@ import { VscPerson } from "react-icons/vsc";
 import { BsTelephoneOutbound } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 
-const InfoCliente = ({ props }) => {
+const InfoCliente = ({props}) => {
+  const { nombre, telefono, email, observaciones} = props;
   return (
     <div>
       <h3>Datos del cliente</h3>
       <div className="info-cliente--datos-personales-container">
         <div className="info-cliente--nombre-telefono-email">
-          <p><VscPerson /> { props.nombre }</p>
-          <p><BsTelephoneOutbound /> { props.telefono }</p>
-          <p><MdAlternateEmail /> { props.email }</p>
+          <p><VscPerson /> { nombre }</p>
+          <p><BsTelephoneOutbound /> { telefono }</p>
+          <p><MdAlternateEmail /> { email }</p>
         </div>
-        <p>Observaciones: { props.observaciones }</p>
+        <p>Observaciones: { observaciones }</p>
       </div>
     </div>
   );

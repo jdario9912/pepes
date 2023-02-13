@@ -43,7 +43,7 @@
 }
 
 .nav--ul li:last-child{
-  /* background: none; */
+  background: none;
   border: none;
   display: flex;
   justify-content: center;

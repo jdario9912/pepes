@@ -1,6 +1,5 @@
 export class DatosClienteModel{
-  constructor(id, nombre, telefono, email, observaciones){
-    this.id = id;
+  constructor(nombre, telefono, email, observaciones){
     this.nombre = nombre;
     this.telefono = telefono;
     this.email = email;

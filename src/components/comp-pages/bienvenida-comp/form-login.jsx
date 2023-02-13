@@ -14,12 +14,14 @@ import { urlApi } from '../../../services/url/url-api';
 import { TbUserCircle } from "react-icons/tb";
 import { CgKeyhole } from "react-icons/cg";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
 const FormLogin = () => {
   const { setUsuarioLogeado } = useContext(AppContext);
   const [errorLogin, setErrorLogin] = useState(false);
   const [camposVacios, setCamposVacios] = useState(false);
   const [mensajeServidor, setMensajeServidor] = useState('');
+  const navigate = useNavigate();
   
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -38,6 +40,7 @@ const FormLogin = () => {
             setUsuarioLogeado(auth);
             setSessionLocal(auth, nickname, permisions);
             if(auth) resetInputs(inputNickname, inputPassword);
+            navigate('/ordenes-pendientes');
           } else {
             setErrorLogin(true);
             setMensajeServidor(mensaje);

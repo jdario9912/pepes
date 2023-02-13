@@ -14,7 +14,8 @@ const MostrarClientes = () => {
   useEffect(() => {
     fetch(urlApi + '/api/clientes')
       .then(res => res.json())
-      .then(data => setClientes(data));
+      .then(data => setClientes(data))
+      .catch(err => console.log(err));
   }, []);
   
   if (clientes)

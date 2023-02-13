@@ -1,11 +1,8 @@
-import React, {
-  useContext
-} from 'react';
-import { AppContext } from '../../app';
+import React from 'react';
 import '../../../styles/atendido-por.css';
 
 const AtendidoPor = () => {
-  const { usuarioActual } = useContext(AppContext);
+  const usuarioActual = localStorage.getItem('usuario-actual');
   return (
     <>
       <p className='atendido-por--p'>Atendido por: <span>{ usuarioActual }</span></p>

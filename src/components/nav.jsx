@@ -8,6 +8,7 @@ import { MdPendingActions, MdPostAdd } from "react-icons/md";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { AppContext } from './app';
 import { SlScreenDesktop } from "react-icons/sl";
+import { BsPeople } from "react-icons/bs";
 
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
@@ -23,6 +24,12 @@ const Nav = () => {
       <p className="nav--p">Opciones</p>
       <nav className='nav' onClick={ handleClick }>
         <ul className='nav--ul'>
+          <li>
+            <BsPeople />
+            <NavLink style={ linkActivo } to='/clientes'>
+              Clientes
+            </NavLink>
+          </li>
           <li>
             <MdPendingActions />
             <NavLink style={ linkActivo } to='/ordenes-pendientes'>
@@ -43,7 +50,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink style={ linkActivo } to='/'>
-              Vaciar <span><SlScreenDesktop /></span>
+              Limpiar <span><SlScreenDesktop /></span>
             </NavLink>
           </li>
         </ul>

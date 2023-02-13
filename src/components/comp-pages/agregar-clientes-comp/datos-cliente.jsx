@@ -15,6 +15,8 @@ import { urlApi } from '../../../services/url/url-api';
 
 const DatosCliente = () => {
   const [irAlHome, setIrAlHome] = useState(false);
+  const [mensajeServidor, setMensajeServidor] = useState(null);
+  const [idCliente, setIdCliente] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,10 +34,17 @@ const DatosCliente = () => {
     ;
       
     enviarDatos(urlApi + '/api/clientes', nombre, telefono, email, observaciones)
-    .then(res => res.ok ? setIrAlHome(true) : setIrAlHome(false))
+    .then(res => res.json())
+    .then(({ mensaje, clienteRegistrado, idCliente }) => {
+      setMensajeServidor(mensaje);
+      if(clienteRegistrado) window.alert('Cliente registrado con exito');
+      setIrAlHome(clienteRegistrado);
+      setIdCliente(idCliente);
+    })
+    .catch(err => console.log(err))
   };
 
-  if(irAlHome) return <Navigate to='/' replace={true} />;
+  if(irAlHome) return <Navigate to={`/nueva-orden/${idCliente}`} />;
 
   return (
     <form onSubmit={ handleSubmit } className='datos-cliente--form'>
@@ -46,6 +55,7 @@ const DatosCliente = () => {
         <TextArea props={ new TextAreaModel('', 'datos-cliente--label', '', 'Observaciones', 'datos-cliente--text-area', 'observaciones') } />
       </div>
       <div className="datos-cliente--btn-submit-container">
+        { mensajeServidor ? <span className='datos-cliente--msj-error'>{ mensajeServidor }</span> : null }
         <InputSubmit texto='Guardar' estilos='datos-cliente--btn-submint' />
       </div>
     </form>

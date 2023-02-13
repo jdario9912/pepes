@@ -6,4 +6,4 @@ export const enviarDatos = (url, nombre, telefono, email, observaciones) => {
     },
     body: JSON.stringify({nombre, telefono, email, observaciones})
   })
-}
+};
