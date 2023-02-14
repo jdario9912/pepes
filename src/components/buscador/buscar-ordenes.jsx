@@ -1,21 +1,16 @@
-import React, {
-  useContext
-} from 'react';
-import BtnSubmit from '../../btn-submit';
-import InputNumber from '../../input-number';
-import { InputNumberModel } from '../../../models/input-number-model';
-import { OrdenesCompContext } from '../ordenes-comp';
+import React from 'react';
+import BtnSubmit from '../btn-submit';
+import InputNumber from '../input-number';
+import { InputNumberModel } from '../../models/input-number-model';
 import { AiOutlineSearch } from "react-icons/ai";
-import '../../../styles/buscar-ordenes.css';
+import '../../styles/buscar-ordenes.css';
 
 const BuscarOrdenes = () => {
-  const { setMostrarListaOrdenes } = useContext(OrdenesCompContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const inputCliente = document.querySelector('[data="cliente"]');
     inputCliente.value = '';
-    setMostrarListaOrdenes(false);
   }
 
   return (

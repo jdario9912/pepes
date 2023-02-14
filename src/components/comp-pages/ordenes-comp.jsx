@@ -2,7 +2,6 @@ import React, {
   createContext,
   useState
 } from 'react';
-import BuscarOrdenes from '../comp-pages/ordenes-comp/buscar-ordenes';
 import MostrarOrdenes from '../comp-pages/ordenes-comp/mostrar-ordenes';
 import Button from '../button';
 import '../../styles/ordenes-comp.css';
@@ -20,7 +19,6 @@ const OrdenesComp = () => {
         <h2>Ordenes</h2>
         <div className="ordenes-comp--lista-buscar-container">
           <Button texto='Ver lista' estilos='ordenes-comp--btn-ver-lista' onClick={ verListaOrdenes } />
-          <BuscarOrdenes />
         </div>
         <MostrarOrdenes />
       </div>

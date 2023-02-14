@@ -1,16 +1,13 @@
-import React, {
-  useContext
-} from 'react';
-import BtnSubmit from '../../btn-submit';
-import InputText from '../../input-text';
-import { InputTextModel } from '../../../models/input-text-model';
-import '../../../styles/buscar-clientes.css';
+import React from 'react';
+import BtnSubmit from '../btn-submit';
+import InputText from '../input-text';
+import { InputTextModel } from '../../models/input-text-model';
+import '../../styles/buscar-clientes.css';
 import { AiOutlineSearch } from "react-icons/ai";
-import { ClientesCompContext } from '../clientes-comp';
-import { urlApi } from '../../../services/url/url-api';
+import { urlApi } from '../../services/url/url-api';
 
 const BuscarClientes = () => {
-  const { setClientes } = useContext(ClientesCompContext);
+  // const { setClientes } = useContext(ClientesCompContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +16,8 @@ const BuscarClientes = () => {
     
     fetch(`${urlApi}/api/clientes?nombre=${nombre}`)
       .then(res => res.json())
-      .then(data => setClientes(data))
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
     ;
   }
   

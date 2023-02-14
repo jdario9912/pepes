@@ -1,6 +1,6 @@
 .agregar-cliente-comp--container{
   align-items: center;
-  align-self: flex-end;
+  align-self: flex-start;
   border-radius: 17px / 20px;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 @media only screen and (max-width: 991px){
   .agregar-cliente-comp--container{
     height: auto;
-    align-self: flex-start;
+    align-self: center;
     box-sizing: border-box;
     margin-top: calc(32px + 2rem);
   }

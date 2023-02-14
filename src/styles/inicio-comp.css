@@ -1,8 +1,11 @@
 .inicio-comp--container{
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   width: 100%;
   overflow: scroll;
+  box-sizing: border-box;
+  justify-content: space-between;
 }
 
 .inicio-comp--container::-webkit-scrollbar {
@@ -22,7 +25,8 @@
 @media only screen and (max-width: 991px) {
   .inicio-comp--container{
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     box-sizing: border-box;
+    align-items: center;
   }
 }
