@@ -7,9 +7,8 @@ import { activeStyleTools } from '../models/nav-link-active-style-model';
 const SaludoUsuario = () => {
   const usuarioActual = localStorage.getItem('usuario-actual');
   const avatar = `https://ui-avatars.com/api/?name=${usuarioActual}&rounded=true`;
-  const permisos = JSON.parse(localStorage.getItem('permisos'));
   const iconoToolsActivo = ({ isActive }) => isActive ? activeStyleTools : null;
-
+  const permisos = JSON.parse(localStorage.getItem('permisos'));
   return (
     <div className='saludo-usuario--container'>
       <div className="saludo-usuario--avatar-texto-container">
@@ -19,7 +18,7 @@ const SaludoUsuario = () => {
         <p className='saludo-usuario--texto'>Hola! <br /> <strong>{ usuarioActual }</strong></p>
       </div>
       { permisos ? 
-        <NavLink style={ iconoToolsActivo } to='/gestionar-empleados'>
+        <NavLink style={ iconoToolsActivo } to='/opciones-admin'>
           <AiOutlineSetting />
         </NavLink> : 
         null
