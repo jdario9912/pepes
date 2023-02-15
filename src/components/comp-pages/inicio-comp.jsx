@@ -13,7 +13,7 @@ const InicioComp = () => {
     <div className='inicio-comp--container'>
       <Buscador />
       {
-        busqueda ? <ResultadosBusqueda /> : null
+        busqueda ? <ResultadosBusqueda dato={ busqueda } /> : null
       }
       <Outlet />
     </div>

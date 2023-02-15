@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Inicio, AgregarCliente, NuevaOrden, NotFound, OrdenesPendientes, OpcionesAdmin, Clientes } from '../pages';
+import { Inicio, AgregarCliente, NuevaOrden, NotFound, OrdenesPendientes, OpcionesAdmin, Clientes, Ordenes } from '../pages';
 
 const EnrutadorComp = () => {
   const permisos = JSON.parse(localStorage.getItem('permisos'));
@@ -13,6 +13,7 @@ const EnrutadorComp = () => {
         <Route path='nueva-orden/:idCliente' element={ <NuevaOrden /> } />
         <Route path='opciones-admin' element={ permisos ? <OpcionesAdmin /> : <Navigate to='/' replace={true} /> } />
         <Route path='clientes' element={ <Clientes />} />
+        <Route path='ordenes' element={ <Ordenes /> } />
       </Route>
       <Route path='*' element={ <NotFound /> } />
     </Routes>

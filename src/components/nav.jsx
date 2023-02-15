@@ -24,12 +24,12 @@ const Nav = () => {
       <p className="nav--p">Opciones</p>
       <nav className='nav' onClick={ handleClick }>
         <ul className='nav--ul'>
-          <li>
+          {/* <li>
             <BsPeople />
             <NavLink style={ linkActivo } to='/clientes'>
               Clientes
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <MdPendingActions />
             <NavLink style={ linkActivo } to='/ordenes-pendientes'>
@@ -42,12 +42,12 @@ const Nav = () => {
               Nuevo cliente
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <MdPostAdd />
             <NavLink style={ linkActivo } to='/nueva-orden'>
               Nueva orden
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink style={ linkActivo } to='/'>
               Limpiar <span><SlScreenDesktop /></span>

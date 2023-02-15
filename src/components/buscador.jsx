@@ -8,8 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const Buscador = () => {
   const navigate = useNavigate();
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     const busqueda = document.querySelector('[data-busqueda]');
     navigate(`/?busqueda=${busqueda.value}`);
   }
