@@ -1,5 +1,6 @@
 .clientes-comp--container{
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
+  border-radius: 17px / 20px;
 }
 
 .clientes-comp--container h2{

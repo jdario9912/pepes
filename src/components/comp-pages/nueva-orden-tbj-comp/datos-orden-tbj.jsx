@@ -18,10 +18,15 @@ export const DatosOrdenTbjContext = createContext();
 
 const DatosOrdenTbj = () => {
   const [tipoTrabajo, setTipoTrabajo] = useState('');
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+  }
 
   return (
     <DatosOrdenTbjContext.Provider value={{ tipoTrabajo, setTipoTrabajo }}>
-      <div>
+      <form onSubmit={ handleSubmit }>
         <h3>Datos de la Orden</h3>
         <div className="datos-orden-tbj--cabecera">
           <AtendidoPor />
@@ -35,7 +40,7 @@ const DatosOrdenTbj = () => {
         <DetallePago />
         <EstadoOrdenTbj />
         <ImprimirOrden />
-      </div>
+      </form>
     </DatosOrdenTbjContext.Provider>
   );
 }

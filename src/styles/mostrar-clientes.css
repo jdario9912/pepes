@@ -1,5 +1,5 @@
 .mostrar-clientes--table-container{
-  max-height: 200px;
+  max-height: 70vh;
   width: 100%;
   overflow: auto;
   margin-top: 1rem;
@@ -12,7 +12,7 @@
 
 .mostrar-clientes--table-container::-webkit-scrollbar {
   width: 4px;
-  height: 4px;
+  height: 7px;
 }
 
 .mostrar-clientes--table-container::-webkit-scrollbar-track {
@@ -22,6 +22,10 @@
 .mostrar-clientes--table-container::-webkit-scrollbar-thumb {
   background-color: #666666;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.mostrar-clientes--table-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--amarillo);    /* color of the scroll thumb */
 }
 
 @media only screen and (max-width: 991px){

@@ -12,17 +12,16 @@ const NuevaOrdenTbjComp = () => {
     fetch(urlApi + `/api/clientes/${idCliente}`)
       .then(res => res.json())
       .then(({ok, cliente}) => {
-          if(ok){
-            setClienteS(cliente)
-          }
+        if(ok){
+          setClienteS(cliente)
         }
-      )
+      })
   }, []);
 
   return (
     <div className='nueva-orden-tbj-comp--container'>
       <h2>Nueva Orden</h2>
-        <InfoCliente props={ clienteS } />
+      <InfoCliente props={ clienteS } />
       <DatosOrdenTbj />
     </div>
   );

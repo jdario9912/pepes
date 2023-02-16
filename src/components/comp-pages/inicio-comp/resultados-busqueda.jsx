@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 import { urlApi } from '../../../services/url/url-api';
-import { Link } from 'react-router-dom';
+import TablaClientes from './resultados-busqueda/tabla-clientes/tabla-clientes';
+import TablaOrden from './resultados-busqueda/tabla-orden/tabla-orden';
+export const TablaOrdenContext = createContext();
+export const TablaClientesContext = createContext();
+
 
 const ResultadosBusqueda = ({ dato }) => {
   const [numerico, setNumerico] = useState(false);
@@ -23,64 +27,24 @@ const ResultadosBusqueda = ({ dato }) => {
     return( <p>{alerta}</p>)
 
   if(numerico){
-    const { Orden, Cliente, Creado, Estado, Tipo, Fecha, Hora } = orden;
     return (
-      <table>
-        <thead className='t-head'>
-          <tr className='t-head--tr'>
-            <th>Orden</th>
-            <th>Cliente</th>
-            <th>Creado</th>
-            <th>Estado</th>
-            <th>Tipo Trabajo</th>
-            <th>Fecha Entrega</th>
-            <th>Hora Entrega</th>
-          </tr>
-        </thead>
-        <tbody className='t-body'>
-          <tr className='t-body--tr'>
-            <td>{ Orden }</td>
-            <td>{ Cliente }</td>
-            <td>{ Creado }</td>
-            <td>{ Estado }</td>
-            <td>{ Tipo }</td>
-            <td>{ Fecha }</td>
-            <td>{ Hora }hs</td>
-          </tr>
-        </tbody>
-      </table>
+      <TablaOrdenContext.Provider value={{ orden }}>
+        {
+          Object.keys(orden).length > 0 ?
+          <TablaOrden /> :
+          <p>Cargando resultado...</p>
+        }
+      </TablaOrdenContext.Provider>
     );
   } else {
     return(
-      <table>
-        <thead className='t-head'>
-          <tr className='t-head--tr'>
-            <th>Nombre</th>
-            <th>Teléfono</th>
-            <th>Mail</th>
-            <th>Observaciones</th>
-            <th>Ordenes pend.</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody className='t-body'>
+      <TablaClientesContext.Provider value={{ clientes }}>
         {
-          clientes.map(({ id, nombre, telefono, email, observaciones }) =>
-            <tr className='t-body--tr' key={ id }>
-              <td>{ nombre }</td>
-              <td>{ telefono }</td>
-              <td>{ email }</td>
-              <td>{ observaciones }</td>
-              <td>Falta este dato</td>
-              <td>
-                <Link to='#'>Ver ordenes</Link>
-                <Link to='#'>Editar</Link>
-              </td>
-            </tr>          
-          )
+          clientes.length > 0 ?
+            <TablaClientes /> :
+            <p>Cargando reslutados...</p>
         }
-      </tbody>
-    </table>
+      </TablaClientesContext.Provider>
     )
   }
 }

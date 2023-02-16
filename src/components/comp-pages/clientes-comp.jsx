@@ -13,7 +13,7 @@ const ClientesComp = () => {
 
   return (
     <ClientesCompContext.Provider value={{ mostrarListaClientes, setMostrarListaClientes, clientes, setClientes }}>
-      <div className='clientes-comp--container'>
+      <div className='clientes-comp--container modulo'>
         <h2>Clientes</h2>
         <MostrarClientes />
       </div>

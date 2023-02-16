@@ -24,16 +24,16 @@ const Nav = () => {
       <p className="nav--p">Opciones</p>
       <nav className='nav' onClick={ handleClick }>
         <ul className='nav--ul'>
-          {/* <li>
-            <BsPeople />
-            <NavLink style={ linkActivo } to='/clientes'>
-              Clientes
-            </NavLink>
-          </li> */}
           <li>
             <MdPendingActions />
             <NavLink style={ linkActivo } to='/ordenes-pendientes'>
               Pendientes
+            </NavLink>
+          </li>
+          <li>
+            <BsPeople />
+            <NavLink style={ linkActivo } to='/clientes'>
+              Clientes
             </NavLink>
           </li>
           <li>

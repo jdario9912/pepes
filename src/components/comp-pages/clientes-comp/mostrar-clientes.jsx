@@ -1,12 +1,15 @@
 import React, {
   useContext,
   useEffect,
+  createContext
 } from 'react';
 import TBody from './mostrar-clientes/t-body';
 import THead from './mostrar-clientes/t-head';
 import '../../../styles/mostrar-clientes.css';
 import { ClientesCompContext } from '../clientes-comp';
 import { urlApi } from '../../../services/url/url-api';
+import Tabla from './mostrar-clientes/tabla';
+export const MostrarClientesContext = createContext();
 
 const MostrarClientes = () => {
   const { setClientes, clientes } = useContext(ClientesCompContext);  
@@ -18,17 +21,17 @@ const MostrarClientes = () => {
       .catch(err => console.log(err));
   }, []);
   
-  if (clientes)
-    return (
+  return (
+    <MostrarClientesContext.Provider value={{ clientes }}>
       <div className="mostrar-clientes--table-container">
-        <table className='mostrar-clientes--table'>
-          <THead />
-          <TBody clientes={ clientes } />
-        </table>
+        {
+          clientes.length > 0 ?
+            <Tabla /> :
+            <p>Cargando clientes...</p>
+        }
       </div>
-    );  
-  else
-    return(<p>Cargando clientes...</p>);
+    </MostrarClientesContext.Provider>
+  );
   
 }
 
