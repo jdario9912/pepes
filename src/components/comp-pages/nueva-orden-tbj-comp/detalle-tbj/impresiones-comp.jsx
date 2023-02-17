@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import InputText from '../../../input-text';
 import Abrochado from './impresiones-comp/abrochado';
 import Anillado from './impresiones-comp/anillado';
@@ -16,12 +16,23 @@ import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
 import EstadoOrdenTbj from '../estado-orden-tbj';
-import ImprimirOrden from '../imprimir-orden';
+import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
+import { nro_orden } from '../../../../services/numero-orden/numero-orden';
 
 const ImpresionesComp = () => {
+  const { clienteS } = useContext(NuevaOrdenTbjCompContext);
+
   const handleSubmint = (e) => {
-    console.log(e.target);
-  }
+    e.preventDefault();
+    const { id } = clienteS;
+    
+    
+    console.table([
+      ['id_cliente', id],
+      ['nro_orden', nro_orden()]
+    ]);
+  };
+
   return (
     <form onSubmit={ handleSubmint }>
       <h5>Impresiones</h5>
@@ -40,7 +51,7 @@ const ImpresionesComp = () => {
       <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
       <DetallePago />
       <EstadoOrdenTbj />
-      <ImprimirOrden />
+      <button type="submit">Guardar</button>
     </form>
   );
 }
