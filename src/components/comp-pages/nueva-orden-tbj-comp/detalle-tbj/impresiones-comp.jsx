@@ -57,7 +57,7 @@ const ImpresionesComp = () => {
       entrega: entrega
     }
 
-    crearImpresiones(urlApi, body)
+    crearImpresiones(urlApi + '/api/impresiones', body)
       .then(res => res.json())
       .then(data => console.log(data))
       .catch(e => console.log(e))
