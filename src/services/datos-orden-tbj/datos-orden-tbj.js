@@ -8,7 +8,7 @@ export const nro_orden = () => {
   const mes = new Date().getMonth();
   const orden = `${year}${mes}${hoy}${minuto}${segundo}${milisegundos}`;
 
-  return parseInt(orden);
+  return orden;
 };
 
 export const fecha_creacion = () => {

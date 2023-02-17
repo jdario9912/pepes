@@ -1,14 +1,24 @@
-import React from 'react';
-import InputRadio from '../../input-radio';
-import { InputRadioModel } from '../../../models/input-radio-model';
+import React, { useContext} from 'react';
+import { NuevaOrdenTbjCompContext } from '../nueva-orden-tbj-comp';
 
 const Muestra = () => {
+  const { setMuestra } = useContext(NuevaOrdenTbjCompContext);
+
+  const handleClick = (e) => {
+    setMuestra(e.target.value);
+  }
   return (
-    <fieldset className='input-radio--fieldset'>
+    <fieldset className='input-radio--fieldset' data="muestra">
       <legend className='input-radio--legend'>Muestra:</legend>
       <div className='input-radio--inputs-container'>
-        <InputRadio props={ new InputRadioModel('muestra', 'muestra-si', 'Si') } />
-        <InputRadio props={ new InputRadioModel('muestra', 'muestra-no', 'No') } />
+        <label onClick={ handleClick }>
+          Si
+          <input type="radio" name="muestra" id="muestra-si" value='Si' onClick={ handleClick } />  
+        </label>        
+        <label onClick={ handleClick }>
+          No
+          <input type="radio" name="muestra" id="muestra-no" value='No' onClick={ handleClick } />
+        </label>        
       </div>
     </fieldset>
   );
