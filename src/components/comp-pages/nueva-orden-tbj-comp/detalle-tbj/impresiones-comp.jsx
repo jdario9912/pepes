@@ -17,7 +17,7 @@ import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
 import EstadoOrdenTbj from '../estado-orden-tbj';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
-import { nro_orden } from '../../../../services/numero-orden/numero-orden';
+import { fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 
 const ImpresionesComp = () => {
   const { clienteS } = useContext(NuevaOrdenTbjCompContext);
@@ -25,11 +25,14 @@ const ImpresionesComp = () => {
   const handleSubmint = (e) => {
     e.preventDefault();
     const { id } = clienteS;
-    
+    const fecha = document.querySelector('[data="fecha"]').value;
     
     console.table([
       ['id_cliente', id],
-      ['nro_orden', nro_orden()]
+      ['nro_orden', nro_orden()],
+      ['fecha_creacion', fecha_creacion()],
+      ['atendido_por', localStorage.getItem('usuario-actual')],
+      ['fecha_entrega', formatear_fecha(fecha)]
     ]);
   };
 
