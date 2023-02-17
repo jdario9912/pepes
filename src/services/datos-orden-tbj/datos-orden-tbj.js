@@ -6,9 +6,8 @@ export const nro_orden = () => {
   const year = yearFull.toString().slice(2,4);
   const hoy = new Date().getDate();
   const mes = new Date().getMonth();
-  const orden = `${year}${mes}${hoy}${minuto}${segundo}${milisegundos}`;
 
-  return orden;
+  return `${year}${mes}${hoy}${minuto}${segundo}${milisegundos}`;
 };
 
 export const fecha_creacion = () => {

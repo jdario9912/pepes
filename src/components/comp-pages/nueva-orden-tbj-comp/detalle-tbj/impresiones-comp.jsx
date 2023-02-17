@@ -18,11 +18,13 @@ import DetallePago from '../detalle-pago';
 import EstadoOrdenTbj from '../estado-orden-tbj';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
 import { fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
+import { urlApi } from '../../../../services/url/url-api';
+import { crearImpresiones } from '../../../../services/form-nueva-orden/impresiones';
 
 const ImpresionesComp = () => {
   const { clienteS, muestra, faz, orientacion, anillado, abrochado, corte } = useContext(NuevaOrdenTbjCompContext);
 
-  const handleSubmint = (e) => {
+  const handleSubmint = async (e) => {
     e.preventDefault();
     const { id } = clienteS;
     const fecha = document.querySelector('[data="fecha"]').value;
@@ -34,27 +36,32 @@ const ImpresionesComp = () => {
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
     
-    
-    console.table([
-      ['id_cliente', id],
-      ['nro_orden', nro_orden()],
-      ['fecha_creacion', fecha_creacion()],
-      ['atendido_por', localStorage.getItem('usuario-actual')],
-      ['fecha_entrega', formatear_fecha(fecha)],
-      ['hora_entrega', hora],
-      ['muestra', muestra],
-      ['ubicacion_archivo', ubicacionArchivo],
-      ['faz', faz],
-      ['tipo_papel', tipoPapel],
-      ['tamano_papel', tamanoPapel],
-      ['orientacion', orientacion],
-      ['anillado', anillado],
-      ['abrochado', abrochado],
-      ['corte', corte],
-      ['observaciones', observaciones],
-      ['total', total],
-      ['entrega', entrega]
-    ]);
+    const body = {
+      id_cliente: id,
+      nro_orden: nro_orden(),
+      fecha_creacion: fecha_creacion(),
+      atendido_por: localStorage.getItem('usuario-actual'),
+      fecha_entrega: formatear_fecha(fecha),
+      hora_entrega: hora,
+      muestra: muestra,
+      ubicacion_archivo: ubicacionArchivo,
+      faz: faz,
+      tipo_papel: tipoPapel,
+      tamano_papel: tamanoPapel,
+      orientacion: orientacion,
+      anillado: anillado,
+      abrochado: abrochado,
+      corte: corte,
+      observaciones: observaciones,
+      total: total,
+      entrega: entrega
+    }
+
+    crearImpresiones(urlApi, body)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(e => console.log(e))
+    ;
   };
 
   return (
