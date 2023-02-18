@@ -11,11 +11,11 @@ export const nro_orden = () => {
 };
 
 export const fecha_creacion = () => {
-  const dia = new Date().getDay();
-  const mes = new Date().getMonth();
+  const dia = new Date().getDate();
+  let mes = new Date().getMonth("MM");
   const year = new Date().getFullYear();
 
-  return `${dia}/${mes}/${year}`;
+  return `${dia}/${mes + 1}/${year}`;
 }
 
 export const formatear_fecha = (fecha) => {
