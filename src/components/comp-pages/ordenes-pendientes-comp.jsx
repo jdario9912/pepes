@@ -4,7 +4,7 @@ import '../../styles/ordenes-pendientes-comp.css';
 
 const OrdenesPendientesComp = () => {
   return (
-    <div className='ordenes-pendientes-comp--container'>
+    <div className='ordenes-pendientes-comp--container modulo'>
       <h2>Ordenes Pendientes</h2>
       <MostrarOrdenesPendientes />
     </div>
