@@ -18,6 +18,7 @@ const NuevaOrdenTbjComp = () => {
   const [anillado, setAnillado] = useState('');
   const [abrochado, setAbrochado] = useState('');
   const [corte, setCorte] = useState('');
+  const [estado, setEstado] = useState('');
 
   const reelegirTrabajo = () => {
     setVerBotonesTipoTrabajo (true);
@@ -45,7 +46,8 @@ const NuevaOrdenTbjComp = () => {
         orientacion, setOrientacion,
         anillado, setAnillado,
         abrochado, setAbrochado,
-        corte, setCorte
+        corte, setCorte,
+        estado, setEstado
        }}
     >
       <div className="nueva-orden-tbj-comp--container">

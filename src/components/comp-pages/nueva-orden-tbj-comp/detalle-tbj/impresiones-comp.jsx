@@ -22,7 +22,7 @@ import { urlApi } from '../../../../services/url/url-api';
 import { crearImpresiones } from '../../../../services/form-nueva-orden/impresiones';
 
 const ImpresionesComp = () => {
-  const { clienteS, muestra, faz, orientacion, anillado, abrochado, corte } = useContext(NuevaOrdenTbjCompContext);
+  const { clienteS, muestra, faz, orientacion, anillado, abrochado, corte, estado } = useContext(NuevaOrdenTbjCompContext);
 
   const handleSubmint = async (e) => {
     e.preventDefault();
@@ -54,7 +54,8 @@ const ImpresionesComp = () => {
       corte: corte,
       observaciones: observaciones,
       total: total,
-      entrega: entrega
+      entrega: entrega,
+      estado: estado
     }
 
     crearImpresiones(urlApi + '/api/impresiones', body)
