@@ -15,6 +15,7 @@ const TBody = ({ clientes }) => {
             <td>{ ordenesPendientes ? 'Si' : 'No' }</td>
             <td>
               <Link to='#'>Ver ordenes</Link>
+              <Link to={`nueva-orden/${id}`}>crear orden</Link>
               <Link to='#'>Editar</Link>
             </td>
           </tr>          

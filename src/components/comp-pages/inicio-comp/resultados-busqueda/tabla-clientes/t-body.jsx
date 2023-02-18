@@ -17,6 +17,7 @@ const TBody = () => {
               <td>
                 <Link to='#'>Ver ordenes</Link>
                 <Link to='#'>Editar</Link>
+                <Link to={`nueva-orden/${id}`}>crear orden</Link>
               </td>
             </tr>          
           )

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import InputText from '../../../input-text';
 import Abrochado from './impresiones-comp/abrochado';
 import Anillado from './impresiones-comp/anillado';
@@ -20,10 +20,13 @@ import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
 import { fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import { urlApi } from '../../../../services/url/url-api';
 import { crearImpresiones } from '../../../../services/form-nueva-orden/impresiones';
+import { useNavigate } from 'react-router-dom';
 
 const ImpresionesComp = () => {
+  const navigate = useNavigate();
   const { clienteS, muestra, faz, orientacion, anillado, abrochado, corte, estado } = useContext(NuevaOrdenTbjCompContext);
-
+  const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
+  
   const handleSubmint = async (e) => {
     e.preventDefault();
     const { id } = clienteS;
@@ -35,6 +38,8 @@ const ImpresionesComp = () => {
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
+    const btnSubmit = document.querySelector('[data="btn-submit"]');
+    
     
     const body = {
       id_cliente: id,
@@ -58,32 +63,47 @@ const ImpresionesComp = () => {
       estado: estado
     }
 
+    btnSubmit.setAttribute('disabled', true);
+
     crearImpresiones(urlApi + '/api/impresiones', body)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(({ registro, mensaje }) => {
+        btnSubmit.removeAttribute('disabled');
+        setRespuestaServidor({registro: registro, mensaje: mensaje});
+        if(registro) navigate('/');
+      })
       .catch(e => console.log(e))
     ;
   };
 
+  const handleChange = () => {
+    setRespuestaServidor({registro: false, mensaje: ''});
+  }
+
   return (
-    <form onSubmit={ handleSubmint }>
-      <h5>Impresiones</h5>
-      <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
-      <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
-      <Muestra />
-      <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
-      <Faz />
-      <InputText props={ new InputTextModel('Tipo: ', '', '', 'Ingresa tipo de papel', '', 'tipo-papel')} />
-      <TamanoPapel />
-      <Orientacion />
-      <Anillado />
-      <Abrochado />
-      <Corte />
-      <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
-      <DetallePago />
-      <EstadoOrdenTbj />
-      <button type="submit">Guardar</button>
-    </form>
+    <div>
+      <h2>Impresiones</h2>
+      <form onSubmit={ handleSubmint } method='POST' name='form-impresiones' onChange={ handleChange }>
+        <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
+        <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
+        <Muestra />
+        <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
+        <Faz />
+        <InputText props={ new InputTextModel('Tipo: ', '', '', 'Ingresa tipo de papel', '', 'tipo-papel')} />
+        <TamanoPapel />
+        <Orientacion />
+        <Anillado />
+        <Abrochado />
+        <Corte />
+        <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
+        <DetallePago />
+        <EstadoOrdenTbj />
+        <div>
+          { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+          <button type="submit" data='btn-submit'>Guardar</button>
+        </div>
+      </form>
+    </div>
   );
 }
 

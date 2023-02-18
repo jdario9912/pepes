@@ -1,13 +1,16 @@
 import React from 'react';
 import TBody from './t-body';
 import THead from './t-head';
+import '../../../../../styles/tabla-clientes-busqueda.css';
 
 const TablaClientes = () => {
   return (
-    <table>
-      <THead />
-      <TBody />
-    </table>
+    <div className="tabla-clientes--busqueda-container modulo">
+      <table>
+        <THead />
+        <TBody />
+      </table>
+    </div>
   );
 }
 
