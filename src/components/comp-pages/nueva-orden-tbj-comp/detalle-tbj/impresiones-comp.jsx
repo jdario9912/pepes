@@ -15,7 +15,6 @@ import { InputTimeModel } from '../../../../models/input-time-model';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
-import EstadoOrdenTbj from '../estado-orden-tbj';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
 import { fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import { urlApi } from '../../../../services/url/url-api';
@@ -24,7 +23,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ImpresionesComp = () => {
   const navigate = useNavigate();
-  const { clienteS, muestra, faz, orientacion, anillado, abrochado, corte, estado } = useContext(NuevaOrdenTbjCompContext);
+  const { clienteS, muestra, faz, orientacion, anillado, abrochado, corte } = useContext(NuevaOrdenTbjCompContext);
   const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
   
   const handleSubmint = async (e) => {
@@ -60,7 +59,7 @@ const ImpresionesComp = () => {
       observaciones: observaciones,
       total: total,
       entrega: entrega,
-      estado: estado
+      estado: "pendiente"
     }
 
     btnSubmit.setAttribute('disabled', true);
@@ -97,7 +96,6 @@ const ImpresionesComp = () => {
         <Corte />
         <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
         <DetallePago />
-        <EstadoOrdenTbj />
         <div>
           { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
           <button type="submit" data='btn-submit'>Guardar</button>

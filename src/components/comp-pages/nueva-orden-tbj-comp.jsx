@@ -8,7 +8,7 @@ import DetalleTbj from './nueva-orden-tbj-comp/detalle-tbj';
 export const NuevaOrdenTbjCompContext = createContext ();
 
 const NuevaOrdenTbjComp = () => {
-  const {idCliente} = useParams();
+  const { idCliente } = useParams();
   const [clienteS, setClienteS] = useState ({});
   const [tipoTrabajo, setTipoTrabajo] = useState ('');
   const [verBotonesTipoTrabajo, setVerBotonesTipoTrabajo] = useState (true);
@@ -18,7 +18,6 @@ const NuevaOrdenTbjComp = () => {
   const [anillado, setAnillado] = useState('');
   const [abrochado, setAbrochado] = useState('');
   const [corte, setCorte] = useState('');
-  const [estado, setEstado] = useState('');
 
   const reelegirTrabajo = () => {
     setVerBotonesTipoTrabajo (true);
@@ -47,7 +46,6 @@ const NuevaOrdenTbjComp = () => {
         anillado, setAnillado,
         abrochado, setAbrochado,
         corte, setCorte,
-        estado, setEstado
        }}
     >
       <div className="nueva-orden-tbj-comp--container">
