@@ -29,11 +29,6 @@
 }
 
 @media only screen and (max-width: 991px){
-  .mostrar-clientes--table-container{
-
-    /* overflow: scroll; */
-  }
-
   .mostrar-clientes--table{
     overflow: scroll;
   }

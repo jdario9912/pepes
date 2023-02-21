@@ -1,3 +1,22 @@
 .tabla-clientes--busqueda-container{
   border-radius: 17px / 20px;
+  overflow: scroll;
+}
+
+.tabla-clientes--busqueda-container::-webkit-scrollbar {
+  width: 4px;
+  height: 7px;
+}
+
+.tabla-clientes--busqueda-container::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.tabla-clientes--busqueda-container::-webkit-scrollbar-thumb {
+  background-color: #666666;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.tabla-clientes--busqueda-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--amarillo);    /* color of the scroll thumb */
 }

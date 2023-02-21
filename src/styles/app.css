@@ -10,3 +10,7 @@
   border: 0.1px solid var(--blanco4);
   backdrop-filter: blur(60px);
 }
+
+.not-action{
+  pointer-events: none;
+}

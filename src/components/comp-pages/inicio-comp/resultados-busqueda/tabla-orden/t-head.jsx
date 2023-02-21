@@ -8,9 +8,9 @@ const THead = () => {
         <th>Cliente</th>
         <th>Creado</th>
         <th>Estado</th>
-        <th>Tipo Trabajo</th>
-        <th>Fecha Entrega</th>
-        <th>Hora Entrega</th>
+        <th>Tipo</th>
+        <th>Fecha</th>
+        <th>Hora</th>
         <th>Acciones</th>
       </tr>
     </thead>
