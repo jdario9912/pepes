@@ -10,6 +10,11 @@
   padding: .5rem;
 }
 
+.t-body--tr td:last-child{
+  display: flex;
+  justify-content: space-around;
+}
+
 .t-body--tr a{
   margin-right: 10px;
 }
@@ -20,4 +25,8 @@
 
 .t-body--tr td a:hover{
   text-decoration: underline;
+}
+
+.t-body--form-actualizar-orden{
+  display: flex;
 }
