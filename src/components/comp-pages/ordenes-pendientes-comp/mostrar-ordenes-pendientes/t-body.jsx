@@ -1,7 +1,12 @@
 import React from 'react';
 import '../../../../styles/t-body.css';
+import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const TBody = ({ ordenesPendientes }) => {
+  const handleEditar = (e) => {
+    console.log(e.target);
+  }
   return (
     <tbody className='t-body'>
       {
@@ -13,6 +18,16 @@ const TBody = ({ ordenesPendientes }) => {
           <td>{ tipo_trabajo }</td>
           <td>{ fecha_entrega }</td>
           <td>{ hora_entrega }hs</td>
+          <td>
+            <Link to='#'>
+              <AiOutlineEye />
+            </Link>
+            <div>
+              <button onClick={ handleEditar } >
+                <AiOutlineEdit className='not-action' />
+              </button>
+            </div>
+          </td>
         </tr>        
         )
       }
