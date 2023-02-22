@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { TablaOrdenContext } from '../../resultados-busqueda';
 import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
-import { BiUpload } from "react-icons/bi";
 import { urlApi } from '../../../../../services/url/url-api';
 import { actualizaEstadoOrden } from '../../../../../services/form-actualiza-estado-orden/form-actualiza-estado-orden';
+import FormActualizarEstadoOrden from './form-actualizar-estado-orden';
 
 const TBody = () => {
   const navigate = useNavigate();
@@ -55,24 +55,15 @@ const TBody = () => {
             <AiOutlineEye />
           </Link>
           <div>
-              {
-                verOpcionesEstado ?
-                  mensajeS ?
-                    <span>{ mensajeS }</span> :
-                    <form action="POST" onSubmit={ handleSubmit } className='t-body--form-actualizar-orden'>
-                      <input type="hidden" data="nro_orden" value={ Orden } />
-                      <input type="hidden" data="tipo_trabajo" value={ Tipo } />
-                      <select name="estado" id="estado">
-                        <option type="submit">enviado a proveedor</option>
-                        <option type="submit">realizado</option>
-                        <option type="submit">entregado</option>
-                      </select>
-                      <button type="submit" disabled={ isSubmiting }><BiUpload /></button>
-                    </form> :
-                    <button onClick={ handleEditar } >
-                      <AiOutlineEdit className='not-action' />
-                    </button>
-              }
+            {
+              verOpcionesEstado ?
+                mensajeS ?
+                  <span>{ mensajeS }</span> :
+                  <FormActualizarEstadoOrden handleSubmit={ handleSubmit } Orden={ Orden } Tipo={ Tipo } isSubmiting={ isSubmiting } /> :
+                  <button onClick={ handleEditar } >
+                    <AiOutlineEdit className='not-action' />
+                  </button>
+            }
           </div>
         </td>
       </tr>
