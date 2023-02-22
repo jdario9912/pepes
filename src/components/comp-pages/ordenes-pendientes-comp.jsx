@@ -18,7 +18,10 @@ const OrdenesPendientesComp = () => {
   useEffect(() => {
     fetch(urlApi + '/api/ordenes-pendientes')
       .then(res => res.json())
-      .then(data => setOrdenesPendientes(data))
+      .then(data => {
+        setOrdenesPendientes(data);
+        setReset(false);
+      })
       .catch(e => console.log(e))
   }, [reset]);
   

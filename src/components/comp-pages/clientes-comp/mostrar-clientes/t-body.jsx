@@ -11,12 +11,12 @@ const TBody = ({ clientes }) => {
             <td>{ nombre }</td>
             <td>{ telefono }</td>
             <td>{ email }</td>
-            <td>{ observaciones }</td>
+            <td className='td-observaciones'>{ observaciones }</td>
             <td>{ ordenesPendientes ? 'Si' : 'No' }</td>
             <td>
-              <Link to='#'>Ver ordenes</Link>
+              {/* <Link to='#'>Ver ordenes</Link> */}
               <Link to={`/nueva-orden/${id}`}>crear orden</Link>
-              <Link to='#'>Editar</Link>
+              {/* <Link to='#'>Editar</Link> */}
             </td>
           </tr>          
         )

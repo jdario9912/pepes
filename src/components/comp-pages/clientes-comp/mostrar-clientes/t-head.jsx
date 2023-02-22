@@ -9,7 +9,7 @@ const THead = () => {
         <th>Teléfono</th>
         <th>Mail</th>
         <th>Observaciones</th>
-        <th>Ordenes pend.</th>
+        <th>Pendientes</th>
         <th>Acciones</th>
       </tr>
     </thead>

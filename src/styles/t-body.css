@@ -10,6 +10,29 @@
   padding: .5rem;
 }
 
+.t-body--tr .td-observaciones{
+  max-width: 50px;
+  overflow-y: scroll;
+}
+
+.t-body--tr .td-observaciones::-webkit-scrollbar {
+  width: 0;
+  height: 6px;
+}
+
+.t-body--tr .td-observaciones::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.t-body--tr .td-observaciones::-webkit-scrollbar-thumb {
+  background-color: #666666;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.t-body--tr .td-observaciones:hover::-webkit-scrollbar-thumb {
+  background-color: var(--amarillo);    /* color of the scroll thumb */
+}
+
 .t-body--tr td:last-child{
   display: flex;
   justify-content: space-around;

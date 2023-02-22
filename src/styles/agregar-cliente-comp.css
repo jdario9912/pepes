@@ -6,7 +6,7 @@
   flex-direction: column;
   height: 80%;
   justify-content: space-between;
-  width: 40%;
+  width: 90%;
 }
 
 .agregar-cliente-comp--container h2{
@@ -23,12 +23,13 @@
     align-self: center;
     box-sizing: border-box;
     margin-top: calc(32px + 2rem);
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 767px){
   .agregar-cliente-comp--container{
-    width: auto;
+    /* width: auto; */
   }
 }
 
