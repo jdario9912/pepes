@@ -1,11 +1,11 @@
 import React from 'react';
 import { BiUpload } from "react-icons/bi";
 
-const FormActualizarEstadoOrden = ({ handleSubmit, Orden, Tipo, isSubmiting}) => {
+const FormActualizarEstadoOrden = ({ handleSubmit, orden, tipo, isSubmiting}) => {
   return (
     <form onSubmit={ handleSubmit } className='t-body--form-actualizar-orden'>
-      <input type="hidden" data="nro_orden" value={ Orden } />
-      <input type="hidden" data="tipo_trabajo" value={ Tipo } />
+      <input type="hidden" data="nro_orden" value={ orden } />
+      <input type="hidden" data="tipo_trabajo" value={ tipo } />
       <select name="estado" id="estado">
         <option type="submit">a proveedor</option>
         <option type="submit">realizado</option>

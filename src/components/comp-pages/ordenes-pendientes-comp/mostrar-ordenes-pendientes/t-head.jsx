@@ -7,7 +7,7 @@ const THead = () => {
       <tr className='t-head--tr'>
         <th>Nro.</th>
         <th>Cliente</th>
-        <th>Creación</th>
+        {/* <th>Creación</th> */}
         <th>Trabajo</th>
         <th>Entrega</th>
         <th>Hora</th>
