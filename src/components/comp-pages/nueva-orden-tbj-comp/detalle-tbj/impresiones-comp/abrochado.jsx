@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { NuevaOrdenTbjCompContext } from '../../../nueva-orden-tbj-comp';
+import { ImpresionesCompContext } from '../impresiones-comp';
 
 const Abrochado = () => {
-  const { setAbrochado } = useContext(NuevaOrdenTbjCompContext);
+  const { setAbrochado } = useContext(ImpresionesCompContext);
 
   const handleClick = (e) => {
     setAbrochado(e.target.value)

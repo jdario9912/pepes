@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { NuevaOrdenTbjCompContext } from '../../../nueva-orden-tbj-comp';
+import { ImpresionesCompContext } from '../impresiones-comp';
 
 const Orientacion = () => {
-  const { setOrientacion } = useContext(NuevaOrdenTbjCompContext);
+  const { setOrientacion } = useContext(ImpresionesCompContext);
   
   const handleClick = (e) => {
     setOrientacion(e.target.value);

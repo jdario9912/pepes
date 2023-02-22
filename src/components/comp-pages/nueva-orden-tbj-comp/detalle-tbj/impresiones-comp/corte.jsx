@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { NuevaOrdenTbjCompContext } from '../../../nueva-orden-tbj-comp';
+import { ImpresionesCompContext } from '../impresiones-comp';
 
 const Corte = () => {
-  const { setCorte } = useContext(NuevaOrdenTbjCompContext);
+  const { setCorte } = useContext(ImpresionesCompContext);
 
   const handleClick = (e) => {
     setCorte(e.target.value);

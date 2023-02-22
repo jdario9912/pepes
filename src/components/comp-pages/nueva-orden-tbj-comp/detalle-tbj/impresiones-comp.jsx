@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, createContext } from 'react';
 import InputText from '../../../input-text';
 import Abrochado from './impresiones-comp/abrochado';
 import Anillado from './impresiones-comp/anillado';
@@ -20,11 +20,17 @@ import { fecha_creacion, formatear_fecha, nro_orden } from '../../../../services
 import { urlApi } from '../../../../services/url/url-api';
 import { crearImpresiones } from '../../../../services/form-nueva-orden/impresiones';
 import { useNavigate } from 'react-router-dom';
+export const ImpresionesCompContext = createContext();
 
 const ImpresionesComp = () => {
   const navigate = useNavigate();
-  const { clienteS, muestra, faz, orientacion, anillado, abrochado, corte } = useContext(NuevaOrdenTbjCompContext);
+  const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
   const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
+  const [faz, setFaz] = useState('');
+  const [orientacion, setOrientacion] = useState('');
+  const [anillado, setAnillado] = useState('');
+  const [abrochado, setAbrochado] = useState('');
+  const [corte, setCorte] = useState('');
   
   const handleSubmint = async (e) => {
     e.preventDefault();
@@ -80,28 +86,30 @@ const ImpresionesComp = () => {
   }
 
   return (
-    <div>
-      <h2>Impresiones</h2>
-      <form onSubmit={ handleSubmint } method='POST' name='form-impresiones' onChange={ handleChange }>
-        <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
-        <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
-        <Muestra />
-        <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
-        <Faz />
-        <InputText props={ new InputTextModel('Tipo: ', '', '', 'Ingresa tipo de papel', '', 'tipo-papel')} />
-        <TamanoPapel />
-        <Orientacion />
-        <Anillado />
-        <Abrochado />
-        <Corte />
-        <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
-        <DetallePago />
-        <div>
-          { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-          <button type="submit" data='btn-submit'>Guardar</button>
-        </div>
-      </form>
-    </div>
+    <ImpresionesCompContext.Provider value={{ setFaz, setOrientacion, setAnillado, setAbrochado, setCorte }}>
+      <div>
+        <h2>Impresiones</h2>
+        <form onSubmit={ handleSubmint } name='form-impresiones' onChange={ handleChange }>
+          <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
+          <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
+          <Muestra />
+          <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
+          <Faz />
+          <InputText props={ new InputTextModel('Tipo: ', '', '', 'Ingresa tipo de papel', '', 'tipo-papel')} />
+          <TamanoPapel />
+          <Orientacion />
+          <Anillado />
+          <Abrochado />
+          <Corte />
+          <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
+          <DetallePago />
+          <div>
+            { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+            <button type="submit" data='btn-submit'>Guardar</button>
+          </div>
+        </form>
+      </div>
+    </ImpresionesCompContext.Provider>
   );
 }
 

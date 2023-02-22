@@ -13,11 +13,6 @@ const NuevaOrdenTbjComp = () => {
   const [tipoTrabajo, setTipoTrabajo] = useState ('');
   const [verBotonesTipoTrabajo, setVerBotonesTipoTrabajo] = useState (true);
   const [muestra, setMuestra] = useState('');
-  const [faz, setFaz] = useState('');
-  const [orientacion, setOrientacion] = useState('');
-  const [anillado, setAnillado] = useState('');
-  const [abrochado, setAbrochado] = useState('');
-  const [corte, setCorte] = useState('');
 
   const reelegirTrabajo = () => {
     setVerBotonesTipoTrabajo (true);
@@ -41,11 +36,6 @@ const NuevaOrdenTbjComp = () => {
         setVerBotonesTipoTrabajo, 
         clienteS, 
         muestra, setMuestra,
-        faz, setFaz,
-        orientacion, setOrientacion,
-        anillado, setAnillado,
-        abrochado, setAbrochado,
-        corte, setCorte,
        }}
     >
       <div className="nueva-orden-tbj-comp--container">

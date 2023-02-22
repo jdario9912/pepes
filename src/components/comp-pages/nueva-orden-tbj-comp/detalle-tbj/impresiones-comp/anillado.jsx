@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { NuevaOrdenTbjCompContext } from '../../../nueva-orden-tbj-comp';
+import { ImpresionesCompContext } from '../impresiones-comp';
 
 const Anillado = () => {
-  const { setAnillado } = useContext(NuevaOrdenTbjCompContext);
+  const { setAnillado } = useContext(ImpresionesCompContext);
 
   const handleClick = (e) => {
     setAnillado(e.target.value);

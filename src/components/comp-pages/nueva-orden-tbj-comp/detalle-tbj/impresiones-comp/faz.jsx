@@ -1,7 +1,8 @@
 import React, { useContext} from 'react';
-import { NuevaOrdenTbjCompContext } from '../../../nueva-orden-tbj-comp';
+import { ImpresionesCompContext } from '../impresiones-comp';
+
 const Faz = () => {
-  const { setFaz } = useContext(NuevaOrdenTbjCompContext);
+  const { setFaz } = useContext(ImpresionesCompContext);
   
   const handleClick = (e) => {
   setFaz(e.target.value);
