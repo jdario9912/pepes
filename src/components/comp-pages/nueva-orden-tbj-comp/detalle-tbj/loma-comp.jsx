@@ -20,10 +20,14 @@ import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
 import { fecha_creacion, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import { crearLoma } from '../../../../services/form-nueva-orden/loma';
 import { urlApi } from '../../../../services/url/url-api';
+import { useNavigate } from 'react-router-dom';
+
 export const LomaCompContext = createContext();
 
 const LomaComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
+  const navigate = useNavigate();
+  const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
   const [orientacion, setOrientacion] = useState('');
   const [corte, setCorte] = useState('');
   const [ojales, setOjales] = useState('');
@@ -41,6 +45,7 @@ const LomaComp = () => {
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
+    const btnSubmit = document.querySelector('[data="btn-submit"]');
 
     const body = {
       id_cliente: id,
@@ -63,19 +68,30 @@ const LomaComp = () => {
       entrega,
       estado: 'pendiente'
     }
+    
+    btnSubmit.setAttribute('disabled', true);
 
     await crearLoma(urlApi + '/api/loma', body)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(({ registro, mensaje }) => {
+        btnSubmit.removeAttribute('disabled');
+        setRespuestaServidor({registro: registro, mensaje: mensaje});
+        if(registro) navigate('/');
+      })
       .catch(e => console.log(e))
     ;
+
   };
+
+  const handleChange = () => {
+    setRespuestaServidor({registro: false, mensaje: ''});
+  }
 
   return (
     <LomaCompContext.Provider value={{setOrientacion, setCorte, setOjales, setTroquelado, setPortabaner}}>
       <div>
         <h5>Loma</h5>
-        <form onSubmit={ handleSubmit }>
+        <form name='form-loma' onSubmit={ handleSubmit } onChange={ handleChange }>
           <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
           <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
           <Muestra />
@@ -90,7 +106,8 @@ const LomaComp = () => {
           <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
           <DetallePago />
           <div>
-            <button type="submit">Guardar</button>
+            { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+            <button type="submit" data='btn-submit'>Guardar</button>
           </div>
         </form>
 

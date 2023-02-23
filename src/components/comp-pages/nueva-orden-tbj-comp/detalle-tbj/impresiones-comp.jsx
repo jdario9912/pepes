@@ -20,11 +20,12 @@ import { fecha_creacion, formatear_fecha, nro_orden } from '../../../../services
 import { urlApi } from '../../../../services/url/url-api';
 import { crearImpresiones } from '../../../../services/form-nueva-orden/impresiones';
 import { useNavigate } from 'react-router-dom';
+
 export const ImpresionesCompContext = createContext();
 
 const ImpresionesComp = () => {
-  const navigate = useNavigate();
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
+  const navigate = useNavigate();
   const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
   const [faz, setFaz] = useState('');
   const [orientacion, setOrientacion] = useState('');
@@ -44,7 +45,6 @@ const ImpresionesComp = () => {
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
-    
     
     const body = {
       id_cliente: id,
@@ -89,7 +89,7 @@ const ImpresionesComp = () => {
     <ImpresionesCompContext.Provider value={{ setFaz, setOrientacion, setAnillado, setAbrochado, setCorte }}>
       <div>
         <h2>Impresiones</h2>
-        <form onSubmit={ handleSubmint } name='form-impresiones' onChange={ handleChange }>
+        <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange }>
           <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
           <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
           <Muestra />
