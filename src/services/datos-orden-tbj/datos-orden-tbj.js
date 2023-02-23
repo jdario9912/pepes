@@ -16,8 +16,10 @@ export const fecha_creacion = () => {
   const year = new Date().getFullYear();
 
   return `${dia}/${mes + 1}/${year}`;
-}
+};
 
 export const formatear_fecha = (fecha) => {
   return fecha.split('-').reverse().join('/');
-}
+};
+
+export const atendido_por = () => localStorage.getItem('usuario-actual');

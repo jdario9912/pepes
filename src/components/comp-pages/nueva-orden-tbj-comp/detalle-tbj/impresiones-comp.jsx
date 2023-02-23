@@ -16,7 +16,7 @@ import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
-import { fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
+import { atendido_por, fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import { urlApi } from '../../../../services/url/url-api';
 import { crearImpresiones } from '../../../../services/form-nueva-orden/impresiones';
 import { useNavigate } from 'react-router-dom';
@@ -50,7 +50,7 @@ const ImpresionesComp = () => {
       id_cliente: id,
       nro_orden: nro_orden(),
       fecha_creacion: fecha_creacion(),
-      atendido_por: localStorage.getItem('usuario-actual'),
+      atendido_por: atendido_por(),
       fecha_entrega: formatear_fecha(fecha),
       hora_entrega: hora,
       muestra: muestra,
@@ -83,7 +83,7 @@ const ImpresionesComp = () => {
 
   const handleChange = () => {
     setRespuestaServidor({registro: false, mensaje: ''});
-  }
+  };
 
   return (
     <ImpresionesCompContext.Provider value={{ setFaz, setOrientacion, setAnillado, setAbrochado, setCorte }}>

@@ -17,7 +17,7 @@ import { TextAreaModel } from '../../../../models/text-area-model';
 import Material from './loma-comp/material';
 import Bolsillo from './loma-comp/bolsillo';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
-import { fecha_creacion, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
+import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import { crearLoma } from '../../../../services/form-nueva-orden/loma';
 import { urlApi } from '../../../../services/url/url-api';
 import { useNavigate } from 'react-router-dom';
@@ -51,7 +51,7 @@ const LomaComp = () => {
       id_cliente: id,
       nro_orden : nro_orden(),
       fecha_creacion: fecha_creacion(),
-      atendido_por: localStorage.getItem('usuario-actual'),
+      atendido_por: atendido_por(),
       fecha_entrega: fecha,
       hora,
       muestra,
