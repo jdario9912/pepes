@@ -1,16 +1,29 @@
 import React, { useContext } from 'react';
-import InputRadio from '../../../../input-radio';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
 import { TalonariosCompContext } from '../talonarios-comp';
 
 const TieneLogo = () => {
-  const { setMostrarUbicacionLogo } = useContext(TalonariosCompContext);
+  const { setTieneLogo, setMostrarUbicacionLogo } = useContext(TalonariosCompContext);
+
+  const handleClick = (e) => {
+    setTieneLogo(e.target.value);
+    if(e.target.value === 'Si')
+      setMostrarUbicacionLogo(true);
+    else 
+      setMostrarUbicacionLogo(false);
+  };
+  
   return (
     <fieldset>
       <legend>Tiene logo:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('tiene-logo', 'tiene-logo-si', 'Si', setMostrarUbicacionLogo)} />
-        <InputRadio props={ new InputRadioModel('tiene-logo', 'tiene-logo-no', 'No', setMostrarUbicacionLogo)} />
+        <label onClick={ handleClick }>
+          Si
+          <input type="radio" name="tiene-logo" value='Si' onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          No
+          <input type="radio" name="tiene-logo" value='No' onClick={ handleClick } />
+        </label>
       </div>
     </fieldset>
   );

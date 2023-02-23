@@ -1,16 +1,29 @@
 import React, { useContext } from 'react';
-import InputRadio from '../../../../input-radio';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
 import { TalonariosCompContext } from '../talonarios-comp';
 
 const Triplicado = () => {
-  const { setMostrarColorTriplicado } = useContext(TalonariosCompContext);
+  const { setTriplicado, setMostrarColorTriplicado } = useContext(TalonariosCompContext);
+
+  const handleClick = (e) => {
+    setTriplicado(e.target.value);
+    if(e.target.value === 'Si')
+      setMostrarColorTriplicado(true)
+    else
+      setMostrarColorTriplicado(false)
+  };
+
   return (
     <fieldset>
       <legend>Triplicado:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('triplicado', 'triplicado-si', 'Si', setMostrarColorTriplicado)} />
-        <InputRadio props={ new InputRadioModel('triplicado', 'triplicado-no', 'No', setMostrarColorTriplicado)} />
+        <label onClick={ handleClick }>
+          Si
+          <input type="radio" name="triplicado" value='Si' onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          No
+          <input type="radio" name="triplicado" value='No' onClick={ handleClick } />
+        </label>
       </div>
     </fieldset>
   );
