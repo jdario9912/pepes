@@ -1,14 +1,25 @@
-import React from 'react';
-import InputRadio from '../../../../input-radio';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
+import React, { useContext } from 'react';
+import { LomaCompContext } from '../loma-comp';
 
 const Troquelado = () => {
+  const { setTroquelado } = useContext(LomaCompContext);
+
+  const handleClick = (e) => {
+    setTroquelado(e.target.value);
+  };
+
   return (
     <fieldset>
       <legend>Troquelado:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('troquelado', 'troquelado-si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('troquelado', 'troquelado-no', 'No')} />
+        <label onClick={ handleClick }>
+          Si
+          <input type="radio" name="troquelado" value='Si' onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          No
+          <input type="radio" name="troquelado" value='No' onClick={ handleClick } />
+        </label>      
       </div>
     </fieldset>
   );

@@ -1,14 +1,25 @@
-import React from 'react';
-import InputRadio from '../../../../input-radio';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
+import React, { useContext } from 'react';
+import { LomaCompContext } from '../loma-comp';
 
 const Portabaner = () => {
+  const { setPortabaner } = useContext(LomaCompContext);
+
+  const handleClick = (e) => {
+    setPortabaner(e.target.value);
+  };
+  
   return (
     <fieldset>
       <legend>Portabaner:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('portabaner', 'portabaner-si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('portabaner', 'portabaner-no', 'No')} />
+        <label onClick={ handleClick }>
+          Si
+          <input type="radio" name="portabaner" value='Si' onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          No
+          <input type="radio" name="portabaner" value='No' onClick={ handleClick } />
+        </label>        
       </div>
     </fieldset>
   );

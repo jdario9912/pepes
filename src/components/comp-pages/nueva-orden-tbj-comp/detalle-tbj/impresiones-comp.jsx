@@ -70,7 +70,7 @@ const ImpresionesComp = () => {
 
     btnSubmit.setAttribute('disabled', true);
 
-    crearImpresiones(urlApi + '/api/impresiones', body)
+    await crearImpresiones(urlApi + '/api/impresiones', body)
       .then(res => res.json())
       .then(({ registro, mensaje }) => {
         btnSubmit.removeAttribute('disabled');

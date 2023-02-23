@@ -1,14 +1,25 @@
-import React from 'react';
-import InputRadio from '../../../../input-radio';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
+import React, { useContext } from 'react';
+import { LomaCompContext } from '../loma-comp';
 
 const Corte = () => {
+  const { setCorte } = useContext(LomaCompContext);
+
+  const handleClick = (e) => {
+    setCorte(e.target.value);
+  };
+
   return (
     <fieldset>
       <legend>Corte:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('loma-corte', 'loma-corte-si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('loma-corte', 'loma-corte-no', 'No')} />
+      <label onClick={ handleClick }>
+          Si
+          <input type="radio" name="corte" value='Si' onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          No
+          <input type="radio" name="corte" value='No' onClick={ handleClick } />
+        </label>
       </div>
     </fieldset>
   );
