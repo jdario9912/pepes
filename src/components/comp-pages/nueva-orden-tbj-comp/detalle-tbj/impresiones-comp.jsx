@@ -16,7 +16,7 @@ import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
-import { atendido_por, fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
+import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import { urlApi } from '../../../../services/url/url-api';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
@@ -36,11 +36,11 @@ const ImpresionesComp = () => {
   const handleSubmint = async (e) => {
     e.preventDefault();
     const { id } = clienteS;
-    const fecha = document.querySelector('[data="fecha"]').value;
-    const hora = document.querySelector('[data="hora"]').value;
-    const ubicacionArchivo = document.querySelector('[data="ubicacion-archivo"]').value;
-    const tipoPapel = document.querySelector('[data="tipo-papel"]').value;
-    const tamanoPapel = document.querySelector('[data="tamano-papel"]').value;
+    const fecha_entrega = document.querySelector('[data="fecha"]').value;
+    const hora_entrega = document.querySelector('[data="hora"]').value;
+    const ubicacion_archivo = document.querySelector('[data="ubicacion-archivo"]').value;
+    const tipo_papel = document.querySelector('[data="tipo-papel"]').value;
+    const tamano_papel = document.querySelector('[data="tamano-papel"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
@@ -51,20 +51,20 @@ const ImpresionesComp = () => {
       nro_orden: nro_orden(),
       fecha_creacion: fecha_creacion(),
       atendido_por: atendido_por(),
-      fecha_entrega: formatear_fecha(fecha),
-      hora_entrega: hora,
-      muestra: muestra,
-      ubicacion_archivo: ubicacionArchivo,
-      faz: faz,
-      tipo_papel: tipoPapel,
-      tamano_papel: tamanoPapel,
-      orientacion: orientacion,
-      anillado: anillado,
-      abrochado: abrochado,
-      corte: corte,
-      observaciones: observaciones,
-      total: total,
-      entrega: entrega,
+      fecha_entrega,
+      hora_entrega,
+      muestra,
+      ubicacion_archivo,
+      faz,
+      tipo_papel,
+      tamano_papel,
+      orientacion,
+      anillado,
+      abrochado,
+      corte,
+      observaciones,
+      total,
+      entrega,
       estado: "pendiente"
     }
 

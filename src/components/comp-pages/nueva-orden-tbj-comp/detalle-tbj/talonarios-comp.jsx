@@ -14,7 +14,7 @@ import ColorDuplicado from './talonarios-comp/color-duplicado';
 import ColorTriplicado from './talonarios-comp/color-triplicado';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
 import { useNavigate } from 'react-router-dom';
-import { atendido_por, fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
+import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import DetallePago from '../detalle-pago';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
@@ -41,8 +41,8 @@ const TalonariosComp = () => {
   const handleSubmint = async (e) => {
     e.preventDefault();
     const { id } = clienteS;
-    const fecha = document.querySelector('[data="fecha"]').value;
-    const hora = document.querySelector('[data="hora"]').value;
+    const fecha_entrega = document.querySelector('[data="fecha"]').value;
+    const hora_entrega = document.querySelector('[data="hora"]').value;
     const tipo = document.querySelector('[data="tipo"]').value;
     const cantidad = document.querySelector('[data="cantidad"]').value;
     const tamano = document.querySelector('[data="tamano"]').value;
@@ -61,8 +61,8 @@ const TalonariosComp = () => {
       nro_orden: nro_orden(),
       fecha_creacion: fecha_creacion(),
       atendido_por: atendido_por(),
-      fecha_entrega: formatear_fecha(fecha),
-      hora_entrega: hora,
+      fecha_entrega,
+      hora_entrega,
       muestra,
       tipo,
       cantidad,

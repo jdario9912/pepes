@@ -37,8 +37,8 @@ const LomaComp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { id } = clienteS;
-    const fecha = document.querySelector('[data="fecha"]').value;
-    const hora = document.querySelector('[data="hora"]').value;
+    const fecha_entrega = document.querySelector('[data="fecha"]').value;
+    const hora_entrega = document.querySelector('[data="hora"]').value;
     const ubicacionArchivo = document.querySelector('[data="ubicacion-archivo"]').value;
     const material = document.querySelector('[data="material"]').value;
     const bolsillo = document.querySelector('[data="bolsillo"]').value;
@@ -52,8 +52,8 @@ const LomaComp = () => {
       nro_orden : nro_orden(),
       fecha_creacion: fecha_creacion(),
       atendido_por: atendido_por(),
-      fecha_entrega: fecha,
-      hora,
+      fecha_entrega,
+      hora_entrega,
       muestra,
       ubicacion_archivo: ubicacionArchivo,
       material,
