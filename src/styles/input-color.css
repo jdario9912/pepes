@@ -1,0 +1,9 @@
+.input-color--container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-color--container:hover{
+  cursor: pointer;
+}

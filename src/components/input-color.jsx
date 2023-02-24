@@ -1,8 +1,11 @@
 import React from 'react';
+import '../styles/input-color.css';
 
-const InputColor = ({ color }) => {
+
+const InputColor = ({ color, accion }) => {
+  
   return (
-    <div>
+    <div onClick={ accion } className='input-color--container'>
       <span>{ Object.keys(color) }</span>
       <input 
         type="color" 
@@ -10,6 +13,7 @@ const InputColor = ({ color }) => {
         id={ Object.keys(color) } 
         value={ Object.values(color) }
         disabled
+        className='not-action'
        />
     </div>
   );
