@@ -18,7 +18,7 @@ import Material from './loma-comp/material';
 import Bolsillo from './loma-comp/bolsillo';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
 import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
-import { crearLoma } from '../../../../services/form-nueva-orden/loma';
+import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { useNavigate } from 'react-router-dom';
 
@@ -71,7 +71,7 @@ const LomaComp = () => {
     
     btnSubmit.setAttribute('disabled', true);
 
-    await crearLoma(urlApi + '/api/loma', body)
+    await crearOrden(urlApi + '/api/loma', body)
       .then(res => res.json())
       .then(({ registro, mensaje }) => {
         btnSubmit.removeAttribute('disabled');

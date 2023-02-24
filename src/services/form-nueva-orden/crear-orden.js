@@ -1,4 +1,4 @@
-export const crearImpresiones = (url, body) => {
+export const crearOrden = (url, body) => {
   return fetch(url, {
     method: 'POST',
     headers: {

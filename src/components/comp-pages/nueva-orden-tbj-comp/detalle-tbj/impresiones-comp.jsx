@@ -18,7 +18,7 @@ import DetallePago from '../detalle-pago';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
 import { atendido_por, fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import { urlApi } from '../../../../services/url/url-api';
-import { crearImpresiones } from '../../../../services/form-nueva-orden/impresiones';
+import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
 
 export const ImpresionesCompContext = createContext();
@@ -70,7 +70,7 @@ const ImpresionesComp = () => {
 
     btnSubmit.setAttribute('disabled', true);
 
-    await crearImpresiones(urlApi + '/api/impresiones', body)
+    await crearOrden(urlApi + '/api/impresiones', body)
       .then(res => res.json())
       .then(({ registro, mensaje }) => {
         btnSubmit.removeAttribute('disabled');

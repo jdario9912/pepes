@@ -13,7 +13,7 @@ import PuntilladoEmblocado from './talonarios-comp/puntillado-emblocado';
 import ColorDuplicado from './talonarios-comp/color-duplicado';
 import ColorTriplicado from './talonarios-comp/color-triplicado';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
-import { useNavigate as navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { atendido_por, fecha_creacion, formatear_fecha, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import DetallePago from '../detalle-pago';
 import TextArea from '../../../text-area';
@@ -23,11 +23,14 @@ import { InputDateModel } from '../../../../models/input-date-model';
 import InputTime from '../../../input-time';
 import { InputTimeModel } from '../../../../models/input-time-model';
 import Muestra from '../muestra';
+import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
+import { urlApi } from '../../../../services/url/url-api';
 
 export const TalonariosCompContext = createContext();
 
 const TalonariosComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
+  const navigate = useNavigate();
   const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
   const [mostrarColorTriplicado, setMostrarColorTriplicado] = useState(false);
   const [mostrarUbicacionLogo, setMostrarUbicacionLogo] = useState(false);
@@ -35,7 +38,7 @@ const TalonariosComp = () => {
   const [tieneLogo, setTieneLogo] = useState('');
   const [triplicado, setTriplicado] = useState('');
 
-  const handleSubmint = (e) => {
+  const handleSubmint = async (e) => {
     e.preventDefault();
     const { id } = clienteS;
     const fecha = document.querySelector('[data="fecha"]').value;
@@ -78,8 +81,16 @@ const TalonariosComp = () => {
       estado: 'pendiente'
     };
 
-    console.log(body);
-    console.log(btnSubmit, navigate);
+    btnSubmit.setAttribute('disabled', true);
+
+    await crearOrden(urlApi + '/api/talonarios', body)
+      .then(res => res.json())
+      .then(({ registro, mensaje }) => {
+        btnSubmit.removeAttribute('disabled');
+        setRespuestaServidor({registro: registro, mensaje: mensaje});
+        if(registro) navigate('/');
+      })
+      .catch(e => console.log(e))
   }
 
   const handleChange = () => {
