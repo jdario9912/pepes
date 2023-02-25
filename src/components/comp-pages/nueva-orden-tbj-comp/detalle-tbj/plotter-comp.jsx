@@ -59,8 +59,6 @@ const PlotterComp = () => {
       estado: "pendiente"
     };
 
-    console.log(body);
-
     btnSubmit.setAttribute('disabled', true);
 
     await crearOrden(urlApi + '/api/plotter', body)
@@ -82,7 +80,7 @@ const PlotterComp = () => {
     <PlotterCompContext.Provider value={{ setMaterial, setTerminacion, setColor, color }}>
       <div>
         <h5>Plotter</h5>
-        <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange }>
+        <form name='form-plotter' onSubmit={ handleSubmint } onChange={ handleChange }>
           <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
           <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
           <Muestra />

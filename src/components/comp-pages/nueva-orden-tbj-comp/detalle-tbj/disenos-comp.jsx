@@ -68,7 +68,7 @@ const DisenosComp = () => {
   return (
     <div>
       <h5>Diseños</h5>
-      <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange }>
+      <form name='form-disenos' onSubmit={ handleSubmint } onChange={ handleChange }>
         <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
         <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
         <Muestra />

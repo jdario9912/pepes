@@ -101,7 +101,7 @@ const TalonariosComp = () => {
     <TalonariosCompContext.Provider value={{ setMostrarColorTriplicado, setMostrarUbicacionLogo, setModeloAnterior, setTieneLogo, setTriplicado, mostrarColorTriplicado }}>
       <div>
         <h5>Talonarios</h5>
-        <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange }>
+        <form name='form-talonarios' onSubmit={ handleSubmint } onChange={ handleChange }>
           <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
           <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
           <Muestra />
