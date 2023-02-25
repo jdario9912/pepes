@@ -66,7 +66,7 @@ const ImpresionesComp = () => {
       total,
       entrega,
       estado: "pendiente"
-    }
+    };
 
     btnSubmit.setAttribute('disabled', true);
 

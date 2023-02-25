@@ -1,14 +1,25 @@
-import React from 'react';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
-import InputRadio from '../../../../input-radio';
+import React, { useContext } from 'react';
+import { TarjetasCompContext } from '../tarjetas-comp';
 
 const PuntasRedondas = () => {
+  const { setPuntas_redondeadas } = useContext(TarjetasCompContext);
+
+  const handleClick = (e) => {
+    setPuntas_redondeadas(e.target.value);
+  };
+
   return (
     <fieldset>
       <legend>Puntas redondeadas:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('puntas-redondas', 'puntas-redondas-si', 'Si')} />
-        <InputRadio props={ new InputRadioModel('puntas-redondas', 'puntas-redondas-no', 'No')} />
+        <label onClick={ handleClick }>
+          Si
+          <input type="radio" name="puntas-redondeadas" value="Si" onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          No
+          <input type="radio" name="puntas-redondeadas" value="No" onClick={ handleClick } />
+        </label>
       </div>
     </fieldset>
   );

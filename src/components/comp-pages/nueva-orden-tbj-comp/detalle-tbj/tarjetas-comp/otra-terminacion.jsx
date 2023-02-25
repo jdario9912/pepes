@@ -1,14 +1,25 @@
-import React from 'react';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
-import InputRadio from '../../../../input-radio';
+import React, { useContext } from 'react';
+import { TarjetasCompContext } from '../tarjetas-comp';
 
 const OtraTerminacion = () => {
+  const { setTerminacion } = useContext(TarjetasCompContext);
+
+  const handleClick = (e) => {
+    setTerminacion(e.target.value);
+  };
+
   return (
     <fieldset>
       <legend>Otra terminación:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('otra-terminacion', 'otra-terminacion-perforado', 'Perforado')} />
-        <InputRadio props={ new InputRadioModel('otra-terminacion', 'otra-terminacion-corte', 'Corte')} />
+        <label onClick={ handleClick }>
+          Perforado
+          <input type="radio" name="otra-terminacion" value="Perforado" onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          Corte
+          <input type="radio" name="otra-terminacion" value="Corte" onClick={ handleClick } />
+        </label>
       </div>
     </fieldset>
   );
