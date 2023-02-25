@@ -1,14 +1,25 @@
-import React from 'react';
-import InputRadio from '../../../../input-radio';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
+import React, { useContext } from 'react';
+import { VolantesCompContext } from '../volantes-comp';
 
 const Tipo = () => {
+  const { setTipo } = useContext(VolantesCompContext);
+
+  const handleClick = (e) => {
+    setTipo(e.target.value);
+  };
+
   return (
     <fieldset>
       <legend>Tipo:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('tipo', 'tipo-color', 'Color')} />
-        <InputRadio props={ new InputRadioModel('tipo', 'tipo-grises', 'Escala de grises')} />
+        <label onClick={ handleClick }>
+          Color
+          <input type="radio" name="tipo" value="Color" onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          Escala de grises
+          <input type="radio" name="tipo" value="Escala de grises" onClick={ handleClick } />
+        </label>
       </div>
     </fieldset>
   );

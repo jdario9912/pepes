@@ -1,14 +1,25 @@
-import React from 'react';
-import InputRadio from '../../../../input-radio';
-import { InputRadioModel } from '../../../../../models/input-radio-model';
+import React, { useContext } from 'react';
+import { VolantesCompContext } from '../volantes-comp';
 
 const Impresion = () => {
+  const { setImpresion } = useContext(VolantesCompContext);
+
+  const handleClick = (e) => {
+    setImpresion(e.target.value);
+  };
+
   return (
     <fieldset>
       <legend>Impresion:</legend>
       <div>
-        <InputRadio props={ new InputRadioModel('impresion', 'impresion-frente', 'Frente')} />
-        <InputRadio props={ new InputRadioModel('impresion', 'impresion-frente-dorso', 'Frente y dorso')} />
+        <label onClick={ handleClick }>
+          Frente
+          <input type="radio" name="impresion" value="Frente" onClick={ handleClick } />
+        </label>
+        <label onClick={ handleClick }>
+          Frente y dorso
+          <input type="radio" name="impresion" value="Frente y dorso" onClick={ handleClick } />
+        </label>
       </div>
     </fieldset>
   );
