@@ -1,10 +1,8 @@
 import React, { useContext, useState, createContext } from 'react';
 import Tipo from './volantes-comp/tipo';
-import SelecOption from '../../../select-option';
 import Impresion from './volantes-comp/impresion';
 import InputText from '../../../input-text';
 import { InputTextModel } from '../../../../models/input-text-model';
-import { SelectOptionModel } from '../../../../models/select-option-model';
 import InputDate from '../../../input-date';
 import InputTime from '../../../input-time';
 import Muestra from '../muestra';
