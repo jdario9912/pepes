@@ -6,9 +6,10 @@ const empleado = localStorage.getItem('usuario-actual');
 const stylesLocal = StyleSheet.create({
   section: {
     height: '50%',
+    gap: 3
   },
-  borde: {
-    border: 1
+  separarFilas: {
+    gap: 2
   },
   header: {
     flexDirection: 'row',
@@ -18,6 +19,12 @@ const stylesLocal = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
   },
+  tipo: {
+    fontSize: 18
+  },
+  fecha: {
+    fontSize: 18
+  },
   atendido: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -25,6 +32,9 @@ const stylesLocal = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
+  },
+  empleado: {
+    textTransform: 'capitalize'
   },
   filas: {
     gap: 3,
@@ -51,6 +61,7 @@ const stylesLocal = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
+    height: '45%'
   },
   pago: {
     flexDirection: 'row',
@@ -66,28 +77,29 @@ const stylesLocal = StyleSheet.create({
 export const Local = () => (
   <View style={stylesLocal.section}>
     <View style={stylesLocal.header}>
-      <View tipo nro orden>
-        <Text>Solventes</Text>
-        <Text>Orden n°: 230213</Text>
+      <View style={stylesLocal.separarFilas}>
+        <Text>Pedido:</Text>
+        <Text style={stylesLocal.tipo}>Solventes</Text>
+        <Text>n°: 230213</Text>
       </View>
-      <View fecha hora>
-        <Text>3/03/2023</Text>
+      <View style={stylesLocal.separarFilas}>
+        <Text>Entregar:</Text>
+        <Text style={stylesLocal.fecha}>3/03/2023</Text>
         <Text>19:00hs</Text>
       </View>
     </View>
     <View style={stylesLocal.atendido}>
-      <View>
-        <Text>Atendido por: {empleado}</Text>
+      <View style={stylesLocal.separarFilas}>
+        <Text>Atendido por: <Text style={stylesLocal.empleado}>{empleado}</Text></Text>
         <Text>Creado: 27/02/2023</Text>
       </View>
-      <View cliete>
+      <View style={stylesLocal.separarFilas}>
         <Text>Cliente: McDonals Even Van Persei Haland</Text>
         <Text>Tel: 351-454647</Text>
         <Text>Email: mcdonals@gmail.com</Text>
       </View>
     </View>
-    <View>
-
+    <View style={stylesLocal.separarFilas}>
       <View style={stylesLocal.filas}>
         <View style={stylesLocal.fila}>
           <View style={stylesLocal.clave}><Text>Muestra:</Text></View>
@@ -95,7 +107,7 @@ export const Local = () => (
         </View>
         <View style={stylesLocal.fila}>
           <View style={stylesLocal.clave}><Text>Ubicacion archivo:</Text></View>
-          <View style={stylesLocal.valor}><Text>pc3Lorem ipsum dolor sit amet consectetur adipiscing elit interdum neque</Text></View>
+          <View style={stylesLocal.valor}><Text>pc3</Text></View>
         </View>
         <View style={stylesLocal.fila}>
           <View style={stylesLocal.clave}><Text>Material</Text></View>
@@ -128,7 +140,7 @@ export const Local = () => (
       </View>
 
       <View style={stylesLocal.observaciones}>
-        <Text>Observaciones: Lorem ipsum dolor sit amet consectetur adipiscing elit interdum neque vivamus, curabitur viverra nulla phasellus cum pulvinar habitant vitae metus conubia integer, sollicitudin enim platea dictum nam mauris nibh massa elementum. Ante consequat posuere pulvinar scelerisque et ut primis nisi sodales, leo turpis curae tellus laoreet at sem gravida vehicula netus, ligula suspendisse ornare etiam vivamus hendrerit tempus risus.</Text>
+        <Text>Observaciones: </Text>
       </View>
     </View>
     <View style={stylesLocal.pago}>
