@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Inicio, AgregarCliente, NuevaOrden, NotFound, OrdenesPendientes, OpcionesAdmin, Clientes, Ordenes } from '../pages';
+import { LomaPdf } from './pdf/loma';
 
 const EnrutadorComp = () => {
   const permisos = JSON.parse(localStorage.getItem('permisos'));
@@ -14,6 +15,7 @@ const EnrutadorComp = () => {
         <Route path='clientes' element={ <Clientes />} />
         <Route path='ordenes' element={ <Ordenes /> } />
       </Route>
+      <Route path='/pdf/loma' element={ <LomaPdf /> } />
       <Route path='*' element={ <NotFound /> } />
     </Routes>
   );
