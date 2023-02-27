@@ -14,7 +14,8 @@ const stylesCliente = StyleSheet.create({
     flexDirection: 'row',
     border: 1,
     borderRadius: 5,
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     justifyContent: 'space-between'
   },
   logo: {
@@ -63,7 +64,6 @@ const stylesCliente = StyleSheet.create({
   },
   clave: {
     width: '50%',
-    fontWeight: 'ultrabold'
   },
   valor: {
     width: '50%',
@@ -107,7 +107,7 @@ export const Cliente = () => (
         <View style={stylesCliente.nombre}>
           <Text>Cliente: McDonals Even Van Persei Haland</Text>
         </View>
-        <Text>Orden nro: 230213</Text>
+        <Text>Orden n°: 230213</Text>
         <Text>Tipo: Solventes</Text>
       </View>
     </View>
