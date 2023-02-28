@@ -8,7 +8,7 @@ import { PdfContext } from '..';
 
 const estilos = StyleSheet.create(estilosCliente);
 
-export const Cliente = () => {
+const Cliente = () => {
   const { pedido } = useContext(PdfContext);
   const { muestra, ubicacion_archivo, material, orientacion, bolsillo, corte, ojales, troquelado, portabaner, observaciones} = pedido;
 
@@ -65,3 +65,5 @@ export const Cliente = () => {
     </View>
   )
 };
+
+export default Cliente;

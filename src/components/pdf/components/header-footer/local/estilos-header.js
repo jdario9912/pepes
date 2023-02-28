@@ -14,7 +14,8 @@ export const estilosHeader = {
     paddingVertical: 5,
   },
   tipo: {
-    fontSize: 18
+    fontSize: 18,
+    textTransform: 'capitalize'
   },
   fecha: {
     fontSize: 18

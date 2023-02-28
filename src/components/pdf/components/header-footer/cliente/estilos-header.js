@@ -34,4 +34,7 @@ export const estilosHeader = {
   empleado: {
     textTransform: 'capitalize'
   },
+  tipo: {
+    textTransform: 'capitalize'
+  }
 }

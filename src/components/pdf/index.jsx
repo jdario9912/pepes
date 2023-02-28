@@ -1,5 +1,5 @@
 import React, { useEffect, createContext, useState } from 'react';
-import { PDFViewer, Document, Page, Text } from '@react-pdf/renderer';
+import { PDFViewer } from '@react-pdf/renderer';
 import { urlApi } from '../../services/url/url-api';
 import { useParams } from 'react-router-dom';
 import { pdfPedidos } from '../../models/pdf-pedidos-model';
@@ -9,8 +9,6 @@ export const PdfContext = createContext();
 export const Index = () => {
   const { tipoTrabajo, nroOrden } = useParams();
   const [pedido, setPedido] = useState(null);
-
-  console.log(typeof tipoTrabajo, tipoTrabajo);
 
   useEffect(() => {
     fetch(urlApi + `/api/pedido/${ nroOrden }`)

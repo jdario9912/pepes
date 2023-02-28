@@ -9,7 +9,7 @@ const estilos = StyleSheet.create(estilosLocal);
 
 const Local = () => {
   const { pedido } = useContext(PdfContext);
-  const { muestra, ubicacion_archivo, faz, tipo_papel, tamano_papel, orientacion, anillado, abrochado, corte, observaciones } = pedido;
+  const { muestra, tipo, tamano, desde_numero, cantidad, numeradores, lotes, observaciones } = pedido;
 
   return (
     <View style={estilos.section}>
@@ -21,39 +21,30 @@ const Local = () => {
             <View style={estilos.valor}><Text>{muestra}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Ubicacion archivo:</Text></View>
-            <View style={estilos.valor}><Text>{ubicacion_archivo}</Text></View>
-          </View>
-          <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Faz:</Text></View>
-            <View style={estilos.valor}><Text>{faz}</Text></View>
-          </View>
-          <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Tipo papel:</Text></View>
-            <View style={estilos.valor}><Text>{tipo_papel}</Text></View>
+            <View style={estilos.clave}><Text>Tipo:</Text></View>
+            <View style={estilos.valor}><Text>{tipo}</Text></View>
           </View>
           <View style={estilos.fila}>
             <View style={estilos.clave}><Text>Tamaño:</Text></View>
-            <View style={estilos.valor}><Text>{tamano_papel}</Text></View>
+            <View style={estilos.valor}><Text>{tamano}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Orientación:</Text></View>
-            <View style={estilos.valor}><Text>{orientacion}</Text></View>
+            <View style={estilos.clave}><Text>Desde número:</Text></View>
+            <View style={estilos.valor}><Text>{desde_numero}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Anillado:</Text></View>
-            <View style={estilos.valor}><Text>{anillado}</Text></View>
+            <View style={estilos.clave}><Text>Cantidad:</Text></View>
+            <View style={estilos.valor}><Text>{cantidad}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Abrochado:</Text></View>
-            <View style={estilos.valor}><Text>{abrochado}</Text></View>
+            <View style={estilos.clave}><Text>Numeradores:</Text></View>
+            <View style={estilos.valor}><Text>{numeradores}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Corte:</Text></View>
-            <View style={estilos.valor}><Text>{corte}</Text></View>
+            <View style={estilos.clave}><Text>En lotes de:</Text></View>
+            <View style={estilos.valor}><Text>{lotes}</Text></View>
           </View>
         </View>
-  
         <View style={estilos.observaciones}>
           <Text>Observaciones: {observaciones}</Text>
         </View>

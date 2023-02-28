@@ -8,7 +8,7 @@ const THead = () => {
         <th>Nro.</th>
         <th>Cliente</th>
         {/* <th>Creación</th> */}
-        <th>Trabajo</th>
+        <th>Tipo</th>
         <th>Entrega</th>
         <th>Hora</th>
         <th>Acciones</th>

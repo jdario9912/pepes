@@ -9,7 +9,7 @@ const estilos = StyleSheet.create(estilosLocal);
 
 const Local = () => {
   const { pedido } = useContext(PdfContext);
-  const { muestra, ubicacion_archivo, faz, tipo_papel, tamano_papel, orientacion, anillado, abrochado, corte, observaciones } = pedido;
+  const {muestra, ubicacion_archivo, tamano, color, material, terminacion, observaciones} = pedido;
 
   return (
     <View style={estilos.section}>
@@ -25,35 +25,22 @@ const Local = () => {
             <View style={estilos.valor}><Text>{ubicacion_archivo}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Faz:</Text></View>
-            <View style={estilos.valor}><Text>{faz}</Text></View>
-          </View>
-          <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Tipo papel:</Text></View>
-            <View style={estilos.valor}><Text>{tipo_papel}</Text></View>
-          </View>
-          <View style={estilos.fila}>
             <View style={estilos.clave}><Text>Tamaño:</Text></View>
-            <View style={estilos.valor}><Text>{tamano_papel}</Text></View>
+            <View style={estilos.valor}><Text>{tamano}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Orientación:</Text></View>
-            <View style={estilos.valor}><Text>{orientacion}</Text></View>
+            <View style={estilos.clave}><Text>Color:</Text></View>
+            <View style={estilos.valor}><Text>{color}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Anillado:</Text></View>
-            <View style={estilos.valor}><Text>{anillado}</Text></View>
+            <View style={estilos.clave}><Text>Material:</Text></View>
+            <View style={estilos.valor}><Text>{material}</Text></View>
           </View>
           <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Abrochado:</Text></View>
-            <View style={estilos.valor}><Text>{abrochado}</Text></View>
-          </View>
-          <View style={estilos.fila}>
-            <View style={estilos.clave}><Text>Corte:</Text></View>
-            <View style={estilos.valor}><Text>{corte}</Text></View>
+            <View style={estilos.clave}><Text>Terminación:</Text></View>
+            <View style={estilos.valor}><Text>{terminacion}</Text></View>
           </View>
         </View>
-  
         <View style={estilos.observaciones}>
           <Text>Observaciones: {observaciones}</Text>
         </View>
