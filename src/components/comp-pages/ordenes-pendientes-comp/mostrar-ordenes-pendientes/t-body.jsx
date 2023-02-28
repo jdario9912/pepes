@@ -56,7 +56,7 @@ const TBody = ({ ordenesPendientes }) => {
           <td>{ fecha_entrega }</td>
           <td>{ hora_entrega }hs</td>
           <td>
-            <Link to='#'>
+            <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}>
               <AiOutlineEye />
             </Link>
             <div>

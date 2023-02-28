@@ -8,9 +8,9 @@ import { PdfContext } from '..';
 
 const estilos = StyleSheet.create(estilosCliente);
 
-export const Cliente = () => {
+const Cliente = () => {
   const { pedido } = useContext(PdfContext);
-  const { muestra, ubicacion_archivo, material, orientacion, bolsillo, corte, ojales, troquelado, portabaner, observaciones} = pedido;
+  const { muestra, ubicacion_archivo, faz, tipo_papel, tamano_papel, orientacion, anillado, abrochado, corte, observaciones } = pedido;
 
   return (
     <View style={estilos.section}>
@@ -27,32 +27,32 @@ export const Cliente = () => {
               <View style={estilos.valor}><Text>{ubicacion_archivo}</Text></View>
             </View>
             <View style={estilos.fila}>
-              <View style={estilos.clave}><Text>Material</Text></View>
-              <View style={estilos.valor}><Text>{material}</Text></View>
+              <View style={estilos.clave}><Text>Faz:</Text></View>
+              <View style={estilos.valor}><Text>{faz}</Text></View>
             </View>
             <View style={estilos.fila}>
-              <View style={estilos.clave}><Text>Orientacion</Text></View>
+              <View style={estilos.clave}><Text>Tipo papel:</Text></View>
+              <View style={estilos.valor}><Text>{tipo_papel}</Text></View>
+            </View>
+            <View style={estilos.fila}>
+              <View style={estilos.clave}><Text>Tamaño:</Text></View>
+              <View style={estilos.valor}><Text>{tamano_papel}</Text></View>
+            </View>
+            <View style={estilos.fila}>
+              <View style={estilos.clave}><Text>Orientación:</Text></View>
               <View style={estilos.valor}><Text>{orientacion}</Text></View>
             </View>
             <View style={estilos.fila}>
-              <View style={estilos.clave}><Text>Bolsillo</Text></View>
-              <View style={estilos.valor}><Text>{bolsillo}</Text></View>
+              <View style={estilos.clave}><Text>Anillado:</Text></View>
+              <View style={estilos.valor}><Text>{anillado}</Text></View>
             </View>
             <View style={estilos.fila}>
-              <View style={estilos.clave}><Text>Corte</Text></View>
+              <View style={estilos.clave}><Text>Abrochado:</Text></View>
+              <View style={estilos.valor}><Text>{abrochado}</Text></View>
+            </View>
+            <View style={estilos.fila}>
+              <View style={estilos.clave}><Text>Corte:</Text></View>
               <View style={estilos.valor}><Text>{corte}</Text></View>
-            </View>
-            <View style={estilos.fila}>
-              <View style={estilos.clave}><Text>Ojales</Text></View>
-              <View style={estilos.valor}><Text>{ojales}</Text></View>
-            </View>
-            <View style={estilos.fila}>
-              <View style={estilos.clave}><Text>Troquelado</Text></View>
-              <View style={estilos.valor}><Text>{troquelado}</Text></View>
-            </View>
-            <View style={estilos.fila}>
-              <View style={estilos.clave}><Text>Portabaner</Text></View>
-              <View style={estilos.valor}><Text>{portabaner}</Text></View>
             </View>
           </View>
           <View style={estilos.observaciones}>
@@ -63,5 +63,7 @@ export const Cliente = () => {
       </View>
       <FooterCliente />
     </View>
-  )
-};
+  );
+}
+
+export default Cliente;

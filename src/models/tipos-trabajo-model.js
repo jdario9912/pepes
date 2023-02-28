@@ -24,4 +24,4 @@ export const tiposTrabajo = {
   "Volantes": <Volantes />,
   "Sellos": <Sellos />,
   "Varios": <Varios />,
-}
+};

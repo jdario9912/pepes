@@ -1,5 +1,4 @@
 .mostrar-ordenes-pendientes--table-container{
-  max-height: 200px;
   width: 100%;
   overflow: auto;
   margin-top: 1rem;
@@ -8,6 +7,7 @@
 .mostrar-ordenes-pendientes--table{
   white-space: nowrap;
   border-collapse: collapse;
+  width: 100%;
 }
 
 .mostrar-ordenes-pendientes--table-container::-webkit-scrollbar {

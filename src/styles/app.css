@@ -14,3 +14,10 @@
 .not-action{
   pointer-events: none;
 }
+
+.pdf-container{
+  padding: 1rem;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
