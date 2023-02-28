@@ -64,10 +64,10 @@ const RemerasComp = () => {
 
     await crearOrden(urlApi + '/api/remeras', body)
       .then(res => res.json())
-      .then(({ registro, mensaje }) => {
+      .then(({ registro, mensaje, nro_orden }) => {
         btnSubmit.removeAttribute('disabled');
         setRespuestaServidor({registro: registro, mensaje: mensaje});
-        if(registro) navigate('/');
+        if(registro) navigate(`/pdf/remeras/${nro_orden}`);
       })
       .catch(e => console.log(e))
     ;

@@ -73,10 +73,10 @@ const LomaComp = () => {
 
     await crearOrden(urlApi + '/api/loma', body)
       .then(res => res.json())
-      .then(({ registro, mensaje }) => {
+      .then(({ registro, mensaje, nro_orden }) => {
         btnSubmit.removeAttribute('disabled');
         setRespuestaServidor({registro: registro, mensaje: mensaje});
-        if(registro) navigate('/');
+        if(registro) navigate(`/pdf/loma/${nro_orden}`);
       })
       .catch(e => console.log(e))
     ;

@@ -66,10 +66,10 @@ const BonosComp = () => {
 
     await crearOrden(urlApi + '/api/bonos', body)
       .then(res => res.json())
-      .then(({ registro, mensaje }) => {
+      .then(({ registro, mensaje, nro_orden }) => {
         btnSubmit.removeAttribute('disabled');
-        setRespuestaServidor({registro: registro, mensaje: mensaje});
-        if(registro) navigate('/');
+        setRespuestaServidor({registro: registro, mensaje: mensaje });
+        if(registro) navigate(`/pdf/bonos/${nro_orden}`);
       })
       .catch(e => console.log(e))
     ;

@@ -85,10 +85,10 @@ const TalonariosComp = () => {
 
     await crearOrden(urlApi + '/api/talonarios', body)
       .then(res => res.json())
-      .then(({ registro, mensaje }) => {
+      .then(({ registro, mensaje, nro_orden }) => {
         btnSubmit.removeAttribute('disabled');
         setRespuestaServidor({registro: registro, mensaje: mensaje});
-        if(registro) navigate('/');
+        if(registro) navigate(`/pdf/talonarios/${nro_orden}`);
       })
       .catch(e => console.log(e))
   }

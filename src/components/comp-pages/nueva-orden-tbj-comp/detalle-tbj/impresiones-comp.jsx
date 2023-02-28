@@ -72,10 +72,10 @@ const ImpresionesComp = () => {
 
     await crearOrden(urlApi + '/api/impresiones', body)
       .then(res => res.json())
-      .then(({ registro, mensaje }) => {
+      .then(({ registro, mensaje, nro_orden }) => {
         btnSubmit.removeAttribute('disabled');
         setRespuestaServidor({registro: registro, mensaje: mensaje});
-        if(registro) navigate('/');
+        if(registro) navigate(`/pdf/impresiones/${nro_orden}`);
       })
       .catch(e => console.log(e))
     ;
