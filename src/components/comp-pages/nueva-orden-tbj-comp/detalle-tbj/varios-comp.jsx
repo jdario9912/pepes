@@ -17,6 +17,7 @@ const VarioComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
   const navigate = useNavigate();
   const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
+  const [numeroOrden, setNumeroOrden] = useState(null);
 
   const handleSubmint = async (e) => {
     e.preventDefault();
@@ -28,10 +29,12 @@ const VarioComp = () => {
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
+
+    setNumeroOrden(nro_orden());
     
     const body = {
       id_cliente: id,
-      nro_orden: nro_orden(),
+      nro_orden: numeroOrden,
       fecha_creacion: fecha_creacion(),
       atendido_por: atendido_por(),
       fecha_entrega,
@@ -49,9 +52,9 @@ const VarioComp = () => {
     await crearOrden(urlApi + '/api/varios', body)
       .then(res => res.json())
       .then(({ registro, mensaje, nro_orden }) => {
-        btnSubmit.removeAttribute('disabled');
-        setRespuestaServidor({registro: registro, mensaje: mensaje});
-        if(registro) navigate(`/pdf/varios/${nro_orden}`);
+          btnSubmit.removeAttribute('disabled');
+          setRespuestaServidor({registro: registro, mensaje: mensaje});
+          if(registro) navigate(`/pdf/varios/${nro_orden}`);
       })
       .catch(e => console.log(e))
     ;
