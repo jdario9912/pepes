@@ -68,8 +68,12 @@ const VarioComp = () => {
     <div>
       <h5>Varios</h5>
       <form name='form-varios' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
-        <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
+        <div>
+          <span>Entregar el </span>
+          <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
+          <span>, a las </span>
+          <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
+        </div>
         <Muestra />
         <TextArea props={ new TextAreaModel('Detalle: ', '', '', 'Ingresa una descripción', '', 'detalle')} />
         <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />

@@ -102,8 +102,12 @@ const TalonariosComp = () => {
       <div>
         <h5>Talonarios</h5>
         <form name='form-talonarios' onSubmit={ handleSubmint } onChange={ handleChange }>
-          <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
-          <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
+          <div>
+            <span>Entregar el </span>
+            <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
+            <span>, a las </span>
+            <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
+          </div>
           <Muestra />
           <Tipo />
           <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'cantidad', 'cantidad') } />

@@ -73,9 +73,13 @@ const SellosComp = () => {
   return (
     <div>
       <h5>Sellos</h5>
-      <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
-        <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
+      <form name='form-sellos' onSubmit={ handleSubmint } onChange={ handleChange }>
+        <div>
+          <span>Entregar el </span>
+          <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
+          <span>, a las </span>
+          <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
+        </div>
         <Muestra />
         <Tipo />
         <InputText props={ new InputTextModel('Tamaño: ', '', '', 'Ingresa el tamaño del sello', '', 'tamano')} />

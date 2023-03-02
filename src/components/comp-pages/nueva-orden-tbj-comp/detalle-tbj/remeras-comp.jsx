@@ -81,8 +81,12 @@ const RemerasComp = () => {
     <div>
       <h5>Remeras</h5>
       <form name='form-remeras' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
-        <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
+        <div>
+          <span>Entregar el </span>
+          <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
+          <span>, a las </span>
+          <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
+        </div>
         <Muestra />
         <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
         <InputText props={ new InputTextModel('Talles: ', '', '', 'Ingresa talles', '', 'talles')} />

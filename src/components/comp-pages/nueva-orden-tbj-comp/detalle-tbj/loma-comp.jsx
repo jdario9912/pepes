@@ -92,8 +92,12 @@ const LomaComp = () => {
       <div>
         <h5>Loma</h5>
         <form name='form-loma' onSubmit={ handleSubmit } onChange={ handleChange }>
-          <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
-          <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
+          <div>
+            <span>Entregar el </span>
+            <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
+            <span>, a las </span>
+            <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
+          </div>
           <Muestra />
           <InputText props={ new InputTextModel('Ubicación del archivo:', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
           <Material />

@@ -81,8 +81,12 @@ const PlotterComp = () => {
       <div>
         <h5>Plotter</h5>
         <form name='form-plotter' onSubmit={ handleSubmint } onChange={ handleChange }>
-          <InputDate props={ new InputDateModel('Fecha:', '', null, '', 'fecha') } />
-          <InputTime props={ new InputTimeModel('Hora:', '', '19:00', '', 'hora')} />
+          <div>
+            <span>Entregar el </span>
+            <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
+            <span>, a las </span>
+            <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
+          </div>
           <Muestra />
           <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa la ubicación del archivo', '', 'ubicacion-archivo')} />
           <InputText props={ new InputTextModel('Tamaño: ', '', '', 'Ingresa el tamaño del plotter', '', 'tamano')} />
