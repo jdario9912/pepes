@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import InputDate from '../../input-date';
 import { InputDateModel } from '../../../models/input-date-model';
 import InputTime from '../../input-time';
@@ -15,13 +15,47 @@ import Corte from '../nueva-orden-tbj-comp/detalle-tbj/impresiones-comp/corte';
 import TextArea from '../../text-area';
 import { TextAreaModel } from '../../../models/text-area-model';
 import DetallePago from '../nueva-orden-tbj-comp/detalle-pago';
+import { urlApi } from '../../../services/url/url-api';
+import { useParams } from 'react-router-dom';
 
 const Impresiones = () => {
+  const { nroOrden } = useParams();
+  const [dataS, setDataS] = useState(null);
+  
+  useEffect(() => {
+    fetch(urlApi + `/api/impresiones/${nroOrden}`)
+      .then(res => res.json())
+      .then(({ busqueda, data, mensaje }) => {
+        if(busqueda){
+          setDataS(data);
+          console.log(mensaje);
+        }
+      })
+      .catch(e => console.log(e))
+    ;
+  }, []);
+
+  // useEffect(() => {
+  //   console.log(dataS.muestra);
+  // }, [dataS]);
   // const handleChange, handleSubmint, respuestaServidor;
 
   return (
     <div>
       <h2>Impresiones</h2>
+      <fieldset className='input-radio--fieldset' data="muestra">
+        <legend className='input-radio--legend'>Muestra:</legend>
+        <div className='input-radio--inputs-container'>
+          <label onClick={ 'handleClick' }>
+            Si
+            <input type="radio" name="muestra" id="muestra-si" value='Si' onClick={ 'handleClick' } />  
+          </label>        
+          <label onClick={ 'handleClick' }>
+            No
+            <input type="radio" name="muestra" id="muestra-no" value='No' onClick={ 'handleClick' } />
+          </label>        
+        </div>
+      </fieldset>
       {/* <form name='form-impresiones' onSubmit={ 'handleSubmint' } onChange={ handleChange }>
         <div>
           <span>Entregar el </span>
