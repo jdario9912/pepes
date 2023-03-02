@@ -8,6 +8,7 @@ import { urlApi } from '../../../../services/url/url-api';
 import { OrdenesPendientesCompContext } from '../../ordenes-pendientes-comp';
 import { TfiReload } from "react-icons/tfi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { BtnOcultarForm, BtnVerForm } from './t-body/componentes';
 
 const TBody = ({ ordenesPendientes }) => {
   const { setReset } = useContext(OrdenesPendientesCompContext);
@@ -42,42 +43,48 @@ const TBody = ({ ordenesPendientes }) => {
     ;
   };
 
-  const verOpciones = () => setVerActualizarEstado(!verActualizarEstado);
+  const verOpciones = (e) => {
+    setVerActualizarEstado(!verActualizarEstado);
+    if(verActualizarEstado){
+      e.target.nextSibling.classList.add('t-body--form-actualizar-orden');
+      e.target.nextSibling.classList.remove('t-body--form-actualizar-orden-hidden');
+    } else {
+      e.target.nextSibling.classList.remove('t-body--form-actualizar-orden');
+      e.target.nextSibling.classList.add('t-body--form-actualizar-orden-hidden');
+    }
+  };
 
   return (
     <tbody className='t-body'>
       {
-        ordenesPendientes.map(({ nro_orden, nombre, tipo_trabajo, fecha_entrega, hora_entrega }) =>
+        ordenesPendientes.map(({ nro_orden, nombre, fecha_creacion, tipo_trabajo, fecha_entrega, hora_entrega }) =>
         <tr key={ nro_orden } className='t-body--tr'>
           <td>{ nro_orden }</td>
           <td>{ nombre }</td>
-          {/* <td>{ fecha_creacion }</td> */}
+          <td>{ fecha_creacion }</td>
           <td>{ tipo_trabajo }</td>
-          <td>{ fecha_entrega }</td>
-          <td>{ hora_entrega }hs</td>
-          <td>
+          <td>{ fecha_entrega } a las { hora_entrega }</td>
+          {/* <td>{ hora_entrega }hs</td> */}
+          <td data={ nro_orden }>
             <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}>
               <AiOutlineEye />
             </Link>
-            <div>
+            <div className='t-body--td-form-container'>
               {
-                verActualizarEstado ?
-                <button onClick={ verOpciones } >
-                  <AiOutlineCloseCircle className='not-action' />
-                </button> :
-                <button onClick={ verOpciones } >
-                  <TfiReload className='not-action' />
-                </button>
+                verActualizarEstado ? 
+                  <BtnVerForm accion={ verOpciones } /> : 
+                  <BtnOcultarForm accion={ verOpciones } />
               }
-              {
+              {/* {
                 verActualizarEstado ?
                   mensajeS ?
                     <span>{ mensajeS }</span> :
-                  <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } /> :
+                    <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } hidden={ verActualizarEstado } /> :
                   null
-              }
+              } */}
+              <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } hidden={ verActualizarEstado } />
             </div>
-            <Link to={`#`}>
+            <Link to={`editar-orden/${nro_orden}`}>
               <AiOutlineEdit />
             </Link>
           </td>

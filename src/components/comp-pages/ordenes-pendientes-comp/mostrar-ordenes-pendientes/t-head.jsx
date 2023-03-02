@@ -7,10 +7,10 @@ const THead = () => {
       <tr className='t-head--tr'>
         <th>Nro.</th>
         <th>Cliente</th>
-        {/* <th>Creación</th> */}
+        <th>Creado</th>
         <th>Tipo</th>
-        <th>Entrega</th>
-        <th>Hora</th>
+        <th>Entregar</th>
+        {/* <th>Hora</th> */}
         <th>Acciones</th>
       </tr>
     </thead>

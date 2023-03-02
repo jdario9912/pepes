@@ -11,6 +11,7 @@ const EnrutadorComp = () => {
         <Route path='ordenes-pendientes' element={ <OrdenesPendientes /> } />
         <Route path='nuevo-cliente' element={ <AgregarCliente /> } />
         <Route path='nueva-orden/:idCliente' element={ <NuevaOrden /> } />
+        <Route path='editar-orden/:idCliente/:nroOrden' element={ <div>Pagina para editar orden </div> } />
         <Route path='opciones-admin' element={ permisos ? <OpcionesAdmin /> : <Navigate to='/' replace={true} /> } />
         <Route path='clientes' element={ <Clientes />} />
       </Route>
