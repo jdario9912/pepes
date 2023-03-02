@@ -6,10 +6,12 @@ import FormActualizarEstadoOrden from './form-actualizar-estado-orden';
 import { actualizaEstadoOrden } from '../../../../services/form-actualiza-estado-orden/form-actualiza-estado-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { OrdenesPendientesCompContext } from '../../ordenes-pendientes-comp';
+import { TfiReload } from "react-icons/tfi";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const TBody = ({ ordenesPendientes }) => {
   const { setReset } = useContext(OrdenesPendientesCompContext);
-  const [verOpcionesEstado, setVerOpcionesEstado] = useState(false);
+  const [verActualizarEstado, setVerActualizarEstado] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const [mensajeS, setMensajeS] = useState(null);
 
@@ -40,9 +42,7 @@ const TBody = ({ ordenesPendientes }) => {
     ;
   };
 
-  const handleEditar = () => {
-    setVerOpcionesEstado(!verOpcionesEstado);
-  };
+  const verOpciones = () => setVerActualizarEstado(!verActualizarEstado);
 
   return (
     <tbody className='t-body'>
@@ -61,15 +61,25 @@ const TBody = ({ ordenesPendientes }) => {
             </Link>
             <div>
               {
-                verOpcionesEstado ?
+                verActualizarEstado ?
+                <button onClick={ verOpciones } >
+                  <AiOutlineCloseCircle className='not-action' />
+                </button> :
+                <button onClick={ verOpciones } >
+                  <TfiReload className='not-action' />
+                </button>
+              }
+              {
+                verActualizarEstado ?
                   mensajeS ?
                     <span>{ mensajeS }</span> :
                   <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } /> :
-                  <button onClick={ handleEditar } >
-                    <AiOutlineEdit className='not-action' />
-                  </button>
+                  null
               }
             </div>
+            <Link to={`#`}>
+              <AiOutlineEdit />
+            </Link>
           </td>
         </tr>        
         )
