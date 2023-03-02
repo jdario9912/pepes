@@ -6,8 +6,6 @@ import FormActualizarEstadoOrden from './form-actualizar-estado-orden';
 import { actualizaEstadoOrden } from '../../../../services/form-actualiza-estado-orden/form-actualiza-estado-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { OrdenesPendientesCompContext } from '../../ordenes-pendientes-comp';
-import { TfiReload } from "react-icons/tfi";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BtnOcultarForm, BtnVerForm } from './t-body/componentes';
 
 const TBody = ({ ordenesPendientes }) => {
@@ -45,13 +43,15 @@ const TBody = ({ ordenesPendientes }) => {
 
   const verOpciones = (e) => {
     setVerActualizarEstado(!verActualizarEstado);
-    if(verActualizarEstado){
-      e.target.nextSibling.classList.add('t-body--form-actualizar-orden');
-      e.target.nextSibling.classList.remove('t-body--form-actualizar-orden-hidden');
-    } else {
-      e.target.nextSibling.classList.remove('t-body--form-actualizar-orden');
-      e.target.nextSibling.classList.add('t-body--form-actualizar-orden-hidden');
-    }
+    const id = e.target.parentNode.parentNode.id;
+    const btnOcultar = document.querySelector(`[data="ocultar${id}"]`);
+    const btnVer = document.querySelector(`[data="ver${id}"]`);
+
+    btnOcultar.classList.toggle('btn-hidden');
+    btnVer.classList.toggle('btn-hidden');
+    e.target.parentNode.lastChild.classList.toggle('form-hidden');
+    e.target.parentNode.lastChild.classList.toggle('t-body--form-actualizar-orden');
+    e.target.parentNode.classList.toggle('container-absolute');    
   };
 
   return (
@@ -65,23 +65,14 @@ const TBody = ({ ordenesPendientes }) => {
           <td>{ tipo_trabajo }</td>
           <td>{ fecha_entrega } a las { hora_entrega }</td>
           {/* <td>{ hora_entrega }hs</td> */}
-          <td data={ nro_orden }>
+          <td id={ nro_orden }>
             <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}>
               <AiOutlineEye />
             </Link>
             <div className='t-body--td-form-container'>
-              {
-                verActualizarEstado ? 
-                  <BtnVerForm accion={ verOpciones } /> : 
-                  <BtnOcultarForm accion={ verOpciones } />
-              }
-              {/* {
-                verActualizarEstado ?
-                  mensajeS ?
-                    <span>{ mensajeS }</span> :
-                    <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } hidden={ verActualizarEstado } /> :
-                  null
-              } */}
+              <BtnVerForm accion={ verOpciones } data={ nro_orden } />
+              <BtnOcultarForm accion={ verOpciones } data={ nro_orden } />
+              { mensajeS ? <span>{ mensajeS }</span> : null }
               <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } hidden={ verActualizarEstado } />
             </div>
             <Link to={`editar-orden/${nro_orden}`}>

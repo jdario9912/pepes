@@ -51,20 +51,34 @@
 }
 
 .t-body--td-form-container{
-  border: 1px solid var(--blanco);
+  background-color: transparent;
+  padding: 0.2rem;
   display: flex;
   overflow: hidden;
   transition: all .3s;
 }
 
-.t-body--form-actualizar-orden{
-  display: flex;
-  transform: translateX(0);
-  transition: all .3s;
+.btn-hidden{
+  display: none;
 }
 
-.t-body--form-actualizar-orden-hidden{
-  transform: translateX(100%);
+.container-absolute{
+  position: relative;
+  right: 0;
+  background-color: var(--amarillo);
+  border-radius: 5px;
+}
+
+.t-body--form-actualizar-orden{
+  display: flex;
+  transform: translateX(0%);
   transition: all .3s;
+  opacity: 1;
+}
+
+.form-hidden{
+  transform: translateX(100%);
   width: 0;
+  opacity: 0;
+  transition: width 1s;
 }
