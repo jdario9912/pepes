@@ -13,15 +13,15 @@ import {
 } from "../components/comp-pages/nueva-orden-tbj-comp/detalle-tbj/index";
 
 export const tiposTrabajo = {
-  "Impresiones": <Impresiones />,
-  "LOMA": <Loma />,
-  "Talonarios": <Talonarios />,
-  "Bonos": <Bonos />,
-  "Diseños": <Disenos />,
-  "Plotter": <Plotter />,
-  "Remeras": <Remeras />,
-  "Tarjetas": <Tarjetas />,
-  "Volantes": <Volantes />,
-  "Sellos": <Sellos />,
-  "Varios": <Varios />,
+  "impresiones": <Impresiones />,
+  "loma": <Loma />,
+  "talonarios": <Talonarios />,
+  "bonos": <Bonos />,
+  "diseños": <Disenos />,
+  "plotter": <Plotter />,
+  "remeras": <Remeras />,
+  "tarjetas": <Tarjetas />,
+  "volantes": <Volantes />,
+  "sellos": <Sellos />,
+  "varios": <Varios />,
 };

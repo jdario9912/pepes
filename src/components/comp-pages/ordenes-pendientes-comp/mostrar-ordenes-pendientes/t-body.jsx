@@ -57,7 +57,7 @@ const TBody = ({ ordenesPendientes }) => {
   return (
     <tbody className='t-body'>
       {
-        ordenesPendientes.map(({ nro_orden, nombre, fecha_creacion, tipo_trabajo, fecha_entrega, hora_entrega }) =>
+        ordenesPendientes.map(({ id_cliente, nro_orden, nombre, fecha_creacion, tipo_trabajo, fecha_entrega, hora_entrega }) =>
         <tr key={ nro_orden } className='t-body--tr'>
           <td>{ nro_orden }</td>
           <td>{ nombre }</td>
@@ -75,7 +75,7 @@ const TBody = ({ ordenesPendientes }) => {
               { mensajeS ? <span>{ mensajeS }</span> : null }
               <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } hidden={ verActualizarEstado } />
             </div>
-            <Link to={`/editar-orden/${tipo_trabajo}/${nro_orden}`}>
+            <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nro_orden}`}>
               <AiOutlineEdit />
             </Link>
           </td>
