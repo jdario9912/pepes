@@ -1,86 +1,85 @@
 import React, { useEffect, useState } from 'react';
-import InputDate from '../../input-date';
-import { InputDateModel } from '../../../models/input-date-model';
-import InputTime from '../../input-time';
-import { InputTimeModel } from '../../../models/input-time-model';
-import Muestra from '../nueva-orden-tbj-comp/muestra';
-import InputText from '../../input-text';
-import { InputTextModel } from '../../../models/input-text-model';
-import Faz from '../nueva-orden-tbj-comp/detalle-tbj/impresiones-comp/faz';
-import TamanoPapel from '../nueva-orden-tbj-comp/detalle-tbj/impresiones-comp/tamano-papel';
-import Orientacion from '../nueva-orden-tbj-comp/detalle-tbj/impresiones-comp/orientacion';
-import Anillado from '../nueva-orden-tbj-comp/detalle-tbj/impresiones-comp/anillado';
-import Abrochado from '../nueva-orden-tbj-comp/detalle-tbj/impresiones-comp/abrochado';
-import Corte from '../nueva-orden-tbj-comp/detalle-tbj/impresiones-comp/corte';
-import TextArea from '../../text-area';
-import { TextAreaModel } from '../../../models/text-area-model';
-import DetallePago from '../nueva-orden-tbj-comp/detalle-pago';
 import { urlApi } from '../../../services/url/url-api';
 import { useParams } from 'react-router-dom';
+import InputText from './comp-generales/input-text';
+import InputSelect from './comp-generales/input-select';
+import TextArea from './comp-generales/text-area';
+import Entregar from './comp-generales/entregar';
+import Header from './comp-generales/header';
+import { opcionesImpresiones } from '../../../models/opciones-editar-ordenes';
 
-const Impresiones = () => {
-  const { nroOrden } = useParams();
-  const [dataS, setDataS] = useState(null);
-  
+const Impresiones = () => {  
+  const { nroOrden, nombre, pedido } = useParams();
+  const [respuesta, setRespuesta] = useState(false);
+  const [dataS, setdataS] = useState({});
+  const { siNo, faz, tamano_papel, orientacion } = opcionesImpresiones;
+
   useEffect(() => {
-    fetch(urlApi + `/api/impresiones/${nroOrden}`)
+    fetch(urlApi + `/api/${pedido}/${nroOrden}`)
       .then(res => res.json())
-      .then(({ busqueda, data, mensaje }) => {
-        if(busqueda){
-          setDataS(data);
-          console.log(mensaje);
-        }
+      .then(({ busqueda, data }) => {
+        setRespuesta(busqueda);
+        setdataS(data);
       })
       .catch(e => console.log(e))
     ;
   }, []);
 
-  // useEffect(() => {
-  //   console.log(dataS.muestra);
-  // }, [dataS]);
-  // const handleChange, handleSubmint, respuestaServidor;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
-  return (
-    <div>
-      <h2>Impresiones</h2>
-      <fieldset className='input-radio--fieldset' data="muestra">
-        <legend className='input-radio--legend'>Muestra:</legend>
-        <div className='input-radio--inputs-container'>
-          <label onClick={ 'handleClick' }>
-            Si
-            <input type="radio" name="muestra" id="muestra-si" value='Si' onClick={ 'handleClick' } />  
-          </label>        
-          <label onClick={ 'handleClick' }>
-            No
-            <input type="radio" name="muestra" id="muestra-no" value='No' onClick={ 'handleClick' } />
-          </label>        
-        </div>
-      </fieldset>
-      {/* <form name='form-impresiones' onSubmit={ 'handleSubmint' } onChange={ handleChange }>
-        <div>
-          <span>Entregar el </span>
-          <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
-          <span>, a las </span>
-          <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
-        </div>
-        <Muestra />
-        <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
-        <Faz />
-        <InputText props={ new InputTextModel('Tipo: ', '', '', 'Ingresa tipo de papel', '', 'tipo-papel')} />
-        <TamanoPapel />
-        <Orientacion />
-        <Anillado />
-        <Abrochado />
-        <Corte />
-        <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
-        <DetallePago />
-        <div>
-          { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-          <button type="submit" data='btn-submit'>Guardar</button>
-        </div>
-      </form> */}
-    </div>
-  );
+  if(respuesta){
+    return (
+      <div>
+        <Header tipo='Impresiones' numero={ nroOrden } nombre={ nombre } />
+        <form className='flex-column' onSubmit={ handleSubmit }>
+          <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
+          <table>
+            <tr>
+              <td>Muestra</td>
+              <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
+            </tr>
+            <tr>
+              <td>Ubicación del archivo</td>
+              <td><InputText valor={ dataS.ubicacion_archivo} data='ubicacion-archivo' /></td>
+            </tr>
+            <tr>
+              <td>Faz</td>
+              <td><InputSelect valor={dataS.faz} data='faz' opciones={ faz } /></td>
+            </tr>
+            <tr>
+              <td>Tipo</td>
+              <td><InputText valor={ dataS.tipo_papel} data='tipo-papel' /></td>
+            </tr>
+            <tr>
+              <td>Tamaño</td>
+              <td><InputSelect valor={dataS.tamano_papel} data='tamano-papel' opciones={ tamano_papel } /></td>
+            </tr>
+            <tr>
+              <td>Orientación</td>
+              <td><InputSelect valor={dataS.orientacion} data='orientacion' opciones={ orientacion } /></td>
+            </tr>
+            <tr>
+              <td>Anillado</td>
+              <td><InputSelect valor={dataS.anillado} data='anillado' opciones={ siNo } /></td>
+            </tr>
+            <tr>
+              <td>Abrochado</td>
+              <td><InputSelect valor={dataS.abrochado} data='abrochado' opciones={ siNo } /></td>
+            </tr>
+            <tr>
+              <td>Corte</td>
+              <td><InputSelect valor={dataS.corte} data='corte' opciones={ siNo } /></td>
+            </tr>
+          </table>
+          <TextArea valor={dataS.observaciones} data='observaciones' />
+          <button type="submit">Guardar cambios</button>
+        </form>
+      </div>
+    );
+  } else
+    return <div>recuperando informacion</div>;
 }
 
 export default Impresiones;

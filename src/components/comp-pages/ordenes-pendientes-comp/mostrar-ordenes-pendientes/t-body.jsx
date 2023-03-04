@@ -75,7 +75,7 @@ const TBody = ({ ordenesPendientes }) => {
               { mensajeS ? <span>{ mensajeS }</span> : null }
               <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } hidden={ verActualizarEstado } />
             </div>
-            <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nro_orden}`}>
+            <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nombre}/${nro_orden}`}>
               <AiOutlineEdit />
             </Link>
           </td>

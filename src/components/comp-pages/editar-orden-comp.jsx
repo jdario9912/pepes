@@ -1,14 +1,14 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
 import { editarTiposTrabajo } from '../../models/editar-tipos-trabajo';
+import '../../styles/editar-orden-comp.css';
 
 const EditarOrden = () => {
-  const { tipo, idCliente, nroOrden } = useParams();
+  const { pedido } = useParams();
 
   return (
     <div>
-      Editar orden numero {nroOrden} de tipo {tipo} para cliente {idCliente}
-      { editarTiposTrabajo[tipo] }
+      { editarTiposTrabajo[pedido] }
     </div>
   );
 }

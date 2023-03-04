@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Inicio, AgregarCliente, NuevaOrden, NotFound, OrdenesPendientes, OpcionesAdmin, Clientes } from '../pages';
-import EditarOrden from './comp-pages/editar-orden';
+import EditarOrden from './comp-pages/editar-orden-comp';
 import { Index } from './pdf';
 
 const EnrutadorComp = () => {
@@ -12,7 +12,7 @@ const EnrutadorComp = () => {
         <Route path='ordenes-pendientes' element={ <OrdenesPendientes /> } />
         <Route path='nuevo-cliente' element={ <AgregarCliente /> } />
         <Route path='nueva-orden/:idCliente' element={ <NuevaOrden /> } />
-        <Route path='editar-orden/:tipo/:idCliente/:nroOrden' element={ <EditarOrden /> } />
+        <Route path='editar-orden/:pedido/:idCliente/:nombre/:nroOrden' element={ <EditarOrden /> } />
         <Route path='opciones-admin' element={ permisos ? <OpcionesAdmin /> : <Navigate to='/' replace={true} /> } />
         <Route path='clientes' element={ <Clientes />} />
       </Route>

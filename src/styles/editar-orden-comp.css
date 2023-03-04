@@ -1,0 +1,40 @@
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.original{
+  border: 2px solid green;
+  height: 23px;
+}
+
+.original:focus{
+  outline: none;
+}
+
+.cambio{
+  border: 3px solid var(--amarillo);
+  height: 23px;
+}
+
+.cambio:focus{
+  outline: none;
+}
+
+.observaciones{
+  width: 100%;
+  height: initial;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.h-23 div{
+  height: 23px;
+}
