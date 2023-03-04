@@ -6,6 +6,7 @@ import InputSelect from './comp-generales/input-select';
 import TextArea from './comp-generales/text-area';
 import Entregar from './comp-generales/entregar';
 import Header from './comp-generales/header';
+import Pago from './comp-generales/pago';
 import { opcionesBonos } from '../../../models/opciones-editar-ordenes';
 
 const Bonos = () => {
@@ -67,6 +68,7 @@ const Bonos = () => {
             
           </table>
           <TextArea valor={dataS.observaciones} data='observaciones' />
+          <Pago total={ dataS.total } entrega={ dataS.entrega } />
           <button type="submit">Guardar cambios</button>
         </form>
       </div>

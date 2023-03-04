@@ -17,7 +17,7 @@ export const tiposTrabajo = {
   "loma": <Loma />,
   "talonarios": <Talonarios />,
   "bonos": <Bonos />,
-  "diseños": <Disenos />,
+  "disenos": <Disenos />,
   "plotter": <Plotter />,
   "remeras": <Remeras />,
   "tarjetas": <Tarjetas />,

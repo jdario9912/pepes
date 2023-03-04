@@ -2,6 +2,7 @@
   width: 100%;
   overflow: auto;
   margin-top: 1rem;
+  height: 85%;
 }
 
 .mostrar-ordenes-pendientes--table{

@@ -15,7 +15,7 @@ export const editarTiposTrabajo = {
   "loma": <Loma />,
   "talonarios": <Talonarios />,
   "bonos": <Bonos />,
-  "disenos": <Disenos />,
+  "diseños": <Disenos />,
   "plotter": <Plotter />,
   "remeras": <Remeras />,
   "tarjetas": <Tarjetas />,
