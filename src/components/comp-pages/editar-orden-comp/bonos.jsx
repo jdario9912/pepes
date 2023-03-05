@@ -28,6 +28,31 @@ const Bonos = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
+    const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
+    const muestra = document.querySelector('[data="muestra"]').value;
+    const tipo = document.querySelector('[data="tipo"]').value;
+    const tamano = document.querySelector('[data="tamano"]').value;
+    const desde_numero = document.querySelector('[data="desde-numero"]').value;
+    const cantidad = document.querySelector('[data="cantidad"]').value;
+    const numeradores = document.querySelector('[data="numeradores"]').value;
+    const lotes = document.querySelector('[data="lotes"]').value;
+    const observaciones = document.querySelector('[data="observaciones"]').value;
+
+    const body = {
+      fecha_entrega,
+      hora_entrega,
+      muestra,
+      tipo,
+      tamano,
+      desde_numero,
+      cantidad,
+      numeradores,
+      lotes,
+      observaciones
+    }
+
+    console.log(body);
   };
 
   if(respuesta){

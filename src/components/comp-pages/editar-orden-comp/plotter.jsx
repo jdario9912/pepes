@@ -29,8 +29,22 @@ const Plotter = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
+    const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
+    const muestra = document.querySelector('[data="muestra"]').value;
     const color = document.querySelector('[data="color"]').value;
-    console.log(color);
+    
+    const observaciones = document.querySelector('[data="observaciones"]').value;
+
+    const body = {
+      fecha_entrega,
+      hora_entrega,
+      muestra,
+
+      observaciones
+    }
+
+    console.log(body);
   };
   
   if(respuesta){
