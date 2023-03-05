@@ -36,6 +36,7 @@ const Pago = ({ total, entrega }) => {
         type="number" 
         data='total' 
         value={ totalPago } 
+        min='0'
         className='original'
         onChange={ handleChangeTotal } 
       />
@@ -45,6 +46,7 @@ const Pago = ({ total, entrega }) => {
         type="number" 
         data='entrega' 
         value={ entregaPago } 
+        min='0'
         className='original'
         onChange={ handleChangeEntrega} 
       />

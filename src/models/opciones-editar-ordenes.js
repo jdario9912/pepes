@@ -33,3 +33,8 @@ export const opcionesPlotter = {
 export const opcionesRemeras = {
   siNo: ['Si', 'No'],
 };
+
+export const opcionesSellos = {
+  siNo: ['Si', 'No'],
+  tipo: ['Madera', 'Automático', 'Pocket', 'Otro']
+};
