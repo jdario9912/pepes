@@ -38,3 +38,11 @@ export const opcionesSellos = {
   siNo: ['Si', 'No'],
   tipo: ['Madera', 'Automático', 'Pocket', 'Otro']
 };
+
+export const opcionesTalonarios = {
+  siNo: ['Si', 'No'],
+  tipo: ['Factura C', 'Recibo C', 'Remito R', 'Presupuesto X', 'Recibo X', 'Otros'],
+  tamano: ['A4', '1/2', '1/4'],
+  puntillado_emblocado: ['Simple', 'Doble', 'Sueltas', 'Emblocado'],
+  colores: ['Amarillo', 'Rosa', 'Verde', 'Celeste'],
+};
