@@ -31,15 +31,27 @@ const Volantes = () => {
     const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
     const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
     const muestra = document.querySelector('[data="muestra"]').value;
-    
+    const tipo = document.querySelector('[data="tipo"]').value;
+    const tamano = document.querySelector('[data="tamano"]').value;
+    const cantidad = document.querySelector('[data="cantidad"]').value;
+    const impresion = document.querySelector('[data="impresion"]').value;
+    const ubicacion_diseno = document.querySelector('[data="ubicacion-diseno"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
+    const total = document.querySelector('[data="total"]').value;
+    const entrega = document.querySelector('[data="entrega"]').value;
 
     const body = {
       fecha_entrega,
       hora_entrega,
       muestra,
-
-      observaciones
+      tipo,
+      tamano,
+      cantidad,
+      impresion,
+      ubicacion_diseno,
+      observaciones,
+      total,
+      entrega
     }
 
     console.log(body);

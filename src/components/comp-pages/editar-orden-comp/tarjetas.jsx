@@ -30,15 +30,27 @@ const Tarjetas = () => {
     const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
     const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
     const muestra = document.querySelector('[data="muestra"]').value;
-    
+    const tipo = document.querySelector('[data="tipo"]').value;
+    const cantidad = document.querySelector('[data="cantidad"]').value;
+    const papel = document.querySelector('[data="papel"]').value;
+    const otra_terminacion = document.querySelector('[data="otra-terminacion"]').value;
+    const puntas_redondeadas = document.querySelector('[data="puntas-redondeadas"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
+    const total = document.querySelector('[data="total"]').value;
+    const entrega = document.querySelector('[data="entrega"]').value;
 
     const body = {
       fecha_entrega,
       hora_entrega,
       muestra,
-
-      observaciones
+      tipo,
+      cantidad,
+      papel,
+      otra_terminacion,
+      puntas_redondeadas,
+      observaciones,
+      total,
+      entrega
     }
 
     console.log(body);

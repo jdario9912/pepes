@@ -32,15 +32,39 @@ const Talonarios = () => {
     const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
     const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
     const muestra = document.querySelector('[data="muestra"]').value;
-    
+    const tipo = document.querySelector('[data="tipo"]').value;
+    const cantidad = document.querySelector('[data="cantidad"]').value;
+    const tamano = document.querySelector('[data="tamano"]').value;
+    const modelo_anterior = document.querySelector('[data="modelo-anterior"]').value;
+    const tiene_logo = document.querySelector('[data="tiene-logo"]').value;
+    const ubicacion_logo = document.querySelector('[data="ubicacion-logo"]').value;
+    const numero_desde = document.querySelector('[data="numero-desde"]').value;
+    const puntillado_emblocado = document.querySelector('[data="puntillado-emblocado"]').value;
+    const color_duplicado = document.querySelector('[data="color-duplicado"]').value;
+    const triplicado = document.querySelector('[data="triplicado"]').value;
+    const color_triplicado = document.querySelector('[data="color-triplicado"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
+    const total = document.querySelector('[data="total"]').value;
+    const entrega = document.querySelector('[data="entrega"]').value;
 
     const body = {
       fecha_entrega,
       hora_entrega,
       muestra,
-
-      observaciones
+      tipo,
+      cantidad,
+      tamano,
+      modelo_anterior,
+      tiene_logo,
+      ubicacion_logo,
+      numero_desde,
+      puntillado_emblocado,
+      color_duplicado,
+      triplicado,
+      color_triplicado,
+      observaciones,
+      total,
+      entrega
     }
 
     console.log(body);

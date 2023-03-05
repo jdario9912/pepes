@@ -38,6 +38,8 @@ const Bonos = () => {
     const numeradores = document.querySelector('[data="numeradores"]').value;
     const lotes = document.querySelector('[data="lotes"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
+    const total = document.querySelector('[data="total"]').value;
+    const entrega = document.querySelector('[data="entrega"]').value;
 
     const body = {
       fecha_entrega,
@@ -49,7 +51,9 @@ const Bonos = () => {
       cantidad,
       numeradores,
       lotes,
-      observaciones
+      observaciones,
+      total,
+      entrega
     }
 
     console.log(body);

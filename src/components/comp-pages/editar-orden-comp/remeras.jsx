@@ -32,15 +32,31 @@ const Remeras = () => {
     const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
     const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
     const muestra = document.querySelector('[data="muestra"]').value;
-    
+    const ubicacion_archivo = document.querySelector('[data="ubicacion-archivo"]').value;
+    const talle = document.querySelector('[data="talles"]').value;
+    const color = document.querySelector('[data="color"]').value;
+    const estampa_pecho = document.querySelector('[data="estampa-pecho"]').value;
+    const estampa_espalda = document.querySelector('[data="estampa-espalda"]').value;
+    const color_estampa = document.querySelector('[data="color-estampa"]').value;
+    const cantidad = document.querySelector('[data="cantidad"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
+    const total = document.querySelector('[data="total"]').value;
+    const entrega = document.querySelector('[data="entrega"]').value;
 
     const body = {
       fecha_entrega,
       hora_entrega,
       muestra,
-
-      observaciones
+      ubicacion_archivo,
+      talle,
+      color,
+      estampa_pecho,
+      estampa_espalda,
+      color_estampa,
+      cantidad,
+      observaciones,
+      total,
+      entrega
     }
 
     console.log(body);

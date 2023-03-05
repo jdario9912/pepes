@@ -31,15 +31,25 @@ const Sellos = () => {
     const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
     const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
     const muestra = document.querySelector('[data="muestra"]').value;
-    
+    const tipo = document.querySelector('[data="tipo"]').value;
+    const tamano = document.querySelector('[data="tamano"]').value;
+    const texto = document.querySelector('[data="texto"]').value;
+    const dibujo = document.querySelector('[data="dibujo"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
+    const total = document.querySelector('[data="total"]').value;
+    const entrega = document.querySelector('[data="entrega"]').value;
 
     const body = {
       fecha_entrega,
       hora_entrega,
       muestra,
-
-      observaciones
+      tipo,
+      tamano,
+      texto,
+      dibujo,
+      observaciones,
+      total,
+      entrega
     }
 
     console.log(body);

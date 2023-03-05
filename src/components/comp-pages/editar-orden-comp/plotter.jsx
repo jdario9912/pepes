@@ -32,16 +32,27 @@ const Plotter = () => {
     const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
     const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
     const muestra = document.querySelector('[data="muestra"]').value;
+    const ubicacion_archivo = document.querySelector('[data="ubicacion-archivo"]').value;
+    const tamano = document.querySelector('[data="tamano"]').value;
     const color = document.querySelector('[data="color"]').value;
-    
+    const material = document.querySelector('[data="material"]').value;
+    const terminacion = document.querySelector('[data="terminacion"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
+    const total = document.querySelector('[data="total"]').value;
+    const entrega = document.querySelector('[data="entrega"]').value;
 
     const body = {
       fecha_entrega,
       hora_entrega,
       muestra,
-
-      observaciones
+      ubicacion_archivo,
+      tamano,
+      color,
+      material,
+      terminacion,
+      observaciones,
+      total,
+      entrega
     }
 
     console.log(body);
