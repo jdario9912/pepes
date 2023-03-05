@@ -54,3 +54,15 @@ export const opcionesTarjetas = {
   papel: ['Ilustración', 'Obra', 'Madera'],
   otra_terminacion: ['Perforado', 'Corte']
 };
+
+export const opcionesVarios = {
+  siNo: ['Si', 'No'],
+};
+
+export const opcionesVolantes = {
+  siNo: ['Si', 'No'],
+  tipo: ['Color', 'Escala de grises'],
+  tamano: ['1/4', '1/2', '1/8', 'otro'],
+  cantidad: ['250', '500', '1000', '2000', '5000'],
+  impresion: ['Frente', 'Frente y dorso']
+};
