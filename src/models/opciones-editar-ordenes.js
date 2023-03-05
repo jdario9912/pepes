@@ -46,3 +46,11 @@ export const opcionesTalonarios = {
   puntillado_emblocado: ['Simple', 'Doble', 'Sueltas', 'Emblocado'],
   colores: ['Amarillo', 'Rosa', 'Verde', 'Celeste'],
 };
+
+export const opcionesTarjetas = {
+  siNo: ['Si', 'No'],
+  tipo: ['Laser 1/0', 'Laser 4/0', 'Laser 4/1', 'Laser 4/4', '1000 4/1', '1000 4/4', 'Opp mate X1', 'Opp mate X2', 'Uv sector X1', 'Uv sector X2'],
+  cantidad: ['100', '200', '1000', '2000'],
+  papel: ['Ilustración', 'Obra', 'Madera'],
+  otra_terminacion: ['Perforado', 'Corte']
+};
