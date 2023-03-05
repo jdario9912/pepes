@@ -10,6 +10,7 @@ const InputNum = ({ valor, data }) => {
         data={ data } 
         value={value }
         className='original'
+        min='0'
         onChange={() => {
           setValue(document.querySelector(`[data="${data}"]`).value);
           document.querySelector(`[data=${data}]`).classList.add('cambio');

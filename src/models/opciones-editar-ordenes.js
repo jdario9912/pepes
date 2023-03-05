@@ -29,3 +29,7 @@ export const opcionesPlotter = {
   material: ['Autoadhesivo' , 'Termotransferible'],
   terminacion: ['Pelado', 'Sin pelar']
 };
+
+export const opcionesRemeras = {
+  siNo: ['Si', 'No'],
+};
