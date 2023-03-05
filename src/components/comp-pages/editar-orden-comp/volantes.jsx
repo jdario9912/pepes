@@ -7,14 +7,13 @@ import TextArea from './comp-generales/text-area';
 import Entregar from './comp-generales/entregar';
 import Header from './comp-generales/header';
 import Pago from './comp-generales/pago';
-import InputNum from './comp-generales/input-num';
 import { opcionesVolantes } from '../../../models/opciones-editar-ordenes';
 
 const Volantes = () => {
   const { nroOrden, nombre, pedido } = useParams();
   const [respuesta, setRespuesta] = useState(false);
   const [dataS, setdataS] = useState({});
-  const { siNo } = opcionesRemeras;
+  const { siNo, tipo, tamano, cantidad, impresion } = opcionesVolantes;
 
   useEffect(() => {
     fetch(urlApi + `/api/${pedido}/${nroOrden}`)
@@ -43,32 +42,24 @@ const Volantes = () => {
               <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
             </tr>
             <tr>
-              <td>Ubicación del archivo</td>
-              <td><InputText valor={ dataS.ubicacion_archivo} data='ubicacion-archivo' /></td>
+              <td>Tipo</td>
+              <td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td>
             </tr>
             <tr>
-              <td>Talles</td>
-              <td><InputText valor={ dataS.talles} data='talles' /></td>
-            </tr>
-            <tr>
-              <td>Color</td>
-              <td><InputText valor={ dataS.color} data='color' /></td>
-            </tr>
-            <tr>
-              <td>Estampa pecho</td>
-              <td><InputText valor={ dataS.estampa_pecho} data='estampa-pecho' /></td>
-            </tr>
-            <tr>
-              <td>Estampa espalda</td>
-              <td><InputText valor={ dataS.estampa_espalda} data='estampa-espalda' /></td>
-            </tr>
-            <tr>
-              <td>Color</td>
-              <td><InputText valor={ dataS.color_estampa} data='color-estampa' /></td>
+              <td>Tamaño</td>
+              <td><InputSelect valor={dataS.tamano} data='tamano' opciones={ tamano } /></td>
             </tr>
             <tr>
               <td>Cantidad</td>
-              <td><InputNum valor={ dataS.cantidad} data='cantidad' /></td>
+              <td><InputSelect valor={ dataS.cantidad} data='cantidad' opciones={ cantidad } /></td>
+            </tr>
+            <tr>
+              <td>Impresión</td>
+              <td><InputSelect valor={ dataS.impresion} data='impresion' opciones={ impresion } /></td>
+            </tr>
+            <tr>
+              <td>Ubicación del diseño</td>
+              <td><InputText valor={ dataS.ubicacion_diseno} data='ubicacion-diseno' /></td>
             </tr>
           </table>
           <TextArea valor={dataS.observaciones} data='observaciones' />
