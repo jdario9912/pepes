@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { urlApi } from '../../../services/url/url-api';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import InputText from './comp-generales/input-text';
 import InputSelect from './comp-generales/input-select';
 import TextArea from './comp-generales/text-area';
@@ -9,8 +9,10 @@ import Header from './comp-generales/header';
 import Pago from './comp-generales/pago';
 import InputNum from './comp-generales/input-num';
 import { opcionesTalonarios } from '../../../models/opciones-editar-ordenes';
+import { editarOrden } from '../../../services/editar-orden/editar-orden';
 
 const Talonarios = () => {
+  const navigate = useNavigate();
   const { nroOrden, nombre, pedido } = useParams();
   const [respuesta, setRespuesta] = useState(false);
   const [dataS, setdataS] = useState({});
@@ -46,6 +48,9 @@ const Talonarios = () => {
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
+    const btnSubmit = document.querySelector('[data="btn-submit"]');
+
+    btnSubmit.setAttribute('disabled', true);
 
     const body = {
       fecha_entrega,
@@ -64,10 +69,18 @@ const Talonarios = () => {
       color_triplicado,
       observaciones,
       total,
-      entrega
+      entrega,
+      nroOrden
     }
 
-    console.log(body);
+    editarOrden(urlApi + '/api/talonarios', body)
+      .then(res => res.json())
+      .then(({ actualizado }) => {
+        btnSubmit.removeAttribute('disabled');
+        if(actualizado) navigate(`/pdf/talonarios/${nroOrden}`)
+      })
+      .catch(e => console.log(e))
+    ;
   };
 
   if(respuesta){
