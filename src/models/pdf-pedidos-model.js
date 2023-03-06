@@ -15,7 +15,7 @@ export const pdfPedidos = {
   "impresiones": <Impresiones />,
   "talonarios": <Talonarios />,
   "bonos": <Bonos />,
-  "diseños": <Disenos />,
+  "disenos": <Disenos />,
   "plotter": <Plotter />,
   "remeras": <Remeras />,
   "tarjetas": <Tarjetas />,
