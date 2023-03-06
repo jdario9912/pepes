@@ -3,9 +3,8 @@
   box-sizing: border-box;
   border-radius: 17px / 20px;
   height: 80vh;
-  /* overflow: scroll; */
 }
 
 .ordenes-pendientes-comp--container h2{
   text-align: center;
-}  
+}

@@ -7,7 +7,7 @@
 
 .mostrar-clientes--table{
   white-space: nowrap;
-  border-collapse: collapse;
+  width: 100%;
 }
 
 .mostrar-clientes--table-container::-webkit-scrollbar {

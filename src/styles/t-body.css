@@ -10,9 +10,11 @@
   padding: .5rem;
 }
 
-.t-body--tr .td-observaciones{
-  max-width: 50px;
-  overflow-y: scroll;
+.td-observaciones{
+  display: block;
+  max-width: 130px;
+  overflow: scroll;
+  box-sizing: border-box;
 }
 
 .t-body--tr .td-observaciones::-webkit-scrollbar {

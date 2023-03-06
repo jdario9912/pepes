@@ -3,8 +3,6 @@ import React, {
   useEffect,
   createContext
 } from 'react';
-import TBody from './mostrar-clientes/t-body';
-import THead from './mostrar-clientes/t-head';
 import '../../../styles/mostrar-clientes.css';
 import { ClientesCompContext } from '../clientes-comp';
 import { urlApi } from '../../../services/url/url-api';

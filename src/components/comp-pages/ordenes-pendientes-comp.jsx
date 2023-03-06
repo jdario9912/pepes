@@ -29,7 +29,13 @@ const OrdenesPendientesComp = () => {
     <OrdenesPendientesCompContext.Provider value={{ setReset, reset }}>
       <div className='ordenes-pendientes-comp--container modulo'>
         <h2>Ordenes Pendientes</h2>
-        <MostrarOrdenesPendientes ordenesPendientes={ ordenesPendientes } />
+        {
+          ordenesPendientes.length === 0 ?
+          <div>
+            No hay ordenes pendientes
+          </div> :
+            <MostrarOrdenesPendientes ordenesPendientes={ ordenesPendientes } />
+        }
       </div>
     </OrdenesPendientesCompContext.Provider>
   );

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../../../styles/t-body.css';
 
 const TBody = ({ clientes }) => {
+  console.log(clientes.ordenesPendientes);
   return (
     <tbody className='t-body'>
       {
