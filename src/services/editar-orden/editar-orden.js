@@ -1,4 +1,4 @@
-export const actualizaEstadoOrden = (url, body) => {
+export const editarOrden = (url, body) => {
   return fetch(url, {
     method: 'PATCH',
     headers: {

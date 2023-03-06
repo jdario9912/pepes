@@ -14,7 +14,6 @@ const TextArea = ({ valor, data }) => {
           setValue(document.querySelector(`[data=${data}]`).value);
           document.querySelector(`[data=${data}]`).classList.add('cambio');
           document.querySelector(`[data=${data}]`).classList.remove('original');
-          console.log('cambio el text area');
         }}
       >
         { value }

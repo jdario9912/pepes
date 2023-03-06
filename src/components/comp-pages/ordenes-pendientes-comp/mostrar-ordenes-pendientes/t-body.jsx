@@ -69,15 +69,15 @@ const TBody = ({ ordenesPendientes }) => {
             <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}>
               <AiOutlineEye />
             </Link>
+            <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nombre}/${nro_orden}`}>
+              <AiOutlineEdit />
+            </Link>
             <div className='t-body--td-form-container'>
               <BtnVerForm accion={ verOpciones } data={ nro_orden } />
               <BtnOcultarForm accion={ verOpciones } data={ nro_orden } />
               { mensajeS ? <span>{ mensajeS }</span> : null }
               <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } hidden={ verActualizarEstado } />
             </div>
-            <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nombre}/${nro_orden}`}>
-              <AiOutlineEdit />
-            </Link>
           </td>
         </tr>        
         )

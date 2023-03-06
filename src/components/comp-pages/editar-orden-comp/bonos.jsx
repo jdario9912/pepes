@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { urlApi } from '../../../services/url/url-api';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import InputText from './comp-generales/input-text';
 import InputSelect from './comp-generales/input-select';
 import TextArea from './comp-generales/text-area';
@@ -8,8 +8,11 @@ import Entregar from './comp-generales/entregar';
 import Header from './comp-generales/header';
 import Pago from './comp-generales/pago';
 import { opcionesBonos } from '../../../models/opciones-editar-ordenes';
+import { editarOrden } from '../../../services/editar-orden/editar-orden';
+
 
 const Bonos = () => {
+  const navigate = useNavigate();
   const { nroOrden, nombre, pedido } = useParams();
   const [respuesta, setRespuesta] = useState(false);
   const [dataS, setdataS] = useState({});
@@ -40,6 +43,9 @@ const Bonos = () => {
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
+    const btnSubmit = document.querySelector('[data="btn-submit"]');
+
+    btnSubmit.setAttribute('disabled', true);
 
     const body = {
       fecha_entrega,
@@ -53,10 +59,18 @@ const Bonos = () => {
       lotes,
       observaciones,
       total,
-      entrega
+      entrega,
+      nroOrden
     }
 
-    console.log(body);
+    editarOrden(urlApi + '/api/bonos', body)
+      .then(res => res.json())
+      .then(({ actualizado }) => {
+        btnSubmit.removeAttribute('disabled');
+        if(actualizado) navigate(`/pdf/bonos/${nroOrden}`)
+      })
+      .catch(e => console.log(e))
+    ;
   };
 
   if(respuesta){
@@ -66,39 +80,40 @@ const Bonos = () => {
         <form className='flex-column' onSubmit={ handleSubmit }>
           <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
           <table>
-            <tr>
-              <td>Muestra</td>
-              <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Tipo</td>
-              <td><td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td></td>
-            </tr>
-            <tr>
-              <td>Tamaño</td>
-              <td><InputSelect valor={dataS.tamano} data='tamano' opciones={ tamano } /></td>
-            </tr>
-            <tr>
-              <td>Desde número</td>
-              <td><InputText valor={ dataS.desde_numero} data='desde-numero' /></td>
-            </tr>
-            <tr>
-              <td>Cantidad</td>
-              <td><InputText valor={ dataS.cantidad} data='cantidad' /></td>
-            </tr>
-            <tr>
-              <td>Numeradores</td>
-              <td><InputSelect valor={dataS.numeradores} data='numeradores' opciones={ numeradores } /></td>
-            </tr>
-            <tr>
-              <td>En lotes de</td>
-              <td><InputSelect valor={dataS.lotes} data='lotes' opciones={ lotes } /></td>
-            </tr>
-            
+            <tbody>
+              <tr>
+                <td>Muestra</td>
+                <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
+              </tr>
+              <tr>
+                <td>Tipo</td>
+                <td><td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td></td>
+              </tr>
+              <tr>
+                <td>Tamaño</td>
+                <td><InputSelect valor={dataS.tamano} data='tamano' opciones={ tamano } /></td>
+              </tr>
+              <tr>
+                <td>Desde número</td>
+                <td><InputText valor={ dataS.desde_numero} data='desde-numero' /></td>
+              </tr>
+              <tr>
+                <td>Cantidad</td>
+                <td><InputText valor={ dataS.cantidad} data='cantidad' /></td>
+              </tr>
+              <tr>
+                <td>Numeradores</td>
+                <td><InputSelect valor={dataS.numeradores} data='numeradores' opciones={ numeradores } /></td>
+              </tr>
+              <tr>
+                <td>En lotes de</td>
+                <td><InputSelect valor={dataS.lotes} data='lotes' opciones={ lotes } /></td>
+              </tr>
+            </tbody>
           </table>
           <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
-          <button type="submit">Guardar cambios</button>
+          <button type="submit" data='btn-submit'>Guardar cambios</button>
         </form>
       </div>
     );
