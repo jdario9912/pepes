@@ -102,28 +102,10 @@ const Plotter = () => {
               <td>Terminación</td>
               <td><InputSelect valor={dataS.terminacion} data='terminacion' opciones={ terminacion } /></td>
             </tr>
-            {/* 
-            
-            <tr>
-              <td>Corte</td>
-              <td><InputSelect valor={dataS.corte} data='corte' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Ojales</td>
-              <td><InputSelect valor={dataS.ojales} data='ojales' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Troquelado</td>
-              <td><InputSelect valor={dataS.troquelado} data='troquelado' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Portabaner</td>
-              <td><InputSelect valor={dataS.portabaner} data='portabaner' opciones={ siNo } /></td>
-            </tr> */}
           </table>
           <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
-          <button type="submit">Guardar cambios</button>
+          <button type="submit" data='btn-submit'>Guardar cambios</button>
         </form>
       </div>
     );

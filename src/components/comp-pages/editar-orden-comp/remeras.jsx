@@ -117,7 +117,7 @@ const Remeras = () => {
           </table>
           <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
-          <button type="submit">Guardar cambios</button>
+          <button type="submit" data='btn-submit'>Guardar cambios</button>
         </form>
       </div>
     );
