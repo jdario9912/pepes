@@ -10,7 +10,6 @@ const THead = () => {
         <th>Creado</th>
         <th>Tipo</th>
         <th>Entregar</th>
-        {/* <th>Hora</th> */}
         <th>Acciones</th>
       </tr>
     </thead>

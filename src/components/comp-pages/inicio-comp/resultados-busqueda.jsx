@@ -42,7 +42,7 @@ const ResultadosBusqueda = ({ dato }) => {
         {
           clientes.length > 0 ?
             <TablaClientes /> :
-            <p>Cargando reslutados...</p>
+            <p>Cargando resultados...</p>
         }
       </TablaClientesContext.Provider>
     )

@@ -12,7 +12,7 @@
 
 .td-observaciones{
   display: block;
-  max-width: 130px;
+  /* max-width: 200px; */
   overflow: scroll;
   box-sizing: border-box;
 }

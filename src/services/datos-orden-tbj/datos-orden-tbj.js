@@ -15,7 +15,7 @@ export const fecha_creacion = () => {
   let mes = new Date().getMonth("MM");
   const year = new Date().getFullYear();
 
-  return `${dia}/${mes + 1}/${year}`;
+  return `${dia}-${mes + 1}-${year}`;
 };
 
 export const formatear_fecha = (fecha) => {
