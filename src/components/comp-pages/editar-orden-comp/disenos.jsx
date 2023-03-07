@@ -9,6 +9,7 @@ import Header from './comp-generales/header';
 import Pago from './comp-generales/pago';
 import { opcionesDisenos } from '../../../models/opciones-editar-ordenes';
 import { editarOrden } from '../../../services/editar-orden/editar-orden';
+import Abono from './comp-generales/abono';
 
 const Disenos = () => {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ const Disenos = () => {
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
+    const abono = document.querySelector('[data="abono"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
 
     btnSubmit.setAttribute('disabled', true);
@@ -51,6 +53,7 @@ const Disenos = () => {
       observaciones,
       total,
       entrega,
+      abono,
       nroOrden
     }
 
@@ -86,6 +89,7 @@ const Disenos = () => {
           </table>
           <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
+          <Abono valor={ dataS.abono } />
           <button type="submit" data='btn-submit'>Guardar cambios</button>
         </form>
       </div>

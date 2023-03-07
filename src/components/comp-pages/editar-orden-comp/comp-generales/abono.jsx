@@ -1,11 +1,12 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 
-const InputSelect = ({ valor, data, opciones }) => {
+const Abono = ({ valor }) => {
   const [value, setValue] = useState(valor);
-
+  const data = 'abono';
   return (
-    <div className='flex-row'>
-      <select 
+    <div>
+      Abonó
+      <select
         value={ value } 
         onChange={ () => {
           setValue(document.querySelector(`[data=${data}]`).value);
@@ -15,14 +16,13 @@ const InputSelect = ({ valor, data, opciones }) => {
         data={data} 
         className='original'
       >
-        {
-          opciones.map(opcion =>
-            <option key={opcion} value={opcion}>{opcion}</option>    
-          )
-        }
+        <option value="efectivo">En efectivo</option>
+        <option value="debito">Por débito</option>
+        <option value="transferencia">Por transferencia</option>
       </select>
     </div>
+
   );
 }
 
-export default InputSelect;
+export default Abono;
