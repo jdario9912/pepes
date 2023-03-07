@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import '../../../../styles/t-body.css';
-import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
-import { Link } from 'react-router-dom';
 import FormActualizarEstadoOrden from './form-actualizar-estado-orden';
 import { actualizaEstadoOrden } from '../../../../services/form-actualiza-estado-orden/form-actualiza-estado-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { OrdenesPendientesCompContext } from '../../ordenes-pendientes-comp';
 import { BtnOcultarForm, BtnVerForm } from './t-body/componentes';
+import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const TBody = ({ ordenesPendientes }) => {
   const { setReset } = useContext(OrdenesPendientesCompContext);

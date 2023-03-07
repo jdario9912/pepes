@@ -31,8 +31,8 @@ const ResultadosBusqueda = ({ dato }) => {
       <TablaOrdenContext.Provider value={{ orden }}>
         {
           Object.keys(orden).length > 0 ?
-          <TablaOrden /> :
-          <p>Cargando resultado...</p>
+            <TablaOrden /> :
+            <p>Cargando resultado...</p>
         }
       </TablaOrdenContext.Provider>
     );

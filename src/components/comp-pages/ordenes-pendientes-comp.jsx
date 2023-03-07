@@ -22,10 +22,8 @@ const OrdenesPendientesComp = () => {
       .then(res => res.json())
       .then(data => {
         if(ordenar){
-          console.log('ordenar por fecha');
           setOrdenesPendientes(ordenarPorFecha(data));
         } else {
-          console.log('ordenar por tipo');
           setOrdenesPendientes(ordenarPorTipo(data));
         }
         setReset(false);
