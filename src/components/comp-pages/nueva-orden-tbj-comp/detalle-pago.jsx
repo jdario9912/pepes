@@ -20,9 +20,23 @@ const DetallePago = () => {
   return (
     <div>
       <h3>Detalle de pago</h3>
-      <InputNumber props={ new InputNumberModel('Total: $', '', '', null, '', 'total', setTotal)} />
-      <InputNumber props={ new InputNumberModel('Entrega: $', '', '', null, '', 'entrega', setEntrega)} />
-      <span>Saldo: { saldo < 0 ? <span className='detalle-pago--alerta'>Los valores ingresados son incorrectos</span> : `$${saldo}` }</span>
+      <div>
+        <InputNumber props={ new InputNumberModel('Total: $', '', '', null, '', 'total', setTotal)} />
+        <InputNumber props={ new InputNumberModel('Entrega: $', '', '', null, '', 'entrega', setEntrega)} />
+        <span>Saldo: { saldo < 0 ? <span className='detalle-pago--alerta'>Los valores ingresados son incorrectos</span> : `$${saldo}` }</span>
+      </div>
+      <div>
+        Abonó
+        <select 
+          name="abono" 
+          data='abono'
+        >
+          <option value="efectivo">En efectivo</option>
+          <option value="debito">Por débito</option>
+          <option value="transferencia">Por transferencia</option>
+        </select>
+      </div>
+
     </div>
   );
 }

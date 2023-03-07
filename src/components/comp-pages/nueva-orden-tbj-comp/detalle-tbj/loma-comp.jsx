@@ -45,6 +45,7 @@ const LomaComp = () => {
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
+    const abono = document.querySelector('[data="abono"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
 
     const body = {
@@ -66,7 +67,8 @@ const LomaComp = () => {
       observaciones,
       total,
       entrega,
-      estado: 'pendiente'
+      estado: 'pendiente',
+      abono
     }
     
     btnSubmit.setAttribute('disabled', true);
