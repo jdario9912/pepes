@@ -6,7 +6,7 @@ import THead from './t-head';
 const Tabla = () => {
   const { ordenes } = useContext(OrdenesClienteCompContext);
   return (
-    <table>
+    <table className='table-ordenes-cliente'>
       <THead />
       {
         ordenes ?

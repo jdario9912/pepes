@@ -79,6 +79,7 @@
 }
 
 .form-hidden{
+  display: flex;
   transform: translateX(100%);
   width: 0;
   opacity: 0;

@@ -14,10 +14,11 @@ const TBody = ({ ordenes }) => {
             <td>{ fecha_creacion }</td>
             <td>{ fecha_entrega }</td>
             <td>{ atendido_por }</td>
-            <td><TdAcciones 
-                  tipo_trabajo={ tipo_trabajo} 
-                  nro_orden={ nro_orden }
-                />
+            <td>
+              <TdAcciones 
+                tipo_trabajo={ tipo_trabajo} 
+                nro_orden={ nro_orden }
+              />
             </td>
           </tr>  
         )
