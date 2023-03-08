@@ -1,0 +1,22 @@
+.link-editar{
+  position: absolute;
+  bottom: 3.4rem;
+  right: 3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 2rem;
+  transition: all 0.5s;
+  color: var(--amarillo);
+  background: var(--amarillo50);
+  box-shadow: 1px 1px 5px var(--negro2);
+}
+
+.link-editar:hover{
+  background: var(--amarillo);
+  border: 1px solid var(--amarillo50);
+  color: var(--blanco);
+}
+
+.link-editar:active{
+  transform: scale(0.8);
+}

@@ -5,7 +5,8 @@ const FormActualizarEstadoOrden = ({ handleSubmit, orden, tipo, isSubmiting }) =
   return (
     <form 
       onSubmit={ handleSubmit } 
-      className='form-hidden' 
+      className='form-hidden'
+      data={`form${orden}`}
     >
       <input type="hidden" data="nro_orden" value={ orden } />
       <input type="hidden" data="tipo_trabajo" value={ tipo } />

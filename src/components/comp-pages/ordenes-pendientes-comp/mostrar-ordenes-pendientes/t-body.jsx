@@ -7,6 +7,7 @@ import { OrdenesPendientesCompContext } from '../../ordenes-pendientes-comp';
 import { BtnOcultarForm, BtnVerForm } from './t-body/componentes';
 import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
 import { Link } from 'react-router-dom';
+import { toggleForm } from '../../../../services/toggle-form-estado-orden';
 
 const TBody = ({ ordenesPendientes }) => {
   const { setReset } = useContext(OrdenesPendientesCompContext);
@@ -43,15 +44,13 @@ const TBody = ({ ordenesPendientes }) => {
 
   const verOpciones = (e) => {
     setVerActualizarEstado(!verActualizarEstado);
-    const id = e.target.parentNode.parentNode.id;
-    const btnOcultar = document.querySelector(`[data="ocultar${id}"]`);
-    const btnVer = document.querySelector(`[data="ver${id}"]`);
+    const nro_orden = e.target.parentNode.parentNode.id;
+    const btnOcultar = document.querySelector(`[data="ocultar${nro_orden}"]`);
+    const btnVer = document.querySelector(`[data="ver${nro_orden}"]`);
+    const form = document.querySelector(`[data="form${nro_orden}"]`);
+    const formContainer = document.querySelector(`[data="form-container${nro_orden}"]`);
 
-    btnOcultar.classList.toggle('btn-hidden');
-    btnVer.classList.toggle('btn-hidden');
-    e.target.parentNode.lastChild.classList.toggle('form-hidden');
-    e.target.parentNode.lastChild.classList.toggle('t-body--form-actualizar-orden');
-    e.target.parentNode.classList.toggle('container-absolute');    
+    toggleForm(btnVer, btnOcultar, form, formContainer);
   };
 
   return (
@@ -69,7 +68,7 @@ const TBody = ({ ordenesPendientes }) => {
 
               <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nombre}/${nro_orden}`}><AiOutlineEdit /></Link>
 
-              <div className='t-body--td-form-container'>
+              <div className='t-body--td-form-container' data={`form-container${nro_orden}`}>
                 <BtnVerForm accion={ verOpciones } data={ nro_orden } />
                 <BtnOcultarForm accion={ verOpciones } data={ nro_orden } />
                 { mensajeS ? <span>{ mensajeS }</span> : null }
