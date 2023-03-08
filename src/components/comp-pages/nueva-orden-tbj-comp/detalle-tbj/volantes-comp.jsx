@@ -3,11 +3,7 @@ import Tipo from './volantes-comp/tipo';
 import Impresion from './volantes-comp/impresion';
 import InputText from '../../../input-text';
 import { InputTextModel } from '../../../../models/input-text-model';
-import InputDate from '../../../input-date';
-import InputTime from '../../../input-time';
 import Muestra from '../muestra';
-import { InputDateModel } from '../../../../models/input-date-model';
-import { InputTimeModel } from '../../../../models/input-time-model';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
@@ -19,6 +15,7 @@ import { useNavigate } from 'react-router-dom';
 import Tamano from './volantes-comp/tamano';
 import Cantidad from './volantes-comp/cantidad';
 import { GiPapers } from "react-icons/gi";
+import FechaHora from '../fecha-hora';
 
 export const VolantesCompContext = createContext();
 
@@ -88,12 +85,7 @@ const VolantesComp = () => {
           <h5 className='nombre-tipo-trabajo'>Volantes</h5>
         </div>
         <form name='form-volantes' onSubmit={ handleSubmint } onChange={ handleChange }>
-          <div>
-            <span>Entregar el </span>
-            <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
-            <span>, a las </span>
-            <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
-          </div>
+          <FechaHora />
           <Muestra />
           <Tipo />
           <Tamano />

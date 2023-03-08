@@ -18,14 +18,11 @@ import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/da
 import DetallePago from '../detalle-pago';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
-import InputDate from '../../../input-date';
-import { InputDateModel } from '../../../../models/input-date-model';
-import InputTime from '../../../input-time';
-import { InputTimeModel } from '../../../../models/input-time-model';
 import Muestra from '../muestra';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { TbFileInvoice } from "react-icons/tb";
+import FechaHora from '../fecha-hora';
 
 export const TalonariosCompContext = createContext();
 
@@ -108,12 +105,7 @@ const TalonariosComp = () => {
           <h5 className='nombre-tipo-trabajo'>Talonarios</h5>
         </div>
         <form name='form-talonarios' onSubmit={ handleSubmint } onChange={ handleChange }>
-          <div>
-            <span>Entregar el </span>
-            <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
-            <span>, a las </span>
-            <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
-          </div>
+          <FechaHora />
           <Muestra />
           <Tipo />
           <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'cantidad', 'cantidad') } />

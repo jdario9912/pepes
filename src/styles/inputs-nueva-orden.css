@@ -7,3 +7,13 @@
   padding-left: 0.7rem;
   color: var(--blanco);
 }
+
+.input-date-time{
+  line-height: 2rem;
+  background: var(--negro3);
+  border: 0.5px solid var(--blanco3);
+  border-radius: 10px;
+  outline: none;
+  padding: 0.2rem 0.5rem;
+  color: var(--blanco);
+}

@@ -3,10 +3,6 @@ import InputNumber from '../../../input-number';
 import { InputNumberModel } from '../../../../models/input-number-model';
 import { useNavigate } from 'react-router-dom';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
-import InputDate from '../../../input-date';
-import InputTime from '../../../input-time';
-import { InputDateModel } from '../../../../models/input-date-model';
-import { InputTimeModel } from '../../../../models/input-time-model';
 import Muestra from '../muestra';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
@@ -19,6 +15,7 @@ import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/da
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { RiCoupon3Line } from "react-icons/ri";
+import FechaHora from '../fecha-hora';
 
 export const BonosCompContext = createContext();
 
@@ -90,12 +87,7 @@ const BonosComp = () => {
           <h5 className='nombre-tipo-trabajo'>Bonos</h5>
         </div>
         <form name='form-bonos' onSubmit={ handleSubmint } onChange={ handleChange }>
-          <div>
-            <span>Entregar el </span>
-            <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
-            <span>, a las </span>
-            <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
-          </div>
+          <FechaHora />
           <Muestra />
           <Tipo />
           <Tamano />

@@ -4,11 +4,7 @@ import PuntasRedondas from './tarjetas-comp/puntas-redondas';
 import Tipo from './tarjetas-comp/tipo';
 import Cantidad from './tarjetas-comp/cantidad';
 import Papel from './tarjetas-comp/papel';
-import InputDate from '../../../input-date';
-import InputTime from '../../../input-time';
 import Muestra from '../muestra';
-import { InputDateModel } from '../../../../models/input-date-model';
-import { InputTimeModel } from '../../../../models/input-time-model';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
@@ -18,6 +14,7 @@ import { urlApi } from '../../../../services/url/url-api';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineIdcard } from "react-icons/ai";
+import FechaHora from '../fecha-hora';
 
 export const TarjetasCompContext = createContext();
 
@@ -87,12 +84,7 @@ const TarjetasComp = () => {
           <h5 className='nombre-tipo-trabajo'>Tarjetas</h5>
         </div>
       <form name='form-tarjetas' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <div>
-          <span>Entregar el </span>
-          <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
-          <span>, a las </span>
-          <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
-        </div>
+        <FechaHora />
         <Muestra />
         <Tipo />
         <Cantidad />

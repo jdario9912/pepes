@@ -6,11 +6,7 @@ import Ojales from './loma-comp/ojales';
 import Troquelado from './loma-comp/troquelado';
 import Portabaner from './loma-comp/portabaner';
 import { InputTextModel } from '../../../../models/input-text-model';
-import InputDate from '../../../input-date';
-import InputTime from '../../../input-time';
 import Muestra from '../muestra';
-import { InputDateModel } from '../../../../models/input-date-model';
-import { InputTimeModel } from '../../../../models/input-time-model';
 import TextArea from '../../../text-area';
 import DetallePago from '../detalle-pago';
 import { TextAreaModel } from '../../../../models/text-area-model';
@@ -22,6 +18,7 @@ import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { useNavigate } from 'react-router-dom';
 import { GiTestTubes } from "react-icons/gi";
+import FechaHora from '../fecha-hora';
 
 export const LomaCompContext = createContext();
 
@@ -98,12 +95,7 @@ const LomaComp = () => {
           <h5 className='nombre-tipo-trabajo'>Loma</h5>
         </div>
         <form name='form-loma' onSubmit={ handleSubmit } onChange={ handleChange }>
-          <div>
-            <span>Entregar el </span>
-            <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
-            <span>, a las </span>
-            <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
-          </div>
+          <FechaHora />
           <Muestra />
           <InputText props={ new InputTextModel('Ubicación del archivo:', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
           <Material />

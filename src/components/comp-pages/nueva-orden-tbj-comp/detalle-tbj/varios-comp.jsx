@@ -1,11 +1,7 @@
 import React, { useState, useContext } from 'react';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
-import InputDate from '../../../input-date';
-import InputTime from '../../../input-time';
 import Muestra from '../muestra';
-import { InputDateModel } from '../../../../models/input-date-model';
-import { InputTimeModel } from '../../../../models/input-time-model';
 import DetallePago from '../detalle-pago';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
 import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
@@ -13,6 +9,7 @@ import { urlApi } from '../../../../services/url/url-api';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
 import { TbQuestionMark } from "react-icons/tb";
+import FechaHora from '../fecha-hora';
 
 const VarioComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
@@ -74,12 +71,7 @@ const VarioComp = () => {
         <h5 className='nombre-tipo-trabajo'>Varios</h5>
       </div>
       <form name='form-varios' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <div>
-          <span>Entregar el </span>
-          <InputDate props={ new InputDateModel('', '', null, '', 'fecha') } />
-          <span>, a las </span>
-          <InputTime props={ new InputTimeModel('', '', '19:00', '', 'hora')} />
-        </div>
+        <FechaHora />
         <Muestra />
         <TextArea props={ new TextAreaModel('Detalle: ', '', '', 'Ingresa una descripción', '', 'detalle')} />
         <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
