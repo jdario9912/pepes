@@ -91,11 +91,11 @@ const BonosComp = () => {
           <Muestra />
           <Tipo />
           <Tamano />
-          <InputNumber props={ new InputNumberModel('Desde número: ', '', '', '', '', 'desde-numero')} />
-          <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', '', 'cantidad')} />
+          <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Desde número', 'desde-numero')} />
+          <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Cantidad', 'cantidad')} />
           <Numeradores />
           <Lotes />
-          <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
+          <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
           <DetallePago />
           <div>
             { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
