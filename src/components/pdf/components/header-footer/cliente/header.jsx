@@ -17,7 +17,7 @@ export const HeaderCliente = () => {
         <Image style={estilos.logo} src={ logo } />
         <View style={estilos.titulo}>
           <View style={estilos.nombre}>
-            <Text>Cliente: {nombre}</Text>
+            <Text style={estilos.nombre}>Cliente: {nombre}</Text>
           </View>
           <Text>Orden n°: {nro_orden}</Text>
           <Text style={estilos.tipo}>Tipo: {tipo_trabajo === 'loma' ? 'solventes' : tipo_trabajo }</Text>

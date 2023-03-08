@@ -19,13 +19,14 @@
   align-items: center;
   padding: 0.5rem;
   box-shadow: 1px 1px 10px var(--negro2);
-  transition: all 1s;
+  transition: all 0.2s;
 }
 
 .btn-reelegir-trabajo:hover{
   border: 1px solid var(--amarillo);
   color: var(--amarillo);
   background: var(--blanco3);
+  transform: scale(1.01);
 }
 
 @media only screen and (max-width: 767px){

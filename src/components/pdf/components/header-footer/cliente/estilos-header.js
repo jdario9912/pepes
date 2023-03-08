@@ -21,7 +21,8 @@ export const estilosHeader = {
     gap: 3
   },
   nombre: {
-    fontSize: 17
+    fontSize: 17,
+    textTransform: 'capitalize'
   },
   entrega: {
     flexDirection: 'row',

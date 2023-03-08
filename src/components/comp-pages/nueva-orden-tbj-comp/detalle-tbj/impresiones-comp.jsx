@@ -90,7 +90,7 @@ const ImpresionesComp = () => {
   return (
     <ImpresionesCompContext.Provider value={{ setFaz, setOrientacion, setAnillado, setAbrochado, setCorte }}>
       <div>
-        <h2>Impresiones</h2>
+        <h5>Impresiones</h5>
         <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange }>
           <div>
             <span>Entregar el </span>

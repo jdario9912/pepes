@@ -19,6 +19,10 @@
   justify-content: center;
 }
 
+.nombre{
+  text-transform: capitalize;
+}
+
 @media only screen and (max-width: 767px) {
   .info-cliente--nombre-telefono-email{
     flex-direction: column;

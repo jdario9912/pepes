@@ -29,7 +29,7 @@ export const HeaderLocal = () => {
           <Text>Creado: {fecha_creacion}</Text>
         </View>
         <View style={estilos.separarFilas}>
-          <Text>Cliente: {nombre}</Text>
+          <Text style={estilos.nombre}>Cliente: {nombre}</Text>
           <Text>Email: {email}</Text>
           <Text>Tel: {telefono}</Text>
         </View>
