@@ -10,7 +10,7 @@ const DetalleTbj = () => {
   return (
     <div>
       {
-        tipoTrabajo.length !== 0 ? tiposTrabajo[tipoTrabajo] : <span>No se eligio tipo de trabajo</span>
+        tipoTrabajo.length !== 0 ? tiposTrabajo[tipoTrabajo] : <span>Elige el tipo de trabajo...</span>
       }
     </div>
   );

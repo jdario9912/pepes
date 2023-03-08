@@ -1,7 +1,31 @@
-
+.nueva-orden-tbj-comp--container{
+  gap: 1rem;
+  display: flex;  
+  flex-direction: column;
+}
 
 .nueva-orden-tbj-comp--container h2{
   text-align: center;
+}
+
+.btn-reelegir-trabajo{
+  background: var(--cyan50);
+  color: var(--blanco);
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid var(--blanco);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 10px var(--negro2);
+  transition: all 1s;
+}
+
+.btn-reelegir-trabajo:hover{
+  border: 1px solid var(--amarillo);
+  color: var(--amarillo);
+  background: var(--blanco3);
 }
 
 @media only screen and (max-width: 767px){

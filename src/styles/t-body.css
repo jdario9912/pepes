@@ -31,6 +31,30 @@
   justify-content: space-around;
 }
 
+.td-email{
+  max-width: 10rem;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+
+.td-email::-webkit-scrollbar {
+  width: 0;
+  height: 6px;
+}
+
+.td-email::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.td-email::-webkit-scrollbar-thumb {
+  background-color: #666666;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.td-email:hover::-webkit-scrollbar-thumb {
+  background-color: var(--amarillo);    /* color of the scroll thumb */
+}
+
 .td-observaciones{
   display: block;
   max-width: 10rem;

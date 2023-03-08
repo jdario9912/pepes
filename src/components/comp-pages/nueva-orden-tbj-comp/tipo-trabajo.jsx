@@ -21,48 +21,48 @@ const TipoTrabajo = ({ accion }) => {
   }
 
   return (
-    <div>
-      <button onClick={ handleTipoTrabajo }  id='impresiones'>
+    <div className='tipo-trabajo--botones-container modulo'>
+      <button onClick={ handleTipoTrabajo }  id='impresiones' className='tipo-trabajo--boton' >
           <AiOutlinePrinter className='svg' />
           Impresiones
       </button>
-      <button onClick={ handleTipoTrabajo } id='loma'>
+      <button onClick={ handleTipoTrabajo } id='loma' className='tipo-trabajo--boton' >
         <GiTestTubes className='svg' />
         LOMA
       </button>
-      <button onClick={ handleTipoTrabajo } id='talonarios' >
+      <button onClick={ handleTipoTrabajo } id='talonarios' className='tipo-trabajo--boton' >
         <TbFileInvoice className='svg' />
         Talonarios
       </button>
-      <button onClick={ handleTipoTrabajo } id='bonos' >
+      <button onClick={ handleTipoTrabajo } id='bonos' className='tipo-trabajo--boton' >
         <RiCoupon3Line className='svg' />
         Bonos
       </button>
-      <button onClick={ handleTipoTrabajo } id='disenos' >
+      <button onClick={ handleTipoTrabajo } id='disenos' className='tipo-trabajo--boton' >
         <HiOutlineLightBulb className='svg' />
         Diseños
       </button>
-      <button onClick={ handleTipoTrabajo } id='plotter' >
+      <button onClick={ handleTipoTrabajo } id='plotter' className='tipo-trabajo--boton' >
         <BsPrinter className='svg' />
         Plotter
       </button>
-      <button onClick={ handleTipoTrabajo } id='remeras' >
+      <button onClick={ handleTipoTrabajo } id='remeras' className='tipo-trabajo--boton' >
         <IoShirtOutline className='svg' />
         Remeras
       </button>
-      <button onClick={ handleTipoTrabajo } id='tarjetas' >
+      <button onClick={ handleTipoTrabajo } id='tarjetas' className='tipo-trabajo--boton' >
         <AiOutlineIdcard className='svg' />
         Tarjetas
       </button>
-      <button onClick={ handleTipoTrabajo } id='volantes' >
+      <button onClick={ handleTipoTrabajo } id='volantes' className='tipo-trabajo--boton' >
         <GiPapers className='svg' />
         Volantes
       </button>
-      <button onClick={ handleTipoTrabajo } id='sellos' >
+      <button onClick={ handleTipoTrabajo } id='sellos' className='tipo-trabajo--boton' >
         <TfiStamp className='svg' />
         Sellos
       </button>
-      <button onClick={ handleTipoTrabajo } id='varios' >
+      <button onClick={ handleTipoTrabajo } id='varios' className='tipo-trabajo--boton' >
         <TbQuestionMark className='svg' />
         Varios
       </button>

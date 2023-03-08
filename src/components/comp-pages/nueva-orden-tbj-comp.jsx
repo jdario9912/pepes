@@ -1,6 +1,7 @@
 import React, {useEffect, useState, createContext} from 'react';
 import InfoCliente from './nueva-orden-tbj-comp/info-cliente';
 import '../../styles/nueva-orden-tbj-comp.css';
+import '../../styles/inputs-nueva-orden.css';
 import {useParams} from 'react-router-dom';
 import {urlApi} from '../../services/url/url-api';
 import TipoTrabajo from './nueva-orden-tbj-comp/tipo-trabajo';
@@ -42,7 +43,7 @@ const NuevaOrdenTbjComp = () => {
         <InfoCliente props={clienteS} />
         {verBotonesTipoTrabajo ? <TipoTrabajo accion={setTipoTrabajo} /> : null}
         {!verBotonesTipoTrabajo
-          ? <button onClick={reelegirTrabajo}>Reelegir trabajo</button>
+          ? <button onClick={reelegirTrabajo} className='btn-reelegir-trabajo'>Reelegir trabajo</button>
           : null}
         <DetalleTbj />
       </div>

@@ -28,7 +28,7 @@ const TBody = ({ clientes }) => {
                 <span className='legend'>editar</span>
               </Link>
             </td>
-            <td>{ email }</td>
+            <td className='td-email'>{ email }</td>
             <td className='td-observaciones'>{ observaciones }</td>
           </tr>          
         )
