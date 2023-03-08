@@ -8,12 +8,18 @@ import { BtnOcultarForm, BtnVerForm } from './t-body/componentes';
 import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { toggleForm } from '../../../../services/toggle-form-estado-orden';
+import { generarFecha } from '../../../../services/generar-fecha';
+import { compararFechas } from '../../../../services/comparar-fechas';
 
 const TBody = ({ ordenesPendientes }) => {
   const { setReset } = useContext(OrdenesPendientesCompContext);
   const [verActualizarEstado, setVerActualizarEstado] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const [mensajeS, setMensajeS] = useState(null);
+  const trNormal = 't-body--tr';
+  const trAlert = 't-body--tr pendiente-del-dia';
+  const noEntregado = 'no-entregado';
+  const tdFlex = 'td-flex';
 
   const handleSubmit = async (e) => {
     const nroOrden = e.target[0].value;
@@ -57,13 +63,19 @@ const TBody = ({ ordenesPendientes }) => {
     <tbody className='t-body'>
       {
         ordenesPendientes.map(({ id_cliente, nro_orden, nombre, fecha_creacion, tipo_trabajo, fecha_entrega, hora_entrega }) =>
-          <tr key={ nro_orden } className='t-body--tr'>
+          <tr 
+            key={ nro_orden } 
+            className={
+              generarFecha(fecha_entrega) === fecha_entrega ? trAlert : trNormal &&
+              compararFechas(fecha_entrega) ? noEntregado : trNormal
+            }
+          >
             <td>{ nro_orden }</td>
             <td>{ nombre }</td>
             <td>{ fecha_creacion }</td>
             <td>{ tipo_trabajo }</td>
             <td>{ fecha_entrega } a las { hora_entrega }</td>
-            <td id={ nro_orden }>
+            <td id={ nro_orden } className={ compararFechas(fecha_entrega) ? tdFlex : trNormal }>
               <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}><AiOutlineEye /></Link>
 
               <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nombre}/${nro_orden}`}><AiOutlineEdit /></Link>

@@ -1,18 +1,39 @@
-.t-body--tr:nth-child(even){
+/* .t-body--tr:nth-child(even){
   background: #ffffff90;
 }
 
 .t-body--tr:nth-child(odd){
   background: #ffffff60;
-}
+} */
 
 .t-body--tr td{
   padding: .5rem;
 }
 
+.pendiente-del-dia{
+	color: var(--amarillo);
+	animation: latidos 2s infinite;
+  transition: all 1.4s;
+}
+
+@keyframes latidos {
+  from { color: var(--amarillo); }
+  50% { color: #de5d2a; }
+  to { color: var(--amarillo) }
+}
+
+.no-entregado{
+  color: var(--error);
+}
+
+.td-flex{
+  display: flex;
+  justify-content: space-around;
+}
+
 .td-observaciones{
   display: block;
-  /* max-width: 200px; */
+  max-width: 10rem;
   overflow: scroll;
   box-sizing: border-box;
 }
@@ -84,4 +105,18 @@
   width: 0;
   opacity: 0;
   transition: width 1s;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amarillo:hover{
+  color: var(--amarillo);
+}
+
+.legend{
+  font-size: 0.7rem;
 }
