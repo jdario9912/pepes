@@ -16,6 +16,7 @@ import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/da
 import { urlApi } from '../../../../services/url/url-api';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
+import { IoShirtOutline } from "react-icons/io5";
 
 const RemerasComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
@@ -81,7 +82,10 @@ const RemerasComp = () => {
 
   return (
     <div>
-      <h5>Remeras</h5>
+      <div className='icon-nombre-tipo-trabajo--container'>
+        <IoShirtOutline className='icon-tipo-trabajo' />
+        <h5 className='nombre-tipo-trabajo'>Remeras</h5>
+      </div>
       <form name='form-remeras' onSubmit={ handleSubmint } onChange={ handleChange }>
         <div>
           <span>Entregar el </span>

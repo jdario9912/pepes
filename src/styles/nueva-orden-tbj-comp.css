@@ -4,8 +4,19 @@
   flex-direction: column;
 }
 
-.nueva-orden-tbj-comp--container h2{
-  text-align: center;
+.icon-nombre-tipo-trabajo--container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-tipo-trabajo{
+  font-size: 2rem;
+}
+
+.nombre-tipo-trabajo{
+  margin-block-start: 0;
+  color: var(--amarillo);
 }
 
 .btn-reelegir-trabajo{

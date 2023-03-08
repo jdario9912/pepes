@@ -7,12 +7,12 @@ const InfoCliente = ({props}) => {
   const { nombre, telefono, email, observaciones} = props;
   return (
     <div className='info-cliente--datos-personales-container modulo'>
-      <h2>Nueva orden para <span className='nombre'>{ nombre }</span></h2>
+      <h3 className='titulo'>Nueva orden para <span className='nombre'>{ nombre }</span></h3>
       <div className="info-cliente--nombre-telefono-email">
-        <p><BsTelephoneOutbound /> { telefono }</p>
-        <p><MdAlternateEmail /> { email }</p>
+        { telefono !== '' ? <p><BsTelephoneOutbound className='icon' />{ ' ' + telefono }</p> : null }
+        { email !== '' ? <p><MdAlternateEmail className='icon' />{ ' ' + email }</p> : null }
       </div>
-      <p className='info-cliente--observaciones'>Observaciones: { observaciones }</p>
+      { observaciones !== '' ? <p className='info-cliente--observaciones'>Observaciones: { observaciones }</p> : null}
     </div>
   );
 }

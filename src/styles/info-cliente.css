@@ -5,8 +5,10 @@
   border-radius: 17px / 20px;
 }
 
-.info-cliente--datos-personales-container h2{
+.titulo{
   margin-block-start: 0;
+  font-size: 1.2rem;
+  font-weight: 200;
 }
 
 .info-cliente--observaciones{
@@ -21,6 +23,12 @@
 
 .nombre{
   text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.icon{
+  color: var(--amarillo);
 }
 
 @media only screen and (max-width: 767px) {

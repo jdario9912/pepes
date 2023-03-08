@@ -25,6 +25,7 @@ import { InputTimeModel } from '../../../../models/input-time-model';
 import Muestra from '../muestra';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
+import { TbFileInvoice } from "react-icons/tb";
 
 export const TalonariosCompContext = createContext();
 
@@ -102,7 +103,10 @@ const TalonariosComp = () => {
   return (
     <TalonariosCompContext.Provider value={{ setMostrarColorTriplicado, setMostrarUbicacionLogo, setModeloAnterior, setTieneLogo, setTriplicado, mostrarColorTriplicado }}>
       <div>
-        <h5>Talonarios</h5>
+        <div className='icon-nombre-tipo-trabajo--container'>
+          <TbFileInvoice className='icon-tipo-trabajo' />
+          <h5 className='nombre-tipo-trabajo'>Talonarios</h5>
+        </div>
         <form name='form-talonarios' onSubmit={ handleSubmint } onChange={ handleChange }>
           <div>
             <span>Entregar el </span>

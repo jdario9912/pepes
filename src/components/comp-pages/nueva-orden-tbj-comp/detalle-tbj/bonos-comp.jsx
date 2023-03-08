@@ -18,6 +18,7 @@ import Lotes from './bonos-comp/lotes';
 import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/datos-orden-tbj/datos-orden-tbj';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
+import { RiCoupon3Line } from "react-icons/ri";
 
 export const BonosCompContext = createContext();
 
@@ -84,7 +85,10 @@ const BonosComp = () => {
   return (
     <BonosCompContext.Provider value={{setTipo}}>
       <div>
-        <h5>Bonos</h5>
+        <div className='icon-nombre-tipo-trabajo--container'>
+          <RiCoupon3Line className='icon-tipo-trabajo' />
+          <h5 className='nombre-tipo-trabajo'>Bonos</h5>
+        </div>
         <form name='form-bonos' onSubmit={ handleSubmint } onChange={ handleChange }>
           <div>
             <span>Entregar el </span>

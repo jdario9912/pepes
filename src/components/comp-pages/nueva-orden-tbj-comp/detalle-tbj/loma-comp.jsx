@@ -21,6 +21,7 @@ import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/da
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { useNavigate } from 'react-router-dom';
+import { GiTestTubes } from "react-icons/gi";
 
 export const LomaCompContext = createContext();
 
@@ -92,7 +93,10 @@ const LomaComp = () => {
   return (
     <LomaCompContext.Provider value={{setOrientacion, setCorte, setOjales, setTroquelado, setPortabaner}}>
       <div>
-        <h5>Loma</h5>
+        <div className='icon-nombre-tipo-trabajo--container'>
+          <GiTestTubes className='icon-tipo-trabajo' />
+          <h5 className='nombre-tipo-trabajo'>Loma</h5>
+        </div>
         <form name='form-loma' onSubmit={ handleSubmit } onChange={ handleChange }>
           <div>
             <span>Entregar el </span>

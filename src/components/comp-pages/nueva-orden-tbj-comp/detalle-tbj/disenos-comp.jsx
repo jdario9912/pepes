@@ -14,6 +14,7 @@ import { InputTimeModel } from '../../../../models/input-time-model';
 import DetallePago from '../detalle-pago';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
+import { HiOutlineLightBulb } from "react-icons/hi";
 
 const DisenosComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
@@ -69,7 +70,10 @@ const DisenosComp = () => {
 
   return (
     <div>
-      <h5>Diseños</h5>
+      <div className='icon-nombre-tipo-trabajo--container'>
+        <HiOutlineLightBulb className='icon-tipo-trabajo' />
+        <h5 className='nombre-tipo-trabajo'>Diseños</h5>
+      </div>
       <form name='form-disenos' onSubmit={ handleSubmint } onChange={ handleChange }>
         <div>
           <span>Entregar el </span>

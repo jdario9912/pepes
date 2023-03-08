@@ -15,6 +15,7 @@ import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/da
 import { urlApi } from '../../../../services/url/url-api';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
+import { TfiStamp } from "react-icons/tfi";
 
 const SellosComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
@@ -74,7 +75,10 @@ const SellosComp = () => {
   
   return (
     <div>
-      <h5>Sellos</h5>
+      <div className='icon-nombre-tipo-trabajo--container'>
+        <TfiStamp className='icon-tipo-trabajo' />
+        <h5 className='nombre-tipo-trabajo'>Sellos</h5>
+      </div>
       <form name='form-sellos' onSubmit={ handleSubmint } onChange={ handleChange }>
         <div>
           <span>Entregar el </span>

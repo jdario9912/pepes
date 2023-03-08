@@ -18,6 +18,7 @@ import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
 import Tamano from './volantes-comp/tamano';
 import Cantidad from './volantes-comp/cantidad';
+import { GiPapers } from "react-icons/gi";
 
 export const VolantesCompContext = createContext();
 
@@ -82,7 +83,10 @@ const VolantesComp = () => {
   return (
     <VolantesCompContext.Provider value={{ setTipo, setImpresion }}>
       <div>
-        <h5>Volantes</h5>
+        <div className='icon-nombre-tipo-trabajo--container'>
+          <GiPapers className='icon-tipo-trabajo' />
+          <h5 className='nombre-tipo-trabajo'>Volantes</h5>
+        </div>
         <form name='form-volantes' onSubmit={ handleSubmint } onChange={ handleChange }>
           <div>
             <span>Entregar el </span>

@@ -20,6 +20,7 @@ import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/da
 import { urlApi } from '../../../../services/url/url-api';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
+import { AiOutlinePrinter } from "react-icons/ai";
 
 export const ImpresionesCompContext = createContext();
 
@@ -90,7 +91,10 @@ const ImpresionesComp = () => {
   return (
     <ImpresionesCompContext.Provider value={{ setFaz, setOrientacion, setAnillado, setAbrochado, setCorte }}>
       <div>
-        <h5>Impresiones</h5>
+        <div className='icon-nombre-tipo-trabajo--container'>
+          <AiOutlinePrinter className='icon-tipo-trabajo' />
+          <h5 className='nombre-tipo-trabajo'>Impresiones</h5>
+        </div>
         <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange }>
           <div>
             <span>Entregar el </span>

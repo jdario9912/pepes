@@ -17,6 +17,7 @@ import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/da
 import { urlApi } from '../../../../services/url/url-api';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
+import { AiOutlineIdcard } from "react-icons/ai";
 
 export const TarjetasCompContext = createContext();
 
@@ -81,7 +82,10 @@ const TarjetasComp = () => {
   return (
     <TarjetasCompContext.Provider value={{ setTerminacion, setPuntas_redondeadas }}>
     <div>
-      <h5>Tarjetas</h5>
+      <div className='icon-nombre-tipo-trabajo--container'>
+          <AiOutlineIdcard className='icon-tipo-trabajo' />
+          <h5 className='nombre-tipo-trabajo'>Tarjetas</h5>
+        </div>
       <form name='form-tarjetas' onSubmit={ handleSubmint } onChange={ handleChange }>
         <div>
           <span>Entregar el </span>

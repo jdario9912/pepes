@@ -17,6 +17,7 @@ import { InputTimeModel } from '../../../../models/input-time-model';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
+import { BsPrinter } from "react-icons/bs";
 
 export const PlotterCompContext = createContext();
 
@@ -81,7 +82,10 @@ const PlotterComp = () => {
   return (
     <PlotterCompContext.Provider value={{ setMaterial, setTerminacion, setColor, color }}>
       <div>
-        <h5>Plotter</h5>
+        <div className='icon-nombre-tipo-trabajo--container'>
+          <BsPrinter className='icon-tipo-trabajo' />
+          <h5 className='nombre-tipo-trabajo'>Plotter</h5>
+        </div>
         <form name='form-plotter' onSubmit={ handleSubmint } onChange={ handleChange }>
           <div>
             <span>Entregar el </span>

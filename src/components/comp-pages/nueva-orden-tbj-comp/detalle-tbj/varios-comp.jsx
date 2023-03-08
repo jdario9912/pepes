@@ -12,6 +12,7 @@ import { atendido_por, fecha_creacion, nro_orden } from '../../../../services/da
 import { urlApi } from '../../../../services/url/url-api';
 import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
+import { TbQuestionMark } from "react-icons/tb";
 
 const VarioComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
@@ -68,7 +69,10 @@ const VarioComp = () => {
 
   return (
     <div>
-      <h5>Varios</h5>
+      <div className='icon-nombre-tipo-trabajo--container'>
+        <TbQuestionMark className='icon-tipo-trabajo' />
+        <h5 className='nombre-tipo-trabajo'>Varios</h5>
+      </div>
       <form name='form-varios' onSubmit={ handleSubmint } onChange={ handleChange }>
         <div>
           <span>Entregar el </span>
