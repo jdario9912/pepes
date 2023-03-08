@@ -7,11 +7,11 @@ const estilos = StyleSheet.create(estilosPago);
 
 export const Pago = () => {
   const { pedido } = useContext(PdfContext);
-  const { total, entrega } = pedido;
+  const { total, entrega, abono } = pedido;
   return(
     <View style={estilos.pago}>
       <Text>Total: <Text style={estilos.importe}>${total}</Text></Text>
-      <Text>Entrega: <Text style={estilos.importe}>${entrega}</Text></Text>
+      <Text>Entrega: <Text style={estilos.importe}>${entrega} - { abono }</Text></Text>
       <Text>Saldo: <Text style={estilos.importe}>${total - entrega}</Text></Text>
     </View>
   )
