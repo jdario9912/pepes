@@ -8,16 +8,15 @@ const Tipo = () => {
     setTipo(e.target.value);
   }
   return (
-    <fieldset>
-      <legend>Tipo</legend>
-      <label onClick={ handleClick } >
-        Obra
-        <input type="radio" name="tipo" value='Obra' onClick={ handleClick } />
-      </label>
-      <label onClick={ handleClick } >
-        Ilustración
-        <input type="radio" name="tipo" value='Ilustración' onClick={ handleClick } />
-      </label>
+    <fieldset className='fieldset'>
+      <span>Tipo:</span>
+      <div className="radio-inputs-container">
+        <input type="radio" name="tipo" id='obra' value='Obra' onClick={ handleClick } hidden />
+        <label onClick={ handleClick } htmlFor='obra'>Obra</label>
+
+        <input type="radio" name="tipo" id='ilustracion' value='Ilustración' onClick={ handleClick } hidden />
+        <label onClick={ handleClick } htmlFor='ilustracion'>Ilustración</label>
+      </div>
     </fieldset>
   );
 }

@@ -11,7 +11,6 @@ import { TfiStamp } from "react-icons/tfi";
 import '../../../styles/tipo-trabajo.css';
 import { NuevaOrdenTbjCompContext } from '../nueva-orden-tbj-comp';
 
-
 const TipoTrabajo = ({ accion }) => {
   const { setVerBotonesTipoTrabajo } = useContext(NuevaOrdenTbjCompContext);
 

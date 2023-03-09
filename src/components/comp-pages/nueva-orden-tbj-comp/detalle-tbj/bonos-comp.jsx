@@ -81,27 +81,35 @@ const BonosComp = () => {
 
   return (
     <BonosCompContext.Provider value={{setTipo}}>
-      <div>
+      <div className='animacion' id='orden'>
         <div className='icon-nombre-tipo-trabajo--container'>
           <RiCoupon3Line className='icon-tipo-trabajo' />
           <h5 className='nombre-tipo-trabajo'>Bonos</h5>
         </div>
-        <form name='form-bonos' onSubmit={ handleSubmint } onChange={ handleChange }>
-          <FechaHora />
-          <Muestra />
-          <Tipo />
-          <Tamano />
-          <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Desde número', 'desde-numero')} />
-          <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Cantidad', 'cantidad')} />
-          <Numeradores />
-          <Lotes />
-          <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
-          <DetallePago />
-          <div>
-            { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-            <button type="submit" data='btn-submit'>Guardar</button>
+        <for name='form-bonos' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
+          <div className="flex-row center gap-1">
+            <FechaHora />
+            <Muestra />
           </div>
-        </form>
+          <div className="flex-row center gap-1">
+            <div className='flex-column gap-1 flex-end'>
+              <Tipo />
+              <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Desde número', 'desde-numero')} />
+              <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Cantidad', 'cantidad')} />
+              <Tamano />
+              <Numeradores />
+              <Lotes />
+            </div>
+            <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
+            <div className="flex-column gap-1 flex-start strech">
+            <DetallePago />
+            <div>
+              { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+              <button type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+            </div>
+            </div>
+          </div>
+        </for>
       </div>
     </BonosCompContext.Provider>
   );

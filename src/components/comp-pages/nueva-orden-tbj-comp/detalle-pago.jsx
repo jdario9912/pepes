@@ -19,21 +19,22 @@ const DetallePago = () => {
 
   return (
     <div>
-      <h3>Detalle de pago</h3>
-      <div>
+      {/* <h3>Detalle de pago</h3> */}
+      <div className='flex-column gap-1'>
         <InputNumber props={ new InputNumberModel('', '', 'input-escribir', null, 'Total', 'total', setTotal)} />
         <InputNumber props={ new InputNumberModel('', '', 'input-escribir', null, 'Entrega', 'entrega', setEntrega)} />
         <span>Saldo: { saldo < 0 ? <span className='detalle-pago--alerta'>Los valores ingresados son incorrectos</span> : `$${saldo}` }</span>
       </div>
-      <div>
-        Abonó
+      <div className='flex-column g-1 select-container'>
+        Abonó:
         <select 
           name="abono" 
           data='abono'
+          className='select'
         >
-          <option value="efectivo">En efectivo</option>
-          <option value="debito">Por débito</option>
-          <option value="transferencia">Por transferencia</option>
+          <option className='option' value="efectivo">En efectivo</option>
+          <option className='option' value="debito">Por débito</option>
+          <option className='option' value="transferencia">Por transferencia</option>
         </select>
       </div>
 

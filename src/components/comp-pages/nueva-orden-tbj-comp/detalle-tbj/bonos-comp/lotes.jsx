@@ -7,7 +7,7 @@ const Lotes = () => {
 
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('En lotes de: ', '', '', '', 'lotes', opcionesLotes)} />    
+      <SelectOption props={ new SelectOptionModel('En lotes de: ', '', 'select', '', 'lotes', opcionesLotes)} />    
     </div>
   );
 }

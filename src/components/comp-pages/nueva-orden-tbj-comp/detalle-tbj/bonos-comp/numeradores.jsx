@@ -7,7 +7,7 @@ const Numeradores = () => {
   
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Numeradores: ', '', '', '', 'numeradores', opcionesNumeradores)} />
+      <SelectOption props={ new SelectOptionModel('Numeradores: ', '', 'select', '', 'numeradores', opcionesNumeradores)} />
     </div>
   );
 }

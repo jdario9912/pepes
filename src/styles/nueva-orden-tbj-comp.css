@@ -40,6 +40,20 @@
   transform: scale(1.01);
 }
 
+.animacion{
+  transition: all 1s;
+  animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-fwd-center {
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
 @media only screen and (max-width: 767px){
   .nueva-orden-tbj-comp--container{
     padding: 0 1rem;

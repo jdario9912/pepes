@@ -8,17 +8,14 @@ const Muestra = () => {
     setMuestra(e.target.value);
   }
   return (
-    <fieldset className='input-radio--fieldset' data="muestra">
-      <legend className='input-radio--legend'>Muestra:</legend>
-      <div className='input-radio--inputs-container'>
-        <label onClick={ handleClick }>
-          Si
-          <input type="radio" name="muestra" id="muestra-si" value='Si' onClick={ handleClick } />  
-        </label>        
-        <label onClick={ handleClick }>
-          No
-          <input type="radio" name="muestra" id="muestra-no" value='No' onClick={ handleClick } />
-        </label>        
+    <fieldset className='fieldset' data="muestra">
+      <span>Muestra:</span>
+      <div className='radio-inputs-container'>
+        <input type="radio" name="muestra" id="muestra-si" value='Si' onClick={ handleClick } hidden />  
+        <label onClick={ handleClick } htmlFor='muestra-si'>Si</label>
+
+        <input type="radio" name="muestra" id="muestra-no" value='No' onClick={ handleClick } hidden />
+        <label onClick={ handleClick } htmlFor='muestra-no'>No</label>        
       </div>
     </fieldset>
   );

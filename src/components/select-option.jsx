@@ -33,7 +33,7 @@ const SelectOption = ({ props }) => {
       >
         {
           props.opciones.map(opcion =>
-            <option value={ opcion } key={ opcion }>{ opcion }</option>
+            <option value={ opcion } key={ opcion } className='option'>{ opcion }</option>
           )
         }
       </select>

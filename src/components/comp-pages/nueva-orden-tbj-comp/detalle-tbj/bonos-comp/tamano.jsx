@@ -7,7 +7,7 @@ const Tamano = () => {
   
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Tamaño: ', '', '', '', 'tamano', opcionesTamano)} />
+      <SelectOption props={ new SelectOptionModel('Tamaño: ', '', 'select', '', 'tamano', opcionesTamano)} />
     </div>
   );
 }
