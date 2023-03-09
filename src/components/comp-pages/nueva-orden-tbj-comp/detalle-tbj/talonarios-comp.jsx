@@ -44,17 +44,20 @@ const TalonariosComp = () => {
     const tipo = document.querySelector('[data="tipo"]').value;
     const cantidad = document.querySelector('[data="cantidad"]').value;
     const tamano = document.querySelector('[data="tamano"]').value;
-    const ubicacion_logo = document.querySelector('[data="ubicacion-logo"]').value;
+    const ubicacionLogo = document.querySelector('[data="ubicacion-logo"]').value;
     const numero_desde = document.querySelector('[data="numero-desde"]').value;
     const puntillado_emblocado = document.querySelector('[data="puntillado"]').value;
     const color_duplicado = document.querySelector('[data="color-duplicado"]').value;
-    const color_triplicado = document.querySelector('[data="color-triplicado"]').value;
+    const colorTriplicado = document.querySelector('[data="color-triplicado"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
     const abono = document.querySelector('[data="abono"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
     
+    const color_triplicado = triplicado === 'No' ? 'no tiene' : colorTriplicado;
+    const ubicacion_logo = tieneLogo === 'No' ? 'no tiene' : ubicacionLogo;
+
     const body = {
       id_cliente: id,
       nro_orden: nro_orden(),
