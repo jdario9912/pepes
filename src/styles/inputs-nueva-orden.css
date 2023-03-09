@@ -179,3 +179,7 @@ select:active{
   color: var(--cyan50);
   border: 1px solid var(--cyan50);
 }
+
+.btn-submit:disabled{
+  filter: blur(1px);
+}
