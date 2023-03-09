@@ -1,9 +1,6 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext, useEffect } from 'react';
 import InputNumber from '../../../input-number';
 import InputText from '../../../input-text';
-import ModeloAnterior from './talonarios-comp/modelo-anterior';
-import TieneLogo from './talonarios-comp/tiene-logo';
-import Triplicado from './talonarios-comp/triplicado';
 import Aviso from './talonarios-comp/aviso';
 import { InputTextModel } from '../../../../models/input-text-model';
 import { InputNumberModel } from '../../../../models/input-number-model';
@@ -23,6 +20,8 @@ import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { TbFileInvoice } from "react-icons/tb";
 import FechaHora from '../fecha-hora';
+import { opcionesModeloAnterior, opcionesTieneLogo, opcionesTriplicado } from '../../../../models/opciones-talonarios';
+import InputRadio from '../../../input-radio';
 
 export const TalonariosCompContext = createContext();
 
@@ -35,6 +34,14 @@ const TalonariosComp = () => {
   const [modeloAnterior, setModeloAnterior] = useState('');
   const [tieneLogo, setTieneLogo] = useState('');
   const [triplicado, setTriplicado] = useState('');
+
+  useEffect(() => {
+    setMostrarColorTriplicado(triplicado === 'Si' ? true: false);
+  }, [triplicado]);
+
+  useEffect(() => {
+    setMostrarUbicacionLogo(tieneLogo === 'Si' ? true : false);
+  }, [tieneLogo]);
 
   const handleSubmint = async (e) => {
     e.preventDefault();
@@ -117,16 +124,18 @@ const TalonariosComp = () => {
               <Tipo />
               <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Cantidad', 'cantidad') } />
               <Tamano />
-              <ModeloAnterior />
-              <TieneLogo />
+              <InputRadio texto='Modelo anterior' accion={setModeloAnterior} opciones={opcionesModeloAnterior} name='modelo-anterior' />
+              <InputRadio texto='Tiene logo' accion={setTieneLogo} opciones={opcionesTieneLogo} name='tiene-logo' />
               <div hidden={ !mostrarUbicacionLogo }>
                 <InputText props={ new InputTextModel('', '', '', 'Ubicación del logo', 'input-escribir', 'ubicacion-logo')} />
               </div>
               <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Numero desde', 'numero-desde') } />
               <PuntilladoEmblocado />
               <ColorDuplicado />
-              <Triplicado />
-              <ColorTriplicado />
+              <InputRadio texto='Triplicado' accion={setTriplicado} opciones={opcionesTriplicado} name='triplicado' />
+              <div hidden={!mostrarColorTriplicado}>
+                <ColorTriplicado />
+              </div>
             </div>
             <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
             <div className="flex-column gap-1 flex-start strech">

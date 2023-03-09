@@ -1,10 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
 import InputText from '../../../input-text';
-import Orientacion from './loma-comp/orientacion';
-import Corte from './loma-comp/corte';
-import Ojales from './loma-comp/ojales';
-import Troquelado from './loma-comp/troquelado';
-import Portabaner from './loma-comp/portabaner';
 import { InputTextModel } from '../../../../models/input-text-model';
 import Muestra from '../muestra';
 import TextArea from '../../../text-area';
@@ -19,6 +14,8 @@ import { urlApi } from '../../../../services/url/url-api';
 import { useNavigate } from 'react-router-dom';
 import { GiTestTubes } from "react-icons/gi";
 import FechaHora from '../fecha-hora';
+import InputRadio from '../../../input-radio';
+import { opcionesCorte, opcionesOrientacion, opcionesOjales, opcionesTroquelado, opcionesPortabaner } from '../../../../models/opciones-loma';
 
 export const LomaCompContext = createContext();
 
@@ -103,12 +100,12 @@ const LomaComp = () => {
             <div className='flex-column gap-1 flex-end'>
               <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
               <Material />
-              <Orientacion />
               <Bolsillo />
-              <Corte />
-              <Ojales />
-              <Troquelado />
-              <Portabaner />
+              <InputRadio texto='Orientación' accion={setOrientacion} name='orientacion' opciones={opcionesOrientacion} />
+              <InputRadio texto='Troquelado' accion={setTroquelado} opciones={opcionesTroquelado} name='troquelado' />
+              <InputRadio texto='Portabaner' accion={setPortabaner} opciones={opcionesPortabaner} name='portabaner' />
+              <InputRadio texto='Corte' accion={setCorte} opciones={opcionesCorte} name='corte' />
+              <InputRadio texto='Ojales' accion={setOjales} opciones={opcionesOjales} name='ojales' />
             </div>
             <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
             <div className="flex-column gap-1 flex-start strech">

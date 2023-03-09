@@ -11,7 +11,7 @@ const InputRadio = ({ texto, accion, name, opciones }) => {
       <div className="radio-inputs-container">
         {
           opciones.map(({id, value}) => (
-            <div>
+            <div key={id}>
               <input type="radio" id={id} name={name} value={value} onClick={ handleClick } hidden />
               <label onClick={ handleClick } htmlFor={id}>{value}</label>
             </div>

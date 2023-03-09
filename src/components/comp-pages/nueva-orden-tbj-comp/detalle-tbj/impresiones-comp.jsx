@@ -1,10 +1,5 @@
 import React, { useContext, useState, createContext } from 'react';
 import InputText from '../../../input-text';
-import Abrochado from './impresiones-comp/abrochado';
-import Anillado from './impresiones-comp/anillado';
-import Corte from './impresiones-comp/corte';
-import Faz from './impresiones-comp/faz';
-import Orientacion from './impresiones-comp/orientacion';
 import TamanoPapel from './impresiones-comp/tamano-papel';
 import { InputTextModel } from '../../../../models/input-text-model';
 import Muestra from '../muestra';
@@ -18,7 +13,7 @@ import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlinePrinter } from "react-icons/ai";
 import FechaHora from '../fecha-hora';
-import { opcionesFaz, opcionesOrientacion } from '../../../../models/opciones-impresiones';
+import { opcionesFaz, opcionesOrientacion, opcionesAnillado, opcionesAbrochado, opcionesCorte } from '../../../../models/opciones-impresiones';
 import InputRadio from '../../../input-radio';
 
 export const ImpresionesCompContext = createContext();
@@ -102,13 +97,16 @@ const ImpresionesComp = () => {
           <div className="flex-row center gap-1">
             <div className='flex-column gap-1 flex-end'>
               <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
-              <InputRadio texto='Faz' accion={setFaz} name='faz' opciones={opcionesFaz} />
               <InputText props={ new InputTextModel('', '', '', 'Tipo de papel', 'input-escribir', 'tipo-papel')} />
               <TamanoPapel />
               <InputRadio texto='Orientacion' accion={setOrientacion} name='orientacion' opciones={opcionesOrientacion} />
-              <Anillado />
+              <InputRadio texto='Faz' accion={setFaz} name='faz' opciones={opcionesFaz} />
+              <InputRadio texto='Abrochado' accion={setAbrochado} name='abrochado' opciones={opcionesAbrochado} />
+              <InputRadio texto='Anillado' accion={setAnillado} name='anillado' opciones={opcionesAnillado} />
+              <InputRadio texto='Corte' accion={setCorte} name='corte' opciones={opcionesCorte} />
+              {/* <Anillado />
               <Abrochado />
-              <Corte />
+              <Corte /> */}
             </div>
             <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
             <div className="flex-column gap-1 flex-start strech">

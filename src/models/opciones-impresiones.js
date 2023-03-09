@@ -18,4 +18,37 @@ export const opcionesOrientacion = [
     id: "apaisado",
     value: "Apaisado"
   }
-]
+];
+
+export const opcionesAnillado = [
+  {
+    id: "anillado-si",
+    value: "Si"
+  },
+  {
+    id: "anillado-no",
+    value: "No"
+  }
+];
+
+export const opcionesAbrochado = [
+  {
+    id: "abrochado-si",
+    value: "Si"
+  },
+  {
+    id: "abrochado-no",
+    value: "No"
+  }
+];
+
+export const opcionesCorte = [
+  {
+    id: "corte-si",
+    value: "Si"
+  },
+  {
+    id: "corte-no",
+    value: "No"
+  }
+];
