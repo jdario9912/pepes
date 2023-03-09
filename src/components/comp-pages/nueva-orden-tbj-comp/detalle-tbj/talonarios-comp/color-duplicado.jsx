@@ -3,7 +3,7 @@ import SelectOption from '../../../../select-option';
 import { SelectOptionModel } from '../../../../../models/select-option-model';
 
 const ColorDuplicado = () => {
-  const opcionesColorDuplicado = ['Amarillo', 'Rosa', 'Verde', 'Celeste'];
+  const opcionesColorDuplicado = ['Amarillo', 'Rosa', 'Verde', 'Celeste', 'Solo original'];
 
   return (
     <div>
