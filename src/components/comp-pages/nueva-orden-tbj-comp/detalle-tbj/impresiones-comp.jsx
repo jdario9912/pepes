@@ -87,27 +87,35 @@ const ImpresionesComp = () => {
 
   return (
     <ImpresionesCompContext.Provider value={{ setFaz, setOrientacion, setAnillado, setAbrochado, setCorte }}>
-      <div className=''>
+      <div className='animacion'>
         <div className='icon-nombre-tipo-trabajo--container'>
           <AiOutlinePrinter className='icon-tipo-trabajo' />
           <h5 className='nombre-tipo-trabajo'>Impresiones</h5>
         </div>
-        <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange }>
-          <FechaHora />
-          <Muestra />
-          <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
-          <Faz />
-          <InputText props={ new InputTextModel('Tipo: ', '', '', 'Ingresa tipo de papel', '', 'tipo-papel')} />
-          <TamanoPapel />
-          <Orientacion />
-          <Anillado />
-          <Abrochado />
-          <Corte />
-          <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
-          <DetallePago />
-          <div>
-            { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-            <button type="submit" data='btn-submit'>Guardar</button>
+        <form name='form-impresiones' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
+          <div className="flex-row center gap-1">
+            <FechaHora />
+            <Muestra />
+          </div>
+          <div className="flex-row center gap-1">
+            <div className='flex-column gap-1 flex-end'>
+              <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
+              <Faz />
+              <InputText props={ new InputTextModel('', '', '', 'Tipo de papel', 'input-escribir', 'tipo-papel')} />
+              <TamanoPapel />
+              <Orientacion />
+              <Anillado />
+              <Abrochado />
+              <Corte />
+            </div>
+            <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
+            <div className="flex-column gap-1 flex-start strech">
+              <DetallePago />
+              <div>
+                { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+                <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+              </div>
+            </div>
           </div>
         </form>
       </div>

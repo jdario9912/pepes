@@ -66,22 +66,30 @@ const DisenosComp = () => {
   };
 
   return (
-    <div>
+    <div className='animacion'>
       <div className='icon-nombre-tipo-trabajo--container'>
         <HiOutlineLightBulb className='icon-tipo-trabajo' />
         <h5 className='nombre-tipo-trabajo'>Diseños</h5>
       </div>
-      <form name='form-disenos' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <FechaHora />
-        <Muestra />
-        <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
-        <InputText props={ new InputTextModel('Detalles: ', '', '', 'Ingresa detalles del diseño', '', 'detalles')} />
-        <TextArea props={ new TextAreaModel('Observaciones: ', '', '', 'Ingresa una descripción del diseño', '', 'observaciones')} />
-        <DetallePago />
-          <div>
-            { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-            <button type="submit" data='btn-submit'>Guardar</button>
+      <form name='form-disenos' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
+        <div className="flex-row center gap-1">
+          <FechaHora />
+          <Muestra />
+        </div>
+        <div className="flex-row center gap-1">
+          <div className='flex-column gap-1 flex-end'>
+            <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
+            <InputText props={ new InputTextModel('', '', '', 'Detalles del diseño', 'input-escribir', 'detalles')} />
           </div>
+          <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones')} />
+          <div className="flex-column gap-1 flex-start strech">
+            <DetallePago />
+            <div>
+              { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+              <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   );

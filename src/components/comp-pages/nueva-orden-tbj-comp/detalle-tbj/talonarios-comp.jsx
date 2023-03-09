@@ -99,33 +99,41 @@ const TalonariosComp = () => {
 
   return (
     <TalonariosCompContext.Provider value={{ setMostrarColorTriplicado, setMostrarUbicacionLogo, setModeloAnterior, setTieneLogo, setTriplicado, mostrarColorTriplicado }}>
-      <div>
+      <div className='animacion'>
         <div className='icon-nombre-tipo-trabajo--container'>
           <TbFileInvoice className='icon-tipo-trabajo' />
           <h5 className='nombre-tipo-trabajo'>Talonarios</h5>
         </div>
-        <form name='form-talonarios' onSubmit={ handleSubmint } onChange={ handleChange }>
-          <FechaHora />
-          <Muestra />
-          <Tipo />
-          <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'cantidad', 'cantidad') } />
-          <Tamano />
-          <ModeloAnterior />
-          <TieneLogo />
-          <div hidden={ !mostrarUbicacionLogo }>
-            <InputText props={ new InputTextModel('Ubicación del logo:', '', '', 'Ingresa ubicación del logo', '', 'ubicacion-logo')} />
+        <form name='form-talonarios' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
+          <div className="flex-row center gap-1">
+            <FechaHora />
+            <Muestra />
           </div>
-          <InputNumber props={ new InputNumberModel('Número desde:', '', '', '', '', 'numero-desde') } />
-          <PuntilladoEmblocado />
-          <ColorDuplicado />
-          <Triplicado />
-          <ColorTriplicado />
-          <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
-          <DetallePago />
-          <Aviso />
-          <div>
-          { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-            <button type="submit" data='btn-submit'>Guardar</button>
+          <div className="flex-row center gap-1">
+            <div className='flex-column gap-1 flex-end'>
+              <Tipo />
+              <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'cantidad', 'cantidad') } />
+              <Tamano />
+              <ModeloAnterior />
+              <TieneLogo />
+              <div hidden={ !mostrarUbicacionLogo }>
+                <InputText props={ new InputTextModel('Ubicación del logo:', '', '', 'Ingresa ubicación del logo', '', 'ubicacion-logo')} />
+              </div>
+              <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Numero desde', 'numero-desde') } />
+              <PuntilladoEmblocado />
+              <ColorDuplicado />
+              <Triplicado />
+              <ColorTriplicado />
+            </div>
+            <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
+            <div className="flex-column gap-1 flex-start strech">
+              <Aviso />
+              <DetallePago />
+              <div>
+                { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+                <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+              </div>
+            </div>
           </div>
         </form>
       </div>

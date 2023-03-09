@@ -78,26 +78,34 @@ const RemerasComp = () => {
   };
 
   return (
-    <div>
+    <div className='animacion'>
       <div className='icon-nombre-tipo-trabajo--container'>
         <IoShirtOutline className='icon-tipo-trabajo' />
         <h5 className='nombre-tipo-trabajo'>Remeras</h5>
       </div>
-      <form name='form-remeras' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <FechaHora />
-        <Muestra />
-        <InputText props={ new InputTextModel('Ubicación del archivo: ', '', '', 'Ingresa ubicación del archivo', '', 'ubicacion-archivo')} />
-        <InputText props={ new InputTextModel('Talles: ', '', '', 'Ingresa talles', '', 'talles')} />
-        <InputText props={ new InputTextModel('Color: ', '', '', 'Ingresa color', '', 'color')} />
-        <InputText props={ new InputTextModel('Estampa pecho: ', '', '', 'Ingresa estampa pecho', '', 'estampa-pecho')} />
-        <InputText props={ new InputTextModel('Estampa espalda: ', '', '', 'Ingresa estampa espalda', '', 'estampa-espalda')} />
-        <InputText props={ new InputTextModel('Color estampa: ', '', '', 'Ingresa color de la estampa', '', 'color-estampa')} />
-        <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'Ingresa cantidad', 'cantidad', null)} />
-        <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
-        <DetallePago />
-        <div>
-          { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-          <button type="submit" data='btn-submit'>Guardar</button>
+      <form name='form-remeras' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
+        <div className="flex-row center gap-1">
+          <FechaHora />
+          <Muestra />
+        </div>
+        <div className="flex-row center gap-1">
+          <div className='flex-column gap-1 flex-end'>
+            <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
+            <InputText props={ new InputTextModel('', '', '', 'Talles', 'input-escribir', 'talles')} />
+            <InputText props={ new InputTextModel('', '', '', 'Color', 'input-escribir', 'color')} />
+            <InputText props={ new InputTextModel('', '', '', 'Estampa pecho', 'input-escribir', 'estampa-pecho')} />
+            <InputText props={ new InputTextModel('', '', '', 'Estampa espalda', 'input-escribir', 'estampa-espalda')} />
+            <InputText props={ new InputTextModel('', '', '', 'Color de la estampa', 'input-escribir', 'color-estampa')} />
+            <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Cantidad', 'cantidad', null)} />
+          </div>
+          <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
+          <div className="flex-column gap-1 flex-start strech">
+            <DetallePago />
+            <div>
+              { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+              <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

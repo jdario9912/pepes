@@ -65,20 +65,28 @@ const VarioComp = () => {
   };
 
   return (
-    <div>
+    <div className='animacion'>
       <div className='icon-nombre-tipo-trabajo--container'>
         <TbQuestionMark className='icon-tipo-trabajo' />
         <h5 className='nombre-tipo-trabajo'>Varios</h5>
       </div>
-      <form name='form-varios' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <FechaHora />
-        <Muestra />
-        <TextArea props={ new TextAreaModel('Detalle: ', '', '', 'Ingresa una descripción', '', 'detalle')} />
-        <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
-        <DetallePago />
-        <div>
-          { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-          <button type="submit" data='btn-submit'>Guardar</button>
+      <form name='form-varios' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
+        <div className="flex-row center gap-1">
+          <FechaHora />
+          <Muestra />
+        </div>
+        <div className="flex-row center gap-1">
+          <div className='flex-column gap-1 flex-end'>
+            <TextArea props={ new TextAreaModel('', '', '', 'Detalle', 'input-escribir text-area', 'detalle')} />
+          </div>
+          <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
+          <div className="flex-column gap-1 flex-start strech">
+            <DetallePago />
+            <div>
+              { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+              <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

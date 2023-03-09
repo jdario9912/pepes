@@ -82,7 +82,7 @@ const BonosComp = () => {
 
   return (
     <BonosCompContext.Provider value={{setTipo}}>
-      <div className='animacion' id='orden'>
+      <div className='animacion'>
         <div className='icon-nombre-tipo-trabajo--container'>
           <RiCoupon3Line className='icon-tipo-trabajo' />
           <h5 className='nombre-tipo-trabajo'>Bonos</h5>
@@ -103,11 +103,11 @@ const BonosComp = () => {
             </div>
             <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
             <div className="flex-column gap-1 flex-start strech">
-            <DetallePago />
-            <div>
-              { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-              <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
-            </div>
+              <DetallePago />
+              <div>
+                { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+                <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+              </div>
             </div>
           </div>
         </form>

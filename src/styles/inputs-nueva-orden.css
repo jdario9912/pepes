@@ -65,11 +65,15 @@
   filter: invert();
   background: var(--blanco3);
   line-height: 2rem;
-  border: 0.5px solid var(--negro3);
+  border: none;
   border-radius: 10px;
   outline: none;
   padding: 0.2rem 0.5rem;
   box-shadow: 1px 1px 3px var(--blanco2);
+}
+
+.input-date-time:focus{
+  border: 1px solid var(--negro);
 }
 
 .text-area{
@@ -147,7 +151,8 @@ input[type=number] { -moz-appearance:textfield; }
 }
 
 select:active{
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
+  border: 1px solid var(--blanco2);
 }
 
 .option{

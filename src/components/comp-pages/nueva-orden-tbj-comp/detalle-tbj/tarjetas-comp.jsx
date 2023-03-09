@@ -78,24 +78,32 @@ const TarjetasComp = () => {
 
   return (
     <TarjetasCompContext.Provider value={{ setTerminacion, setPuntas_redondeadas }}>
-    <div>
+    <div className='animacion'>
       <div className='icon-nombre-tipo-trabajo--container'>
           <AiOutlineIdcard className='icon-tipo-trabajo' />
           <h5 className='nombre-tipo-trabajo'>Tarjetas</h5>
         </div>
-      <form name='form-tarjetas' onSubmit={ handleSubmint } onChange={ handleChange }>
-        <FechaHora />
-        <Muestra />
-        <Tipo />
-        <Cantidad />
-        <Papel />
-        <OtraTerminacion />
-        <PuntasRedondas />
-        <TextArea props={ new TextAreaModel('Observaciones:', '', '', 'Ingresar detalles de la orden', '', 'observaciones') } />
-        <DetallePago />
-        <div>
-          { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-          <button type="submit" data='btn-submit'>Guardar</button>
+      <form name='form-tarjetas' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
+        <div className="flex-row center gap-1">
+          <FechaHora />
+          <Muestra />
+        </div>
+        <div className="flex-row center gap-1">
+          <div className='flex-column gap-1 flex-end'>
+            <Tipo />
+            <Cantidad />
+            <Papel />
+            <OtraTerminacion />
+            <PuntasRedondas />
+          </div>
+          <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
+          <div className="flex-column gap-1 flex-start strech">
+            <DetallePago />
+            <div>
+              { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
+              <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
