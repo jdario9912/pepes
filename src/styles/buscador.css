@@ -8,9 +8,14 @@
 }
 
 .buscador--form{
-  border-bottom: 1px solid var(--blanco3);
+  /* border: 1px solid var(--blanco3); */
+  background: var(--blanco4);
   display: flex;
   flex-direction: row-reverse;
+  padding: 0.3rem 0;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 3px 3px 9px var(--negro2);
 }
 
 .buscador--input{
@@ -19,6 +24,7 @@
   background: transparent;
   color: var(--blanco);
   padding-bottom: 0.2rem;
+  width: 100%;
 }
 
 .buscador--input:focus{

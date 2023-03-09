@@ -36,6 +36,8 @@
   gap: 0.6rem;
   border-radius: 10px / 8px;
   border: 0.2px solid var(--blanco3);
+  box-shadow: 3px 3px 9px var(--negro2);
+  text-shadow: 2px 2px 6px var(--negro);
 }
 
 .nav--ul li:hover{
@@ -47,6 +49,7 @@
   border: none;
   display: flex;
   justify-content: center;
+  box-shadow: none;
 }
 
 @media only screen and (max-width: 991px){

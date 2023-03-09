@@ -8,7 +8,7 @@ const InputSearch = () => {
         name="busqueda" 
         id="busqueda" 
         className='buscador--input' 
-        placeholder='Cliente / Nro Orden'
+        placeholder='cliente - pedido'
         data-busqueda
       />
     </>
