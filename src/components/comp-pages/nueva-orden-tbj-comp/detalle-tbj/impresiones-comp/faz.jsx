@@ -1,25 +1,23 @@
-import React, { useContext} from 'react';
-import { ImpresionesCompContext } from '../impresiones-comp';
+import React from 'react';
 
-const Faz = () => {
-  const { setFaz } = useContext(ImpresionesCompContext);
-  
+const Faz = ({ texto, accion, name, opciones }) => {
+
   const handleClick = (e) => {
-  setFaz(e.target.value);
+    accion(e.target.value);
   };
    
-  return (
-    <fieldset>
-      <legend>Faz:</legend>
-      <div>
-        <label onClick={ handleClick }>
-          Simple
-          <input type="radio" name="faz" value='Simple' onClick={ handleClick } />  
-        </label>        
-        <label onClick={ handleClick }>
-          Doble
-          <input type="radio" name="faz" value='Doble' onClick={ handleClick } />
-        </label>
+  return (    
+    <fieldset className='fieldset'>
+      <span>{texto}:</span>
+      <div className="radio-inputs-container">
+        {
+          opciones.map(({id, value}) => (
+            <div>
+              <input type="radio" id={id} name={name} value={value} onClick={ handleClick } hidden />
+              <label onClick={ handleClick } htmlFor={id}>{value}</label>
+            </div>
+          ))
+        }
       </div>
     </fieldset>
   );

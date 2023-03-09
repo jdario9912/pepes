@@ -18,6 +18,8 @@ import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlinePrinter } from "react-icons/ai";
 import FechaHora from '../fecha-hora';
+import { opcionesFaz, opcionesOrientacion } from '../../../../models/opciones-impresiones';
+import InputRadio from '../../../input-radio';
 
 export const ImpresionesCompContext = createContext();
 
@@ -100,10 +102,10 @@ const ImpresionesComp = () => {
           <div className="flex-row center gap-1">
             <div className='flex-column gap-1 flex-end'>
               <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
-              <Faz />
+              <InputRadio texto='Faz' accion={setFaz} name='faz' opciones={opcionesFaz} />
               <InputText props={ new InputTextModel('', '', '', 'Tipo de papel', 'input-escribir', 'tipo-papel')} />
               <TamanoPapel />
-              <Orientacion />
+              <InputRadio texto='Orientacion' accion={setOrientacion} name='orientacion' opciones={opcionesOrientacion} />
               <Anillado />
               <Abrochado />
               <Corte />
@@ -113,7 +115,7 @@ const ImpresionesComp = () => {
               <DetallePago />
               <div>
                 { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-                <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+                <button type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
               </div>
             </div>
           </div>

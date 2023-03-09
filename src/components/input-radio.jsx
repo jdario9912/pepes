@@ -1,48 +1,25 @@
 import React from 'react';
 
-const InputRadio = ({ props }) => {
-  const mostrarComponente = () => props.handleComponent(true);
-  const ocultarComponente = () => props.handleComponent(false);
-
-  if (props.handleComponent) {
-    if (props.value === 'Si') {
-      return (
-        <label htmlFor={ props.id}>
-          { props.value }
-          <input 
-            type="radio" 
-            name={ props.name } 
-            id={ props.id } 
-            value={ props.value } 
-            onClick={ mostrarComponente } 
-          />
-        </label>
-      );  
-    }
-
-    if (props.value === 'No'){
-      return (
-        <label htmlFor={ props.id}>
-          { props.value }
-          <input 
-            type="radio" 
-            name={ props.name } 
-            id={ props.id } 
-            value={ props.value } 
-            onClick={ ocultarComponente } 
-          />
-        </label>
-      );
-    }
-  } else{
-    return (
-      <label htmlFor={ props.id}>
-        { props.value }
-        <input type="radio" name={ props.name } id={ props.id } value={ props.value } />
-      </label>
-    );
-  }
-  
+const InputRadio = ({ texto, accion, name, opciones }) => {
+  const handleClick = (e) => {
+    accion(e.target.value);
+  };
+   
+  return (    
+    <fieldset className='fieldset'>
+      <span>{texto}:</span>
+      <div className="radio-inputs-container">
+        {
+          opciones.map(({id, value}) => (
+            <div>
+              <input type="radio" id={id} name={name} value={value} onClick={ handleClick } hidden />
+              <label onClick={ handleClick } htmlFor={id}>{value}</label>
+            </div>
+          ))
+        }
+      </div>
+    </fieldset>
+  );
 }
 
 export default InputRadio;
