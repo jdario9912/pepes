@@ -5,6 +5,7 @@ import React, {
 import InputNumber from '../../input-number';
 import { InputNumberModel } from '../../../models/input-number-model';
 import '../../../styles/detalle-pago.css'
+import { AiFillWarning } from "react-icons/ai";
 
 const DetallePago = () => {
   const 
@@ -29,7 +30,7 @@ const DetallePago = () => {
         <div className='detalle-pago--saldo'>
           { 
             saldo < 0 ? 
-              <span className={alerta}>revisar valores!</span> : 
+              <span className={alerta}><AiFillWarning /> revisar valores!</span> : 
               <span className={ saldo === 0 ? sinSaldo : deuda }>Saldo: ${saldo}</span>
           }
         </div>
