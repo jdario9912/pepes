@@ -163,3 +163,13 @@ select:active{
   box-shadow: 1px 1px 10px var(--negro2);
   width: 100%;
 }
+
+.btn-submit:hover{
+  text-decoration: underline;
+}
+
+.btn-submit:active{
+  background: var(--blanco);
+  color: var(--cyan50);
+  border: 1px solid var(--cyan50);
+}

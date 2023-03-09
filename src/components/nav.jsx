@@ -9,6 +9,7 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import { AppContext } from './app';
 import { SlScreenDesktop } from "react-icons/sl";
 import { BsPeople } from "react-icons/bs";
+import Buscador from './buscador';
 
 const Nav = () => {
   const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
@@ -55,6 +56,7 @@ const Nav = () => {
           </li>
         </ul>
       </nav>
+      <Buscador />
     </div>
   );
 }

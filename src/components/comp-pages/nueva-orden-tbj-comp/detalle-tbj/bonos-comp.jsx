@@ -41,6 +41,7 @@ const BonosComp = () => {
     const abono = document.querySelector('[data="abono"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
 
+    console.log('submiting');
     const body = {
       id_cliente: id,
       nro_orden: nro_orden(),
@@ -86,7 +87,7 @@ const BonosComp = () => {
           <RiCoupon3Line className='icon-tipo-trabajo' />
           <h5 className='nombre-tipo-trabajo'>Bonos</h5>
         </div>
-        <for name='form-bonos' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
+        <form name='form-bonos' onSubmit={ handleSubmint } onChange={ handleChange } className='form'>
           <div className="flex-row center gap-1">
             <FechaHora />
             <Muestra />
@@ -105,11 +106,11 @@ const BonosComp = () => {
             <DetallePago />
             <div>
               { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-              <button type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+              <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
             </div>
             </div>
           </div>
-        </for>
+        </form>
       </div>
     </BonosCompContext.Provider>
   );
