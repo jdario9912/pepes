@@ -7,7 +7,7 @@ const Material = () => {
   
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Material: ', '', '', '', 'material', opcionesMaterial)} />
+      <SelectOption props={ new SelectOptionModel('Material: ', '', 'select', '', 'material', opcionesMaterial)} />
     </div>
   );
 }

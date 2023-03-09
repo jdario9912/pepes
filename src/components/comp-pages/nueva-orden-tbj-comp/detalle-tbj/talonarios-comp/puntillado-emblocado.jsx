@@ -7,7 +7,7 @@ const PuntilladoEmblocado = () => {
 
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Puntillado - Emblocado: ', '', '', '', 'puntillado', opcionesPuntillado)} />
+      <SelectOption props={ new SelectOptionModel('Puntillado - Emblocado: ', '', 'select', '', 'puntillado', opcionesPuntillado)} />
     </div>
   );
 }

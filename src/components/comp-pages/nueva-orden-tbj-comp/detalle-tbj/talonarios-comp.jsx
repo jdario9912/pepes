@@ -112,12 +112,12 @@ const TalonariosComp = () => {
           <div className="flex-row center gap-1">
             <div className='flex-column gap-1 flex-end'>
               <Tipo />
-              <InputNumber props={ new InputNumberModel('Cantidad: ', '', '', '', 'cantidad', 'cantidad') } />
+              <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Cantidad', 'cantidad') } />
               <Tamano />
               <ModeloAnterior />
               <TieneLogo />
               <div hidden={ !mostrarUbicacionLogo }>
-                <InputText props={ new InputTextModel('Ubicación del logo:', '', '', 'Ingresa ubicación del logo', '', 'ubicacion-logo')} />
+                <InputText props={ new InputTextModel('', '', '', 'Ubicación del logo', 'input-escribir', 'ubicacion-logo')} />
               </div>
               <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Numero desde', 'numero-desde') } />
               <PuntilladoEmblocado />

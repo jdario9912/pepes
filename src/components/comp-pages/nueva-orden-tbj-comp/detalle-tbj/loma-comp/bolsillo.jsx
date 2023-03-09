@@ -6,7 +6,7 @@ const Bolsillo = () => {
   const opcionesBolsillo = ['No', 'Arriba', 'Arriba y abajo'];
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Bolsillo: ', '', '', '', 'bolsillo', opcionesBolsillo) } />
+      <SelectOption props={ new SelectOptionModel('Bolsillo: ', '', 'select', '', 'bolsillo', opcionesBolsillo) } />
     </div>
   );
 }

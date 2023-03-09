@@ -84,9 +84,9 @@ const SellosComp = () => {
         <div className="flex-row center gap-1">
           <div className='flex-column gap-1 flex-end'>
           <Tipo />
-            <InputText props={ new InputTextModel('Tamaño: ', '', '', 'Ingresa el tamaño del sello', '', 'tamano')} />
-            <InputText props={ new InputTextModel('Texto: ', '', '', 'Ingresa el texto del sello', '', 'texto')} />
-            <InputText props={ new InputTextModel('Dibujo: ', '', '', 'Ingresa descripción del dibujo', '', 'dibujo')} />
+            <InputText props={ new InputTextModel('', '', '', 'Tamaño', 'input-escribir', 'tamano')} />
+            <InputText props={ new InputTextModel('', '', '', 'Texto', 'input-escribir', 'texto')} />
+            <InputText props={ new InputTextModel('', '', '', 'Descripción del dibujo', 'input-escribir', 'dibujo')} />
           </div>
           <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
           <div className="flex-column gap-1 flex-start strech">

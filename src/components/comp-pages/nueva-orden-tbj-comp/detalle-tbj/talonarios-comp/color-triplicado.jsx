@@ -9,7 +9,7 @@ const ColorTriplicado = () => {
 
   return (
     <div hidden={ !mostrarColorTriplicado }>
-      <SelectOption props={ new SelectOptionModel('Color triplicado:', '', '', '', 'color-triplicado', opcionesColorTriplicado)} />
+      <SelectOption props={ new SelectOptionModel('Color triplicado:', '', 'select', '', 'color-triplicado', opcionesColorTriplicado)} />
     </div>
   );
 }

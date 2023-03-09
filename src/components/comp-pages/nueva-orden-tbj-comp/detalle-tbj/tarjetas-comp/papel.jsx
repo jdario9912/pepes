@@ -7,7 +7,7 @@ const Papel = () => {
 
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Papel: ', '', '', '', 'papel', opcionesPapel)} />
+      <SelectOption props={ new SelectOptionModel('Papel: ', '', 'select', '', 'papel', opcionesPapel)} />
     </div>
   );
 }

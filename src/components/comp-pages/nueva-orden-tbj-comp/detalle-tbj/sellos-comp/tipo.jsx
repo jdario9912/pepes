@@ -7,7 +7,7 @@ const Tipo = () => {
 
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Tipo: ', '', '', '', 'tipo', opcionesTipo)} />
+      <SelectOption props={ new SelectOptionModel('Tipo: ', '', 'select', '', 'tipo', opcionesTipo)} />
     </div>
   );
 }

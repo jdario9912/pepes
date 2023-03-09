@@ -7,7 +7,7 @@ const ColorDuplicado = () => {
 
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Color duplicado:', '', '', '', 'color-duplicado', opcionesColorDuplicado)} />
+      <SelectOption props={ new SelectOptionModel('Color duplicado:', '', 'select', '', 'color-duplicado', opcionesColorDuplicado)} />
     </div>
   );
 }

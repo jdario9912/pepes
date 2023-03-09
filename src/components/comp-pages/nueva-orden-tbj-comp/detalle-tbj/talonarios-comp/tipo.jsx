@@ -6,7 +6,7 @@ const Tipo = () => {
   const opcionesTipo = ['Factura C', 'Recibo C', 'Remito R', 'Presupuesto X', 'Recibo X', 'Otros'];
   return (
     <div>
-      <SelectOption props={ new SelectOptionModel('Tipo:', '', '', '', 'tipo', opcionesTipo) } />
+      <SelectOption props={ new SelectOptionModel('Tipo:', '', 'select', '', 'tipo', opcionesTipo) } />
     </div>
   );
 }
