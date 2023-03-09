@@ -5,6 +5,7 @@
   width: 100%;
   overflow: scroll;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .inicio-comp--container::-webkit-scrollbar {
@@ -17,7 +18,7 @@
 }
 
 .inicio-comp--container::-webkit-scrollbar-thumb {
-  background-color: #666666;    /* color of the scroll thumb */
+  background-color: #66666600;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
 }
 

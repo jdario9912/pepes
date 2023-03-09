@@ -12,18 +12,27 @@ const DetallePago = () => {
     [entrega, setEntrega] = useState(0),
     [saldo, setSaldo] = useState(0)
   ;
+  const alerta = 'detalle-pago--alerta';
+  const sinSaldo = 'detallo-pago--sin-saldo';
+  const deuda = 'detalle-pago--saldo-deuda';
 
   useEffect(() => {
     setSaldo(total - entrega)
   }, [total, entrega]);
 
   return (
-    <div>
-      {/* <h3>Detalle de pago</h3> */}
+    <div className='detalle-pago--container'>
+      <h3 className='detalle-pago--titulo'>Detalle de pago</h3>
       <div className='flex-column gap-1'>
         <InputNumber props={ new InputNumberModel('', '', 'input-escribir', null, 'Total', 'total', setTotal)} />
         <InputNumber props={ new InputNumberModel('', '', 'input-escribir', null, 'Entrega', 'entrega', setEntrega)} />
-        <span>Saldo: { saldo < 0 ? <span className='detalle-pago--alerta'>Los valores ingresados son incorrectos</span> : `$${saldo}` }</span>
+        <div className='detalle-pago--saldo'>
+          { 
+            saldo < 0 ? 
+              <span className={alerta}>revisar valores!</span> : 
+              <span className={ saldo === 0 ? sinSaldo : deuda }>Saldo: ${saldo}</span>
+          }
+        </div>
       </div>
       <div className='flex-column g-1 select-container'>
         Abonó:

@@ -111,9 +111,15 @@ input[type="radio"]:checked + label{
   border: 0.5px solid var(--amarillo);
   font-weight: 800;
   font-size: 1.08rem;
-  /* text-decoration: underline; */
   transform: scale(1.02);
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
 
 .select-container{
   background: var(--negro3);

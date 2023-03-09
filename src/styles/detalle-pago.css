@@ -1,3 +1,33 @@
+.detalle-pago--container{
+  display: flex;
+  flex-direction: column;
+  background: var(--negro3);
+  border: none;
+  border-radius: 10px;
+  gap: 1rem;
+  padding: 0.7rem;
+  color: var(--blanco);
+  box-shadow: 1px 1px 5px var(--negro2);
+}
+
+.detalle-pago--titulo{
+  font-size: 1rem;
+  margin-block: 0;
+  text-align: center;
+  font-weight: 400;
+  text-shadow: 2px 2px 6px var(--negro);
+}
+
+.detallo-pago--sin-saldo{
+  text-shadow: 2px 2px 6px var(--negro);
+  color: green;
+}
+
+.detalle-pago--saldo-deuda{
+  text-shadow: 2px 2px 6px var(--negro);
+  color: var(--amarillo);
+}
+
 .detalle-pago--alerta{
-  color: red;
+  color: var(--error);
 }

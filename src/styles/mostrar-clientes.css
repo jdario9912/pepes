@@ -1,5 +1,5 @@
 .mostrar-clientes--table-container{
-  max-height: 70vh;
+  max-height: 82vh;
   width: 100%;
   overflow: auto;
   margin-top: 1rem;
@@ -20,7 +20,7 @@
 }
 
 .mostrar-clientes--table-container::-webkit-scrollbar-thumb {
-  background-color: #666666;    /* color of the scroll thumb */
+  background-color: #66666657;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
 }
 
