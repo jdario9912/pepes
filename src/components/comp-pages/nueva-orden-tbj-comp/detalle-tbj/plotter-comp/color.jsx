@@ -32,10 +32,10 @@ const Color = () => {
   }, [colorHexa]);
 
   return (
-    <div>
-      <div>
-        <button onClick={ handleColor }>Elegir color</button>
-        <span>{ color.length > 0 ? color : '' }</span>
+    <div className='color--container'>
+      <div className='flex-row gap-1 justify-end items-center'>
+        <button onClick={ handleColor } className='button'>Elegir color</button>
+        <span className='texto-color'>{ color.length > 0 ? color : '' }</span>
         { colorHexa.length > 0 ? <input type='color' value={ colorHexa } disabled /> : null}
       </div>
       {

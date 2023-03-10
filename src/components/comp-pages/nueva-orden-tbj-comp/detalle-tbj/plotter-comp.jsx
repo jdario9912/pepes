@@ -88,13 +88,13 @@ const PlotterComp = () => {
             <FechaHora />
             <Muestra />
           </div>
-          <div className="flex-row center gap-1">
+          <div className="flex-row center gap-1 wrap">
             <div className='flex-column gap-1 flex-end'>
               <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
               <InputText props={ new InputTextModel('', '', '', 'Tamaño del plotter', 'input-escribir', 'tamano')} />
-              <Color />
               <InputRadio texto='Material' accion={setMaterial} opciones={opcionesMaterial} name='material' />
               <InputRadio texto='Terminación' accion={setTerminacion} opciones={opcionesTerminacion} name='terminacion' />
+              <Color />
             </div>
             <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
             <div className="flex-column gap-1 flex-start strech">

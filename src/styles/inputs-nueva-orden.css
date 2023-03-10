@@ -20,6 +20,14 @@
   justify-content: center;
 }
 
+.items-center{
+  align-items: center;
+}
+
+.justify-end{
+  justify-content: flex-end;
+}
+
 .flex-start{
   align-items: flex-start;
 }
@@ -38,6 +46,10 @@
 
 .gap-1{
   gap: 1rem;
+}
+
+.wrap{
+  flex-wrap: wrap;
 }
 
 .form{
@@ -91,7 +103,6 @@
   border-radius: 10px;
   outline: none;
   padding: 0.7rem;
-  /* width: 50%; */
   align-items: center;
   box-shadow: 1px 1px 5px var(--negro2);
 
@@ -124,6 +135,12 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
     }
 input[type=number] { -moz-appearance:textfield; }
+
+input[type=color]{
+  /* border: 1px solid var(--blanco); */
+  border-radius: 5px;
+  outline: none;
+}
 
 .select-container{
   background: var(--negro3);
@@ -162,6 +179,22 @@ select:active{
   outline: none;
 }
 
+.button{
+  background: var(--negro3);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0.7rem;
+  font-size: 1rem;
+  color: var(--blanco);
+  box-shadow: 1px 1px 5px var(--negro2);
+}
+
+.button:hover{
+  border: 0.7px solid var(--blanco2);
+  cursor: pointer;
+}
+
 .btn-submit{
   background: var(--cyan50);
   color: var(--blanco);
@@ -177,6 +210,7 @@ select:active{
 
 .btn-submit:hover{
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .btn-submit:active{

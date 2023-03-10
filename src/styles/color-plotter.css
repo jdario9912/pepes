@@ -1,4 +1,22 @@
+.color--container{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .color--container-input{
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
+  gap: 0.3rem;
+  width: 500px;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0px 0px 5px  var(--negro);
+  padding: 1rem;
+  background-color: var(--negroTotal);
+  border: 0.1px solid var(--blanco4);
+  backdrop-filter: blur(60px);
+  border-radius: 17px / 20px;
 }
