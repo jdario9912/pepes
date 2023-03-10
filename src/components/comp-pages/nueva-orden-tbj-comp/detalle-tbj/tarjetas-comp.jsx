@@ -1,6 +1,4 @@
 import React, { useState, createContext, useContext } from 'react';
-import OtraTerminacion from './tarjetas-comp/otra-terminacion';
-import PuntasRedondas from './tarjetas-comp/puntas-redondas';
 import Tipo from './tarjetas-comp/tipo';
 import Cantidad from './tarjetas-comp/cantidad';
 import Papel from './tarjetas-comp/papel';
@@ -15,6 +13,8 @@ import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineIdcard } from "react-icons/ai";
 import FechaHora from '../fecha-hora';
+import InputRadio from '../../../input-radio';
+import { opcionesPuntas, opcionesTerminacion } from '../../../../models/opciones-tarjetas';
 
 export const TarjetasCompContext = createContext();
 
@@ -93,15 +93,15 @@ const TarjetasComp = () => {
             <Tipo />
             <Cantidad />
             <Papel />
-            <OtraTerminacion />
-            <PuntasRedondas />
+            <InputRadio texto='Otra terminación' accion={setTerminacion} opciones={opcionesTerminacion} name='terminacion' />
+            <InputRadio texto='Puntas redondeadas' accion={setPuntas_redondeadas} opciones={opcionesPuntas} name='puntas' />
           </div>
           <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
           <div className="flex-column gap-1 flex-start strech">
             <DetallePago />
             <div>
               { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-              <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+              <button type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
             </div>
           </div>
         </div>

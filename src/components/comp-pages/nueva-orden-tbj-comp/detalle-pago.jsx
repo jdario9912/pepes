@@ -43,7 +43,7 @@ const DetallePago = () => {
           className='select'
         >
           <option className='option' value="efectivo">En efectivo</option>
-          <option className='option' value="debito">Por débito</option>
+          <option className='option' value="debito">Con débito</option>
           <option className='option' value="transferencia">Por transferencia</option>
         </select>
       </div>

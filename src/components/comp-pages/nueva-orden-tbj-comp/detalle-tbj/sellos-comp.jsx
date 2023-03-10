@@ -93,7 +93,7 @@ const SellosComp = () => {
             <DetallePago />
             <div>
               { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-              <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+              <button type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
             </div>
           </div>
         </div>

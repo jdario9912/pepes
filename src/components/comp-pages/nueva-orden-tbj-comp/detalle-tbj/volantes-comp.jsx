@@ -1,6 +1,4 @@
 import React, { useContext, useState, createContext } from 'react';
-import Tipo from './volantes-comp/tipo';
-import Impresion from './volantes-comp/impresion';
 import InputText from '../../../input-text';
 import { InputTextModel } from '../../../../models/input-text-model';
 import Muestra from '../muestra';
@@ -16,6 +14,8 @@ import Tamano from './volantes-comp/tamano';
 import Cantidad from './volantes-comp/cantidad';
 import { GiPapers } from "react-icons/gi";
 import FechaHora from '../fecha-hora';
+import { opcionesImpresion, opcionesTipo } from '../../../../models/opciones-volantes';
+import InputRadio from '../../../input-radio';
 
 export const VolantesCompContext = createContext();
 
@@ -91,18 +91,18 @@ const VolantesComp = () => {
           </div>
           <div className="flex-row center gap-1">
             <div className='flex-column gap-1 flex-end'>
-              <Tipo />
-              <Tamano />
+              <InputRadio texto='Tipo' accion={setTipo} opciones={opcionesTipo} name='tipo' />
+              <InputRadio texto='Impresión' accion={setImpresion} opciones={opcionesImpresion} name='impresion' />
+              <InputText props={ new InputTextModel('', '', '', 'Ubicación del diseño', 'input-escribir', 'ubicacion')} />
               <Cantidad />
-              <Impresion />
-              <InputText props={ new InputTextModel('Ubicación del diseño: ', '', '', 'Ingresa ubicación del diseño', '', 'ubicacion')} />
+              <Tamano />
             </div>
             <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
             <div className="flex-column gap-1 flex-start strech">
               <DetallePago />
               <div>
                 { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-                <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+                <button type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
               </div>
             </div>
           </div>

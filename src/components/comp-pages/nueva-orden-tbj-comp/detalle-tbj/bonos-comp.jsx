@@ -7,7 +7,6 @@ import Muestra from '../muestra';
 import TextArea from '../../../text-area';
 import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
-import Tipo from './bonos-comp/tipo';
 import Tamano from './bonos-comp/tamano';
 import Numeradores from './bonos-comp/numeradores';
 import Lotes from './bonos-comp/lotes';
@@ -16,6 +15,8 @@ import { crearOrden } from '../../../../services/form-nueva-orden/crear-orden';
 import { urlApi } from '../../../../services/url/url-api';
 import { RiCoupon3Line } from "react-icons/ri";
 import FechaHora from '../fecha-hora';
+import InputRadio from '../../../input-radio';
+import { opcionesTipo } from '../../../../models/opciones-bonos';
 
 export const BonosCompContext = createContext();
 
@@ -94,7 +95,7 @@ const BonosComp = () => {
           </div>
           <div className="flex-row center gap-1">
             <div className='flex-column gap-1 flex-end'>
-              <Tipo />
+              <InputRadio texto='Tipo' accion={setTipo} opciones={opcionesTipo} name='tipo' />
               <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Desde número', 'desde-numero')} />
               <InputNumber props={ new InputNumberModel('', '', 'input-escribir', '', 'Cantidad', 'cantidad')} />
               <Tamano />
@@ -106,7 +107,7 @@ const BonosComp = () => {
               <DetallePago />
               <div>
                 { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-                <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+                <button type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
               </div>
             </div>
           </div>

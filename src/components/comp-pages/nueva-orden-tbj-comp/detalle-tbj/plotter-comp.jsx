@@ -1,8 +1,6 @@
 import React, { useContext, useState, createContext } from 'react';
 import InputText from '../../../input-text';
 import Color from './plotter-comp/color';
-import Material from './plotter-comp/material';
-import Terminacion from './plotter-comp/terminacion';
 import { InputTextModel } from '../../../../models/input-text-model';
 import { useNavigate } from 'react-router-dom';
 import { NuevaOrdenTbjCompContext } from '../../nueva-orden-tbj-comp';
@@ -15,6 +13,8 @@ import { TextAreaModel } from '../../../../models/text-area-model';
 import DetallePago from '../detalle-pago';
 import { BsPrinter } from "react-icons/bs";
 import FechaHora from '../fecha-hora';
+import { opcionesTerminacion, opcionesMaterial } from '../../../../models/opciones-plotter';
+import InputRadio from '../../../input-radio';
 
 export const PlotterCompContext = createContext();
 
@@ -93,15 +93,15 @@ const PlotterComp = () => {
               <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
               <InputText props={ new InputTextModel('', '', '', 'Tamaño del plotter', 'input-escribir', 'tamano')} />
               <Color />
-              <Material />
-              <Terminacion />
+              <InputRadio texto='Material' accion={setMaterial} opciones={opcionesMaterial} name='material' />
+              <InputRadio texto='Terminación' accion={setTerminacion} opciones={opcionesTerminacion} name='terminacion' />
             </div>
             <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
             <div className="flex-column gap-1 flex-start strech">
               <DetallePago />
               <div>
                 { !respuestaServidor.registro ? <span>{respuestaServidor.mensaje}</span> : null }
-                <button onClick={() => console.log('estoy enviando')} type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
+                <button type="submit" data='btn-submit' className='btn-submit'>Guardar</button>
               </div>
             </div>
           </div>

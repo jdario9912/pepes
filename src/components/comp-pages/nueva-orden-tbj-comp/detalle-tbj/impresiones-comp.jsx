@@ -104,9 +104,6 @@ const ImpresionesComp = () => {
               <InputRadio texto='Abrochado' accion={setAbrochado} name='abrochado' opciones={opcionesAbrochado} />
               <InputRadio texto='Anillado' accion={setAnillado} name='anillado' opciones={opcionesAnillado} />
               <InputRadio texto='Corte' accion={setCorte} name='corte' opciones={opcionesCorte} />
-              {/* <Anillado />
-              <Abrochado />
-              <Corte /> */}
             </div>
             <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />
             <div className="flex-column gap-1 flex-start strech">
