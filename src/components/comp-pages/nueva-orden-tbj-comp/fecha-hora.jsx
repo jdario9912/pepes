@@ -9,7 +9,7 @@ const FechaHora = () => {
     <div>
       <span>Entregar el </span>
       <InputDate props={ new InputDateModel('', '', null, 'input-date-time', 'fecha') } />
-      <span>, a las </span>
+      <span> a las </span>
       <InputTime props={ new InputTimeModel('', '', '19:00', 'input-date-time', 'hora')} />
     </div>
   );
