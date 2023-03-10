@@ -52,6 +52,10 @@
   flex-wrap: wrap;
 }
 
+.hidden{
+  display: none;
+}
+
 .form{
   display: flex;
   flex-direction: column;

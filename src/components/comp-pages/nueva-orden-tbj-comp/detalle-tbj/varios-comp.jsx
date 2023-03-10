@@ -15,7 +15,6 @@ const VarioComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
   const navigate = useNavigate();
   const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
-  const [numeroOrden, setNumeroOrden] = useState(null);
 
   const handleSubmint = async (e) => {
     e.preventDefault();
@@ -26,14 +25,13 @@ const VarioComp = () => {
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
-    const abono = document.querySelector('[data="abono"]').value;
+    const pago = document.querySelector('[data="abono"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
-
-    setNumeroOrden(nro_orden());
+    const abono = parseInt(entrega) > 0 ? pago : '';
     
     const body = {
       id_cliente: id,
-      nro_orden: numeroOrden,
+      nro_orden: nro_orden(),
       fecha_creacion: fecha_creacion(),
       atendido_por: atendido_por(),
       fecha_entrega,

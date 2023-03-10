@@ -39,8 +39,9 @@ const ImpresionesComp = () => {
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
-    const abono = document.querySelector('[data="abono"]').value;
+    const pago = document.querySelector('[data="abono"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
+    const abono = parseInt(entrega) > 0 ? pago : '';
     
     const body = {
       id_cliente: id,

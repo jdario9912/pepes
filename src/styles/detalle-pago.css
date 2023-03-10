@@ -8,6 +8,7 @@
   padding: 0.7rem;
   color: var(--blanco);
   box-shadow: 1px 1px 5px var(--negro2);
+  align-items: center;
 }
 
 .detalle-pago--titulo{
@@ -30,4 +31,21 @@
 
 .detalle-pago--alerta{
   color: var(--error);
+}
+
+.desplegar{
+  transition: all 1s;
+  animation: desplegar 1s;
+}
+
+@keyframes desplegar {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
