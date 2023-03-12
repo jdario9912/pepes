@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import MostrarClientes from '../comp-pages/clientes-comp/mostrar-clientes';
 import '../../styles/clientes-comp.css';
+import { BsPeople } from "react-icons/bs";
 
 export const ClientesCompContext = createContext();
 
@@ -14,7 +15,10 @@ const ClientesComp = () => {
   return (
     <ClientesCompContext.Provider value={{ mostrarListaClientes, setMostrarListaClientes, clientes, setClientes }}>
       <div className='clientes-comp--container modulo'>
-        <h2>Clientes</h2>
+        <div className='clientes-comp--titulo'>
+          <span className='clientes-comp--icon'><BsPeople /></span> 
+          Clientes
+        </div>
         <MostrarClientes />
       </div>
     </ClientesCompContext.Provider>

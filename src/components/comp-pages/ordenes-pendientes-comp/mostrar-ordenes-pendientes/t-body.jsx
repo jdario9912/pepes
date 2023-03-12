@@ -71,8 +71,8 @@ const TBody = ({ ordenesPendientes }) => {
             }
           >
             <td>{ nro_orden }</td>
-            <td>{ tipo_trabajo }</td>
-            <td>{ nombre }</td>
+            <td className='capitalize'>{ tipo_trabajo }</td>
+            <td className='capitalize'>{ nombre }</td>
             <td>{ fecha_entrega } a las { hora_entrega }</td>
             <td>{fecha_creacion}</td>
             <td id={ nro_orden } className='td-flex td-acciones'>

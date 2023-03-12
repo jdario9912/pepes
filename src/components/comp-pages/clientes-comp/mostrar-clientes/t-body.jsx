@@ -10,7 +10,7 @@ const TBody = ({ clientes }) => {
       {
         clientes.map(({ id, nombre, telefono, email, observaciones }) =>
           <tr className='t-body--tr' key={ id }>
-            <td>{ nombre }</td>
+            <td className='capitalize'>{ nombre }</td>
             <td>{ telefono }</td>
             <td className='td-flex'>
               <Link to={`/ordenes-cliente/${id}/${nombre}`} className='flex-column amarillo'>

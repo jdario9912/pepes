@@ -4,7 +4,7 @@ import React, {
 import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
 import { activeStyle } from '../models/nav-link-active-style-model';
-import { MdPendingActions, MdPostAdd } from "react-icons/md";
+import { MdPendingActions } from "react-icons/md";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { AppContext } from './app';
 import { SlScreenDesktop } from "react-icons/sl";
@@ -43,12 +43,6 @@ const Nav = () => {
               Nuevo cliente
             </NavLink>
           </li>
-          {/* <li>
-            <MdPostAdd />
-            <NavLink style={ linkActivo } to='/nueva-orden'>
-              Nueva orden
-            </NavLink>
-          </li> */}
           <li>
             <NavLink style={ linkActivo } to='/'>
               Limpiar <span><SlScreenDesktop /></span>

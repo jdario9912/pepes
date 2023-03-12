@@ -3,6 +3,8 @@ import MostrarOrdenesPendientes from '../comp-pages/ordenes-pendientes-comp/most
 import '../../styles/ordenes-pendientes-comp.css';
 import { urlApi } from '../../services/url/url-api';
 import { ordenarPorFecha, ordenarPorTipo } from '../../services/ordenar-ordenes-pendientes';
+import { MdPendingActions } from "react-icons/md";
+
 export const OrdenesPendientesCompContext = createContext();
 
 const OrdenesPendientesComp = () => {
@@ -29,12 +31,15 @@ const OrdenesPendientesComp = () => {
         setReset(false);
       })
       .catch(e => console.log(e))
-  }, [reset, ordenar]);
+    }, [reset, ordenar]);
   
   return (
     <OrdenesPendientesCompContext.Provider value={{ setReset, reset, setOrdenar }}>
       <div className='ordenes-pendientes-comp--container modulo'>
-        <h2>Ordenes Pendientes</h2>
+        <div className='ordenes-pendientes-comp--titulo'>
+          <span className='ordenes-pendientes-comp--icon'><MdPendingActions /></span> 
+          Ordenes pendientes
+        </div>
         {
           !ordenesPendientes ? 
             <div>Cargando...</div> :

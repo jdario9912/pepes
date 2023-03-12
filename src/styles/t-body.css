@@ -32,6 +32,10 @@
   align-items: center;
 }
 
+.capitalize{
+  text-transform: capitalize;
+}
+
 .td-email{
   max-width: 10rem;
   overflow: scroll;
@@ -83,6 +87,7 @@
 
 .td-acciones{
   position: relative;
+  color: var(--blanco);
 }
 
 .t-body--tr a{
@@ -103,13 +108,13 @@
   display: flex;
   overflow: hidden;
   transition: all .3s;
+
 }
 
 .t-body--button{
   background: none;
   border: none;
   outline: none;
-  font-size: 1rem;
   color: var(--blanco);
 }
 
@@ -120,9 +125,12 @@
 .container-absolute{
   position: absolute;
   right: 0.8rem;
-  background-color: var(--amarillo);
   border-radius: 5px;
   z-index: 10;
+  background: var(--negroTotal);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  border: 1px solid var(--amarillo50);
 }
 
 .t-body--form-actualizar-orden{
@@ -138,6 +146,17 @@
   width: 0;
   opacity: 0;
   transition: width 1s;
+}
+
+.input-select{
+  background: var(--negro3);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  padding: 0.7rem;
+  color: var(--blanco);
+  box-shadow: 1px 1px 5px var(--negro2);
+  font-size: 1rem;
 }
 
 .flex-column{

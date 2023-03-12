@@ -2,8 +2,16 @@
   border-radius: 17px / 20px;
 }
 
-.clientes-comp--container h2{
-  text-align: center;
+.clientes-comp--titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.clientes-comp--icon{
+  font-size: 2rem;
+  color: var(--amarillo);
 }
 
 .clientes-comp--lista-buscar-container{
