@@ -62,8 +62,8 @@ const TalonariosComp = () => {
     const pago = document.querySelector('[data="abono"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
     const abono = parseInt(entrega) > 0 ? pago : '';
-    const color_triplicado = triplicado === 'No' ? 'no tiene' : colorTriplicado;
-    const ubicacion_logo = tieneLogo === 'No' ? 'no tiene' : ubicacionLogo;
+    const color_triplicado = triplicado === 'No' ? '--' : colorTriplicado;
+    const ubicacion_logo = tieneLogo === 'No' ? '--' : ubicacionLogo;
 
     const body = {
       id_cliente: id,

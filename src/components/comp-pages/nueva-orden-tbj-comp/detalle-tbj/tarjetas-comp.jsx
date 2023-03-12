@@ -14,7 +14,10 @@ import { useNavigate } from 'react-router-dom';
 import { AiOutlineIdcard } from "react-icons/ai";
 import FechaHora from '../fecha-hora';
 import InputRadio from '../../../input-radio';
-import { opcionesPuntas, opcionesTerminacion } from '../../../../models/opciones-tarjetas';
+import { opcionesPuntas } from '../../../../models/opciones-tarjetas';
+import OtraTerminacion from './tarjetas-comp/otra-terminacion';
+import InputText from '../../../input-text';
+import { InputTextModel } from '../../../../models/input-text-model';
 
 export const TarjetasCompContext = createContext();
 
@@ -22,7 +25,6 @@ const TarjetasComp = () => {
   const { clienteS, muestra } = useContext(NuevaOrdenTbjCompContext);
   const navigate = useNavigate();
   const [respuestaServidor, setRespuestaServidor] = useState({registro: false, mensaje: ''});
-  const [terminacion, setTerminacion] = useState('');
   const [puntas_redondeadas, setPuntas_redondeadas] = useState('');
 
   const handleSubmint = async (e) => {
@@ -30,9 +32,11 @@ const TarjetasComp = () => {
     const { id } = clienteS;
     const fecha_entrega = document.querySelector('[data="fecha"]').value;
     const hora_entrega = document.querySelector('[data="hora"]').value;
+    const ubicacion_archivo = document.querySelector('[data="ubicacion-archivo"]').value;
     const tipo = document.querySelector('[data="tipo"]').value;
     const cantidad = document.querySelector('[data="cantidad"]').value;
     const papel = document.querySelector('[data="papel"]').value;
+    const terminacion = document.querySelector('[data="terminacion"]').value;
     const observaciones = document.querySelector('[data="observaciones"]').value;
     const total = document.querySelector('[data="total"]').value;
     const entrega = document.querySelector('[data="entrega"]').value;
@@ -48,6 +52,7 @@ const TarjetasComp = () => {
       fecha_entrega,
       hora_entrega,
       muestra,
+      ubicacion_archivo,
       tipo,
       cantidad,
       papel,
@@ -78,7 +83,7 @@ const TarjetasComp = () => {
   };
 
   return (
-    <TarjetasCompContext.Provider value={{ setTerminacion, setPuntas_redondeadas }}>
+    <TarjetasCompContext.Provider value={{ setPuntas_redondeadas }}>
     <div className='animacion'>
       <div className='icon-nombre-tipo-trabajo--container'>
           <AiOutlineIdcard className='icon-tipo-trabajo' />
@@ -91,10 +96,11 @@ const TarjetasComp = () => {
         </div>
         <div className="flex-row center gap-1">
           <div className='flex-column gap-1 flex-end'>
+            <InputText props={ new InputTextModel('', '', '', 'Ubicación del archivo', 'input-escribir', 'ubicacion-archivo')} />
             <Tipo />
             <Cantidad />
             <Papel />
-            <InputRadio texto='Otra terminación' accion={setTerminacion} opciones={opcionesTerminacion} name='terminacion' />
+            <OtraTerminacion />
             <InputRadio texto='Puntas redondeadas' accion={setPuntas_redondeadas} opciones={opcionesPuntas} name='puntas' />
           </div>
           <TextArea props={ new TextAreaModel('', '', '', 'Observaciones', 'input-escribir text-area', 'observaciones') } />

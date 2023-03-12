@@ -6,9 +6,9 @@ const Cantidad = () => {
   const opcionesCantidad = ['100', '200', '1000', '2000'];
     
   return (
-    <div>
+    <>
       <SelectOption props={ new SelectOptionModel('Cantidad: ', '', 'select', '', 'cantidad', opcionesCantidad)} />
-    </div>
+    </>
   );
 }
 

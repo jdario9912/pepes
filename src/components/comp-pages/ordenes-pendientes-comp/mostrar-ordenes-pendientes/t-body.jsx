@@ -19,7 +19,7 @@ const TBody = ({ ordenesPendientes }) => {
   const trNormal = 't-body--tr';
   const trAlert = 't-body--tr pendiente-del-dia';
   const noEntregado = 'no-entregado';
-  const tdFlex = 'td-flex';
+  const tdFlex = '';
 
   const handleSubmit = async (e) => {
     const nroOrden = e.target[0].value;
@@ -71,17 +71,17 @@ const TBody = ({ ordenesPendientes }) => {
             }
           >
             <td>{ nro_orden }</td>
-            <td>{ nombre }</td>
-            <td>{ fecha_creacion }</td>
             <td>{ tipo_trabajo }</td>
+            <td>{ nombre }</td>
             <td>{ fecha_entrega } a las { hora_entrega }</td>
-            <td id={ nro_orden } className={ compararFechas(fecha_entrega) ? tdFlex : trNormal }>
+            <td>{fecha_creacion}</td>
+            <td id={ nro_orden } className='td-flex td-acciones'>
               <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}><AiOutlineEye /></Link>
 
               <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nombre}/${nro_orden}`}><AiOutlineEdit /></Link>
 
               <div className='t-body--td-form-container' data={`form-container${nro_orden}`}>
-                <BtnVerForm accion={ verOpciones } data={ nro_orden } />
+                <BtnVerForm accion={ verOpciones } data={ nro_orden } className='t-body--button' />
                 <BtnOcultarForm accion={ verOpciones } data={ nro_orden } />
                 { mensajeS ? <span>{ mensajeS }</span> : null }
                 <FormActualizarEstadoOrden handleSubmit={ handleSubmit } orden={ nro_orden } tipo={ tipo_trabajo } isSubmiting={ isSubmiting } hidden={ verActualizarEstado } />
@@ -95,3 +95,5 @@ const TBody = ({ ordenesPendientes }) => {
 }
 
 export default TBody;
+
+// className={ compararFechas(fecha_entrega) ? tdFlex : trNormal }

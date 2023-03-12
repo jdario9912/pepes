@@ -6,7 +6,7 @@ import { ordenarPorFecha, ordenarPorTipo } from '../../services/ordenar-ordenes-
 export const OrdenesPendientesCompContext = createContext();
 
 const OrdenesPendientesComp = () => {
-  const [ordenesPendientes, setOrdenesPendientes] = useState([]);
+  const [ordenesPendientes, setOrdenesPendientes] = useState(null);
   const [reset, setReset] = useState(false);
   const [ordenar, setOrdenar] = useState(true);
   
@@ -36,6 +36,8 @@ const OrdenesPendientesComp = () => {
       <div className='ordenes-pendientes-comp--container modulo'>
         <h2>Ordenes Pendientes</h2>
         {
+          !ordenesPendientes ? 
+            <div>Cargando...</div> :
           ordenesPendientes.length === 0 ?
             <div>No hay ordenes pendientes</div> :
             <MostrarOrdenesPendientes ordenesPendientes={ ordenesPendientes } />

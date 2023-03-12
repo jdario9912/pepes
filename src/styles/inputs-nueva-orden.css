@@ -56,6 +56,10 @@
   display: none;
 }
 
+.color-inherit{
+  color: inherit;
+}
+
 .form{
   display: flex;
   flex-direction: column;
@@ -109,7 +113,7 @@
   padding: 0.7rem;
   align-items: center;
   box-shadow: 1px 1px 5px var(--negro2);
-
+  flex-wrap: wrap;
 }
 
 .radio-inputs-container{
@@ -188,9 +192,9 @@ select:active{
   border-radius: 10px;
   border: none;
   outline: none;
+  color: var(--blanco);
   padding: 0.7rem;
   font-size: 1rem;
-  color: var(--blanco);
   box-shadow: 1px 1px 5px var(--negro2);
 }
 

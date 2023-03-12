@@ -11,12 +11,14 @@ import InputNum from './comp-generales/input-num';
 import { opcionesTalonarios } from '../../../models/opciones-editar-ordenes';
 import { editarOrden } from '../../../services/editar-orden/editar-orden';
 import Abono from './comp-generales/abono';
+import InputTieneLogo from './talonarios/input-tiene-logo';
 
 const Talonarios = () => {
   const navigate = useNavigate();
   const { nroOrden, nombre, pedido } = useParams();
   const [respuesta, setRespuesta] = useState(false);
   const [dataS, setdataS] = useState({});
+  const [tieneLogo, setTieneLogo] = useState(null);
   const { siNo, tipo, tamano, puntillado_emblocado, colores } = opcionesTalonarios;
 
   useEffect(() => {
@@ -30,6 +32,11 @@ const Talonarios = () => {
     ;
   }, []);
 
+  useEffect(() => {
+    setTieneLogo(tieneLogo);
+    console.log(tieneLogo);
+  }, [tieneLogo]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
@@ -40,7 +47,7 @@ const Talonarios = () => {
     const tamano = document.querySelector('[data="tamano"]').value;
     const modelo_anterior = document.querySelector('[data="modelo-anterior"]').value;
     const tiene_logo = document.querySelector('[data="tiene-logo"]').value;
-    const ubicacion_logo = document.querySelector('[data="ubicacion-logo"]').value;
+    const ubicacionLogo = document.querySelector('[data="ubicacion-logo"]').value;
     const numero_desde = document.querySelector('[data="numero-desde"]').value;
     const puntillado_emblocado = document.querySelector('[data="puntillado-emblocado"]').value;
     const color_duplicado = document.querySelector('[data="color-duplicado"]').value;
@@ -51,6 +58,7 @@ const Talonarios = () => {
     const entrega = document.querySelector('[data="entrega"]').value;
     const abono = document.querySelector('[data="abono"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
+    const ubicacion_logo = tieneLogo ? ubicacionLogo : '--';
 
     btnSubmit.setAttribute('disabled', true);
 
@@ -115,9 +123,10 @@ const Talonarios = () => {
             </tr>
             <tr>
               <td>Tiene logo</td>
-              <td><InputSelect valor={dataS.tiene_logo} data='tiene-logo' opciones={ siNo } /></td>
+              <td><InputTieneLogo valor={dataS.tiene_logo} data='tiene-logo' opciones={ siNo } accion={setTieneLogo} /> </td>
+              {/* <td><InputSelect valor={dataS.tiene_logo} data='tiene-logo' opciones={ siNo } /></td> */}
             </tr>
-            <tr>
+            <tr hidden={ !tieneLogo }>
               <td>Ubicación del logo</td>
               <td><InputText valor={ dataS.ubicacion_logo} data='ubicacion-logo' /></td>
             </tr>

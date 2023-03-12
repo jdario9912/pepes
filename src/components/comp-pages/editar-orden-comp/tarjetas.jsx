@@ -9,6 +9,7 @@ import Pago from './comp-generales/pago';
 import { opcionesTarjetas } from '../../../models/opciones-editar-ordenes';
 import { editarOrden } from '../../../services/editar-orden/editar-orden';
 import Abono from './comp-generales/abono';
+import InputText from './comp-generales/input-text';
 
 const Tarjetas = () => {
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ const Tarjetas = () => {
     const fecha_entrega = document.querySelector('[data="fecha-entrega"]').value;
     const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
     const muestra = document.querySelector('[data="muestra"]').value;
+    const ubicacion_archivo = document.querySelector('[data="ubicacion-archivo"]').value;
     const tipo = document.querySelector('[data="tipo"]').value;
     const cantidad = document.querySelector('[data="cantidad"]').value;
     const papel = document.querySelector('[data="papel"]').value;
@@ -50,6 +52,7 @@ const Tarjetas = () => {
       fecha_entrega,
       hora_entrega,
       muestra,
+      ubicacion_archivo,
       tipo,
       cantidad,
       papel,
@@ -82,6 +85,10 @@ const Tarjetas = () => {
             <tr>
               <td>Muestra</td>
               <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
+            </tr>
+            <tr>
+              <td>Ubicación archivo</td>
+              <td><InputText valor={dataS.ubicacion_archivo} data='ubicacion-archivo' /></td>
             </tr>
             <tr>
               <td>Tipo</td>

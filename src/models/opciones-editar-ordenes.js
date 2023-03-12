@@ -44,7 +44,7 @@ export const opcionesTalonarios = {
   tipo: ['Factura C', 'Recibo C', 'Remito R', 'Presupuesto X', 'Recibo X', 'Otros'],
   tamano: ['A4', '1/2', '1/4'],
   puntillado_emblocado: ['Simple', 'Doble', 'Sueltas', 'Emblocado'],
-  colores: ['Amarillo', 'Rosa', 'Verde', 'Celeste'],
+  colores: ['--', 'Amarillo', 'Rosa', 'Verde', 'Celeste'],
 };
 
 export const opcionesTarjetas = {

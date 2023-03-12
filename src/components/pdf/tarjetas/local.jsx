@@ -9,7 +9,7 @@ const estilos = StyleSheet.create(estilosLocal);
 
 const Local = () => {
   const { pedido } = useContext(PdfContext);
-  const { muestra, tipo, cantidad, papel, terminacion, puntas_redondeadas, observaciones} = pedido;
+  const { muestra, ubicacion_archivo, tipo, cantidad, papel, terminacion, puntas_redondeadas, observaciones} = pedido;
 
   return(
     <View style={estilos.section}>
@@ -19,6 +19,10 @@ const Local = () => {
           <View style={estilos.fila}>
             <View style={estilos.clave}><Text>Muestra:</Text></View>
             <View style={estilos.valor}><Text>{muestra}</Text></View>
+          </View>
+          <View style={estilos.fila}>
+            <View style={estilos.clave}><Text>Ubicación archivo:</Text></View>
+            <View style={estilos.valor}><Text>{ubicacion_archivo}</Text></View>
           </View>
           <View style={estilos.fila}>
             <View style={estilos.clave}><Text>Tipo:</Text></View>
