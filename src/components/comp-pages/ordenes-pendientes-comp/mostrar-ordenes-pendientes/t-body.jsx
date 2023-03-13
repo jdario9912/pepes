@@ -19,15 +19,16 @@ const TBody = ({ ordenesPendientes }) => {
   const trNormal = 't-body--tr';
   const trAlert = 't-body--tr pendiente-del-dia';
   const noEntregado = 'no-entregado';
-  const tdFlex = '';
 
   const handleSubmit = async (e) => {
     const nroOrden = e.target[0].value;
     const tipoTrabajo = e.target[1].value;
     const estado = e.target[2].value;
+    const tipo_trabajo = tipoTrabajo === 'diseños' ? 'disenos': tipoTrabajo;
+
     const body = {
       nro_orden: nroOrden,
-      tipo_trabajo: tipoTrabajo,
+      tipo_trabajo: tipo_trabajo,
       estado: estado
     }
 
