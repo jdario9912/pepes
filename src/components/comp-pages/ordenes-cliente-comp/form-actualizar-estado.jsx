@@ -49,12 +49,12 @@ const FormActualizarEstado = ({orden, tipo, setMensajeS}) => {
     >
       <input type="hidden" data={`nro_orden${orden}`} value={ orden } />
       <input type="hidden" data={`tipo_trabajo${orden}`} value={ tipo } />
-      <select name="estado" data={`estado${orden}`}>
+      <select name="estado" data={`estado${orden}`} className='input-select'>
         <option type="submit">a proveedor</option>
         <option type="submit">realizado</option>
         <option type="submit">entregado</option>
       </select>
-      <button type="submit" disabled={ isSubmiting }><BiUpload /></button>
+      <button type="submit" disabled={ isSubmiting } className='t-body--button amarillo'><BiUpload /></button>
     </form>
   );
 }

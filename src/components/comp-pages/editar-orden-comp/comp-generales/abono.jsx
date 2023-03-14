@@ -4,7 +4,7 @@ const Abono = ({ valor }) => {
   const [value, setValue] = useState(valor);
   const data = 'abono';
   return (
-    <div>
+    <div className='flex-column'>
       Abonó
       <select
         value={ value } 

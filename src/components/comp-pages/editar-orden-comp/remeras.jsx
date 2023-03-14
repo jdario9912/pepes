@@ -82,46 +82,49 @@ const Remeras = () => {
     return (
       <div>
         <Header tipo={pedido} numero={ nroOrden } nombre={ nombre } />
-        <form className='flex-column' onSubmit={ handleSubmit }>
+        <form className='flex-column form puntas-redondas' onSubmit={ handleSubmit }>
           <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
-          <table>
-            <tr>
-              <td>Muestra</td>
-              <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Ubicación del archivo</td>
-              <td><InputText valor={ dataS.ubicacion_archivo} data='ubicacion-archivo' /></td>
-            </tr>
-            <tr>
-              <td>Talles</td>
-              <td><InputText valor={ dataS.talles} data='talles' /></td>
-            </tr>
-            <tr>
-              <td>Color</td>
-              <td><InputText valor={ dataS.color} data='color' /></td>
-            </tr>
-            <tr>
-              <td>Estampa pecho</td>
-              <td><InputText valor={ dataS.estampa_pecho} data='estampa-pecho' /></td>
-            </tr>
-            <tr>
-              <td>Estampa espalda</td>
-              <td><InputText valor={ dataS.estampa_espalda} data='estampa-espalda' /></td>
-            </tr>
-            <tr>
-              <td>Color</td>
-              <td><InputText valor={ dataS.color_estampa} data='color-estampa' /></td>
-            </tr>
-            <tr>
-              <td>Cantidad</td>
-              <td><InputNum valor={ dataS.cantidad} data='cantidad' /></td>
-            </tr>
-          </table>
-          <TextArea valor={dataS.observaciones} data='observaciones' />
+            <table>
+              <tr>
+                <td>Muestra</td>
+                <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
+              </tr>
+              <tr>
+                <td>Ubicación del archivo</td>
+                <td><InputText valor={ dataS.ubicacion_archivo} data='ubicacion-archivo' /></td>
+              </tr>
+              <tr>
+                <td>Talles</td>
+                <td><InputText valor={ dataS.talles} data='talles' /></td>
+              </tr>
+              <tr>
+                <td>Color</td>
+                <td><InputText valor={ dataS.color} data='color' /></td>
+              </tr>
+              <tr>
+                <td>Estampa pecho</td>
+                <td><InputText valor={ dataS.estampa_pecho} data='estampa-pecho' /></td>
+              </tr>
+              <tr>
+                <td>Estampa espalda</td>
+                <td><InputText valor={ dataS.estampa_espalda} data='estampa-espalda' /></td>
+              </tr>
+              <tr>
+                <td>Color</td>
+                <td><InputText valor={ dataS.color_estampa} data='color-estampa' /></td>
+              </tr>
+              <tr>
+                <td>Cantidad</td>
+                <td><InputNum valor={ dataS.cantidad} data='cantidad' /></td>
+              </tr>
+            </table>
+          <div className="flex-column gap-1">
+
+            <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
           <Abono valor={ dataS.abono } />
-          <button type="submit" data='btn-submit'>Guardar cambios</button>
+          <button type="submit" data='btn-submit' className='btn-submit'>Guardar cambios</button>
+          </div>
         </form>
       </div>
     );

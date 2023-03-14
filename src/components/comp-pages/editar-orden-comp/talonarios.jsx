@@ -98,63 +98,66 @@ const Talonarios = () => {
     return (
       <div>
         <Header tipo={pedido} numero={ nroOrden } nombre={ nombre } />
-        <form className='flex-column' onSubmit={ handleSubmit }>
+        <form className='flex-column form puntas-redondas' onSubmit={ handleSubmit }>
           <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
-          <table>
-            <tr>
-              <td>Muestra</td>
-              <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Tipo</td>
-              <td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td>
-            </tr>
-            <tr>
-              <td>Cantidad</td>
-              <td><InputNum valor={ dataS.cantidad} data='cantidad' /></td>
-            </tr>
-            <tr>
-              <td>Tamaño</td>
-              <td><InputSelect valor={dataS.tamano} data='tamano' opciones={ tamano } /></td>
-            </tr>
-            <tr>
-              <td>Modelo anterior</td>
-              <td><InputSelect valor={dataS.modelo_anterior} data='modelo-anterior' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Tiene logo</td>
-              <td><InputTieneLogo valor={dataS.tiene_logo} data='tiene-logo' opciones={ siNo } accion={setTieneLogo} /> </td>
-              {/* <td><InputSelect valor={dataS.tiene_logo} data='tiene-logo' opciones={ siNo } /></td> */}
-            </tr>
-            <tr hidden={ !tieneLogo }>
-              <td>Ubicación del logo</td>
-              <td><InputText valor={ dataS.ubicacion_logo} data='ubicacion-logo' /></td>
-            </tr>
-            <tr>
-              <td>Número desde</td>
-              <td><InputNum valor={ dataS.numero_desde} data='numero-desde' /></td>
-            </tr>
-            <tr>
-              <td>Puntillado-emblocado</td>
-              <td><InputSelect valor={dataS.puntillado_emblocado} data='puntillado-emblocado' opciones={ puntillado_emblocado } /></td>
-            </tr>
-            <tr>
-              <td>Color duplicado</td>
-              <td><InputSelect valor={dataS.color_duplicado} data='color-duplicado' opciones={ colores } /></td>
-            </tr>
-            <tr>
-              <td>Triplicado</td>
-              <td><InputSelect valor={dataS.triplicado} data='triplicado' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Color triplicado</td>
-              <td><InputSelect valor={dataS.color_triplicado} data='color-triplicado' opciones={ colores } /></td>
-            </tr>
-          </table>
-          <TextArea valor={dataS.observaciones} data='observaciones' />
+            <table>
+              <tr>
+                <td>Muestra</td>
+                <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
+              </tr>
+              <tr>
+                <td>Tipo</td>
+                <td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td>
+              </tr>
+              <tr>
+                <td>Cantidad</td>
+                <td><InputNum valor={ dataS.cantidad} data='cantidad' /></td>
+              </tr>
+              <tr>
+                <td>Tamaño</td>
+                <td><InputSelect valor={dataS.tamano} data='tamano' opciones={ tamano } /></td>
+              </tr>
+              <tr>
+                <td>Modelo anterior</td>
+                <td><InputSelect valor={dataS.modelo_anterior} data='modelo-anterior' opciones={ siNo } /></td>
+              </tr>
+              <tr>
+                <td>Tiene logo</td>
+                <td><InputTieneLogo valor={dataS.tiene_logo} data='tiene-logo' opciones={ siNo } accion={setTieneLogo} /> </td>
+                {/* <td><InputSelect valor={dataS.tiene_logo} data='tiene-logo' opciones={ siNo } /></td> */}
+              </tr>
+              <tr hidden={ !tieneLogo }>
+                <td>Ubicación del logo</td>
+                <td><InputText valor={ dataS.ubicacion_logo} data='ubicacion-logo' /></td>
+              </tr>
+              <tr>
+                <td>Número desde</td>
+                <td><InputNum valor={ dataS.numero_desde} data='numero-desde' /></td>
+              </tr>
+              <tr>
+                <td>Puntillado-emblocado</td>
+                <td><InputSelect valor={dataS.puntillado_emblocado} data='puntillado-emblocado' opciones={ puntillado_emblocado } /></td>
+              </tr>
+              <tr>
+                <td>Color duplicado</td>
+                <td><InputSelect valor={dataS.color_duplicado} data='color-duplicado' opciones={ colores } /></td>
+              </tr>
+              <tr>
+                <td>Triplicado</td>
+                <td><InputSelect valor={dataS.triplicado} data='triplicado' opciones={ siNo } /></td>
+              </tr>
+              <tr>
+                <td>Color triplicado</td>
+                <td><InputSelect valor={dataS.color_triplicado} data='color-triplicado' opciones={ colores } /></td>
+              </tr>
+            </table>
+          <div className="flex-column gap-1">
+
+            <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
           <Abono valor={ dataS.abono } />
-          <button type="submit" data='btn-submit'>Guardar cambios</button>
+          <button type="submit" data='btn-submit' className='btn-submit'>Guardar cambios</button>
+          </div>
         </form>
       </div>
     );

@@ -79,9 +79,9 @@ const Bonos = () => {
     return (
       <div>
         <Header tipo={pedido} numero={ nroOrden } nombre={ nombre } />
-        <form className='flex-column' onSubmit={ handleSubmit }>
+        <form className='flex-column form puntas-redondas' onSubmit={ handleSubmit }>
           <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
-          <table>
+            <table>
             <tbody>
               <tr>
                 <td>Muestra</td>
@@ -112,11 +112,13 @@ const Bonos = () => {
                 <td><InputSelect valor={dataS.lotes} data='lotes' opciones={ lotes } /></td>
               </tr>
             </tbody>
-          </table>
-          <TextArea valor={dataS.observaciones} data='observaciones' />
-          <Pago total={ dataS.total } entrega={ dataS.entrega } />
-          <Abono valor={ dataS.abono } />
-          <button type="submit" data='btn-submit'>Guardar cambios</button>
+            </table>
+            <div className="flex-column gap-1">
+              <TextArea valor={dataS.observaciones} data='observaciones' />
+              <Pago total={ dataS.total } entrega={ dataS.entrega } />
+              <Abono valor={ dataS.abono } />
+              <button type="submit" data='btn-submit' className='btn-submit'>Guardar cambios</button>
+            </div>
         </form>
       </div>
     );

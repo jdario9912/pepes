@@ -79,42 +79,44 @@ const Tarjetas = () => {
     return (
       <div>
         <Header tipo={pedido} numero={ nroOrden } nombre={ nombre } />
-        <form className='flex-column' onSubmit={ handleSubmit }>
+        <form className='flex-column form puntas-redondas' onSubmit={ handleSubmit }>
           <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
-          <table>
-            <tr>
-              <td>Muestra</td>
-              <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Ubicación archivo</td>
-              <td><InputText valor={dataS.ubicacion_archivo} data='ubicacion-archivo' /></td>
-            </tr>
-            <tr>
-              <td>Tipo</td>
-              <td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td>
-            </tr>
-            <tr>
-              <td>Cantidad</td>
-              <td><InputSelect valor={dataS.cantidad} data='cantidad' opciones={ cantidad } /></td>
-            </tr>
-            <tr>
-              <td>Papel</td>
-              <td><InputSelect valor={dataS.papel} data='papel' opciones={ papel } /></td>
-            </tr>
-            <tr>
-              <td>Otra terminación</td>
-              <td><InputSelect valor={dataS.otra_terminacion} data='otra-terminacion' opciones={ otra_terminacion } /></td>
-            </tr>
-            <tr>
-              <td>Puntas redondeadas</td>
-              <td><InputSelect valor={dataS.puntas_redondeadas} data='puntas-redondeadas' opciones={ siNo } /></td>
-            </tr>
-          </table>
-          <TextArea valor={dataS.observaciones} data='observaciones' />
+            <table>
+              <tr>
+                <td>Muestra</td>
+                <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
+              </tr>
+              <tr>
+                <td>Ubicación archivo</td>
+                <td><InputText valor={dataS.ubicacion_archivo} data='ubicacion-archivo' /></td>
+              </tr>
+              <tr>
+                <td>Tipo</td>
+                <td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td>
+              </tr>
+              <tr>
+                <td>Cantidad</td>
+                <td><InputSelect valor={dataS.cantidad} data='cantidad' opciones={ cantidad } /></td>
+              </tr>
+              <tr>
+                <td>Papel</td>
+                <td><InputSelect valor={dataS.papel} data='papel' opciones={ papel } /></td>
+              </tr>
+              <tr>
+                <td>Otra terminación</td>
+                <td><InputSelect valor={dataS.otra_terminacion} data='otra-terminacion' opciones={ otra_terminacion } /></td>
+              </tr>
+              <tr>
+                <td>Puntas redondeadas</td>
+                <td><InputSelect valor={dataS.puntas_redondeadas} data='puntas-redondeadas' opciones={ siNo } /></td>
+              </tr>
+            </table>
+          <div className="flex-column gap-1">
+            <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
           <Abono valor={ dataS.abono } />
-          <button type="submit" data='btn-submit'>Guardar cambios</button>
+          <button type="submit" data='btn-submit' className='btn-submit'>Guardar cambios</button>
+          </div>
         </form>
       </div>
     );

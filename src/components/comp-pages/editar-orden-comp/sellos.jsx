@@ -75,34 +75,36 @@ const Sellos = () => {
     return (
       <div>
         <Header tipo={pedido} numero={ nroOrden } nombre={ nombre } />
-        <form className='flex-column' onSubmit={ handleSubmit }>
+        <form className='flex-column form puntas-redondas' onSubmit={ handleSubmit }>
           <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
-          <table>
-            <tr>
-              <td>Muestra</td>
-              <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
-            </tr>
-            <tr>
-              <td>Tipo</td>
-              <td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td>
-            </tr>
-            <tr>
-              <td>Tamaño</td>
-              <td><InputText valor={ dataS.tamano} data='tamano' /></td>
-            </tr>
-            <tr>
-              <td>Texto</td>
-              <td><InputText valor={ dataS.texto} data='texto' /></td>
-            </tr>
-            <tr>
-              <td>Dibujo</td>
-              <td><InputText valor={ dataS.dibujo} data='dibujo' /></td>
-            </tr>
-          </table>
-          <TextArea valor={dataS.observaciones} data='observaciones' />
+            <table>
+              <tr>
+                <td>Muestra</td>
+                <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
+              </tr>
+              <tr>
+                <td>Tipo</td>
+                <td><InputSelect valor={dataS.tipo} data='tipo' opciones={ tipo } /></td>
+              </tr>
+              <tr>
+                <td>Tamaño</td>
+                <td><InputText valor={ dataS.tamano} data='tamano' /></td>
+              </tr>
+              <tr>
+                <td>Texto</td>
+                <td><InputText valor={ dataS.texto} data='texto' /></td>
+              </tr>
+              <tr>
+                <td>Dibujo</td>
+                <td><InputText valor={ dataS.dibujo} data='dibujo' /></td>
+              </tr>
+            </table>
+          <div className="flex-column gap-1">
+            <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
           <Abono valor={ dataS.abono } />
-          <button type="submit" data='btn-submit'>Guardar cambios</button>
+          <button type="submit" data='btn-submit' className='btn-submit'>Guardar cambios</button>
+          </div>
         </form>
       </div>
     );

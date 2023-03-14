@@ -30,7 +30,7 @@ const Pago = ({ total, entrega }) => {
   }
 
   return (
-    <div className='flex-row'>
+    <div className=''>
       Total 
       <input 
         type="number" 

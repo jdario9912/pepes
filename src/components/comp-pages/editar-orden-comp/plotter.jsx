@@ -78,9 +78,9 @@ const Plotter = () => {
     return (
       <div>
         <Header tipo={pedido} numero={ nroOrden } nombre={ nombre } />
-        <form className='flex-column' onSubmit={ handleSubmit }>
+        <form className='flex-column form puntas-redondas' onSubmit={ handleSubmit }>
           <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
-          <table>
+            <table>
             <tr>
               <td>Muestra</td>
               <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
@@ -105,11 +105,13 @@ const Plotter = () => {
               <td>Terminación</td>
               <td><InputSelect valor={dataS.terminacion} data='terminacion' opciones={ terminacion } /></td>
             </tr>
-          </table>
-          <TextArea valor={dataS.observaciones} data='observaciones' />
+            </table>
+          <div className="flex-column gap-1">
+            <TextArea valor={dataS.observaciones} data='observaciones' />
           <Pago total={ dataS.total } entrega={ dataS.entrega } />
           <Abono valor={ dataS.abono } />
-          <button type="submit" data='btn-submit'>Guardar cambios</button>
+          <button type="submit" data='btn-submit' className='btn-submit'>Guardar cambios</button>
+          </div>
         </form>
       </div>
     );

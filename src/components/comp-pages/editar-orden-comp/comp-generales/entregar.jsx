@@ -4,9 +4,9 @@ import HoraEntrega from './hora-entrega';
 
 const Entregar = ({ fecha, hora }) => {
   return (
-    <div className='flex-row'>
+    <div className='flex-row items-center'>
       Entregar el 
-      <FechaEntrega valor={ fecha } />,
+      <FechaEntrega valor={ fecha } /> 
       a las
       <HoraEntrega valor={ hora } />
       hs
