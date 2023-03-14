@@ -5,6 +5,7 @@ const InputTel = ({ valor, data }) => {
 
   return (
     <div>
+      Teléfono:
       <input 
         type="tel"
         data={ data }

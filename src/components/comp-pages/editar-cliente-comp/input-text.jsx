@@ -5,6 +5,7 @@ const InputText = ({ valor, data }) => {
 
   return (
     <div>
+      Nombre:
       <input 
         type="text"
         data={ data }

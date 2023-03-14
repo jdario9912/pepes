@@ -1,0 +1,12 @@
+.editar-cliente--titulo{
+  text-align: center;
+}
+
+.editar-cliente--form{
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.editar-cliente--observaciones{
+  width: 94%;
+}

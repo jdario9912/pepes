@@ -5,10 +5,11 @@ const TextArea = ({ valor, data }) => {
 
   return (
     <div>
+      Observaciones
       <textarea 
         cols="30" 
         rows="10"
-        className='observaciones original'
+        className='original editar-cliente--observaciones'
         data={ data }
         onChange={() => {
           setValue(document.querySelector(`[data=${data}]`).value);

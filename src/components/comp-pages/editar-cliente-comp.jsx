@@ -6,6 +6,7 @@ import { urlApi } from '../../services/url/url-api';
 import InputTel from './editar-cliente-comp/input-tel';
 import InputEmail from './editar-cliente-comp/input-email';
 import TextArea from './editar-cliente-comp/text-area';
+import '../../styles/editar-cliente-comp.css'
 
 const EditarClienteComp = () => {
   const navigate = useNavigate();
@@ -56,14 +57,17 @@ const EditarClienteComp = () => {
 
   if (busqueda) {
     return (
-      <form onSubmit={ handleSubmit }>
-        <InputText valor={cliente.nombre} data='nombre' />
-        <InputTel valor={cliente.telefono} data='telefono' />
-        <InputEmail valor={ cliente.email } data='email' />
-        <TextArea valor={cliente.observaciones} data='observaciones' />
-        { mensajeS ? <span>{ mensajeS }</span> : null }
-        <button type="submit">actualizar</button>
-      </form>
+      <div>
+        <form onSubmit={ handleSubmit } className='form puntas-redondas editar-cliente--form'>
+        <span className='editar-cliente--titulo'>Editar cliente</span>
+          <InputText valor={cliente.nombre} data='nombre' />
+          <InputTel valor={cliente.telefono} data='telefono' />
+          <InputEmail valor={ cliente.email } data='email' />
+          <TextArea valor={cliente.observaciones} data='observaciones' />
+          { mensajeS ? <span>{ mensajeS }</span> : null }
+          <button type="submit" className='btn-submit'>actualizar</button>
+        </form>
+      </div>
     );
   } else {
     <div>Cliente no encontrado</div>

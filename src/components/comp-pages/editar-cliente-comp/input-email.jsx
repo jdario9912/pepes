@@ -5,6 +5,7 @@ const InputEmail = ({ valor, data }) => {
 
   return (
     <div>
+      Email:
       <input 
         type="email" 
         data={ data }
