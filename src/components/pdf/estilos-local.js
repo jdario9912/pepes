@@ -34,6 +34,9 @@ export const estilosLocal = {
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    height: '45%'
+    height: '45%',
+    lineHeight: 1.2,
+    fontSize: 12,
+    letterSpacing: 0.5
   },
 }

@@ -34,7 +34,10 @@ export const estilosCliente = {
     border: 1,
     borderRadius: 5,
     borderColor: '#e6e6e6',
-    padding: 2
+    padding: 2,
+    lineHeight: 1.2,
+    fontSize: 12,
+    letterSpacing: 0.5
   },
   subrayado: {
     textDecoration: 'underline' 
