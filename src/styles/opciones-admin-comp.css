@@ -1,0 +1,42 @@
+.opciones-admin--botones-container{
+  border-radius: 17px / 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.opciones-admin--boton{
+  background: var(--cyan50);
+  color: var(--blanco);
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid var(--blanco);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 10px var(--negro2);
+  transition: all 0.1s;
+
+}
+
+.opciones-admin--boton:hover{
+  border: 1px solid var(--amarillo);
+  color: var(--amarillo);
+  background: var(--blanco3);
+  transform: scale(1.07);
+}
+
+.opciones-admin--boton:active{
+  background: var(--blanco);
+}
+
+.icon-texto-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svg{
+  pointer-events: none;
+  font-size: 2rem;
+}
