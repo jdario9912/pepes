@@ -1,4 +1,4 @@
-export const crearOrden = (url, body) => {
+export const crearEmpleado = (url, body) => {
   return fetch(url, {
     method: 'POST',
     headers: {
