@@ -12,7 +12,7 @@ const OpcionesAdmin = () => {
 
   return (
     <div>
-      <h2>Opciones de administrador</h2>
+      <h2>Panel de administrador</h2>
       <div className='opciones-admin--botones-container modulo'>
         <button className='opciones-admin--boton' onClick={() => dispatch({type: 'empleados'})}>
           <div className='icon-texto-container'>

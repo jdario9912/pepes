@@ -1,15 +1,25 @@
-import React, {useEffect, useState} from 'react';
-import { crearEmpleado } from '../../../services/crear-empleado/crear-empleado';
+import React, {useEffect, useState, createContext} from 'react';
+import { crearEmpleado } from '../../../services/panel-admin/crear-empleado';
 import {urlApi} from '../../../services/url/url-api';
-import { AiOutlineUpload } from "react-icons/ai";
+import { editarEmpleado } from '../../../services/panel-admin/editar-empleado';
+import { eliminarEmpleado } from '../../../services/panel-admin/eliminar-empleado';
+import Formulario from './empleados/formulario';
+import Tabla from './empleados/tabla';
+import Icono from './empleados/icono';
+import TituloForm from './empleados/titulo-form';
+import '../../../styles/clientes-admin-panel.css';
+
+export const EmpleadosContext = createContext();
 
 const Empleados = () => {
   const [empleados, setEmpleados] = useState (null);
-  const [registro, setRegistro] = useState(false);
+  const [recargarPagina, setRecargarPagina] = useState(false);
   const [nickname, setNickname] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [id, setId] = useState(null);
+  const [mensajeS, setMensajeS] = useState(null);
+  const [actualiza, setActualiza] = useState(false);
 
   useEffect (() => {
     fetch (urlApi + '/api/empleados')
@@ -35,24 +45,20 @@ const Empleados = () => {
       })
       .catch (e => console.log (e))
     ;
-    setRegistro(false);
-  }, [registro]);
+    setRecargarPagina(false);
+  }, [recargarPagina]);
 
-  const handleSubmitCrearEmpleado = e => {
+  const handleSubmit = e => {
     e.preventDefault ();
 
     const form = document.querySelector('[data="form-crear-empleado"]');
     const nickname = document.querySelector('[data="nickname"]').value;
     const email = document.querySelector('[data="email"]').value;
     const password = document.querySelector('[data="password"]').value;
+    const id = document.querySelector('[data="id"]').value;
     const btnSubmit = document.querySelector('[data="btn-submit"]');
 
     btnSubmit.setAttribute('disabled', true);
-
-    setTimeout(() => {
-      btnSubmit.removeAttribute('disabled');
-      form.reset();
-    }, 1000);
 
     const body = {
       nickname, 
@@ -60,82 +66,84 @@ const Empleados = () => {
       password
     };
 
-    crearEmpleado(urlApi + `/api/empleados`, body)
-      .then(res => res.json())
-      .then(({creado}) => {
-        if (creado) {
+    if (actualiza) {
+      editarEmpleado(urlApi + `/api/empleados/${id}`, body)
+        .then(res => res.json())
+        .then(({actualizado, mensaje}) => {
+          if(!actualizado) {
+            setMensajeS(mensaje);
+          } else {
+            setRecargarPagina(true);
+            setActualiza(false);
+            setId('');
+            setNickname('');
+            setEmail('');
+            setPassword('');
+          }
+          btnSubmit.removeAttribute('disabled');
+        })
+        .catch(e => console.log(e))
+      ;
+    } else {
+      crearEmpleado(urlApi + `/api/empleados`, body)
+        .then(res => res.json())
+        .then(({creado, mensaje}) => {
+          if (!creado) return setMensajeS(mensaje);
           btnSubmit.removeAttribute('disabled');
           form.reset();
-          setRegistro(true);
-        }
+          setRecargarPagina(true);
+        })
+        .catch(e => console.log(e))
+      ;
+    }
+  };
+
+  const handleChange = () => {
+    const btnSubmit = document.querySelector('[data="btn-submit"]');
+    setMensajeS(null);
+    btnSubmit.removeAttribute('disabled');
+  };
+
+  const handleDelete = (e) => {
+    const btnEliminar = e.target;
+    const id = e.target.id;
+
+    btnEliminar.setAttribute('disabled', true);
+
+    eliminarEmpleado(urlApi + `/api/empleados/${id}`)
+      .then(res => res.json())
+      .then(({eliminado, mensaje}) => {
+        if(!eliminado) return setMensajeS(mensaje);
+        setRecargarPagina(true);
+        btnEliminar.removeAttribute('disabled');
       })
       .catch(e => console.log(e))
     ;
   };
 
   return (
-    <div>
-      <p>Empleados</p>
-      <form onSubmit={handleSubmitCrearEmpleado} data='form-crear-empleado'>
-        <input 
-          type="text" 
-          hidden 
-          value={id} 
-        />
-        <input
-          type="text"
-          placeholder="nickname"
-          data="nickname"
-          value={nickname}
-          onChange={(e) => setNickname(e.value)}
-        />
-
-        <input 
-          type="email" 
-          placeholder="email" 
-          data="email" 
-          value={email} 
-          onChange={(e) => setEmail(e.value)}
-        />
-
-        <input
-          type="text"
-          placeholder="contraseña"
-          data="password"
-          value={password}
-          onChange={(e) => setPassword(e.value)}
-        />
-
-        <button type="submit" data='btn-submit'><AiOutlineUpload /></button>
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <th>Nickname</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {empleados
-            ? empleados.map (({id, nickname, email, password}) => (
-                <tr key={id}>
-                  <td>{nickname}</td>
-                  <td>
-                    <button onClick={() => {
-                      setId(id); 
-                      setNickname(nickname); 
-                      setEmail(email); 
-                      setPassword(password)
-                    }}>editar</button>
-                    
-                    eliminar
-                  </td>
-                </tr>
-              ))
-            : <span>cargando empleados</span>}
-        </tbody>
-      </table>
-    </div>
+    <EmpleadosContext.Provider value={{
+      handleSubmit, 
+      handleChange,
+      handleDelete,
+      setId, 
+      setNickname, 
+      setEmail, 
+      setPassword,
+      setActualiza,
+      id,
+      nickname,
+      email,
+      password
+    }}>
+      <div className='modulo clientes--container'>
+        <Icono />
+        <TituloForm actualiza={actualiza} />
+        <Formulario />
+        <span>{mensajeS}</span>
+        <Tabla empleados={empleados} />
+      </div>
+    </EmpleadosContext.Provider>
   );
 };
 

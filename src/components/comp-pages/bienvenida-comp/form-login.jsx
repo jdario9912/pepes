@@ -54,8 +54,10 @@ const FormLogin = () => {
     }
   };
 
+  const handleChange = () => setMensajeServidor('');
+
   return (
-    <form className='form-login' onSubmit={ onSubmit }>
+    <form className='form-login' onSubmit={ onSubmit } onChange={handleChange}>
       <div className='form-login--container-label-input'>
         <TbUserCircle className='form-login--icons' />
         <InputText props={ 
