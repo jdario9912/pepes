@@ -3,7 +3,11 @@ import React from 'react';
 const TituloForm = ({ actualiza }) => {
   return (
     <>
-      {actualiza ? <span>editar empleado</span> : <span>agregar empleado</span>}
+      {
+        actualiza ? 
+          <span className='titulo-form'>editar empleado</span> : 
+          <span className='titulo-form'>agregar empleado</span>
+      }
     </>
   );
 }

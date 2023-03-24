@@ -2,6 +2,7 @@
   border-radius: 17px / 20px;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 1rem;
 }
 
 .opciones-admin--boton{

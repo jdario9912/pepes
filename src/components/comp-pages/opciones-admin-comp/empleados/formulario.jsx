@@ -9,19 +9,22 @@ const Formulario = () => {
       onSubmit={handleSubmit} 
       data='form-crear-empleado' 
       onChange={handleChange}
-      className='form'
+      className='formulario'
     >
       <input 
         type="text" 
         hidden 
         value={id} 
         data='id'
+        className='input'
       />
+
       <input
         type="text"
         placeholder="nickname"
         data="nickname"
         value={nickname}
+        className='input'
         onChange={(e) => setNickname(e.value)}
       />
 
@@ -30,6 +33,7 @@ const Formulario = () => {
         placeholder="email" 
         data="email" 
         value={email} 
+        className='input'
         onChange={(e) => setEmail(e.value)}
       />
 
@@ -38,10 +42,15 @@ const Formulario = () => {
         placeholder="contraseña"
         data="password"
         value={password}
+        className='input'
         onChange={(e) => setPassword(e.value)}
       />
 
-      <button type="submit" data='btn-submit'><AiOutlineUpload /></button>
+      <button 
+        type="submit" 
+        data='btn-submit'
+        className='btn-submit-admin-panel'
+      ><AiOutlineUpload /></button>
     </form>
   );
 }
