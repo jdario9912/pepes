@@ -76,6 +76,16 @@
   background-color: rgba(255, 255, 255, 0.067);
 }
 
+.td-nickname{
+  padding: 0 2rem 0 0.5rem;
+  text-transform: capitalize;
+}
+
+.td-buttons{
+  display: flex;
+  gap: 1rem;
+}
+
 .btn-editar-empleados--panel-admin{
   background-color: transparent;
   border: none;

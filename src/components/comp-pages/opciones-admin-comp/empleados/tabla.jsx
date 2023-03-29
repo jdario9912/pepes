@@ -11,8 +11,8 @@ const Tabla = ({empleados}) => {
         {empleados
           ? empleados.filter(i => i.nickname !== 'pepo').map(({id, nickname, email, password}) => (
               <tr key={id} className='tr-empleados--panel-admin'>
-                <td>{nickname}</td>
-                <td>
+                <td className='td-nickname'>{nickname}</td>
+                <td className='td-buttons'>
                   <button 
                     onClick={() => {
                       setId(id); 
