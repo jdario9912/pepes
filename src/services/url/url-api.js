@@ -1,5 +1,5 @@
 const web = true;
 const local = 'http://localhost:3001';
-const railway = 'http://200.58.98.142';
+const railway = 'https://pepes-api.com.ar';
 
 export const urlApi = web ? railway : local;

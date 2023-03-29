@@ -35,12 +35,12 @@ const OpcionesAdmin = () => {
           </div>
         </button>
 
-        <button className='opciones-admin--boton' onClick={() => dispatch({type: 'historial'})}>
+        {/* <button className='opciones-admin--boton' onClick={() => dispatch({type: 'historial'})}>
           <div className='icon-texto-container'>
             <FaHistory />
             Historial
           </div>
-        </button>
+        </button> */}
       </div>
       {
         opcionesPanelAdmin[administrar]

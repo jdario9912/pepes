@@ -40,11 +40,64 @@
 }
 
 .btn-submit-admin-panel{
-  color: var(--amarillo);
+  color: var(--blanco);
   font-weight: 800;
-  background-color: transparent;
+  background-color: var(--amarillo50);
   outline: none;
-  border: 1px solid var(--amarillo);
+  border: 2px solid var(--amarillo50);
   border-radius: 10px;
 }
 
+.btn-submit-admin-panel:hover{
+  border: 2px solid var(--amarillo);
+  color: var(--amarillo);
+}
+
+.btn-submit-admin-panel:active{
+  background-color: var(--amarillo);
+}
+
+.btn-submit-admin-panel:disabled{
+  border: 2px solid var(--blanco2);
+  background-color: var(--blanco2);
+  color: var(--blanco);
+}
+
+.btn-submit-admin-panel:focus{
+  border: 2px solid var(--amarillo);
+  color: var(--amarillo);
+}
+
+.tabla-empleados--panel-admin{
+  display: block;
+}
+
+.tr-empleados--panel-admin:hover{
+  background-color: rgba(255, 255, 255, 0.067);
+}
+
+.btn-editar-empleados--panel-admin{
+  background-color: transparent;
+  border: none;
+  color: var(--blanco3);
+  font-size: 1.2rem;
+}
+
+.btn-editar-empleados--panel-admin:hover{
+  color: var(--amarillo);
+}
+
+.btn-eliminar-empleados--panel-admin{
+  background-color: transparent;
+  border: none;
+  color: var(--blanco3);
+  font-size: 1.2rem;
+}
+
+.btn-eliminar-empleados--panel-admin:hover{
+  color: var(--rojo);
+}
+
+.btn-editar-empleados--panel-admin:active,.btn-eliminar-empleados--panel-admin:active {
+  color: var(--blanco);
+}

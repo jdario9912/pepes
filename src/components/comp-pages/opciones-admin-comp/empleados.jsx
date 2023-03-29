@@ -14,9 +14,9 @@ export const EmpleadosContext = createContext();
 const Empleados = () => {
   const [empleados, setEmpleados] = useState (null);
   const [recargarPagina, setRecargarPagina] = useState(false);
-  const [nickname, setNickname] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [nickname, setNickname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [id, setId] = useState(null);
   const [mensajeS, setMensajeS] = useState(null);
   const [actualiza, setActualiza] = useState(false);
@@ -46,7 +46,7 @@ const Empleados = () => {
       .catch (e => console.log (e))
     ;
     setRecargarPagina(false);
-  }, [recargarPagina]);
+  }, [recargarPagina, actualiza]);
 
   const handleSubmit = e => {
     e.preventDefault ();
@@ -85,6 +85,7 @@ const Empleados = () => {
         .catch(e => console.log(e))
       ;
     } else {
+      if(nickname === '' || password === '') return setMensajeS('Faltan datos');
       crearEmpleado(urlApi + `/api/empleados`, body)
         .then(res => res.json())
         .then(({creado, mensaje}) => {
