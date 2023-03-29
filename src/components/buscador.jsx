@@ -8,14 +8,17 @@ import { useNavigate } from 'react-router-dom';
 const Buscador = () => {
   const navigate = useNavigate();
   
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const busqueda = document.querySelector('[data-busqueda]');
+    const formBusqueda = document.querySelector('[data="form-busqueda"]');
     navigate(`/?busqueda=${busqueda.value}`);
-  }
+    formBusqueda.reset();
+  };
 
   return (
     <div className='buscador--container'>
-      <form action="" method="get" className='buscador--form' onSubmit={ handleSubmit }>
+      <form method="get" className='buscador--form' onSubmit={ handleSubmit } data='form-busqueda'>
         <InputSearch />
         <BtnSubmit texto={ <FiSearch /> } estilos='buscador--btn' />
       </form>

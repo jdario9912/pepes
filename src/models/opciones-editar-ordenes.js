@@ -20,7 +20,7 @@ export const opcionesDisenos = {
 export const opcionesLoma = {
   siNo: ['Si', 'No'],
   bolsillo: ['No', 'Arriba', 'Arriba y abajo'],
-  material: ['Vinilo Brillo', 'Vinilo Mate', 'Papel', 'Lona Front', 'Transparente', 'Lona Back', 'Micro'],
+  material: ['Vinilo Brillo', 'Vinilo Mate', 'Vinilo sobre corrugado', 'Papel', 'Lona Front', 'Transparente', 'Lona Back', 'Micro'],
   orientacion: ['Horizontal','Vertical']
 };
 

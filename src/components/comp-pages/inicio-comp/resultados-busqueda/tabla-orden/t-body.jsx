@@ -50,8 +50,8 @@ const TBody = () => {
         <td>{ Tipo }</td>
         <td>{ Fecha }</td>
         <td>{ Hora }hs</td>
-        <td>
-          <Link to='#'>
+        <td className='td-acciones td-flex'>
+          <Link to={`/pdf/${Tipo}/${Orden}`}>
             <AiOutlineEye />
           </Link>
           <div>
