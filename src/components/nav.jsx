@@ -1,51 +1,40 @@
-import React, {
-  useContext,
-} from 'react';
-import { NavLink } from 'react-router-dom';
-import '../styles/nav.css';
-import { activeStyle } from '../models/nav-link-active-style-model';
-import { MdPendingActions } from "react-icons/md";
-import { AiOutlineUserAdd } from "react-icons/ai";
-import { AppContext } from './app';
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import "../styles/nav.css";
+import { activeStyle } from "../models/nav-link-active-style-model";
+import { AppContext } from "./app";
 import { SlScreenDesktop } from "react-icons/sl";
-import { BsPeople } from "react-icons/bs";
-import Buscador from './buscador';
+import Buscador from "./buscador";
+import { nav } from "../models/nav";
 
 const Nav = () => {
-  const linkActivo = ({ isActive }) => isActive ? activeStyle : null;
+  const linkActivo = ({ isActive }) => (isActive ? activeStyle : null);
   const { toogleNav, setToogleNav } = useContext(AppContext);
 
   const handleClick = () => {
-    if(toogleNav)
-      setToogleNav(false);
+    if (toogleNav) setToogleNav(false);
   };
 
   return (
     <div className="nav--container">
       <p className="nav--p">Opciones</p>
-      <nav className='nav' onClick={ handleClick }>
-        <ul className='nav--ul'>
+      <nav className="nav" onClick={handleClick}>
+        <ul className="nav--ul">
+          {nav.map(({ icon, to, label }) => (
+            <li>
+              {icon}
+              <NavLink style={linkActivo} to={to}>
+                {label}
+              </NavLink>
+            </li>
+          ))}
+
           <li>
-            <MdPendingActions />
-            <NavLink style={ linkActivo } to='/ordenes-pendientes'>
-              Pendientes
-            </NavLink>
-          </li>
-          <li>
-            <BsPeople />
-            <NavLink style={ linkActivo } to='/clientes'>
-              Clientes
-            </NavLink>
-          </li>
-          <li>
-            <AiOutlineUserAdd />
-            <NavLink style={ linkActivo } to='/nuevo-cliente'>
-              Nuevo cliente
-            </NavLink>
-          </li>
-          <li>
-            <NavLink style={ linkActivo } to='/'>
-              Limpiar <span><SlScreenDesktop /></span>
+            <NavLink style={linkActivo} to="/">
+              Limpiar{" "}
+              <span>
+                <SlScreenDesktop />
+              </span>
             </NavLink>
           </li>
         </ul>
@@ -53,6 +42,6 @@ const Nav = () => {
       <Buscador />
     </div>
   );
-}
+};
 
 export default Nav;
