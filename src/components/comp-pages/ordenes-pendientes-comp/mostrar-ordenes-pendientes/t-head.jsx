@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../../../styles/t-head.css';
 import { TbArrowsSort } from "react-icons/tb";
 

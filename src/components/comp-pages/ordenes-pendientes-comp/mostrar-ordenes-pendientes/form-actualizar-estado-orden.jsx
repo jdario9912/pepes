@@ -1,4 +1,3 @@
-import React from 'react';
 import { BiUpload } from "react-icons/bi";
 
 const FormActualizarEstadoOrden = ({ handleSubmit, orden, tipo, isSubmiting }) => {

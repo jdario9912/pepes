@@ -10,7 +10,7 @@ const estilos = StyleSheet.create(estilosCliente);
 
 const Cliente = () => {
   const { pedido } = useContext(PdfContext);
-  const { muestra, ubicacion_archivo, talles, color, estampa_pecho, estampa_espalda, ojales, colo_estampa, cantidad, observaciones} = pedido;
+  const { muestra, ubicacion_archivo, talles, color, estampa_pecho, estampa_espalda, color_estampa, cantidad, observaciones} = pedido;
 
   return (
     <View style={estilos.section}>
@@ -43,12 +43,8 @@ const Cliente = () => {
               <View style={estilos.valor}><Text>{estampa_espalda}</Text></View>
             </View>
             <View style={estilos.fila}>
-              <View style={estilos.clave}><Text>Ojales</Text></View>
-              <View style={estilos.valor}><Text>{ojales}</Text></View>
-            </View>
-            <View style={estilos.fila}>
               <View style={estilos.clave}><Text>Color estampa:</Text></View>
-              <View style={estilos.valor}><Text>{colo_estampa}</Text></View>
+              <View style={estilos.valor}><Text>{color_estampa}</Text></View>
             </View>
             <View style={estilos.fila}>
               <View style={estilos.clave}><Text>Cantidad:</Text></View>

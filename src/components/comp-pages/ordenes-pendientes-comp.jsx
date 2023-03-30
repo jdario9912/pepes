@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import MostrarOrdenesPendientes from '../comp-pages/ordenes-pendientes-comp/mostrar-ordenes-pendientes';
 import '../../styles/ordenes-pendientes-comp.css';
 import { urlApi } from '../../services/url/url-api';
