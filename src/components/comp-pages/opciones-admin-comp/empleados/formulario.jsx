@@ -17,6 +17,7 @@ const Formulario = () => {
         value={id} 
         data='id'
         className='input'
+        readOnly
       />
 
       <input

@@ -17,7 +17,7 @@ const Empleados = () => {
   const [nickname, setNickname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [id, setId] = useState(null);
+  const [id, setId] = useState('');
   const [mensajeS, setMensajeS] = useState(null);
   const [actualiza, setActualiza] = useState(false);
 
@@ -25,7 +25,7 @@ const Empleados = () => {
     fetch (urlApi + '/api/empleados')
       .then (res => res.json ())
       .then (data => {
-        setEmpleados (data);
+        setEmpleados(data.sort((a, b) => a.nickname.localeCompare(b.nickname)));
       })
       .catch (e => console.log (e));
   }, []);
