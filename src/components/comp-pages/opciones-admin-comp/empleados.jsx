@@ -7,7 +7,7 @@ import Formulario from './empleados/formulario';
 import Tabla from './empleados/tabla';
 import Icono from './empleados/icono';
 import TituloForm from './empleados/titulo-form';
-import '../../../styles/empleados-admin-panel.css';
+import '../../../styles/admin-panel.css';
 
 export const EmpleadosContext = createContext();
 
@@ -137,7 +137,7 @@ const Empleados = () => {
       email,
       password
     }}>
-      <div className='modulo empleados--container'>
+      <div className='modulo admin--container'>
         <Icono />
         <TituloForm actualiza={actualiza} />
         <Formulario />

@@ -1,35 +1,35 @@
-.empleados--container{
+.admin--container {
   border-radius: 17px / 20px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.icono-nombre-panel-empleados{
+.icono-nombre-panel-admin {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
 }
 
-.icono-texto{
+.icono-texto {
   font-size: 0.8rem;
   color: var(--amarillo);
   margin-block-start: 0;
   font-weight: 600;
 }
 
-.titulo-form{
+.titulo-form {
   font-style: italic;
   color: var(--amarillo);
 }
 
-.formulario{
+.formulario {
   display: flex;
   gap: 0.5rem;
 }
 
-.input{
+.input {
   line-height: 2rem;
   background: var(--negro3);
   border: 0.5px solid var(--blanco3);
@@ -39,7 +39,7 @@
   color: var(--blanco);
 }
 
-.btn-submit-admin-panel{
+.btn-submit-admin-panel {
   color: var(--blanco);
   font-weight: 800;
   background-color: var(--amarillo50);
@@ -48,66 +48,77 @@
   border-radius: 10px;
 }
 
-.btn-submit-admin-panel:hover{
+.btn-submit-admin-panel:hover {
   border: 2px solid var(--amarillo);
   color: var(--amarillo);
 }
 
-.btn-submit-admin-panel:active{
+.btn-submit-admin-panel:active {
   background-color: var(--amarillo);
 }
 
-.btn-submit-admin-panel:disabled{
+.btn-submit-admin-panel:disabled {
   border: 2px solid var(--blanco2);
   background-color: var(--blanco2);
   color: var(--blanco);
 }
 
-.btn-submit-admin-panel:focus{
+.btn-submit-admin-panel:focus {
   border: 2px solid var(--amarillo);
   color: var(--amarillo);
 }
 
-.tabla-empleados--panel-admin{
+.tabla-empleados--panel-admin {
   display: block;
 }
 
-.tr-empleados--panel-admin:hover{
+.tr--panel-admin td {
+  padding: 0.5rem;
+}
+
+.tr--panel-admin:hover {
   background-color: rgba(255, 255, 255, 0.067);
 }
 
-.td-nickname{
+.th {
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.td-nickname {
   padding: 0 2rem 0 0.5rem;
   text-transform: capitalize;
 }
 
-.td-buttons{
+.td-buttons {
   display: flex;
   gap: 1rem;
 }
 
-.btn-editar-empleados--panel-admin{
+.btn-editar--panel-admin {
   background-color: transparent;
   border: none;
   color: var(--blanco3);
   font-size: 1.2rem;
 }
 
-.btn-editar-empleados--panel-admin:hover{
+.btn-editar--panel-admin:hover {
   color: var(--amarillo);
 }
 
-.btn-eliminar-empleados--panel-admin{
+.btn-eliminar--panel-admin {
   background-color: transparent;
   border: none;
   color: var(--blanco3);
   font-size: 1.2rem;
 }
 
-.btn-eliminar-empleados--panel-admin:hover{
+.btn-eliminar--panel-admin:hover {
   color: var(--rojo);
 }
 
-.btn-editar-empleados--panel-admin:active,.btn-eliminar-empleados--panel-admin:active {
+.btn-editar--panel-admin:active,
+.btn-eliminar--panel-admin:active {
   color: var(--blanco);
 }

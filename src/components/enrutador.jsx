@@ -10,7 +10,8 @@ import {
   Clientes,
   OrdenesCliente,
   EditarCliente,
-  EnviadosProveedor
+  EnviadosProveedor,
+  EliminarCliente
 } from "../pages";
 import EditarOrden from "./comp-pages/editar-orden-comp";
 import { Index } from "./pdf";
@@ -41,6 +42,7 @@ const EnrutadorComp = () => {
           element={<OrdenesCliente />}
         />
         <Route path="editar-cliente/:id" element={<EditarCliente />} />
+        <Route path="eliminar-cliente/:id/:nombre" element={<EliminarCliente />} />
       </Route>
       <Route path="/pdf/:tipoTrabajo/:nroOrden" element={<Index />} />
       <Route path="*" element={<NotFound />} />

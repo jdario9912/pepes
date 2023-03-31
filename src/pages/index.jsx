@@ -8,6 +8,7 @@ import OpcionesAdminComp from "../components/comp-pages/opciones-admin-comp";
 import OrdenesClienteComp from "../components/comp-pages/ordenes-cliente-comp";
 import EditarClienteComp from "../components/comp-pages/editar-cliente-comp";
 import OrdenesEnviadosProvComp from "../components/comp-pages/ordenes-enviados-prov-comp";
+import EliminarClienteComp from "../components/comp-pages/eliminar-cliente-comp";
 
 export const Inicio = () => <InicioComp />;
 export const Clientes = () => <ClientesComp />;
@@ -19,3 +20,4 @@ export const OpcionesAdmin = () => <OpcionesAdminComp />;
 export const OrdenesCliente = () => <OrdenesClienteComp />;
 export const EditarCliente = () => <EditarClienteComp />;
 export const EnviadosProveedor = () => <OrdenesEnviadosProvComp />;
+export const EliminarCliente = () => <EliminarClienteComp />

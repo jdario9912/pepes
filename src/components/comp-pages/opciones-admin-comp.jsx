@@ -1,35 +1,50 @@
-import React, { useReducer } from 'react';
-import { opcionesPanelAdmin } from '../../models/opciones-panel-admin';
-import '../../styles/opciones-admin-comp.css'
-import { opcionesAdmin } from '../../services/redux/opciones-admin';
+import React, { useReducer } from "react";
+import { opcionesPanelAdmin } from "../../models/opciones-panel-admin";
+import "../../styles/opciones-admin-comp.css";
+import { opcionesAdmin } from "../../services/redux/opciones-admin";
 import { FaPeopleCarry, FaClipboardList, FaHistory } from "react-icons/fa";
 import { BsPeopleFill } from "react-icons/bs";
+import { AiOutlineSetting } from "react-icons/ai";
 
-const administrarInicial = '';
+const administrarInicial = "";
 
 const OpcionesAdmin = () => {
   const [administrar, dispatch] = useReducer(opcionesAdmin, administrarInicial);
 
   return (
     <div>
-      <h2>Panel de administrador</h2>
-      <div className='opciones-admin--botones-container modulo'>
-        <button className='opciones-admin--boton' onClick={() => dispatch({type: 'empleados'})}>
-          <div className='icon-texto-container'>
+      <h2 className="opciones-admin--titulo">
+        <span>
+          <AiOutlineSetting />
+        </span>
+        Panel administrador
+      </h2>
+      <div className="opciones-admin--botones-container modulo">
+        <button
+          className="opciones-admin--boton"
+          onClick={() => dispatch({ type: "empleados" })}
+        >
+          <div className="icon-texto-container">
             <FaPeopleCarry />
             Empleados
           </div>
         </button>
 
-        <button className='opciones-admin--boton' onClick={() => dispatch({type: 'clientes'})}>
-          <div className='icon-texto-container'>
+        <button
+          className="opciones-admin--boton"
+          onClick={() => dispatch({ type: "clientes" })}
+        >
+          <div className="icon-texto-container">
             <BsPeopleFill />
             Clientes
           </div>
         </button>
 
-        <button className='opciones-admin--boton' onClick={() => dispatch({type: 'ordenes'})}>
-          <div className='icon-texto-container'>
+        <button
+          className="opciones-admin--boton"
+          onClick={() => dispatch({ type: "ordenes" })}
+        >
+          <div className="icon-texto-container">
             <FaClipboardList />
             Ordenes
           </div>
@@ -42,11 +57,9 @@ const OpcionesAdmin = () => {
           </div>
         </button> */}
       </div>
-      {
-        opcionesPanelAdmin[administrar]
-      }
+      {opcionesPanelAdmin[administrar]}
     </div>
   );
-}
+};
 
 export default OpcionesAdmin;

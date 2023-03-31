@@ -19,7 +19,7 @@ const Tabla = ({ empleados }) => {
           empleados
             .filter((i) => i.permisions !== "admin")
             .map(({ id, nickname, email, password }) => (
-              <tr key={id} className="tr-empleados--panel-admin">
+              <tr key={id} className="tr--panel-admin">
                 <td className="td-nickname">{nickname}</td>
                 <td className="td-buttons">
                   <button
@@ -30,7 +30,7 @@ const Tabla = ({ empleados }) => {
                       setPassword(password);
                       setActualiza(true);
                     }}
-                    className="btn-editar-empleados--panel-admin"
+                    className="btn-editar--panel-admin"
                   >
                     <AiFillEdit />
                   </button>
@@ -38,7 +38,7 @@ const Tabla = ({ empleados }) => {
                   <button
                     onClick={handleDelete}
                     id={id}
-                    className="btn-eliminar-empleados--panel-admin"
+                    className="btn-eliminar--panel-admin"
                   >
                     <RiDeleteBinLine />
                   </button>
