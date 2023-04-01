@@ -2,14 +2,15 @@ import React, { useReducer } from "react";
 import { opcionesPanelAdmin } from "../../models/opciones-panel-admin";
 import "../../styles/opciones-admin-comp.css";
 import { opcionesAdmin } from "../../services/redux/opciones-admin";
-import { FaPeopleCarry, FaClipboardList, FaHistory } from "react-icons/fa";
-import { BsPeopleFill } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
+import { btnsOpcionesAdmin } from "../../models/btns-opciones-admin";
 
 const administrarInicial = "";
 
 const OpcionesAdmin = () => {
   const [administrar, dispatch] = useReducer(opcionesAdmin, administrarInicial);
+
+  const handleClick = (e) => dispatch({ type: e.target.id });
 
   return (
     <div>
@@ -20,42 +21,18 @@ const OpcionesAdmin = () => {
         Panel administrador
       </h2>
       <div className="opciones-admin--botones-container modulo">
-        <button
-          className="opciones-admin--boton"
-          onClick={() => dispatch({ type: "empleados" })}
-        >
-          <div className="icon-texto-container">
-            <FaPeopleCarry />
-            Empleados
-          </div>
-        </button>
-
-        <button
-          className="opciones-admin--boton"
-          onClick={() => dispatch({ type: "clientes" })}
-        >
-          <div className="icon-texto-container">
-            <BsPeopleFill />
-            Clientes
-          </div>
-        </button>
-
-        <button
-          className="opciones-admin--boton"
-          onClick={() => dispatch({ type: "ordenes" })}
-        >
-          <div className="icon-texto-container">
-            <FaClipboardList />
-            Ordenes
-          </div>
-        </button>
-
-        {/* <button className='opciones-admin--boton' onClick={() => dispatch({type: 'historial'})}>
-          <div className='icon-texto-container'>
-            <FaHistory />
-            Historial
-          </div>
-        </button> */}
+        {btnsOpcionesAdmin.map(({ dispatch, icon, label }) => (
+          <button
+            id={dispatch}
+            className="opciones-admin--boton"
+            onClick={handleClick}
+          >
+            <div className="icon-texto-container" id={dispatch}>
+              {icon}
+              {label}
+            </div>
+          </button>
+        ))}
       </div>
       {opcionesPanelAdmin[administrar]}
     </div>

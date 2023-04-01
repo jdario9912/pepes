@@ -21,7 +21,7 @@ const Nav = () => {
       <nav className="nav" onClick={handleClick}>
         <ul className="nav--ul">
           {nav.map(({ icon, to, label }) => (
-            <li>
+            <li key={label}>
               {icon}
               <NavLink style={linkActivo} to={to}>
                 {label}

@@ -101,6 +101,9 @@
   border: none;
   color: var(--blanco3);
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-editar--panel-admin:hover {
@@ -112,6 +115,9 @@
   border: none;
   color: var(--blanco3);
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-eliminar--panel-admin:hover {
@@ -121,4 +127,8 @@
 .btn-editar--panel-admin:active,
 .btn-eliminar--panel-admin:active {
   color: var(--blanco);
+}
+
+.label-btn{
+  font-size: 0.5rem;
 }

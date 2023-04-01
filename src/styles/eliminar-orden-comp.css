@@ -1,0 +1,67 @@
+.eliminar-orden--container-comp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.eliminar-orden--container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.eliminar-orden--icon{
+  font-size: 3rem;
+  color: var(--rojo);
+}
+
+.span-amarillo{
+  font-style: italic;
+  color: var(--amarillo);
+  text-transform: capitalize;
+}
+
+.link-amarillo{
+  color: var(--amarillo);
+}
+
+.link-amarillo:hover{
+  text-decoration: underline;
+}
+
+.buttons-container{
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.button-confirmar{
+  background-color: var(--rojo);
+  color: var(--blanco);
+  outline: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px var(--negro2);
+}
+
+.button-confirmar:hover{
+  background-color: var(--rojo2);
+  text-decoration: underline;
+}
+
+.button-confirmar:disabled{
+  background-color: darkgray;
+}
+
+.button-cancelar{
+  text-shadow: 2px 2px 10px var(--negro2);
+}
+
+.button-cancelar:hover{
+  color: var(--amarillo);
+  text-decoration: underline;
+}

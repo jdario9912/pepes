@@ -8,5 +8,5 @@ export const opcionesPanelAdmin = {
   'clientes': <Clientes />,
   'ordenes': <Ordenes />,
   'historial': <Historial />,
-  '': <div>Elige una opción</div>
+  '': <i>Elige una opción...</i>
 };

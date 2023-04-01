@@ -16,6 +16,7 @@ const TBody = ({ clientes, mensaje }) => {
               className="btn-editar--panel-admin"
             >
               <BsCardChecklist />
+              <span className="label-btn">ver ordenes</span>
             </Link>
 
             <Link
@@ -23,6 +24,7 @@ const TBody = ({ clientes, mensaje }) => {
               className="btn-editar--panel-admin"
             >
               <AiFillEdit />
+              <span className="label-btn">editar</span>
             </Link>
 
             <Link
@@ -30,6 +32,7 @@ const TBody = ({ clientes, mensaje }) => {
               className="btn-eliminar--panel-admin"
             >
               <RiDeleteBinLine />
+              <span className="label-btn">eliminar</span>
             </Link>
             <span>{mensaje}</span>
           </td>
