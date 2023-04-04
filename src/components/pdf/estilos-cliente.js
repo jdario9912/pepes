@@ -1,45 +1,43 @@
 export const estilosCliente = {
   section: {
-    height: '50%',
-    gap: 4
+    height: "100%",
+    gap: 4,
   },
   pedido: {
     border: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    height: '50%'
+    height: "80%",
+    justifyContent: "space-between",
   },
   items: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    flexDirection: "column",
+    gap: 20,
+    height: "100%",
   },
   filas: {
     gap: 3,
-    flexDirection: 'column',
-    width: '66%',
+    flexDirection: "column",
+    width: "100%",
   },
   fila: {
-    flexDirection: 'row',
-    padding: 1
+    flexDirection: "row",
+    padding: 1,
   },
   clave: {
-    width: '50%',
+    width: "50%",
   },
   valor: {
-    width: '50%',
+    width: "50%",
   },
   observaciones: {
-    width: '30%',
-    border: 1,
-    borderRadius: 5,
-    borderColor: '#e6e6e6',
+    width: "100%",
     padding: 2,
     lineHeight: 1.2,
-    fontSize: 12,
-    letterSpacing: 0.5
+    letterSpacing: 0.5,
   },
   subrayado: {
-    textDecoration: 'underline' 
-  }
-}
+    textDecoration: "underline",
+  },
+};

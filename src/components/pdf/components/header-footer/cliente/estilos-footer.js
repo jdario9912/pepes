@@ -6,7 +6,7 @@ export const estilosFooter = {
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    marginBottom: 10,
+    marginBottom: 0,
     alignItems: 'center'
   },
   contacto: {

@@ -1,10 +1,12 @@
 export const estilosLocal = {
   section: {
-    borderTop: 1,
-    borderStyle: 'dashed',
-    height: '50%',
+    height: '100%',
     gap: 3,
     paddingTop: 4
+  },
+  body: {
+    justifyContent: "space-between",
+    height: '100%'
   },
   separarFilas: {
     gap: 3

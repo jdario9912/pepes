@@ -40,7 +40,7 @@ const Cliente = () => {
             </View>
           </View>
           <View style={estilos.observaciones}>
-            <Text><Text style={estilos.subrayado}>Observaciones:</Text>{observaciones}.</Text>
+            <Text>Observaciones: {observaciones}.</Text>
           </View>
         </View>
         <Pago />
