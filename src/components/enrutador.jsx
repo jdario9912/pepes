@@ -45,7 +45,7 @@ const EnrutadorComp = () => {
         />
         <Route path="editar-cliente/:id" element={<EditarCliente />} />
         <Route path="eliminar-cliente/:id/:nombre" element={<EliminarCliente />} />
-        <Route path="desviar-orden/:nroOrden" element={<DesviarOrden />} />
+        <Route path="desviar-orden/:nroOrden/:tipoTrabajo" element={<DesviarOrden />} />
         <Route path="eliminar-orden/:nroOrden/:tipoTrabajo/:nombre" element={<EliminarOrden />} />
       </Route>
       <Route path="/pdf/:tipoTrabajo/:nroOrden" element={<Index />} />

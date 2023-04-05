@@ -3,14 +3,14 @@ import Icono from "./ordenes/icono";
 import TBody from "./ordenes/t-body";
 import THead from "./ordenes/t-head";
 
-const ordenes = [
-  // {
-  //   id: 2,
-  //   nombre: 'Kinsa',
-  //   nro_orden: 232311720655,
-  //   tipo_trabajo: 'impresiones',
-  // },
-];
+// const ordenes = [
+//   {
+//     id: 33,
+//     nombre: 'Gauchito',
+//     nro_orden: 232121127664,
+//     tipo_trabajo: 'tarjetas',
+//   },
+// ];
 
 const Ordenes = () => {
   return (
@@ -18,7 +18,7 @@ const Ordenes = () => {
       <Icono />
       <table>
         <THead />
-        <TBody ordenes={ordenes} />
+        <TBody ordenes={[]} />
       </table>
     </div>
   );
