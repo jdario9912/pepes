@@ -20,7 +20,7 @@ const Empleados = () => {
   const [id, setId] = useState("");
   const [mensajeS, setMensajeS] = useState(null);
   const [actualiza, setActualiza] = useState(false);
-  const [filtro, setFiltro] = useState('');
+  const [filtro, setFiltro] = useState("");
 
   useEffect(() => {
     fetch(urlApi + "/api/empleados")
@@ -141,7 +141,12 @@ const Empleados = () => {
       <div className="modulo admin--container">
         <div className="icono-filtro--container">
           <Icono />
-          <input type="text" className="input input-filtro" onChange={handleFiltro} />
+          <input
+            type="text"
+            className="input input-filtro"
+            onChange={handleFiltro}
+            placeholder='Filtrar empleados'
+          />
         </div>
         <TituloForm actualiza={actualiza} />
         <Formulario />

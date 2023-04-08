@@ -32,7 +32,7 @@ const Ordenes = () => {
         <input
           type="text"
           className="input input-filtro"
-          placeholder="Filtrar clientes"
+          placeholder="Filtrar ordenes"
           onChange={handleFiltro}
         />
       </div>
