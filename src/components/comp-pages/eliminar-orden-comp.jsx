@@ -19,7 +19,7 @@ const EliminarOrdenComp = () => {
     eliminarOrden(urlApi + `/api/eliminar-orden/${tipo_trabajo}/${nroOrden}`)
       .then(res => res.json())
       .then(({eliminado, mensaje}) => {
-        if(eliminado) return navigate('/opciones-admin');
+        if(eliminado) return navigate('/panel-admin');
         
         setMensajeS(mensaje);
         e.target.removeAttribute('disabled');

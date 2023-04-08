@@ -17,7 +17,7 @@ const EliminarClienteComp = () => {
       .then((res) => res.json())
       .then(({ eliminado, mensaje }) => {
         if (eliminado) {
-          navigate("/opciones-admin");
+          navigate("/panel-admin");
           e.target.removeAttribute('disabled');
         }
         else setMensajeS(mensaje);
