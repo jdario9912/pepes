@@ -6,6 +6,7 @@ import THead from "./ordenes/t-head";
 
 const Ordenes = () => {
   const [ordenes, setOrdenes] = useState([]);
+  const [filtro, setFiltro] = useState("");
 
   useEffect(() => {
     fetch(urlApi + "/api/ordenes-todas")
@@ -20,12 +21,24 @@ const Ordenes = () => {
     setOrdenes(ordenes);
   }, [ordenes]);
 
+  const handleFiltro = (e) => {
+    setFiltro(e.target.value);
+  };
+
   return (
     <div className="modulo admin--container">
-      <Icono />
+      <div className="icono-filtro--container">
+        <Icono />
+        <input
+          type="text"
+          className="input input-filtro"
+          placeholder="Filtrar clientes"
+          onChange={handleFiltro}
+        />
+      </div>
       <table>
         <THead />
-        <TBody ordenes={ordenes} />
+        <TBody ordenes={ordenes} filtro={filtro} />
       </table>
     </div>
   );

@@ -3,7 +3,9 @@ import { EmpleadosContext } from "../empleados";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { AiFillEdit } from "react-icons/ai";
 
-const Tabla = ({ empleados }) => {
+const Tabla = ({ empleados, filtro }) => {
+  const regexp = new RegExp(filtro, "gmi");
+
   const {
     setId,
     setActualiza,
@@ -17,6 +19,7 @@ const Tabla = ({ empleados }) => {
       <tbody>
         {empleados ? (
           empleados
+            .filter((empleado) => regexp.test(empleado.nickname))
             .filter((i) => i.permisions !== "admin")
             .map(({ id, nickname, email, password }) => (
               <tr key={id} className="tr--panel-admin">

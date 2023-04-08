@@ -3,11 +3,12 @@ import { urlApi } from "../../../services/url/url-api";
 import TBody from "./clientes/t-body";
 import THead from "./clientes/t-head";
 import Icono from "./clientes/icono";
-import '../../../styles/admin-panel.css';
+import "../../../styles/admin-panel.css";
 
 const Clientes = () => {
   const [clientes, setClientes] = useState([]);
   const [reset, setReset] = useState(false);
+  const [filtro, setFiltro] = useState("");
 
   useEffect(() => {
     fetch(urlApi + "/api/clientes")
@@ -32,12 +33,24 @@ const Clientes = () => {
     setClientes(clientes);
   }, [clientes]);
 
+  const handleFiltro = (e) => {
+    setFiltro(e.target.value);
+  };
+
   return (
     <div className="modulo admin--container">
-      <Icono />
+      <div className="icono-filtro--container">
+        <Icono />
+        <input
+          type="text"
+          className="input input-filtro"
+          placeholder="Filtrar clientes"
+          onChange={handleFiltro}
+        />
+      </div>
       <table>
         <THead />
-        <TBody clientes={clientes} />
+        <TBody clientes={clientes} filtro={filtro} />
       </table>
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useContext} from 'react';
-import { MostrarClientesContext } from '../mostrar-clientes';
 import THead from './t-head';
 import TBody from './t-body';
+import { ClientesCompContext } from '../../clientes-comp';
 
 const Tabla = () => {
-  const { clientes } = useContext(MostrarClientesContext);
+  const { clientes } = useContext(ClientesCompContext);
   return (
     <table className='mostrar-clientes--table'>
       <THead />

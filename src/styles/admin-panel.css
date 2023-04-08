@@ -19,9 +19,20 @@
   font-weight: 600;
 }
 
+.icono-filtro--container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .titulo-form {
   font-style: italic;
   color: var(--amarillo);
+}
+
+.input-filtro{
+  max-width: 250px;
+  max-height: 2rem;
 }
 
 .formulario {

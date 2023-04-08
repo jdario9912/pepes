@@ -1,4 +1,4 @@
-const web = true;
+const web = false;
 const local = 'http://localhost:3001';
 const railway = 'https://pepes-api.com.ar';
 
