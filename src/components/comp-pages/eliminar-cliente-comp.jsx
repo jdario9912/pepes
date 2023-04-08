@@ -37,7 +37,7 @@ const EliminarClienteComp = () => {
         <p>Se borrarán todos sus pedidos...</p>
         <div className="buttons-container">
           <button onClick={handleEliminar} className='button-confirmar'>confirmar</button>
-          <Link to="/opciones-admin" className="button-cancelar">Cancelar</Link>
+          <Link to="/panel-admin" className="button-cancelar">Cancelar</Link>
         </div>
         <span>{mensajeS}</span>
       </div>

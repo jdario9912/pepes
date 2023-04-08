@@ -18,7 +18,7 @@ const SaludoUsuario = () => {
         <p className='saludo-usuario--texto'>Hola! <br /> <strong>{ usuarioActual }</strong></p>
       </div>
       { permisos ? 
-        <NavLink style={ iconoToolsActivo } to='/opciones-admin'>
+        <NavLink style={ iconoToolsActivo } to='/panel-admin'>
           <AiOutlineSetting />
         </NavLink> : 
         null

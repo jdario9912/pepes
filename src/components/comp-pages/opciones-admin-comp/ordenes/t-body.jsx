@@ -6,7 +6,7 @@ import { MdAltRoute } from "react-icons/md";
 const TBody = ({ ordenes }) => {
   return (
     <tbody>
-      {/* {ordenes.map(({ id, nro_orden, tipo_trabajo, nombre }) => (
+      {ordenes.map(({ id, nro_orden, tipo_trabajo, nombre }) => (
         <tr key={nro_orden} className="tr--panel-admin">
           <td>{nro_orden}</td>
           <td>{tipo_trabajo}</td>
@@ -36,8 +36,7 @@ const TBody = ({ ordenes }) => {
             </Link>
           </td>
         </tr>
-      ))} */}
-      <tr><td>Pagina en desarrollo...</td></tr>
+      ))}
     </tbody>
   );
 };

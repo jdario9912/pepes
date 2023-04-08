@@ -10,9 +10,9 @@ const EliminarOrdenComp = () => {
   const navigate = useNavigate();
   const { nroOrden, tipoTrabajo, nombre } = useParams();
   const [mensajeS, setMensajeS] = useState(null);
+  const tipo_trabajo = tipoTrabajo === "diseños" ? "disenos" : tipoTrabajo;
 
   const handleEliminar = (e) => {
-    const tipo_trabajo = tipoTrabajo === "diseños" ? "disenos" : tipoTrabajo;
 
     e.target.setAttribute('disabled', true);
 
@@ -44,7 +44,7 @@ const EliminarOrdenComp = () => {
         </p>
         <p>
           Quizás quieras asignarla a otro cliente haciendo click{" "}
-          <Link to={`/desviar-orden/${nroOrden}`} className="link-amarillo">
+          <Link to={`/desviar-orden/${nroOrden}/${tipo_trabajo}`} className="link-amarillo">
             aquí
           </Link>
           , o...
@@ -54,7 +54,7 @@ const EliminarOrdenComp = () => {
           <button onClick={handleEliminar} className="button-confirmar">
             confirmar
           </button>
-          <Link to="/opciones-admin" className="button-cancelar">
+          <Link to="/panel-admin" className="button-cancelar">
             Cancelar
           </Link>
         </div>

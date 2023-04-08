@@ -1,24 +1,31 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { urlApi } from "../../../services/url/url-api";
 import Icono from "./ordenes/icono";
 import TBody from "./ordenes/t-body";
 import THead from "./ordenes/t-head";
 
-// const ordenes = [
-//   {
-//     id: 33,
-//     nombre: 'Gauchito',
-//     nro_orden: 232121127664,
-//     tipo_trabajo: 'tarjetas',
-//   },
-// ];
-
 const Ordenes = () => {
+  const [ordenes, setOrdenes] = useState([]);
+
+  useEffect(() => {
+    fetch(urlApi + "/api/ordenes-todas")
+      .then((res) => res.json())
+      .then((d) => {
+        setOrdenes(d);
+      })
+      .catch((e) => console.log(e));
+  }, []);
+
+  useEffect(() => {
+    setOrdenes(ordenes);
+  }, [ordenes]);
+
   return (
     <div className="modulo admin--container">
       <Icono />
       <table>
         <THead />
-        <TBody ordenes={[]} />
+        <TBody ordenes={ordenes} />
       </table>
     </div>
   );

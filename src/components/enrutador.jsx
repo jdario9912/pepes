@@ -33,7 +33,7 @@ const EnrutadorComp = () => {
           element={<EditarOrden />}
         />
         <Route
-          path="opciones-admin"
+          path="panel-admin"
           element={
             permisos ? <OpcionesAdmin /> : <Navigate to="/" replace={true} />
           }
