@@ -86,8 +86,8 @@ const TBody = ({ enviadosAProveedor }) => {
             }
           >
             <td>{nro_orden}</td>
-            <td>{tipo_trabajo}</td>
-            <td>{nombre}</td>
+            <td className="capitalize">{tipo_trabajo}</td>
+            <td className="capitalize">{nombre}</td>
             <td>
               {fecha_entrega} a las {hora_entrega}
             </td>

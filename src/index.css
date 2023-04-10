@@ -1,38 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-:root{
+:root {
   /* Colores */
   --negroTotal: #000;
   --negro: #353535;
   --negro2: #00000045;
   --negro3: #00000049;
   --blanco: #ffffff;
-  --blanco2: #e6e6e6; 
-  --blanco3: #e6e6e69e; 
+  --blanco2: #e6e6e6;
+  --blanco3: #e6e6e69e;
   --blanco5: #e6e6e640;
   --blanco4: #e6e6e62b;
-  --magenta: #FF0090;
+  --magenta: #ff0090;
   --magenta50: #ff009080;
-  --amarillo: #FFFF00;
-  --amarillo25: #FFFF00bb;
-  --amarillo50: #FFFF0080;
-  --cyan: #00FFFF;
+  --amarillo: #ffff00;
+  --amarillo25: #ffff00bb;
+  --amarillo50: #ffff0080;
+  --cyan: #00ffff;
   --cyan75: #00ffffbb;
-  --cyan50: #00FFFF80;
+  --cyan50: #00ffff80;
   --error: #ff2929;
   --rojo: #e83333;
   --rojo2: #eb2121;
   --verde: rgb(19, 152, 19);
-  
+
   /* Font */
-  --Montserrat: 'Montserrat', sans-serif;
+  --Montserrat: "Montserrat", sans-serif;
 
   /* Background */
-  --bg-gradient:
-    radial-gradient(circle at 50% 0, var(--amarillo), rgba(255, 0, 0, 0) 99.71%), 
-    radial-gradient(circle at 6.7% 75%, var(--magenta), rgba(0, 0, 255, 0) 99.71%),
-    radial-gradient(circle at 93.3% 75%, var(--cyan), rgba(0, 255, 0, 0) 99.71%)
-  ;
+  --bg-gradient: radial-gradient(
+      circle at 50% 0,
+      var(--amarillo),
+      rgba(255, 0, 0, 0) 99.71%
+    ),
+    radial-gradient(
+      circle at 6.7% 75%,
+      var(--magenta),
+      rgba(0, 0, 255, 0) 99.71%
+    ),
+    radial-gradient(circle at 93.3% 75%, var(--cyan), rgba(0, 255, 0, 0) 99.71%);
 }
 
 body {
@@ -42,19 +48,63 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--blanco);
   min-height: 100vh;
-  background: 
-    radial-gradient(
-      40% 40% at 60% 10%, rgba(255, 0, 144, 0.86) 0%, 
-      rgba(0, 0, 0, .3) 100%),
-    radial-gradient(
-      40% 40% at 90% 70%, rgba(255, 255, 0, 0.59) 0%,
-      rgba(0, 0, 0, .3) 100%),
-    radial-gradient(
-      40% 40% at 10% 30%, rgba(0, 255, 255, 0.75) 0%, 
-      rgba(0, 0, 0, .7) 100%)
-  ;
   backdrop-filter: blur(60px);
   box-sizing: border-box;
+  animation: 60s ease-in infinite fondo_movedizo;
+}
+
+@keyframes fondo_movedizo {
+  from {
+    background: radial-gradient(
+        40% 40% at 60% 10%,
+        rgba(255, 0, 144, 0.36) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      radial-gradient(
+        40% 40% at 90% 70%,
+        rgba(255, 255, 0, 0.39) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      radial-gradient(
+        40% 40% at 10% 60%,
+        rgba(0, 255, 255, 0.57) 0%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
+  }
+  50% {
+    background: radial-gradient(
+        40% 40% at 90% 70%,
+        rgba(255, 0, 144, 0.36) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      radial-gradient(
+        40% 40% at 10% 30%,
+        rgba(255, 255, 0, 0.39) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      radial-gradient(
+        40% 40% at 60% 20%,
+        rgba(0, 255, 255, 0.55) 0%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
+  }
+  to {
+    background: radial-gradient(
+        40% 40% at 10% 30%,
+        rgba(255, 0, 144, 0.36) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      radial-gradient(
+        40% 40% at 60% 10%,
+        rgba(255, 255, 0, 0.39) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      radial-gradient(
+        40% 40% at 90% 70%,
+        rgba(0, 255, 255, 0.55) 0%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
+  }
 }
 
 body::-webkit-scrollbar {
@@ -63,27 +113,27 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: transparent;        /* color of the tracking area */
+  background: transparent; /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #000000db;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
+  background-color: #000000db; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
 }
 
-li{
+li {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-input[type='submit']{
+input[type="submit"] {
   font-family: var(--Montserrat);
 }
 
-.nada{
+.nada {
   align-self: flex-end;
 }

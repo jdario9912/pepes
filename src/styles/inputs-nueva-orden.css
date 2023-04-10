@@ -145,19 +145,8 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] { -moz-appearance:textfield; }
 
 input[type=color]{
-  /* border: 1px solid var(--blanco); */
   border-radius: 5px;
   outline: none;
-}
-
-.select-container{
-  background: var(--negro3);
-  border: none;
-  border-radius: 10px;
-  outline: none;
-  padding: 0.7rem;
-  color: var(--blanco);
-  box-shadow: 1px 1px 5px var(--negro2);
 }
 
 .select{
@@ -229,4 +218,30 @@ select:active{
 
 .btn-submit:disabled{
   filter: blur(1px);
+}
+
+@media only screen and (max-width: 991px){
+  .label-input-escribir{
+    width: 97%;
+  }
+
+  .input-escribir{
+    width: 100%;
+  }
+
+  .label-select{
+    width: 100%;
+  }
+
+  .fieldset{
+    width: 95%;
+  }
+
+  .label-text-area{
+    width: 97%;
+  }
+
+  .text-area{
+    max-width: 100%;
+  }
 }

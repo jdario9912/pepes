@@ -1,21 +1,27 @@
-.ordenes-pendientes-comp--container{
+.ordenes-pendientes-comp--container {
   width: 100%;
   box-sizing: border-box;
   border-radius: 17px / 20px;
 }
 
-.ordenes-pendientes-comp--titulo{
+.ordenes-pendientes-comp--titulo {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.ordenes-pendientes-comp--icon{
+.ordenes-pendientes-comp--icon {
   font-size: 2rem;
   color: var(--amarillo);
 }
 
-.ordenes-pendientes-comp--container h2{
+.ordenes-pendientes-comp--container h2 {
   text-align: center;
+}
+
+@media only screen and (max-width: 991px) {
+  .ordenes-pendientes-comp--container {
+    margin-top: 3rem;
+  }
 }

@@ -9,11 +9,11 @@ const TBody = ({ ordenes }) => {
         ordenes.map(({ nro_orden, tipo_trabajo, estado, fecha_creacion, fecha_entrega, atendido_por }) =>
           <tr key={ nro_orden } className='t-body--tr'>
             <td>{ nro_orden }</td>
-            <td>{ tipo_trabajo }</td>
+            <td className='capitalize'>{ tipo_trabajo }</td>
             <td>{ estado }</td>
             <td>{ fecha_creacion }</td>
             <td>{ fecha_entrega }</td>
-            <td>{ atendido_por }</td>
+            <td className='capitalize'>{ atendido_por }</td>
             <td className='td-flex'>
               <TdAcciones 
                 tipo_trabajo={ tipo_trabajo} 

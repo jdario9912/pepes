@@ -25,3 +25,9 @@
 .table-ordenes-cliente{
   width: 100%;
 }
+
+@media only screen and (max-width: 992px){
+  .ordenes-cliente-comp--container{
+    margin-top: 3rem;
+  }
+}

@@ -12,7 +12,7 @@ const TBody = ({ clientes, filtro }) => {
         .filter((cliente) => regexp.test(cliente.nombre))
         .map(({ id, nombre, telefono }) => (
           <tr key={id} className="tr--panel-admin">
-            <td>{nombre}</td>
+            <td className="capitalize">{nombre}</td>
             <td>{telefono}</td>
             <td className="td-buttons">
               <Link

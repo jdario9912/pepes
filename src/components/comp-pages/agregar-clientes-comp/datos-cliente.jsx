@@ -44,10 +44,14 @@ const DatosCliente = () => {
     .catch(err => console.log(err))
   };
 
+  const resetForm = () => {
+    setMensajeServidor('');
+  }
+
   if(irAlHome) return <Navigate to={`/nueva-orden/${idCliente}`} />;
 
   return (
-    <form onSubmit={ handleSubmit } className='datos-cliente--form'>
+    <form onSubmit={ handleSubmit } className='datos-cliente--form' onChange={resetForm}>
       <div className="datos-cliente--inputs-container">
         <InputText props={ new InputTextModel('', 'datos-cliente--label', '', 'Nombre', 'datos-cliente--input', 'nombre')} />
         <InputTel props={ new InputTelModel('', 'datos-cliente--label', '', 'datos-cliente--input', 'Teléfono', 'telefono')} />

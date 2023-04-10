@@ -26,8 +26,6 @@ const TextArea = ({ props }) => {
     <label className={ estilosLabel} >
       { texto }
       <textarea 
-        name="" 
-        id="" 
         cols="30" 
         rows="10"
         className={ estilosTextArea }

@@ -43,13 +43,8 @@
   font-size: 1.1rem;
 }
 
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 991px){
   .buscador--container{
-    margin-top: 3rem;
-  }
-
-  .buscador--form{
-    width: 100%;
-    justify-content: center;
+    display: none;
   }
 }
