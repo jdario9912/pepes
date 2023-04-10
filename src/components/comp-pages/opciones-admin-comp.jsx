@@ -23,6 +23,7 @@ const OpcionesAdmin = () => {
       <div className="opciones-admin--botones-container modulo">
         {btnsOpcionesAdmin.map(({ dispatch, icon, label }) => (
           <button
+            key={label}
             id={dispatch}
             className="opciones-admin--boton"
             onClick={handleClick}
