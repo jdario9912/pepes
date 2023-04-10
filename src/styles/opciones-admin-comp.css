@@ -53,14 +53,22 @@
   pointer-events: none;
   font-size: 2rem;
 }
+
 @media only screen and (max-width: 640px) {
   .opciones-admin--boton {
     width: auto;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .opciones-admin--botones-container {
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .opciones-admin--container{
+    margin-top: 3rem;
   }
 }

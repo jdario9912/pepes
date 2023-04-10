@@ -30,7 +30,7 @@ const Pago = ({ total, entrega }) => {
   }
 
   return (
-    <div className=''>
+    <div className='editar-orden--pago'>
       Total 
       <input 
         type="number" 

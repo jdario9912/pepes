@@ -4,7 +4,7 @@ const TextArea = ({ valor, data }) => {
   const [value, setValue] = useState(valor);
 
   return (
-    <div>
+    <>
       <textarea 
         cols="30" 
         rows="10"
@@ -18,7 +18,7 @@ const TextArea = ({ valor, data }) => {
       >
         { value }
       </textarea>
-    </div>
+    </>
   );
 }
 

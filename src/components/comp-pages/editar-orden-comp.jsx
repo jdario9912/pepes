@@ -7,7 +7,7 @@ const EditarOrden = () => {
   const { pedido } = useParams();
 
   return (
-    <div>
+    <div className='editar-orden--container'>
       { editarTiposTrabajo[pedido] }
     </div>
   );

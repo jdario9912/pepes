@@ -13,7 +13,7 @@ const OpcionesAdmin = () => {
   const handleClick = (e) => dispatch({ type: e.target.id });
 
   return (
-    <div>
+    <div className="opciones-admin--container">
       <h2 className="opciones-admin--titulo">
         <span>
           <AiOutlineSetting />

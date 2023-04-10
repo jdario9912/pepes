@@ -1,34 +1,59 @@
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
 }
 
-.flex-row{
+.flex-row {
   display: flex;
   flex-direction: row;
 }
 
-.gap-1{
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-1 {
   gap: 1rem;
 }
 
-.mb-1{
+.mb-1 {
   margin-bottom: 1rem;
 }
 
-.items-center{
+.items-center {
   align-items: center;
 }
 
-.justify-between{
+.justify-between {
   justify-content: space-between;
 }
 
-.puntas-redondas{
+.puntas-redondas {
   border-radius: 17px / 20px;
 }
 
-.original{
+.editar-orden--header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.editar-orden--header p{
+  margin-block: 0;
+}
+
+.editar-orden--header span{
+  color: var(--amarillo);
+}
+
+.editar-orden--entregar {
+  display: flex;
+  align-items: center;
+}
+
+.original {
   background: var(--negro3);
   border: 0.5px solid var(--blanco3);
   border-radius: 10px;
@@ -37,11 +62,11 @@
   color: var(--blanco);
 }
 
-.original:focus{
+.original:focus {
   outline: none;
 }
 
-.cambio{
+.cambio {
   background: var(--negro3);
   border: 2px solid var(--amarillo);
   border-radius: 10px;
@@ -50,24 +75,24 @@
   color: var(--blanco);
 }
 
-.cambio:focus{
+.cambio:focus {
   outline: none;
 }
 
-.observaciones{
+.observaciones {
   width: 100%;
   height: initial;
 }
 
-.capitalize{
+.capitalize {
   text-transform: capitalize;
 }
 
-.h-23 div{
+.h-23 div {
   height: 23px;
 }
 
-.form{
+.form {
   box-shadow: 0px 0px 10px 2px var(--negro);
   padding: 1rem;
   background-color: var(--negro2);
@@ -77,7 +102,7 @@
   gap: 1rem;
 }
 
-.btn-submit{
+.btn-submit {
   background: var(--cyan50);
   color: var(--blanco);
   border-radius: 10px;
@@ -87,4 +112,31 @@
   justify-content: center;
   padding: 0.5rem;
   box-shadow: 1px 1px 10px var(--negro2);
+}
+
+@media only screen and (max-width: 427px) {
+.editar-orden--entregar {
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: flex-start;
+}
+}
+
+@media only screen and (max-width: 767px) {
+  .editar-orden--table tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editar-orden--pago{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .editar-orden--container {
+    margin-top: 3rem;
+  }
 }

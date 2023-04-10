@@ -81,7 +81,7 @@ const Tarjetas = () => {
         <Header tipo={pedido} numero={ nroOrden } nombre={ nombre } />
         <form className='flex-column form puntas-redondas' onSubmit={ handleSubmit }>
           <Entregar fecha={ dataS.fecha_entrega } hora={ dataS.hora_entrega } />
-            <table>
+            <table className="editar-orden--table">
               <tr>
                 <td>Muestra</td>
                 <td><InputSelect valor={dataS.muestra} data='muestra' opciones={ siNo } /></td>
