@@ -1,3 +1,14 @@
+export const opcionesImpresion = [
+  {
+    id: "color",
+    value: "Color"
+  },
+  {
+    id: "blanco-negro",
+    value: "Blanco y negro"
+  }
+];
+
 export const opcionesFaz = [
   {
     id: "simple",

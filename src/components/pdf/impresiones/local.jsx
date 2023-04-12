@@ -11,6 +11,7 @@ const Local = () => {
   const { pedido } = useContext(PdfContext);
   const {
     muestra,
+    impresion,
     ubicacion_archivo,
     faz,
     tipo_papel,
@@ -34,6 +35,14 @@ const Local = () => {
               </View>
               <View style={estilos.valor}>
                 <Text>{muestra}</Text>
+              </View>
+            </View>
+            <View style={estilos.fila}>
+              <View style={estilos.clave}>
+                <Text>Impresión:</Text>
+              </View>
+              <View style={estilos.valor}>
+                <Text>{impresion}</Text>
               </View>
             </View>
             <View style={estilos.fila}>

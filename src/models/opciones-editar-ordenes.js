@@ -1,5 +1,6 @@
 export const opcionesImpresiones = {
   siNo: ['Si', 'No'],
+  impresion: ['Color', 'Blanco y negro'],
   faz: ['Simple', 'Doble'],
   tamano_papel: ['A4', 'A5', 'A3', 'Oficio', 'Legal'],
   orientacion: ['Vertical', 'Apaisado']

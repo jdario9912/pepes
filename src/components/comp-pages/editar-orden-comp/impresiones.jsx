@@ -16,7 +16,7 @@ const Impresiones = () => {
   const { nroOrden, nombre, pedido } = useParams();
   const [respuesta, setRespuesta] = useState(false);
   const [dataS, setdataS] = useState({});
-  const { siNo, faz, tamano_papel, orientacion } = opcionesImpresiones;
+  const { siNo, impresion, faz, tamano_papel, orientacion } = opcionesImpresiones;
 
   useEffect(() => {
     fetch(urlApi + `/api/${pedido}/${nroOrden}`)
@@ -35,6 +35,7 @@ const Impresiones = () => {
     ).value;
     const hora_entrega = document.querySelector('[data="hora-entrega"]').value;
     const muestra = document.querySelector('[data="muestra"]').value;
+    const impresion = document.querySelector('[data="impresion"]').value;
     const ubicacion_archivo = document.querySelector(
       '[data="ubicacion-archivo"]'
     ).value;
@@ -59,6 +60,7 @@ const Impresiones = () => {
       fecha_entrega,
       hora_entrega,
       muestra,
+      impresion,
       ubicacion_archivo,
       faz,
       tipo_papel,
@@ -101,6 +103,12 @@ const Impresiones = () => {
                   data="muestra"
                   opciones={siNo}
                 />
+              </td>
+            </tr>
+            <tr>
+              <td>Impresión</td>
+              <td>
+                <InputSelect valor={dataS.impresion} data="impresion" opciones={impresion} />
               </td>
             </tr>
             <tr>

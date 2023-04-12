@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlinePrinter } from "react-icons/ai";
 import FechaHora from "../fecha-hora";
 import {
+  opcionesImpresion,
   opcionesFaz,
   opcionesOrientacion,
   opcionesAnillado,
@@ -33,6 +34,7 @@ const ImpresionesComp = () => {
     registro: false,
     mensaje: "",
   });
+  const [impresion, setImpresion] = useState("");
   const [faz, setFaz] = useState("");
   const [orientacion, setOrientacion] = useState("");
   const [anillado, setAnillado] = useState("");
@@ -66,6 +68,7 @@ const ImpresionesComp = () => {
       fecha_entrega,
       hora_entrega,
       muestra,
+      impresion,
       ubicacion_archivo,
       faz,
       tipo_papel,
@@ -115,6 +118,12 @@ const ImpresionesComp = () => {
         </div>
         <div className="nueva-orden--container-1">
           <div className="nueva-orden--container-2">
+            <InputRadio
+              texto="Impresión"
+              accion={setImpresion}
+              name="impresion"
+              opciones={opcionesImpresion}
+            />
             <InputText
               props={
                 new InputTextModel(
