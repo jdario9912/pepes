@@ -15,10 +15,12 @@ export const estilosHeader = {
   },
   tipo: {
     fontSize: 18,
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
+    backgroundColor: '#ffff00'
   },
   fecha: {
-    fontSize: 18
+    fontSize: 18,
+    backgroundColor: '#ffff00'
   },
   atendido: {
     flexDirection: 'row',
@@ -33,5 +35,9 @@ export const estilosHeader = {
   },
   nombre: {
     textTransform: 'capitalize'
+  },
+  cliente: {
+    fontSize: 18,
+    backgroundColor: '#ffff00'
   }
 }

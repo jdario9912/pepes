@@ -5,7 +5,8 @@ import { actualizaEstadoOrden } from '../../../../services/form-actualiza-estado
 import { urlApi } from '../../../../services/url/url-api';
 import { OrdenesPendientesCompContext } from '../../ordenes-pendientes-comp';
 import { BtnOcultarForm, BtnVerForm } from './t-body/componentes';
-import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
+import { AiOutlineEdit } from "react-icons/ai";
+import { ImFilePdf } from "react-icons/im";
 import { Link } from 'react-router-dom';
 import { toggleForm } from '../../../../services/toggle-form-estado-orden';
 import { generarFecha } from '../../../../services/generar-fecha';
@@ -63,7 +64,7 @@ const TBody = ({ ordenesPendientes }) => {
   return (
     <tbody className='t-body'>
       {
-        ordenesPendientes.map(({ id_cliente, nro_orden, nombre, fecha_creacion, tipo_trabajo, fecha_entrega, hora_entrega }) =>
+        ordenesPendientes.map(({ id_cliente, nro_orden, atendido_por, nombre, fecha_creacion, tipo_trabajo, fecha_entrega, hora_entrega }) =>
           <tr 
             key={ nro_orden } 
             className={
@@ -71,13 +72,13 @@ const TBody = ({ ordenesPendientes }) => {
               compararFechas(fecha_entrega) ? noEntregado : trNormal
             }
           >
-            <td>{ nro_orden }</td>
+            <td className='capitalize'>{ atendido_por }</td>
+            <td>{fecha_creacion}</td>
             <td className='capitalize'>{ tipo_trabajo }</td>
             <td className='capitalize'>{ nombre }</td>
             <td>{ fecha_entrega } a las { hora_entrega }</td>
-            <td>{fecha_creacion}</td>
             <td id={ nro_orden } className='td-flex td-acciones'>
-              <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}><AiOutlineEye /></Link>
+              <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}><ImFilePdf /></Link>
 
               <Link to={`/editar-orden/${tipo_trabajo}/${id_cliente}/${nombre}/${nro_orden}`}><AiOutlineEdit /></Link>
 

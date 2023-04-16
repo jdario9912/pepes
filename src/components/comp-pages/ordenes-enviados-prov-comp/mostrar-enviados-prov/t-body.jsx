@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
+import { AiOutlineEdit } from "react-icons/ai";
+import { ImFilePdf } from "react-icons/im";
 import {
   BtnOcultarForm,
   BtnVerForm,
@@ -94,7 +95,7 @@ const TBody = ({ enviadosAProveedor }) => {
             <td>{fecha_creacion}</td>
             <td id={ nro_orden } className='td-flex td-acciones'>
               <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}>
-                <AiOutlineEye />
+                <ImFilePdf />
               </Link>
 
               <Link

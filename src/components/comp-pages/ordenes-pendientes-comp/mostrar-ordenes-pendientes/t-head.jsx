@@ -5,7 +5,8 @@ const THead = ({ accion }) => {
   return (
     <thead className='t-head'>
       <tr className='t-head--tr'>
-        <th>Nro.</th>
+        <th>Atendió</th>
+        <th>Creado</th>
         <th>
           <button onClick={ () => accion(false) } className='t-head--button'>
             <TbArrowsSort />
@@ -19,7 +20,6 @@ const THead = ({ accion }) => {
             Entregar
           </button>
         </th>
-        <th>Creado</th>
         <th>Acciones</th>
       </tr>
     </thead>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
+import { AiOutlineEdit } from "react-icons/ai";
+import { ImFilePdf } from "react-icons/im";
 import { Link } from 'react-router-dom';
 import FormActualizarEstado from './form-actualizar-estado';
 import { BtnOcultarForm, BtnVerForm } from './td-acciones/componentes';
@@ -23,7 +24,7 @@ const TdAcciones = ({ tipo_trabajo, nro_orden, }) => {
 
   return (
     <>
-      <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}><AiOutlineEye /></Link>
+      <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}><ImFilePdf /></Link>
       <Link to={`/editar-orden/${tipo_trabajo}/${id}/${nombre}/${nro_orden}`}><AiOutlineEdit /></Link>      
       
       <div className='t-body--td-form-container' data={`form-container${nro_orden}`}>

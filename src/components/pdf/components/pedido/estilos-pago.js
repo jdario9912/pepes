@@ -6,6 +6,24 @@ export const estilosPago = {
     marginTop: 5,
   },
   importe: {
-    fontSize: 15
+    fontSize: 10
   },
+  cuadricula1: {
+    width: '33.33%',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'strech'
+  },
+  cuadricula2: {
+    textAlign: 'center',
+    backgroundColor: '#00000080',
+    width: '100%',
+    padding: 3
+  },
+  cuadricula3: {
+    padding: 3,
+    backgroundColor: '#00000049',
+    width: '100%',
+    textAlign: 'center',
+  }
 }
