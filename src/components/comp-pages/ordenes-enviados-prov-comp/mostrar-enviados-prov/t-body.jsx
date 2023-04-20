@@ -15,7 +15,7 @@ import { compararFechas } from "../../../../services/comparar-fechas";
 import FormActualizarEstadoOrden from "../../ordenes-pendientes-comp/mostrar-ordenes-pendientes/form-actualizar-estado-orden";
 
 const TBody = ({ enviadosAProveedor }) => {
-  const { setReset} = useContext(OrdenesEnviadosProvCompContext);
+  const { setReset } = useContext(OrdenesEnviadosProvCompContext);
   const [verActualizarEstado, setVerActualizarEstado] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const [mensajeS, setMensajeS] = useState(null);
@@ -93,7 +93,7 @@ const TBody = ({ enviadosAProveedor }) => {
               {fecha_entrega} a las {hora_entrega}
             </td>
             <td>{fecha_creacion}</td>
-            <td id={ nro_orden } className='td-flex td-acciones'>
+            <td id={nro_orden} className="td-flex td-acciones">
               <Link to={`/pdf/${tipo_trabajo}/${nro_orden}`}>
                 <ImFilePdf />
               </Link>

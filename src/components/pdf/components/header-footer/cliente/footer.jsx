@@ -8,7 +8,7 @@ const estilos = StyleSheet.create(estilosFooter);
 
 export const FooterCliente = () => (
   <View style={estilos.footer}>
-    <Text>Horario de Lunes a Viernes de 9:00hs a 13:00hs y de 15:00hs a 20:00hs</Text>
+    <Text>Horario de Lunes a Viernes de 9:00hs a 13:00hs y de 16:00hs a 19:50hs</Text>
     <Text>Av. Bodereau 2249 - Villa Allende - Tel: (0351)431555</Text>
     <View style={ estilos.contacto }>
       <Image src={ whatsappLogo } style={ estilos.logoWhatsapp} />

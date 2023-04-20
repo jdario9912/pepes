@@ -22,6 +22,10 @@ const OrdenesEnviadosProvComp = () => {
     setEnviadosAProveedor(enviadosAProveedor);
   }, [enviadosAProveedor]);
 
+  useEffect(() => {
+    setReset(reset);
+  }, [reset]);
+
   return (
     <OrdenesEnviadosProvCompContext.Provider value={{ setReset }}>
       <div className="modulo ordenes-pendientes-comp--container">
