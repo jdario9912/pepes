@@ -12,28 +12,29 @@ export const Pago = () => {
     <View style={estilos.pago}>
       <View style={estilos.cuadricula1}>
         <View style={estilos.cuadricula2}>
-          <Text>Total:</Text>
+          <Text style={estilos.texto}>Total</Text>
         </View>
         <View style={estilos.cuadricula3}>
-          <Text style={estilos.importe}>${total}</Text>
+          <Text style={estilos.importe}>$ {total}</Text>
+          <Text>{" "}</Text>
         </View>
       </View>
       <View style={estilos.cuadricula1}>
         <View style={estilos.cuadricula2}>
-          <Text>Entrega: </Text>
+          <Text style={estilos.texto}>Entrega </Text>
         </View>
         <View style={estilos.cuadricula3}>
-          <Text style={estilos.importe}>
-            ${entrega} - {abono}
-          </Text>
+          <Text style={estilos.importe}>$ {entrega}</Text>
+          <Text>{abono}</Text>
         </View>
       </View>
       <View style={estilos.cuadricula1}>
         <View style={estilos.cuadricula2}>
-          <Text>Saldo:</Text>
+          <Text style={estilos.texto}>Saldo</Text>
         </View>
         <View style={estilos.cuadricula3}>
-          <Text style={estilos.importe}>${total - entrega}</Text>
+          <Text style={estilos.importe}>$ {total - entrega}</Text>
+          <Text>{" "}</Text>
         </View>
       </View>
     </View>

@@ -3,11 +3,11 @@ import SelectOption from '../../../../select-option';
 import { SelectOptionModel } from '../../../../../models/select-option-model';
 
 const OtraTerminacion = () => {
-  const opcionesCantidad = ['Ninguna', 'Perforado', 'Corte'];
+  const opcionesTerminacion = ['Ninguna', 'Perforado', 'Corte'];
     
   return (
     <>
-      <SelectOption props={ new SelectOptionModel('Otra terminación: ', '', 'select', '', 'terminacion', opcionesCantidad)} />
+      <SelectOption props={ new SelectOptionModel('Otra terminación: ', '', 'select', '', 'terminacion', opcionesTerminacion)} />
     </>
   );
 }

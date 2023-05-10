@@ -22,6 +22,22 @@
   background-color: var(--amarillo);    /* color of the scroll thumb */
 }
 
+.ordenes-cliente--container1{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.ordenes-cliente--atras{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--blanco);
+  font-size: 1.5rem;
+}
+
 .table-ordenes-cliente{
   width: 100%;
 }

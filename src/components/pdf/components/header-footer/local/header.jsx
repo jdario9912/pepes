@@ -31,8 +31,7 @@ export const HeaderLocal = () => {
           <Text style={estilos.nombre}>
             Cliente: <Text style={estilos.cliente}>{nombre}</Text>
           </Text>
-          <Text>Tel: {telefono}</Text>
-          <Text>Email: {email}</Text>
+          <Text>Tel: <Text style={estilos.cliente}>{telefono}</Text></Text>
         </View>
       </View>
       <View style={estilos.atendido}>

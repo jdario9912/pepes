@@ -1,4 +1,3 @@
-import React from 'react';
 import TBody from './t-body';
 import THead from './t-head';
 import '../../../../../styles/tabla-clientes-busqueda.css';

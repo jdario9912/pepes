@@ -19,7 +19,7 @@
 }
 
 .no-entregado{
-  color: var(--rojo);
+  color: var(--no-entregado);
 }
 
 .no-entregado td , .t-body--tr td{

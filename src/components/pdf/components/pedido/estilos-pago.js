@@ -4,26 +4,31 @@ export const estilosPago = {
     justifyContent: 'space-around',
     width: '100%',
     marginTop: 5,
+    borderRadius: 3,
+    overflow: 'hidden'
   },
   importe: {
-    fontSize: 10
+    fontSize: 15
   },
   cuadricula1: {
     width: '33.33%',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'strech'
+    justifyContent: 'strech',
   },
   cuadricula2: {
     textAlign: 'center',
-    backgroundColor: '#00000080',
+    backgroundColor: '#ffff00',
     width: '100%',
-    padding: 3
+    padding: 3,
   },
   cuadricula3: {
     padding: 3,
-    backgroundColor: '#00000049',
+    backgroundColor: '#ffff0080',
     width: '100%',
     textAlign: 'center',
+  },
+  texto: {
+    fontSize: 15
   }
 }
