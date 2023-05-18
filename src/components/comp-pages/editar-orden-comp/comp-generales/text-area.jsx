@@ -9,6 +9,7 @@ const TextArea = ({ valor, data }) => {
         cols="30" 
         rows="10"
         className='observaciones original'
+        maxLength='300'
         data={ data }
         onChange={() => {
           setValue(document.querySelector(`[data=${data}]`).value);

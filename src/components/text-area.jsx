@@ -33,6 +33,7 @@ const TextArea = ({ props }) => {
         data={ data }
         placeholder={ placeholder }
         onChange= { handleValue }
+        maxLength='300'
       ></textarea>
     </label>
   );
